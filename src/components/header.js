@@ -1,21 +1,20 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState } from "react"
+import Button from "../components/Button"
 
 function Header({ siteTitle }) {
   const [isExpanded, toggleExpansion] = useState(false)
 
   return (
-    <nav className="flex flex-wrap items-center justify-between p-6 mb-6 bg-gray-800">
-      <div className="flex items-center flex-shrink-0 mr-6 text-white">
-        <span className="text-xl font-semibold tracking-tight">
-          {siteTitle}
-        </span>
+    <nav className="flex flex-wrap items-center justify-between p-6 mb-6 border border-b-red">
+      <div className="flex items-center flex-shrink-0 mr-6 text-red">
+        <span className="text-xl tracking-tight">{siteTitle}</span>
       </div>
       <div className="block lg:hidden">
         <button
           onClick={() => toggleExpansion(!isExpanded)}
-          className="flex items-center px-3 py-2 text-white border border-white rounded hover:text-white hover:border-white"
+          className="flex items-center px-3 py-2 text-red border border-red rounded hover:text-white hover:border-white"
         >
           <svg
             className="w-3 h-3 fill-current"
@@ -47,16 +46,10 @@ function Header({ siteTitle }) {
             page 2
           </Link>
         </div>
-        <div>
-          <a
-            href="https://github.com/kosvrouvas/gatsby-tailwindcss-starter"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block px-4 py-2 mt-4 text-sm leading-none text-white border border-white rounded hover:border-transparent hover:text-black hover:bg-white lg:mt-0"
-          >
-            Download
-          </a>
-        </div>
+        <Button
+          cta="Book now"
+          url="https://github.com/kosvrouvas/gatsby-tailwindcss-starter"
+        />
       </div>
     </nav>
   )

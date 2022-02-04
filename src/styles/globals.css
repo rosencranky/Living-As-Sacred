@@ -1,17 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Nanum+Myeongjo&display=swap");
+
 @tailwind base;
+@layer base {
+  @font-face {
+    font-family: "panama";
+    font-display: swap;
+    font-style: normal;
+    src: url("../fonts/panama-demo-regular.otf");
+  }
 
-h1 {
-  @apply text-2xl;
-}
-h2 {
-  @apply text-xl;
-}
-h3 {
-  @apply text-lg;
-}
-a {
-  @apply text-blue-600;
-}
+  @font-face {
+    font-family: "panama";
+    font-display: swap;
+    font-style: italic;
+    src: url("../fonts/panama-demo-italic.otf");
+  }
 
+  body {
+    @apply text-red bg-cream font-serif antialiased;
+  }
+
+  h1 {
+    @apply text-2xl text-red font-serif antialiased;
+  }
+
+  h2 {
+    @apply text-base text-red font-mono tracking-wider uppercase antialiased;
+  }
+
+  h3 {
+    @apply text-lg text-red font-serif antialiased;
+  }
+
+  a {
+    @apply text-blue-600;
+  }
+}
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .section {
+    @apply my-10;
+  }
+}
