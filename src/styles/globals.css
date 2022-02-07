@@ -20,11 +20,11 @@
     @apply text-red bg-cream font-serif antialiased;
   }
 
-  h1 {
+  h2 {
     @apply text-2xl text-red font-serif antialiased;
   }
 
-  h2 {
+  h1 {
     @apply text-base text-red font-mono tracking-wider uppercase antialiased;
   }
 
