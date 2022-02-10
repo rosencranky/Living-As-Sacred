@@ -3,14 +3,11 @@ import PropTypes from "prop-types"
 import React, { useState } from "react"
 import Button from "../components/Button"
 
-function Header({ siteTitle }) {
+function Header() {
   const [isExpanded, toggleExpansion] = useState(false)
 
   return (
-    <nav className="flex flex-wrap items-center justify-between p-6 mb-6 border border-b-red">
-      <div className="flex items-center flex-shrink-0 mr-6 text-red">
-        <span className="text-xl tracking-tight">{siteTitle}</span>
-      </div>
+    <nav className="flex flex-wrap items-center justify-between p-6 mb-6">
       <div className="block lg:hidden">
         <button
           onClick={() => toggleExpansion(!isExpanded)}
@@ -46,21 +43,10 @@ function Header({ siteTitle }) {
             page 2
           </Link>
         </div>
-        <Button
-          cta="Book now"
-          url="https://github.com/kosvrouvas/gatsby-tailwindcss-starter"
-        />
+        <Button cta="Book now" url="mailto:living.as.sacred@gmail.com" />
       </div>
     </nav>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header

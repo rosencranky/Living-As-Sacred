@@ -6,8 +6,10 @@ module.exports = {
     extend: {
       colors: {
         // cream: "#FBF8F2",
-        cream: "#fff",
+        cream: "#FBF8F2",
         red: "#C21F06",
+        black: "#121814",
+        // red: "#f74c25",
       },
       fontFamily: {
         sans: ["Inconsolata", "sans-serif"],
@@ -15,6 +17,10 @@ module.exports = {
         serif: ["panama", "serif"],
       },
       fontSize: {},
+      backgroundImage: {
+        hero: "url('../images/logo-transparent.png')",
+        banner: "url('../images/logo-transparent.png')",
+      },
     },
     variants: {},
     plugins: [],

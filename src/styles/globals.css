@@ -41,6 +41,17 @@
 
 @layer utilities {
   .section {
-    @apply my-10;
+    @apply my-10 mx-10;
+  }
+  .accordion-item {
+    @apply transition-all ease-linear duration-200 pointer-events-none delay-100;
+    max-height: 0;
+    height: 100% !important;
+  }
+
+  .accordion-item--open {
+    max-height: 1000px;
+    height: 100% !important;
+    @apply transition-all ease-linear duration-200 pb-12 md:pb-16 xl:pb-12 delay-100;
   }
 }

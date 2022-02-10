@@ -5,3 +5,9 @@
  */
 
 // You can delete this file if you're not using it
+
+const createWomen = require(`./gatsby/createWomen`)
+
+exports.createPages = async ({ actions, graphql }) => {
+  await createWomen({ actions, graphql })
+}
