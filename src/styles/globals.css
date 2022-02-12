@@ -20,8 +20,12 @@
     @apply text-red bg-cream font-serif antialiased;
   }
 
+  p {
+    @apply mt-2;
+  }
+
   h2 {
-    @apply text-2xl text-red font-serif antialiased;
+    @apply text-5xl text-red font-serif antialiased;
   }
 
   h1 {
@@ -32,8 +36,28 @@
     @apply text-lg text-red font-serif antialiased;
   }
 
+  h4 {
+    @apply text-red font-serif text-5xl italic antialiased;
+  }
+
   a {
-    @apply text-blue-600;
+    @apply underline;
+
+    &:hover,
+    &:focus {
+      @apply text-red;
+    }
+  }
+  /* Headings following paragraphs */
+  p + h1,
+  p + h2,
+  p + h3,
+  p + h4 {
+    @apply pt-3 block;
+  }
+
+  ul {
+    @apply list-inside list-disc mb-5;
   }
 }
 @tailwind components;
@@ -41,8 +65,25 @@
 
 @layer utilities {
   .section {
-    @apply my-10 mx-10;
+    @apply mt-24 mx-10;
   }
+
+  .top-margin-medium {
+    @apply mt-12;
+  }
+
+  .section-center {
+    @apply flex flex-wrap items-center justify-center;
+  }
+
+  .section-grid {
+    @apply mx-10 grid grid-cols-3 md:grid-cols-12 items-baseline justify-center;
+  }
+
+  .image-div {
+    @apply border border-red mt-3 mb-2  p-5;
+  }
+
   .accordion-item {
     @apply transition-all ease-linear duration-200 pointer-events-none delay-100;
     max-height: 0;

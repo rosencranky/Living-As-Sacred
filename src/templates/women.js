@@ -4,7 +4,7 @@ import SEO from "../components/seo"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import { StructuredText } from "react-datocms"
-import { getImage, GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 // import Div100vh from "react-div-100vh"
 
@@ -33,10 +33,10 @@ const WomanTemplate = ({ data: { person }, location }) => {
 
       <div>
         <div className="min-h-screen">
-          <div className="flex flex-wrap items-center h-full pt-14 md:pt-22 min-h-screen bg-offblack">
-            <div className="text-red relative bg-offblack pb-24 md:pb-32 w-full">
+          <div className="flex flex-wrap items-center h-full pt-14 md:pt-22 min-h-screen bg-green text-cream  ">
+            <div className="relative  pb-24 md:pb-32 w-full ">
               <div className="w-10/12 lg:w-9/12 mx-auto relative">
-                <h1 className="text-2xl lg:text-3xl block w-full border-b border-red pb-1 mb-6 lg:mb-10 xl:mb-14">
+                <h1 className="text-2xl lg:text-3xl font-serif normal-case block w-full pb-1 mb-6 lg:mb-10 xl:mb-14">
                   {person.name}
                 </h1>
                 <div className="flex flex-wrap relative">
@@ -113,6 +113,8 @@ export const query = graphql`
       bio {
         value
       }
+      theme
+      weekNumber
       image {
         gatsbyImageData
         alt
