@@ -35,7 +35,7 @@ export default function AccordionGrid({ index, excerpt, fullText }) {
                 )}
                 {open && (
                   <p
-                    className={`block mb-0 pb-0 px-3 flex-1 transition-opacity ease-in duration-200 delay-50 ${
+                    className={`leading-tight block mb-0 pb-0 px-3 flex-1 transition-opacity ease-in duration-200 delay-50 ${
                       open ? "opacity-100" : "opacity-0"
                     }`}
                   >

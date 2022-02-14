@@ -26,8 +26,7 @@ module.exports = {
         serif: ["panama", "serif"],
       },
       fontSize: {
-        "45xl": "2.75rem",
-
+        // "45xl": ["2.75rem", "2.5rem"],
         // 'xs': '.75rem',
         // 'sm': '.875rem',
         // 'tiny': '.875rem',

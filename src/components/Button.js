@@ -7,7 +7,7 @@ export default function Button({ cta, url }) {
         href={`mailto:${url}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="z-20 inline-block bg-green hover:bg-red px-4 py-2 text-sm font-mono tracking-wider uppercase no-underline text-cream  leading-none shadow-sm"
+        className="z-20 inline-block bg-green hover:bg-red px-4 py-2 monotext no-underline text-cream  leading-none shadow-sm"
       >
         {cta}
       </a>

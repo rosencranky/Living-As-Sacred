@@ -68,7 +68,7 @@ const WomanTemplate = ({ data: { person }, location }) => {
                   </div>
                   <div className="w-full lg:flex-1 relative z-10">
                     <div className="lg:w-10/12 xl:w-8/12 lg:pl-8">
-                      <div className="max-w-md">
+                      <div className="max-w-md leading-tight">
                         <StructuredText data={person.bio} />
                       </div>
                     </div>

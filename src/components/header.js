@@ -29,7 +29,7 @@ function Header() {
           isExpanded ? `block` : `hidden`
         } w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto`}
       >
-        <div className="text-sm lg:justify-center self-center lg:mr-10 ">
+        <div className="monotext lg:justify-center self-center lg:mr-10 ">
           <Link
             to={`/#about`}
             href="#responsive-header"

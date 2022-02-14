@@ -23,11 +23,11 @@ const IndexPage = ({ data }) => (
     <SectionOffering content={data.content} />
 
     <SectionTimeline content={data.content} />
-    <SectionQs content={data.content} />
+    {/* <SectionQs content={data.content} /> */}
     <SectionValue content={data.content} />
 
     <SectionBios2 content={data.content} />
-    {/* <SectionSoul2 content={data.content} /> */}
+    <SectionSoul2 content={data.content} />
     <SectionSoul1 content={data.content} />
     <Supporting content={data.content} />
     <Footer content={data.content} />
@@ -68,7 +68,7 @@ function SectionIntro({ content }) {
     <div id="about" className="section  z-10  section-center ">
       <span className="w-3/4">
         <h1 className="text-center">{content.introSectionTitle} </h1>
-        <h2 className="text-center">
+        <h2 className="text-center leading-tightest">
           <StructuredText data={content.introtext1} />
         </h2>
       </span>
@@ -90,7 +90,7 @@ function SectionAbout({ content }) {
             className="rounded-full hover:rounded-none transition ease-in-out duration-300 p-5 m-5 border  border-green"
           />
         </div>
-        <p className="mx-3">
+        <p className="mx-3 leading-tight">
           <StructuredText data={content.mission} />
         </p>
       </div>
@@ -106,7 +106,7 @@ function SectionAbout({ content }) {
           />
         </div>
 
-        <p className="mx-3">
+        <p className="mx-3 leading-tight">
           {" "}
           <StructuredText data={content.purpose} />
         </p>
@@ -122,7 +122,7 @@ function SectionAbout({ content }) {
             className="rounded-full hover:rounded-none transition ease-in-out duration-300 delay-50 p-5 m-5 border  border-green"
           />
         </div>
-        <p className="mx-3">
+        <p className="mx-3 leading-tight">
           <StructuredText data={content.vision} />
         </p>
       </div>
@@ -194,7 +194,7 @@ function SectionValues({ content }) {
 function SectionOffering({ content }) {
   return (
     <div id="offering" className="section  ">
-      <h4 className="mx-32 text-center">{content.ctaSentence}</h4>
+      <h4 className="xl:mx-24 2xl:mx-32 text-center">{content.ctaSentence}</h4>
       <div className="flex justify-center">
         <Button cta={content.cta2} url={content.cta2Email} />
       </div>
@@ -261,7 +261,7 @@ function SectionTimeline({ content }) {
                 </div>
               ))}
             </div>
-            <p className="row-start-3 text-base leading-tight -mt-16 text-darkgreen">
+            <p className="row-start-3 text-sm 2xl:text-base leading-tight -mt-16 text-darkgreen">
               {" "}
               <StructuredText data={block.moduleDescription} />
             </p>
@@ -321,7 +321,7 @@ function SectionQs({ content }) {
 
 function SectionValue({ content }) {
   return (
-    <div className="section bg-green py-12 mb-12 shadow-sm">
+    <div className="section bg-green px-8 2xl:px-0 py-12 mb-12 shadow-sm">
       <h1 className="text-center text-cream ">{content.valueSectionTitle}</h1>
       <div className="section-center w-7/8 2xl:w-full">
         <div className="col-start-1 col-span-7">
@@ -381,7 +381,7 @@ function SectionSoul1({ content }) {
             {" "}
             <StructuredText data={content.ifYourSoulIsCallingForIntro} />
           </h2>
-          <p className="flex justify-center w-5/6">
+          <p className="flex justify-center w-5/6 leading-tight">
             {" "}
             <StructuredText data={content.ifYourSoulIsCallingFor} />
           </p>
@@ -710,7 +710,7 @@ export const query = graphql`
         }
       }
       valuesImage {
-        gatsbyImageData(height: 750, width: 750, imgixParams: { fit: "crop" })
+        gatsbyImageData(height: 650, width: 650, imgixParams: { fit: "crop" })
         alt
       }
       valueImage {
