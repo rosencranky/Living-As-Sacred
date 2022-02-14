@@ -6,9 +6,9 @@ export default function Footer() {
   return (
     <footer className="w-full flex justify-between items-end pb-10 px-10 mt-24 pt-24 bg-green ">
       <div className=" text-cream flex flex-col">
-        <span className="mb-6">
+        {/* <span className="mb-6">
           <h2 className="text-cream">Living as Sacred </h2>
-        </span>
+        </span> */}
         <p> © {new Date().getFullYear()} </p>
       </div>
       <div className=" flex items-end text-cream">
