@@ -43,9 +43,13 @@ function Hero({ content }) {
       {/* bg-contain opacity-90 */}
       <Header />
       <div className="z-10 absolute top-5 left-5 ">
-        <h1 className="text-8xl font-serif normal-case">Living as Sacred</h1>
-        <h1 className=" text-8xl font-serif uppercase">May – July 2022</h1>
-        <h1 className="text-8xl font-serif uppercase">
+        <h1 className="xl:text-7xl 2xl:text-8xl font-serif normal-case">
+          Living as Sacred
+        </h1>
+        <h1 className=" xl:text-7xl 2xl:text-8xl font-serif uppercase">
+          May – July 2022
+        </h1>
+        <h1 className="xl:text-7xl 2xl:text-8xl font-serif uppercase">
           <em>Online</em>
         </h1>
         {/* <div className="z-40">
@@ -74,7 +78,7 @@ function SectionIntro({ content }) {
 
 function SectionAbout({ content }) {
   return (
-    <div className="section-grid top-margin-medium   w-full pt-10 justify-items-center items-end">
+    <div className="section-grid top-margin-medium   w-11/12 2xl:w-full pt-10 justify-items-center items-end">
       {/* Mission */}
       <div className="col-start-1 md:col-span-4 text-center lg:pl-16">
         <h1 className="text-center">{content.missionSectionTitle}</h1>
@@ -246,7 +250,7 @@ function SectionTimeline({ content }) {
               {block.weeks.map((week, i) => (
                 <div key={week.id} key={i} className="">
                   <div className="grid grid-rows-2 items-start">
-                    <h3 className="row-start-1 row-end-1 bg-green w-16 h-16 mb-16 rounded-full text-cream text-center flex justify-center items-center">
+                    <h3 className="row-start-1 row-end-1 bg-green w-12 h-12 2xl:w-16 2xl:h-16 mb-16 rounded-full text-cream text-center flex justify-center items-center">
                       {week.weekNumber}
                     </h3>
 
@@ -271,7 +275,7 @@ function SectionTimeline({ content }) {
 function SectionQs({ content }) {
   return (
     <div className="section-full pb-24">
-      <div className="max-h-screen grid grid-rows-3 grid-cols-12 items-center ">
+      <div className="2xl:max-h-screen grid grid-rows-3 grid-cols-12 items-center ">
         <div className="z-0 col-start-1 col-span-4 row-start-1  ">
           <GatsbyImage
             image={content.valueImages[0].gatsbyImageData}
@@ -319,7 +323,7 @@ function SectionValue({ content }) {
   return (
     <div className="section bg-green py-12 mb-12 shadow-sm">
       <h1 className="text-center text-cream ">{content.valueSectionTitle}</h1>
-      <div className="section-center w-full">
+      <div className="section-center w-7/8 2xl:w-full">
         <div className="col-start-1 col-span-7">
           <div className="self-center">
             <h2 className="text-7xl text-center text-cream">
