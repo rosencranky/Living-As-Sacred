@@ -24,9 +24,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
       <div
-        className="m-10"
+        className=""
         style={
           {
             // margin: `0 auto`,
@@ -36,7 +35,6 @@ const Layout = ({ children }) => {
         }
       >
         <main>{children}</main>
-        <footer>© {new Date().getFullYear()}</footer>
       </div>
     </>
   )

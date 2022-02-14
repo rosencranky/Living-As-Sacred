@@ -3,14 +3,11 @@ import PropTypes from "prop-types"
 import React, { useState } from "react"
 import Button from "../components/Button"
 
-function Header({ siteTitle }) {
+function Header() {
   const [isExpanded, toggleExpansion] = useState(false)
 
   return (
-    <nav className="flex flex-wrap items-center justify-between p-6 mb-6 border border-b-red">
-      <div className="flex items-center flex-shrink-0 mr-6 text-red">
-        <span className="text-xl tracking-tight">{siteTitle}</span>
-      </div>
+    <nav className="flex flex-wrap items-center justify-between p-6 mb-6">
       <div className="block lg:hidden">
         <button
           onClick={() => toggleExpansion(!isExpanded)}
@@ -26,41 +23,43 @@ function Header({ siteTitle }) {
           </svg>
         </button>
       </div>
+
       <div
         className={`${
           isExpanded ? `block` : `hidden`
-        } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
+        } w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto`}
       >
-        <div className="text-sm lg:flex-grow">
+        <div className="text-sm lg:justify-center self-center lg:mr-10 ">
           <Link
-            to={`/`}
+            to={`/#about`}
             href="#responsive-header"
-            className="block mt-4 mr-4 text-white lg:inline-block lg:mt-0 hover:text-white"
+            className="block mt-4 mr-4 monotext no-underline hover:underline focus:underline lg:inline-block lg:mt-0 "
           >
-            Home
+            About
           </Link>
           <Link
-            to={`/page-2`}
-            className="block mt-4 mr-4 text-white lg:inline-block lg:mt-0 hover:text-white"
+            to={`/#timeline`}
+            className="block mt-4 mr-4 monotext no-underline hover:underline focus:underline lg:inline-block lg:mt-0 "
           >
-            page 2
+            Timeline
+          </Link>
+          <Link
+            to={`/#women`}
+            className="block mt-4 mr-4 monotext no-underline hover:underline focus:underline lg:inline-block lg:mt-0 "
+          >
+            Meet us
           </Link>
         </div>
-        <Button
-          cta="Book now"
-          url="https://github.com/kosvrouvas/gatsby-tailwindcss-starter"
-        />
+        {/* <div className="block">EN/PT</div> */}
+        <div className="-mt-4">
+          <Button
+            cta="Let’s journey together"
+            url="mailto:livingasacred@gmail.com"
+          />
+        </div>
       </div>
     </nav>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header
