@@ -23,10 +23,10 @@ export default function AccordionGrid({ index, excerpt, fullText }) {
         <div className="py-6 md:py-10 cursor-pointer ring-blue">
           <div className="flex flex-wrap items-start">
             <div className="flex-1">
-              <div className="flex flex-wrap items-start accordion-item--open  hover:text-green">
+              <div className="flex flex-wrap items-start accordion-item--open ">
                 {!open && (
                   <h3
-                    className={`block mb-0 pb-0 px-3 flex-1  transition-opacity ease-in duration-200  ${
+                    className={`block mb-0 pb-0 px-3 flex-1  hover:text-green transition-opacity ease-in duration-200  ${
                       open ? "opacity-0" : "opacity-100"
                     }`}
                   >

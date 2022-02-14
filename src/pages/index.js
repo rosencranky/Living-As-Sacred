@@ -38,7 +38,7 @@ function Hero({ content }) {
   return (
     <div
       id="hero"
-      className="h-screen max-h-screen bg-hero bg-center bg-contain"
+      className="h-screen max-h-screen bg-hero bg-center bg-contain bg-no-repeat"
     >
       {/* bg-contain opacity-90 */}
       <Header />
@@ -61,7 +61,7 @@ function Hero({ content }) {
 
 function SectionIntro({ content }) {
   return (
-    <div className="section  z-10  section-center ">
+    <div id="about" className="section  z-10  section-center ">
       <span className="w-3/4">
         <h1 className="text-center">{content.introSectionTitle} </h1>
         <h2 className="text-center">
@@ -74,12 +74,9 @@ function SectionIntro({ content }) {
 
 function SectionAbout({ content }) {
   return (
-    <div
-      id="about"
-      className="section-grid top-margin-medium xl:px-48  w-full pt-10 items-end"
-    >
+    <div className="section-grid top-margin-medium   w-full pt-10 justify-items-center items-end">
       {/* Mission */}
-      <div className="col-start-1 md:col-span-4 text-lef">
+      <div className="col-start-1 md:col-span-4 text-center lg:pl-16">
         <h1 className="text-center">{content.missionSectionTitle}</h1>
         <div className="image-div ">
           <GatsbyImage
@@ -94,8 +91,8 @@ function SectionAbout({ content }) {
         </p>
       </div>
       {/* Purpose */}
-      <div className="md:col-start-5 md:col-span-4 ">
-        <h1 className="text-center">{content.purposeSectionTitle}</h1>
+      <div className="md:col-start-5 md:col-span-4 px-8">
+        <h1 className="text-center mx-8">{content.purposeSectionTitle}</h1>
         <div className="image-div">
           <GatsbyImage
             image={content.purposeImage.gatsbyImageData}
@@ -111,7 +108,7 @@ function SectionAbout({ content }) {
         </p>
       </div>
       {/* Vision */}
-      <div className="md:col-start-9 md:col-span-4">
+      <div className="md:col-start-9 md:col-span-4 lg:pr-16">
         <h1 className="text-center">{content.visionSectionTitle}</h1>
         <div className="image-div">
           <GatsbyImage
@@ -171,10 +168,10 @@ function SectionValues({ content }) {
             image={content.valuesImage.gatsbyImageData}
             alt={content.valuesImage.alt}
             placeholder="blurred"
-            className="border  border-green"
+            className="border  border-green hover:rounded-full"
           />
         </div>
-        <h2 className="text-center col-start-10 col-span-3 hover:text-green ">
+        <h2 className="text-center col-start-10 col-span-3  ">
           <span className="hover:text-green ">
             <StructuredText data={content.valuesList[3].value} />·
           </span>
@@ -201,7 +198,7 @@ function SectionOffering({ content }) {
         {content.offeringSectionTitle}
       </h1>
 
-      <div className="top-margin-medium relative z-10 grid grid-cols-4 grid-rows-2 shadow-sm">
+      <div className="top-margin-medium relative z-10 grid grid-cols-4 grid-rows-2 shadow-sm hover:text-green">
         {content.offeringItem.map((block, i) => (
           <div
             className={`border-r border-t border-cream  bg-green hover:bg-beige text-cream hover:text-green ${
@@ -226,7 +223,7 @@ function SectionOffering({ content }) {
 
 function SectionTimeline({ content }) {
   return (
-    <div className="section-full">
+    <div id="timeline" className="section-full">
       <h1 className="text-center  z-50">{content.timelineSectionTitle}</h1>
 
       <div className="grid grid-cols-5 gap-5 z-10">
@@ -237,7 +234,7 @@ function SectionTimeline({ content }) {
             className="grid grid-rows-3 auto-rows-fr gap-y-10  hover:bg-beige p-3 z-10 "
           >
             {/* Title */}
-            <div className="row-start-1 row-span-1 border-b-2 border-red self-center">
+            <div className="row-start-1 row-span-1 border-b-2 border-red self-end">
               <h2 className="text-center leading-none pb-5">{block.title}</h2>
               <span className="flex justify-between font-sans tracking-wider text-sm">
                 <p className="inline-block">{block.startDate}</p>
@@ -260,7 +257,7 @@ function SectionTimeline({ content }) {
                 </div>
               ))}
             </div>
-            <p className="row-start-3 text-base leading-tight -mt-16 text-green">
+            <p className="row-start-3 text-base leading-tight -mt-16 text-darkgreen">
               {" "}
               <StructuredText data={block.moduleDescription} />
             </p>

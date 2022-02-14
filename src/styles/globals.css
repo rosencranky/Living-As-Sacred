@@ -17,7 +17,7 @@
   }
 
   body {
-    @apply text-red text-lg bg-cream font-serif antialiased leading-tight;
+    @apply text-darkred text-lg bg-cream font-serif antialiased leading-tight;
   }
 
   p {
@@ -25,7 +25,7 @@
   }
 
   h2 {
-    @apply text-5xl  font-serif antialiased leading-tightest;
+    @apply text-5xl text-red font-serif antialiased leading-tightest;
   }
 
   h2 em {
@@ -33,7 +33,7 @@
   }
 
   h1 {
-    @apply text-base font-mono tracking-wider uppercase antialiased leading-tight mb-2;
+    @apply text-red text-base font-mono tracking-wider uppercase antialiased leading-tight mb-2;
   }
 
   h3 {

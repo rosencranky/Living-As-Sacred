@@ -27,28 +27,36 @@ function Header() {
       <div
         className={`${
           isExpanded ? `block` : `hidden`
-        } w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
+        } w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto`}
       >
-        <div className="text-sm lg:flex-grow">
+        <div className="text-sm lg:justify-center self-center lg:mr-10 ">
           <Link
-            to={`/`}
+            to={`/#about`}
             href="#responsive-header"
-            className="block mt-4 mr-4 text-red lg:inline-block lg:mt-0 hover:text-green"
+            className="block mt-4 mr-4 monotext no-underline hover:underline focus:underline lg:inline-block lg:mt-0 "
           >
-            Home
+            About
           </Link>
           <Link
-            to={`/page-2`}
-            className="block mt-4 mr-4 text-red lg:inline-block lg:mt-0 hover:text-green"
+            to={`/#timeline`}
+            className="block mt-4 mr-4 monotext no-underline hover:underline focus:underline lg:inline-block lg:mt-0 "
           >
-            page 2
+            Timeline
+          </Link>
+          <Link
+            to={`/#women`}
+            className="block mt-4 mr-4 monotext no-underline hover:underline focus:underline lg:inline-block lg:mt-0 "
+          >
+            Meet us
           </Link>
         </div>
         {/* <div className="block">EN/PT</div> */}
-        <Button
-          cta="Let’s journey together"
-          url="mailto:livingasacred@gmail.com"
-        />
+        <div className="-mt-4">
+          <Button
+            cta="Let’s journey together"
+            url="mailto:livingasacred@gmail.com"
+          />
+        </div>
       </div>
     </nav>
   )
