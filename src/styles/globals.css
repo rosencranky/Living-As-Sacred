@@ -69,7 +69,7 @@
   }
 
   .monotext {
-    @apply text-sm 2xl:text-base text-red font-mono tracking-wider uppercase antialiased;
+    @apply text-xs 2xl:text-base text-red font-mono tracking-wider uppercase antialiased;
   }
 }
 @tailwind components;

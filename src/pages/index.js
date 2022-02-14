@@ -23,13 +23,13 @@ const IndexPage = ({ data }) => (
     <SectionOffering content={data.content} />
 
     <SectionTimeline content={data.content} />
-    {/* <SectionQs content={data.content} /> */}
+    <SectionQs content={data.content} />
     <SectionValue content={data.content} />
 
     <SectionBios2 content={data.content} />
-    <SectionSoul2 content={data.content} />
+    {/* <SectionSoul2 content={data.content} /> */}
     <SectionSoul1 content={data.content} />
-    <Supporting content={data.content} />
+    {/* <Supporting content={data.content} /> */}
     <Footer content={data.content} />
   </Layout>
 )
@@ -140,9 +140,7 @@ function SectionJoannaMacy({ content }) {
       {/* bg-texture bg-contain py-32 */}
       <span className="col-start-2 col-span-10">
         <h4 className="text-center text-red">{content.joannaMacyQuote}</h4>
-        <p className="text-center text-red font-sans uppercase tracking-wider text-base">
-          —Joanna Macy
-        </p>
+        <p className="text-center text-red monotext">—Joanna Macy</p>
       </span>
     </div>
   )
@@ -272,6 +270,53 @@ function SectionTimeline({ content }) {
   )
 }
 
+// function SectionQs({ content }) {
+//   return (
+//     <div className="section-full pb-24">
+//       <div className="2xl:max-h-screen grid grid-rows-3 grid-cols-12 items-center ">
+//         <div className="z-0 col-start-1 col-span-4 row-start-1  ">
+//           <GatsbyImage
+//             image={content.valueImages[0].gatsbyImageData}
+//             alt={content.valueImages[0].alt}
+//             placeholder="blurred"
+//             className="border  border-green"
+//             width={600}
+//           />
+//         </div>
+//         <h4 className="z-10 col-start-5 col-end-13  mx-32 text-center self-start  row-start-1">
+//           Do you feel the call to learn to walk in your truth and power with
+//           integrity and respect for all beings?
+//         </h4>
+//         <div className="z-0  col-end-13 col-span-4 self-start">
+//           <GatsbyImage
+//             image={content.valueImages[1].gatsbyImageData}
+//             alt={content.valueImages[1].alt}
+//             placeholder="blurred"
+//             className="border  border-green"
+//             height={600}
+//           />
+//         </div>
+//         <h2 className="z-10 col-start-1 col-end-7  row-start-2 text-left ml-10 ">
+//           To activate your own voice to sing and pray and manifest a new world?
+//         </h2>
+//         <div className="z-0 col-start-2 col-span-4 row-start-3  ">
+//           <GatsbyImage
+//             image={content.valueImages[2].gatsbyImageData}
+//             alt={content.valueImages[2].alt}
+//             placeholder="blurred"
+//             className="border  border-green"
+//             width={600}
+//           />
+//         </div>
+//         <h2 className="z-10 col-start-7 col-end-13  row-start-3  text-right mr-10 self-end">
+//           To remember your interdependence with the natural world and how to
+//           connect with the earth and all its beings?
+//         </h2>
+//       </div>
+//     </div>
+//   )
+// }
+
 function SectionQs({ content }) {
   return (
     <div className="section-full pb-24">
@@ -286,9 +331,12 @@ function SectionQs({ content }) {
           />
         </div>
         <h4 className="z-10 col-start-5 col-end-13  mx-32 text-center self-start  row-start-1">
-          Do you feel the call to learn to walk in your truth and power with
-          integrity and respect for all beings?
+          Do you feel the call to ...
         </h4>
+        {/* <h3 className="z-10 col-start-6 col-end-13 ">
+          learn to walk in your truth and power with integrity and respect for
+          all beings?
+        </h3> */}
         <div className="z-0  col-end-13 col-span-4 self-start">
           <GatsbyImage
             image={content.valueImages[1].gatsbyImageData}
@@ -298,9 +346,11 @@ function SectionQs({ content }) {
             height={600}
           />
         </div>
-        <h2 className="z-10 col-start-1 col-end-7  row-start-2 text-left ml-10 ">
+        <h3 className="z-10 col-start-1 col-end-7  row-start-2 text-left ml-10 ">
           To activate your own voice to sing and pray and manifest a new world?
-        </h2>
+          <br />
+          To deepen connection with yourself, with your body, heart and soul?
+        </h3>
         <div className="z-0 col-start-2 col-span-4 row-start-3  ">
           <GatsbyImage
             image={content.valueImages[2].gatsbyImageData}
@@ -310,10 +360,13 @@ function SectionQs({ content }) {
             width={600}
           />
         </div>
-        <h2 className="z-10 col-start-7 col-end-13  row-start-3  text-right mr-10 self-end">
+        <h3 className="z-10 col-start-7 col-end-13  row-start-3  text-left mr-10 self-end">
+          To walk in your truth and power with integrity and respect for all
+          beings?
+          <br />
           To remember your interdependence with the natural world and how to
           connect with the earth and all its beings?
-        </h2>
+        </h3>
       </div>
     </div>
   )
@@ -477,7 +530,7 @@ function SectionBios2({ content }) {
                           </div>
                           <div className="absolute bottom-0 left-0 right-0 w-full z-30 p-3">
                             <div className="pb-6 ">
-                              <h3 className="block text-center leading-none text-cream mb-1">
+                              <h3 className="block text-center  text-cream mb-1">
                                 {node.name}
                               </h3>
                             </div>
@@ -522,9 +575,9 @@ function SectionBios2({ content }) {
                           </div>
                           <div className="absolute bottom-0 left-0 right-0 w-full z-30 p-3">
                             <div className=" pb-2">
-                              <span className="text-lg md:text-xl xl:text-2xl block text-center leading-none text-white mb-1">
+                              <h3 className="block text-center text-white mb-1">
                                 {node.name}
-                              </span>
+                              </h3>
                             </div>
                           </div>
                         </div>
