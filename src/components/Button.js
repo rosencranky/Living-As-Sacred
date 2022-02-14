@@ -2,12 +2,12 @@ import React from "react"
 
 export default function Button({ cta, url }) {
   return (
-    <div>
+    <div className="mt-6 mb-3">
       <a
         href={`mailto:${url}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="z-20 inline-block px-4 py-2 mt-4 text-sm font-mono uppercase no-underline text-red border border-red leading-none hover:border-transparent hover:text-cream hover:bg-red lg:mt-0"
+        className="z-20 inline-block bg-green hover:bg-red px-4 py-2 text-sm font-mono tracking-wider uppercase no-underline text-cream  leading-none shadow-sm"
       >
         {cta}
       </a>

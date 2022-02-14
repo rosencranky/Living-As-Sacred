@@ -23,6 +23,7 @@ function Header() {
           </svg>
         </button>
       </div>
+
       <div
         className={`${
           isExpanded ? `block` : `hidden`
@@ -32,18 +33,22 @@ function Header() {
           <Link
             to={`/`}
             href="#responsive-header"
-            className="block mt-4 mr-4 text-white lg:inline-block lg:mt-0 hover:text-white"
+            className="block mt-4 mr-4 text-red lg:inline-block lg:mt-0 hover:text-green"
           >
             Home
           </Link>
           <Link
             to={`/page-2`}
-            className="block mt-4 mr-4 text-white lg:inline-block lg:mt-0 hover:text-white"
+            className="block mt-4 mr-4 text-red lg:inline-block lg:mt-0 hover:text-green"
           >
             page 2
           </Link>
         </div>
-        <Button cta="Book now" url="mailto:living.as.sacred@gmail.com" />
+        {/* <div className="block">EN/PT</div> */}
+        <Button
+          cta="Let’s journey together"
+          url="mailto:livingasacred@gmail.com"
+        />
       </div>
     </nav>
   )
