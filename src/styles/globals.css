@@ -33,7 +33,7 @@
   }
 
   h1 {
-    @apply text-red text-sm 2xl:text-base font-mono tracking-wider uppercase antialiased leading-tight mb-2;
+    @apply text-red text-xs 2xl:text-base font-mono tracking-wider uppercase antialiased leading-tight mb-2;
   }
 
   h3 {
@@ -85,7 +85,7 @@
   }
 
   .section-full {
-    @apply mt-24 mx-5 2xl:mx-1 2xl:w-full;
+    @apply mt-24 mx-5 2xl:mx-3;
   }
 
   .top-margin-medium {

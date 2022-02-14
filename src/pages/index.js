@@ -252,7 +252,7 @@ function SectionTimeline({ content }) {
                       {week.weekNumber}
                     </h3>
 
-                    <p className="row-start-2 transform rotate-90 text-xs 2xl:text-sm uppercase text-green">
+                    <p className="row-start-2 transform rotate-45 monotext leading-tight uppercase text-green">
                       {week.womanName}
                     </p>
                   </div>
@@ -320,7 +320,7 @@ function SectionTimeline({ content }) {
 function SectionQs({ content }) {
   return (
     <div className="section-full pb-24">
-      <div className="2xl:max-h-screen grid grid-rows-3 grid-cols-12 items-center ">
+      <div className="max-h-screen grid grid-rows-3 grid-cols-12 items-center ">
         <div className="z-0 col-start-1 col-span-4 row-start-1  ">
           <GatsbyImage
             image={content.valueImages[0].gatsbyImageData}
@@ -330,14 +330,14 @@ function SectionQs({ content }) {
             width={600}
           />
         </div>
-        <h4 className="z-10 col-start-5 col-end-13  mx-32 text-center self-start  row-start-1">
+        <h4 className="z-10 col-start-5 col-end-13  xl:mx-8 2xl:mx-32 text-center self-center  row-start-1">
           Do you feel the call to ...
         </h4>
         {/* <h3 className="z-10 col-start-6 col-end-13 ">
           learn to walk in your truth and power with integrity and respect for
           all beings?
         </h3> */}
-        <div className="z-0  col-end-13 col-span-4 self-start">
+        <div className="z-0  col-end-13 col-span-4 self-center">
           <GatsbyImage
             image={content.valueImages[1].gatsbyImageData}
             alt={content.valueImages[1].alt}
@@ -346,7 +346,7 @@ function SectionQs({ content }) {
             height={600}
           />
         </div>
-        <h3 className="z-10 col-start-1 col-end-7  row-start-2 text-left ml-10 ">
+        <h3 className="z-10 col-start-1 col-end-8  row-start-2 text-left ml-10 ">
           To activate your own voice to sing and pray and manifest a new world?
           <br />
           To deepen connection with yourself, with your body, heart and soul?
@@ -360,7 +360,7 @@ function SectionQs({ content }) {
             width={600}
           />
         </div>
-        <h3 className="z-10 col-start-7 col-end-13  row-start-3  text-left mr-10 self-end">
+        <h3 className="z-10 col-start-7 col-end-13  row-start-3  text-left mr-10 self-center">
           To walk in your truth and power with integrity and respect for all
           beings?
           <br />
