@@ -78,7 +78,7 @@ function SectionIntro({ content }) {
 
 function SectionAbout({ content }) {
   return (
-    <div className="section-grid top-margin-medium   w-11/12 2xl:w-full pt-10 justify-items-center items-end">
+    <div className="section-grid top-margin-medium   w-full pt-10 justify-items-center items-end">
       {/* Mission */}
       <div className="col-start-1 md:col-span-4 text-center lg:pl-16">
         <h1 className="text-center">{content.missionSectionTitle}</h1>
@@ -240,7 +240,7 @@ function SectionTimeline({ content }) {
             {/* Title */}
             <div className="row-start-1 row-span-1 border-b-2 border-red self-end">
               <h2 className="text-center leading-none pb-5">{block.title}</h2>
-              <span className="flex justify-between font-sans tracking-wider text-sm">
+              <span className="flex justify-between monotext">
                 <p className="inline-block">{block.startDate}</p>
                 <p className="inline-block">{block.endDate}</p>
               </span>
@@ -254,7 +254,7 @@ function SectionTimeline({ content }) {
                       {week.weekNumber}
                     </h3>
 
-                    <p className="row-start-2 transform rotate-45 -mt-2 text-sm uppercase text-green">
+                    <p className="row-start-2 transform rotate-90 text-xs 2xl:text-sm uppercase text-green">
                       {week.womanName}
                     </p>
                   </div>
@@ -321,12 +321,12 @@ function SectionQs({ content }) {
 
 function SectionValue({ content }) {
   return (
-    <div className="section bg-green px-8 2xl:px-0 py-12 mb-12 shadow-sm">
+    <div className="section lg:mx-16 2xl:mx-10 bg-green px-16 2xl:px-0 xl:py-10 2xl:py-12 mb-12 shadow-sm">
       <h1 className="text-center text-cream ">{content.valueSectionTitle}</h1>
       <div className="section-center w-7/8 2xl:w-full">
         <div className="col-start-1 col-span-7">
           <div className="self-center">
-            <h2 className="text-7xl text-center text-cream">
+            <h2 className="xl:text-6xl 2xl:text-7xl text-center text-cream">
               <StructuredText data={content.price} />
             </h2>
             <p className="text-right text-cream">{content.priceSubtext}</p>
@@ -477,9 +477,9 @@ function SectionBios2({ content }) {
                           </div>
                           <div className="absolute bottom-0 left-0 right-0 w-full z-30 p-3">
                             <div className="pb-6 ">
-                              <span className="text-lg md:text-xl xl:text-2xl block text-center leading-none text-cream mb-1">
+                              <h3 className="block text-center leading-none text-cream mb-1">
                                 {node.name}
-                              </span>
+                              </h3>
                             </div>
                           </div>
                         </div>
@@ -710,11 +710,11 @@ export const query = graphql`
         }
       }
       valuesImage {
-        gatsbyImageData(height: 650, width: 650, imgixParams: { fit: "crop" })
+        gatsbyImageData(height: 550, width: 550, imgixParams: { fit: "crop" })
         alt
       }
       valueImage {
-        gatsbyImageData(width: 600)
+        gatsbyImageData(width: 550)
         alt
       }
 
@@ -786,7 +786,7 @@ export const query = graphql`
       cta2
       cta2Email
       horizontalImage {
-        gatsbyImageData(height: 750, width: 750, imgixParams: { fit: "crop" })
+        gatsbyImageData(height: 500, width: 500, imgixParams: { fit: "crop" })
         alt
       }
       soulSectionTitle
