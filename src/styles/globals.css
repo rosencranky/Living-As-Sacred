@@ -33,7 +33,7 @@
   }
 
   h1 {
-    @apply text-red text-xs 2xl:text-base font-mono tracking-wider uppercase antialiased leading-tight mb-2;
+    @apply text-red text-sm 2xl:text-base font-mono tracking-wider uppercase antialiased leading-tight mb-2;
   }
 
   h3 {
@@ -41,7 +41,7 @@
   }
 
   h4 {
-    @apply text-red font-serif text-6xl 2xl:text-7xl italic antialiased leading-tightest;
+    @apply text-red font-serif text-5xl 2xl:text-6xl italic antialiased leading-tightest;
   }
 
   a {
@@ -69,7 +69,7 @@
   }
 
   .monotext {
-    @apply text-xs 2xl:text-base text-red font-mono tracking-wider uppercase antialiased;
+    @apply text-sm 2xl:text-base text-red font-mono tracking-wider uppercase antialiased;
   }
 }
 @tailwind components;
@@ -117,5 +117,10 @@
     max-height: 1000px;
     height: 100% !important;
     @apply transition-all ease-linear duration-200 pb-12 md:pb-16 xl:pb-12 delay-100;
+  }
+
+  .title {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
   }
 }

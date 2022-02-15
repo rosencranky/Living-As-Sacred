@@ -51,7 +51,7 @@ function Header() {
           </Link>
         </div>
         {/* <div className="block">EN/PT</div> */}
-        <div className="-mt-4">
+        <div className="-mt-10">
           <Button
             cta="Let’s journey together"
             url="mailto:livingasacred@gmail.com"

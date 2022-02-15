@@ -16,7 +16,7 @@ module.exports = {
         darkgreen: "#313f27",
         // red: "#b70612",
         black: "#121814",
-        darkbeige: "#F5EDE0",
+        // beige: "#F5EDE0",
         green: "#485d3a",
         // red: "#f74c25",
       },
@@ -41,7 +41,7 @@ module.exports = {
         // '7xl': '5rem',
       },
       backgroundImage: {
-        hero: "url('../images/logo-transparent.png')",
+        hero: "url('../images/logo-smaller.png')",
         banner: "url('../images/07A.jpg')",
         wood: "url('../images/woodcut.jpeg')",
         texture: "url('../images/text.jpeg')",
