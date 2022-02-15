@@ -9,41 +9,55 @@ const Contact = () => (
   <Layout>
     <SEO title="Privacy Policy" />
     <Header />
-    <div className="section min-h-screen">
-      <form>
-        <label>
-          Name:
-          <input type="text" name="name" />
-        </label>
-        <label>
-          Email:
-          <input type="text" name="name" />
-        </label>
-        <label>
-          Message:
-          <input type="text" name="name" />
-          "I want to sign up "
-        </label>
-        <input type="submit" value="Submit" />
+    <div className="flex justify-center">
+      <div className="w-full lg:w-1/2 xl:w-8/12 px-4 min-h-screen ">
+        <h1 className="text-center">Contact us</h1>
+        <form className="relative top-margin-medium  ">
+          <label>
+            <div className="mt-12  flex justify-center">
+              <input
+                className="p-3 md:p-6 bg-transparent  border border-red focus:outline-none ring-white relative  w-3/4"
+                type="text"
+                name="name"
+                placeholder="Name"
+              />
+            </div>
+          </label>
 
-        <div className="border border-white w-full flex flex-wrap mt-auto">
-          <input
-            className="flex-1 p-5 md:p-8 bg-transparent text-white font-sans font-bold w-full focus:outline-none ring-white"
-            name="_replyto"
-            type="email"
-            placeholder="Your email address.."
-          />
-          <div className="w-auto border-l border-white">
+          <label className="">
+            <div className="mt-12 flex justify-center">
+              <input
+                className=" p-3 md:p-6 bg-transparent  border border-red focus:outline-none ring-white relative  w-3/4"
+                type="text"
+                name="email"
+                placeholder="Email address"
+              />
+            </div>
+          </label>
+
+          <label className="">
+            {/* Message: */}
+            <div className=" border border-red w-full  mt-12 h-full">
+              <input
+                className="accordion-item--open p-3 md:p-6 bg-transparent text-red  w-full  focus:outline-none ring-white"
+                name="message"
+                type="text"
+                role="textbox"
+                value="I want to sign up for Living as Sacred journey. Can you please send me payment details?"
+              />
+            </div>
+          </label>
+          <div className=" mt-12 border-red flex items-center justify-center ">
             <button
-              className="text-center font-bold w-full h-full flex items-center justify-center ring-white md:text-lg px-5 md:px-8 hover:bg-black hover:bg-opacity-10 transition ease-in-out duration-300"
+              className="bg-green hover:bg-red px-6 py-3 monotext 
+              text-sm 2xl:text-base no-underline text-cream  leading-none shadow-sm  ring-white    transition ease-in-out duration-300"
               type="submit"
             >
-              Send{" "}
-              <span className="hidden md:inline-block">&nbsp;your message</span>
+              Send
             </button>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
     <Footer />
   </Layout>

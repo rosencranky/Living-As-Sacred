@@ -182,7 +182,7 @@ function SectionValues({ content }) {
             image={content.valuesImage.gatsbyImageData}
             alt={content.valuesImage.alt}
             placeholder="blurred"
-            className="border  border-green hover:rounded-full"
+            className="border  border-green hover:rounded-full  "
           />
         </div>
         <h2 className="text-center col-start-10 col-span-3  ">
@@ -215,7 +215,7 @@ function SectionOffering({ content }) {
       <div className="top-margin-medium relative z-10 grid grid-cols-4 grid-rows-2 shadow-sm hover:text-green">
         {content.offeringItem.map((block, i) => (
           <div
-            className={`border-r border-t border-cream  bg-green hover:bg-beige text-cream hover:text-green ${
+            className={`border-r border-t border-cream  bg-green hover:bg-beige text-cream hover:text-green transition ease-in duration-100 ${
               i < 3 || i == 0 ? "border-t" : "border-b"
             } ${i % 4 == 0 ? "border-l" : ""}`}
             key={block.id}
@@ -245,7 +245,7 @@ function SectionTimeline({ content }) {
           <div
             key={block.id}
             key={i}
-            className="grid grid-rows-3 auto-rows-fr gap-y-10  hover:bg-beige p-3 z-10 "
+            className="grid grid-rows-3 auto-rows-fr gap-y-10  hover:bg-beige transition ease-in duration-100 p-3 z-10 "
           >
             {/* Title */}
             <div className="row-start-1 row-span-1 border-b-2 border-red self-end">
@@ -434,7 +434,7 @@ function Button2({ cta, url }) {
         href={`mailto:${url}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="z-20 inline-block bg-green hover:bg-red px-5 py-3 monotext text-sm 2xl:text-base no-underline text-cream  leading-none shadow-sm border border-cream"
+        className="z-20 inline-block bg-green hover:bg-red px-6 py-3 monotext text-sm 2xl:text-base no-underline text-cream  leading-none shadow-sm border border-cream  transition ease-in-out duration-300"
       >
         {cta}
       </a>
@@ -512,14 +512,14 @@ function SectionBios2({ content }) {
   console.log(content.women)
   return (
     <div className="section section-center " id="women">
-      <span className="text-center">
-        <h1>{content.womenSectionTitle}</h1>
-      </span>
+      <h1 className="text-center">{content.womenSectionTitle}</h1>
+
       <div className="lg:mx-16 top-margin-medium">
         <div className="w-full">
           <div className="w-full h-full">
             {/* Main bios */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mb-10">
+            <h1 className="text-center ">The core team</h1>
+            <div className="top-margin-sm grid grid-cols-1 md:grid-cols-4 gap-5 mb-10">
               {content.women.map((node, i) => {
                 return (
                   node.isMainOrganiser && (
@@ -536,7 +536,7 @@ function SectionBios2({ content }) {
                                 image={node.image.gatsbyImageData}
                                 alt={node.image.alt}
                                 placeholder="blurred"
-                                className="rounded-full hover:rounded-none border border-green"
+                                className="rounded-full  border border-green "
                               />
                             </div>
                           </div>
@@ -560,7 +560,8 @@ function SectionBios2({ content }) {
               })}
             </div>
             {/* All bios */}
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-2">
+            <h1 className="text-center ">The council</h1>
+            <div className="top-margin-sm grid grid-cols-2 md:grid-cols-6 gap-2">
               {content.women.map((node, i) => {
                 return (
                   !node.isMainOrganiser && (
