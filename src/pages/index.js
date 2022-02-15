@@ -11,23 +11,33 @@ import Button from "../components/Button"
 import { StructuredText } from "react-datocms"
 import Header from "../components/header"
 import AccordionGrid from "../components/Accordiongrid"
+import Marquee from "react-fast-marquee"
 
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" description="Landing page for Living as Sacred .." />
+    <div className="z-50 sticky top-0 left-0 ">
+      <Marquee className="h-6 monotext text-white bg-red" gradient={false}>
+        {data.content.priceSubtext}
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        {data.content.priceSubtext}
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        {data.content.priceSubtext}
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+      </Marquee>
+    </div>
+
     <Hero content={data.content} />
+
     <SectionIntro content={data.content} />
     <SectionAbout content={data.content} />
     <SectionJoannaMacy content={data.content} />
     {/* <SectionBanner /> */}
     <SectionValues content={data.content} />
-
     <SectionOffering content={data.content} />
-
     <SectionTimeline content={data.content} />
     <SectionQs content={data.content} />
     <SectionValue content={data.content} />
-
     <SectionBios2 content={data.content} />
     {/* <SectionSoul2 content={data.content} /> */}
     <SectionSoul1 content={data.content} />
@@ -40,11 +50,11 @@ function Hero({ content }) {
   return (
     <div
       id="hero"
-      className="h-screen max-h-screen bg-hero bg-center bg-contain bg-beige bg-no-repeat"
+      className="h-screen max-h-screen bg-hero bg-center bg-contain bg-lightbeige bg-no-repeat"
     >
       {/* bg-contain opacity-90 */}
       <Header />
-      <div className="z-10 absolute top-5 left-5 ">
+      <div className="z-10 absolute top-10 left-5 ">
         <h1 className="xl:text-7xl 2xl:text-8xl font-serif normal-case text-red tracking-tight">
           Living · as · Sacred
         </h1>

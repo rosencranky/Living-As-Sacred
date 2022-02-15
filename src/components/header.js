@@ -33,22 +33,30 @@ function Header() {
           <Link
             to={`/#about`}
             href="#responsive-header"
-            className="block mt-4 mr-4 monotext no-underline hover:underline focus:underline lg:inline-block lg:mt-0 "
+            className="block mt-4 mr-4 monotext no-underline hover:underline  lg:inline-block lg:mt-0 "
           >
             About
           </Link>
           <Link
             to={`/#timeline`}
-            className="block mt-4 mr-4 monotext no-underline hover:underline focus:underline lg:inline-block lg:mt-0 "
+            className="block mt-4 mr-4 monotext no-underline hover:underline  lg:inline-block lg:mt-0 "
           >
             Timeline
           </Link>
           <Link
             to={`/#women`}
-            className="block mt-4 mr-4 monotext no-underline hover:underline focus:underline lg:inline-block lg:mt-0 "
+            className="block mt-4 mr-4 monotext no-underline hover:underline  lg:inline-block lg:mt-0 "
           >
             Meet us
           </Link>
+          {/* <span>
+            <Link
+              to={`/#women`}
+              className="block mt-4 mr-4 monotext no-underline hover:underline  lg:inline-block lg:mt-0 "
+            >
+              EN
+            </Link>
+          </span> */}
         </div>
         {/* <div className="block">EN/PT</div> */}
         <div className="-mt-10">
