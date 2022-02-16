@@ -27,7 +27,7 @@ function Header() {
       <div
         className={`${
           isExpanded ? `block` : `hidden`
-        } w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto`}
+        } w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto text-cream`}
       >
         <div className="monotext lg:justify-center self-center lg:mr-10 ">
           <Link
@@ -67,6 +67,21 @@ function Header() {
         </div>
       </div>
     </nav>
+  )
+}
+
+function Button2({ cta, url }) {
+  return (
+    <div className="mt-6 mb-3">
+      <a
+        href={`mailto:${url}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="z-20 inline-block bg-transparent hover:bg-red px-6 py-3 monotext text-sm 2xl:text-base no-underline text-cream  leading-none shadow-sm border border-cream  transition ease-in-out duration-300"
+      >
+        {cta}
+      </a>
+    </div>
   )
 }
 

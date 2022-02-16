@@ -1,51 +1,55 @@
 import React from "react"
-import { graphql } from "gatsby"
 import { Link } from "gatsby"
 
 export default function Footer() {
   return (
-    <footer className="w-full flex justify-between items-end pb-10 px-10 mt-24 pt-24 bg-green ">
-      <div className=" text-cream flex flex-col">
-        {/* <span className="mb-6">
-          <h2 className="text-cream">Living as Sacred </h2>
-        </span> */}
+    <footer className="w-full flex justify-between items-end pb-10 px-10 mt-24 pt-24 border-t-2 border-green ">
+      <div className="  flex flex-col">
         <p> © {new Date().getFullYear()} </p>
       </div>
-      <div className=" flex items-end text-cream">
-        <p className="text-cream -mb-1">
+      <div className=" flex items-end">
+        <p className=" -mb-1">
           {" "}
           <Link
             to={`/terms`}
-            className="monotext text-cream no-underline hover:underline ml-5"
+            className="monotext  no-underline hover:underline ml-5"
           >
             Terms & Conditions
           </Link>
         </p>
-        <p className="text-cream -mb-1">
+        <p className="-mb-1">
           {" "}
           <Link
             to={"/privacy"}
-            className="monotext text-cream no-underline hover:underline ml-5"
+            className="monotext  no-underline hover:underline ml-5"
           >
             Privacy
           </Link>
         </p>
-        <p className="text-cream -mb-1">
-          {" "}
+        <p className="-mb-1">
           <a
             href={"https://joannaherman.com"}
             target="_blank"
             rel="noreferrer noopener"
-            className="monotext text-cream no-underline hover:underline ml-5 mr-10"
+            className="monotext  no-underline hover:underline ml-5 "
           >
             Site Credit
+          </a>
+        </p>
+        <p className=" -mb-1">
+          <a
+            href={"mailto:livingasacred@gmail.com"}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="monotext  no-underline hover:underline ml-5 mr-10"
+          >
+            Contact
           </a>
         </p>
         <a
           href="https://www.instagram.com/living.as.sacred/"
           target="_blank"
           rel="noreferrer noopener"
-          className=""
         >
           {" "}
           <svg

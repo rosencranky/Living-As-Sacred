@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 
@@ -50,7 +50,8 @@ function Hero({ content }) {
   return (
     <div
       id="hero"
-      className="h-screen max-h-screen bg-hero bg-center bg-contain bg-lightbeige bg-no-repeat"
+      className="h-screen max-h-screen "
+      // bg-hero bg-center bg-auto  bg-no-repeat
     >
       {/* bg-contain opacity-90 */}
       <Header />
@@ -65,20 +66,22 @@ function Hero({ content }) {
           <em>Online</em>
         </h1>
       </div>
-      {/* <div className="bottom-5 left-5 absolute">
-        <h1 className=" xl:text-5xl 2xl:text-8xl font-serif uppercase text-green tracking-tight">
+      <div className="mx-64 pt-24  flex justify-center  ">
+        <StaticImage src="../images/background-1.jpg" placeholder="blurred" />
+      </div>
+      <div className="bottom-5 left-5 absolute">
+        {/* <h1 className=" xl:text-5xl 2xl:text-8xl font-serif uppercase text-red tracking-tight">
           May – July 2022 · Online
-        </h1>
-        
-      </div> */}
+        </h1> */}
+      </div>
     </div>
   )
 }
 
 function SectionIntro({ content }) {
   return (
-    <div id="about" className="section  z-10  section-center ">
-      <span className="w-5/6">
+    <div id="about" className="section section-center z-10">
+      <span className="xl:w-5/6">
         <h1 className="text-center">{content.introSectionTitle} </h1>
         <h2 className="text-center leading-tightest">
           <StructuredText data={content.introtext1} />
@@ -90,18 +93,16 @@ function SectionIntro({ content }) {
 
 function SectionAbout({ content }) {
   return (
-    <div className="block md:grid md:mx-32 grid-cols-3 gap-x-3 top-margin-lg">
+    <div className="section block md:grid md:mx-32 grid-cols-3 gap-x-3">
       {/* Mission */}
       <div className="col-start-1 flex flex-col justify-center items-center">
         <h1 className="text-center">{content.missionSectionTitle}</h1>
-        {/* <div className="image-div "> */}
         <GatsbyImage
           image={content.missionImage.gatsbyImageData}
           alt={content.missionImage.alt}
           placeholder="blurred"
           className="rounded-full hover:rounded-none transition ease-in-out duration-300 p-5 m-5 border  border-green"
         />
-        {/* </div> */}
         <p className="mx-3 leading-tight">
           <StructuredText data={content.mission} />
         </p>
@@ -109,14 +110,13 @@ function SectionAbout({ content }) {
       {/* Purpose */}
       <div className="md:col-start-2 flex flex-col justify-center items-center">
         <h1 className="text-center">{content.purposeSectionTitle}</h1>
-        {/* <div className="image-div"> */}
+
         <GatsbyImage
           image={content.purposeImage.gatsbyImageData}
           alt={content.purposeImage.alt}
           placeholder="blurred"
           className="rounded-full hover:rounded-none transition ease-in-out duration-300 p-5 m-5 border  border-green"
         />
-        {/* </div> */}
 
         <p className="mx-3 leading-tight">
           {" "}
@@ -126,20 +126,17 @@ function SectionAbout({ content }) {
       {/* Vision */}
       <div className="md:col-start-3 flex flex-col justify-center items-center">
         <h1 className="text-center">{content.visionSectionTitle}</h1>
-        {/* <div className="image-div"> */}
         <GatsbyImage
           image={content.visionImage.gatsbyImageData}
           alt={content.visionImage.alt}
           placeholder="blurred"
           className="rounded-full hover:rounded-none transition ease-in-out duration-300 delay-50 p-5 m-5 border  border-green"
         />
-        {/* </div> */}
         <p className="mx-3 leading-tight">
           <StructuredText data={content.vision} />
         </p>
       </div>
-
-      <div className="col-span-3 place-self-center">
+      <div className="col-span-3 flex justify-center place-self-center">
         <Button cta={content.cta1} url={content.cta1Email} />
       </div>
     </div>
@@ -148,12 +145,9 @@ function SectionAbout({ content }) {
 
 function SectionJoannaMacy({ content }) {
   return (
-    <div className="mx-36  my-24 ">
-      {/* bg-texture bg-contain py-32 */}
-      <span className="col-start-2 col-span-10">
-        <h4 className="text-center text-red">{content.joannaMacyQuote}</h4>
-        <p className="text-center text-red monotext">—Joanna Macy</p>
-      </span>
+    <div className="mx-large  top-margin-lg btm-margin-lg">
+      <h4 className="text-center ">{content.joannaMacyQuote}</h4>
+      <p className="text-center  monotext">—Joanna Macy</p>
     </div>
   )
 }
@@ -163,7 +157,7 @@ function SectionValues({ content }) {
     <div className="section-full">
       <h1 className="text-center">{content.valuesSectionTitle}</h1>
       <div className="grid grid-cols-12 place-items-center place-content-center items-center">
-        <h2 className="text-center col-start-1 col-span-3">
+        <h2 className="text-center col-start-1 col-span-3 text-black">
           <span className="hover:text-green ">
             <StructuredText data={content.valuesList[0].value} />
           </span>
@@ -185,7 +179,7 @@ function SectionValues({ content }) {
             className="border  border-green hover:rounded-full  "
           />
         </div>
-        <h2 className="text-center col-start-10 col-span-3  ">
+        <h2 className="text-center col-start-10 col-span-3  text-black">
           <span className="hover:text-green ">
             <StructuredText data={content.valuesList[3].value} />·
           </span>
@@ -203,8 +197,8 @@ function SectionValues({ content }) {
 
 function SectionOffering({ content }) {
   return (
-    <div id="offering" className="section  ">
-      <h4 className="xl:mx-24 2xl:mx-32 text-center">{content.ctaSentence}</h4>
+    <div id="offering" className="section ">
+      <h4 className="mx-medium text-center">{content.ctaSentence}</h4>
       <div className="flex justify-center">
         <Button cta={content.cta2} url={content.cta2Email} />
       </div>
@@ -212,10 +206,10 @@ function SectionOffering({ content }) {
         {content.offeringSectionTitle}
       </h1>
 
-      <div className="top-margin-medium relative z-10 grid grid-cols-4 grid-rows-2 shadow-sm hover:text-green">
+      <div className="top-margin-medium relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid-rows-2 shadow-sm hover:text-green">
         {content.offeringItem.map((block, i) => (
           <div
-            className={`border-r border-t border-cream  bg-green hover:bg-beige text-cream hover:text-green transition ease-in duration-100 ${
+            className={`border-r border-t border-green  bg-beige hover:bg-transparent text-cream hover:text-black transition ease-in duration-100 ${
               i < 3 || i == 0 ? "border-t" : "border-b"
             } ${i % 4 == 0 ? "border-l" : ""}`}
             key={block.id}
@@ -237,18 +231,18 @@ function SectionOffering({ content }) {
 
 function SectionTimeline({ content }) {
   return (
-    <div id="timeline" className="section-full">
+    <div id="timeline" className="section-full  max-h-screen">
       <h1 className="text-center  z-50">{content.timelineSectionTitle}</h1>
 
-      <div className="grid grid-cols-5 gap-5 z-10">
+      <div className="grid grid-cols-5 gap-5 z-10 overflow-x-scroll xl:overflow-x-auto timeline">
         {content.contentModules.map((block, i) => (
           <div
             key={block.id}
             key={i}
-            className="grid grid-rows-3 auto-rows-fr gap-y-10  hover:bg-beige transition ease-in duration-100 p-3 z-10 "
+            className="grid grid-rows-3 gap-y-10  hover:bg-beige transition ease-in duration-100 p-3 z-10 "
           >
             {/* Title */}
-            <div className="row-start-1 row-span-1 border-b-2 border-red self-end">
+            <div className="row-start-1 row-span-1 border-b-2 border-green self-end">
               <h2 className="text-center leading-none pb-5">{block.title}</h2>
               <span className="flex justify-between monotext">
                 <p className="inline-block">{block.startDate}</p>
@@ -256,7 +250,7 @@ function SectionTimeline({ content }) {
               </span>
             </div>
             {/* Weeks */}
-            <div className="row-start-2 row-span-1 flex justify-evenly  ">
+            <div className="row-start-2 row-span-1 flex justify-evenly ">
               {block.weeks.map((week, i) => (
                 <div key={week.id} key={i} className="">
                   <div className="grid grid-rows-2 items-start">
@@ -264,14 +258,14 @@ function SectionTimeline({ content }) {
                       {week.weekNumber}
                     </h3>
 
-                    <p className="row-start-2 transform rotate-45 monotext leading-tight uppercase text-green">
+                    <p className="row-start-2 transform rotate-45 monotext leading-tight uppercase ">
                       {week.womanName}
                     </p>
                   </div>
                 </div>
               ))}
             </div>
-            <p className="row-start-3 text-sm 2xl:text-base leading-tight -mt-16 text-darkgreen">
+            <p className="row-start-3 text-sm 2xl:text-base leading-tight -mt-16 ">
               {" "}
               <StructuredText data={block.moduleDescription} />
             </p>
@@ -282,57 +276,10 @@ function SectionTimeline({ content }) {
   )
 }
 
-// function SectionQs({ content }) {
-//   return (
-//     <div className="section-full pb-24">
-//       <div className="2xl:max-h-screen grid grid-rows-3 grid-cols-12 items-center ">
-//         <div className="z-0 col-start-1 col-span-4 row-start-1  ">
-//           <GatsbyImage
-//             image={content.valueImages[0].gatsbyImageData}
-//             alt={content.valueImages[0].alt}
-//             placeholder="blurred"
-//             className="border  border-green"
-//             width={600}
-//           />
-//         </div>
-//         <h4 className="z-10 col-start-5 col-end-13  mx-32 text-center self-start  row-start-1">
-//           Do you feel the call to learn to walk in your truth and power with
-//           integrity and respect for all beings?
-//         </h4>
-//         <div className="z-0  col-end-13 col-span-4 self-start">
-//           <GatsbyImage
-//             image={content.valueImages[1].gatsbyImageData}
-//             alt={content.valueImages[1].alt}
-//             placeholder="blurred"
-//             className="border  border-green"
-//             height={600}
-//           />
-//         </div>
-//         <h2 className="z-10 col-start-1 col-end-7  row-start-2 text-left ml-10 ">
-//           To activate your own voice to sing and pray and manifest a new world?
-//         </h2>
-//         <div className="z-0 col-start-2 col-span-4 row-start-3  ">
-//           <GatsbyImage
-//             image={content.valueImages[2].gatsbyImageData}
-//             alt={content.valueImages[2].alt}
-//             placeholder="blurred"
-//             className="border  border-green"
-//             width={600}
-//           />
-//         </div>
-//         <h2 className="z-10 col-start-7 col-end-13  row-start-3  text-right mr-10 self-end">
-//           To remember your interdependence with the natural world and how to
-//           connect with the earth and all its beings?
-//         </h2>
-//       </div>
-//     </div>
-//   )
-// }
-
 function SectionQs({ content }) {
   return (
     <div className="section-full pb-24">
-      <div className=" grid grid-rows-3 grid-cols-12 items-center ">
+      <div className="block lg:grid grid-rows-3 grid-cols-12 items-center ">
         <div className="z-0 col-start-1 col-span-4 row-start-1  ">
           <GatsbyImage
             image={content.valueImages[0].gatsbyImageData}
@@ -389,43 +336,165 @@ function SectionQs({ content }) {
   )
 }
 
+// function SectionQs({ content }) {
+//   return (
+//     <div className="section-full  pb-24  bg-center">
+//       <div className="block lg:grid grid-rows-1 grid-cols-12 items-center ">
+//         <div className="z-0 col-start-1 col-span-5 row-start-1  ">
+//           <GatsbyImage
+//             image={content.valueImages[0].gatsbyImageData}
+//             alt={content.valueImages[0].alt}
+//             placeholder="blurred"
+//             className="border  border-green"
+//           />
+//           <GatsbyImage
+//             image={content.valueImages[1].gatsbyImageData}
+//             alt={content.valueImages[1].alt}
+//             placeholder="blurred"
+//             className="mt-12 border  border-green"
+//           />
+//         </div>
+//         <h4 className="z-10 col-start-7 col-end-13   self-start  row-start-1">
+//           Is your soul calling for ...
+//         </h4>
+
+//         {/* <div className="z-0  col-start-3 row-start-3 col-span-4 self-center">
+//           <GatsbyImage
+//             image={content.valueImages[1].gatsbyImageData}
+//             alt={content.valueImages[1].alt}
+//             placeholder="blurred"
+//             className="border  border-green"
+//           />
+//         </div> */}
+
+//         <div className=" row-start-1 row-end-3 col-start-7 col-end-13 ">
+//           <h3 className="max-w-prose z-10 col-start-1 col-end-8  row-start-2 text-left ">
+//             <ul className="">
+//               <li>{content.soulBulletPoints[0].text}</li>
+//               <li>{content.soulBulletPoints[1].text}</li>
+//               <li>{content.soulBulletPoints[2].text}</li>
+//               <li> {content.soulBulletPoints[3].text}</li>
+//               <li>{content.soulBulletPoints[4].text}</li>
+
+//               <li> {content.soulBulletPoints[5].text}</li>
+
+//               <li>{content.soulBulletPoints[6].text}</li>
+
+//               <li>{content.soulBulletPoints[7].text}</li>
+//             </ul>
+//           </h3>
+//           <h3 className="z-10 text-xl col-start-7 col-end-13  row-start-3  text-left ">
+//             <ul>
+//               <li>{content.soulBulletPoints[4].text}</li>
+
+//               <li> {content.soulBulletPoints[5].text}</li>
+
+//               <li>{content.soulBulletPoints[6].text}</li>
+
+//               <li>{content.soulBulletPoints[7].text}</li>
+//             </ul>
+//           </h3>
+//         </div>
+
+//         {/* <div className="z-0 col-start-2 col-span-4 row-start-2 row-end-3 place-self-center self-center  ">
+//           <GatsbyImage
+//             image={content.valueImages[2].gatsbyImageData}
+//             alt={content.valueImages[2].alt}
+//             placeholder="blurred"
+//             className="border  border-green"
+//           />
+//         </div> */}
+//       </div>
+//     </div>
+//   )
+// }
+
 function SectionValue({ content }) {
   return (
-    <div className="section lg:mx-16 2xl:mx-10 bg-green px-16 2xl:px-0 xl:py-10 2xl:py-12 mb-12 shadow-sm">
-      <h1 className="text-center text-cream ">{content.valueSectionTitle}</h1>
-      <div className="section-center w-7/8 2xl:w-full">
-        <div className="col-start-1 col-span-7">
-          <div className="self-center">
-            <h2 className="xl:text-6xl 2xl:text-7xl text-center text-cream">
-              <StructuredText data={content.price} />
+    <div className="section lg:mx-16 2xl:mx-10 border-2 border-red px-16  py-10 2xl:py-12 mb-12 shadow-sm bg-beige">
+      <div className="top-margin-medium md:grid grid-cols-6 gap-x-10">
+        {/* Price */}
+        <div className="col-start-1 col-span-2">
+          <h1 className="text-left  ">{content.valueSectionTitle}</h1>
+          <h2 className="top-margin-sm xl:text-6xl 2xl:text-7xl text-center text-black">
+            <StructuredText data={content.price} />
+          </h2>
+          <p className="text-center ">
+            20% off early bird price, from 28th Feb to 6th March
+          </p>
+          <span className="top-margin-sm flex justify-around">
+            <span>
+              <h2 className="xl:text-5xl 2xl:text-6xl text-center leading-none text-black line-through decoration-red decoration-2 inline-block mt-3">
+                264€
+                {/* <span className="inline-block">*</span> */}
+                {/* <sup className="inline-block text-red monotext">-20%</sup> */}
+              </h2>
+            </span>
+            <h2 className="xl:text-5xl 2xl:text-6xl text-center leading-0 p-2 text-black border-2 border-red">
+              210€
             </h2>
-            <p className="text-right text-cream">{content.priceSubtext}</p>
-          </div>
+          </span>
         </div>
 
-        <div className="top-margin-sm flex items-start">
-          <div className="w-7/12">
-            <h1 className="text-left text-cream">
-              {content.offerResumeSectionTitle}
-            </h1>
-            <ul className=" text-cream">
-              {content.including.map((block, i) => (
-                <li key={i}>{block.offeringBulletPoint}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="justify-self-start">
-            <h1 className="text-cream">{content.paymentTermsTitle}</h1>
-            <p className="text-cream">{content.paymentTerms}</p>
-          </div>
+        <div className="col-start-3 col-span-4">
+          <h1 className="text-left">{content.offerResumeSectionTitle}</h1>
+          <ul className="top-margin-sm ">
+            {content.including.map((block, i) => (
+              <li key={i}>{block.offeringBulletPoint}</li>
+            ))}
+          </ul>
+          <h1 className="top-margin-medium ">{content.paymentTermsTitle}</h1>
+          <p className="top-margin-sm ">{content.paymentTerms}</p>
         </div>
+
+        {/* <div className="col-start-6 col-span-1">
+          <h1 className="text-cream">{content.paymentTermsTitle}</h1>
+          <p className="top-margin-sm text-cream">{content.paymentTerms}</p>
+        </div>
+      */}
       </div>
       <div className="flex justify-center mt-6">
-        <Button2 cta={content.cta2} url={content.cta2Email} />
+        <Button cta={content.cta2} url={content.cta2Email} />
       </div>
     </div>
   )
 }
+
+// function SectionValue({ content }) {
+//   return (
+//     <div className="section lg:mx-16 2xl:mx-10 bg-green px-16 2xl:px-0 xl:py-10 2xl:py-12 mb-12 shadow-sm">
+//       <h1 className="text-center text-cream ">{content.valueSectionTitle}</h1>
+//       <div className="section-center w-7/8 2xl:w-full">
+//         <div className="self-center">
+//           <h2 className="xl:text-6xl 2xl:text-7xl text-center text-cream">
+//             <StructuredText data={content.price} />
+//           </h2>
+//           <p className="text-right text-cream">{content.priceSubtext}</p>
+//         </div>
+//       </div>
+
+//       <div className="top-margin-sm flex items-start">
+//         <div className="w-7/12">
+//           <h1 className="text-left text-cream">
+//             {content.offerResumeSectionTitle}
+//           </h1>
+//           <ul className=" text-cream">
+//             {content.including.map((block, i) => (
+//               <li key={i}>{block.offeringBulletPoint}</li>
+//             ))}
+//           </ul>
+//         </div>
+//         <div className="justify-self-start">
+//           <h1 className="text-cream">{content.paymentTermsTitle}</h1>
+//           <p className="text-cream">{content.paymentTerms}</p>
+//         </div>
+//       </div>
+//       <div className="flex justify-center mt-6">
+//         <Button2 cta={content.cta2} url={content.cta2Email} />
+//       </div>
+//     </div>
+//   )
+// }
 
 function Button2({ cta, url }) {
   return (
@@ -434,7 +503,7 @@ function Button2({ cta, url }) {
         href={`mailto:${url}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="z-20 inline-block bg-green hover:bg-red px-6 py-3 monotext text-sm 2xl:text-base no-underline text-cream  leading-none shadow-sm border border-cream  transition ease-in-out duration-300"
+        className="z-20 inline-block bg-transparent hover:bg-red px-6 py-3 monotext text-sm 2xl:text-base no-underline text-cream  leading-none shadow-sm border border-cream  transition ease-in-out duration-300"
       >
         {cta}
       </a>
@@ -444,22 +513,9 @@ function Button2({ cta, url }) {
 
 function SectionSoul1({ content }) {
   return (
-    <div className="section  section-center">
-      <div className="flex justify-between ">
-        <span className="w-1/2">
-          <h2 className="text-left">
-            {" "}
-            <StructuredText data={content.ifYourSoulIsCallingForIntro} />
-          </h2>
-          <p className="flex justify-center w-5/6 leading-tight">
-            {" "}
-            <StructuredText data={content.ifYourSoulIsCallingFor} />
-          </p>
-          <div className="">
-            <Button cta={content.cta2} url={content.cta2Email} />
-          </div>
-        </span>
-        <div className="flex justify-center items-center">
+    <div className="section section-center">
+      <div className="md:flex justify-between ">
+        <div className="order-2 flex justify-center items-center">
           <GatsbyImage
             image={content.horizontalImage.gatsbyImageData}
             alt={content.horizontalImage.alt}
@@ -467,59 +523,66 @@ function SectionSoul1({ content }) {
             className=""
           />
         </div>
+        <span className="order-1 w-1/2">
+          <h2 className="text-left">
+            <StructuredText data={content.ifYourSoulIsCallingForIntro} />
+          </h2>
+          <p className="flex justify-center w-5/6 leading-tight">
+            <StructuredText data={content.ifYourSoulIsCallingFor} />
+          </p>
+          <div className="">
+            <Button cta={content.cta2} url={content.cta2Email} />
+          </div>
+        </span>
       </div>
     </div>
   )
 }
 
-function SectionBanner() {
-  return (
-    <div className="mt-16 min-h-screen w-full bg-wood bg-center bg-contain"></div>
-  )
-}
+// function SectionBanner() {
+//   return (
+//     <div className="mt-16 min-h-screen w-full bg-wood bg-center bg-contain"></div>
+//   )
+// }
 
-function SectionSoul2({ content }) {
-  return (
-    <div className="section flex justify-between bg-beige p-12">
-      <div className="image-div w-1/2">
-        <GatsbyImage
-          image={content.horizontalImage.gatsbyImageData}
-          alt={content.horizontalImage.alt}
-          placeholder="blurred"
-          className=""
-        />
-      </div>
-      <div className="ml-16 w-1/2 ">
-        <h2 className="z-10 text-red  text-left">{content.soulSectionTitle}</h2>
-        <h3 className="mt-5 ">
-          <ul className="">
-            {content.soulBulletPoints.map((block, i) => (
-              <li className="mb-6" key={i}>
-                {block.text}
-              </li>
-            ))}
-          </ul>
-        </h3>
-      </div>
-      {/* <div className="flex justify-center">
-          <Button cta={content.cta2} url={content.cta2Email} />
-        </div> */}
-    </div>
-  )
-}
+// function SectionSoul2({ content }) {
+//   return (
+//     <div className="section flex justify-between bg-beige p-12">
+//       <div className="image-div w-1/2">
+//         <GatsbyImage
+//           image={content.horizontalImage.gatsbyImageData}
+//           alt={content.horizontalImage.alt}
+//           placeholder="blurred"
+//           className=""
+//         />
+//       </div>
+//       <div className="ml-16 w-1/2 ">
+//         <h2 className="z-10 text-red  text-left">{content.soulSectionTitle}</h2>
+//         <h3 className="mt-5 ">
+//           <ul className="">
+//             {content.soulBulletPoints.map((block, i) => (
+//               <li className="mb-6" key={i}>
+//                 {block.text}
+//               </li>
+//             ))}
+//           </ul>
+//         </h3>
+//       </div>
+//     </div>
+//   )
+// }
 
 function SectionBios2({ content }) {
   console.log(content.women)
   return (
-    <div className="section section-center " id="women">
+    <div className="section section-center" id="women">
       <h1 className="text-center">{content.womenSectionTitle}</h1>
-
       <div className="lg:mx-16 top-margin-medium">
         <div className="w-full">
           <div className="w-full h-full">
             {/* Main bios */}
             <h1 className="text-center ">The core team</h1>
-            <div className="top-margin-sm grid grid-cols-1 md:grid-cols-4 gap-5 mb-10">
+            <div className="top-margin-sm grid grid-cols-1 md:grid-cols-4 gap-3 mb-10">
               {content.women.map((node, i) => {
                 return (
                   node.isMainOrganiser && (
@@ -579,10 +642,7 @@ function SectionBios2({ content }) {
                                   image={node.image.gatsbyImageData}
                                   alt={node.image.alt}
                                   placeholder="blurred"
-                                  className=""
                                 />
-                                {/* <div className="team-member__image-bg absolute top-0 left-0 right-0 bottom-0 w-full h-full z-0"></div>
-                                <div className="absolute bottom-0 left-0 right-0 w-full h-64 z-20 team-member__image-gradient"></div> */}
                               </div>
                             </div>
                           </div>
@@ -614,7 +674,7 @@ function SectionBios2({ content }) {
 
 function Supporting({ content }) {
   return (
-    <div className="section  flex flex-col justify-center items-center">
+    <div className="section flex flex-col justify-center items-center">
       <h1>{content.supportingSectionTitle}</h1>
 
       {content.supportedProject.map((block, i) => (
@@ -625,7 +685,6 @@ function Supporting({ content }) {
             rel="noreferrer noopener"
             className="no-underline hover:underline"
           >
-            {" "}
             {block.projectName}
           </a>
           <br />

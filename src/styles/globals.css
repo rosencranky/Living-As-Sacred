@@ -17,7 +17,7 @@
   }
 
   body {
-    @apply text-darkred text-base 2xl:text-lg  bg-cream font-serif antialiased;
+    @apply text-black text-base 2xl:text-lg  bg-cream font-serif antialiased;
   }
 
   p {
@@ -25,32 +25,23 @@
   }
 
   h2 {
-    @apply xl:text-4xl 2xl:text-5xl text-red font-serif antialiased leading-tightest;
-  }
-
-  h2 em {
-    @apply hover:text-green;
+    @apply text-3xl xl:text-4xl 2xl:text-5xl text-red font-serif antialiased leading-tightest;
   }
 
   h1 {
-    @apply text-red text-sm 2xl:text-base font-mono tracking-wider uppercase antialiased leading-tight mb-2;
+    @apply text-black text-sm 2xl:text-base font-mono tracking-wider uppercase antialiased leading-tight mb-2;
   }
 
   h3 {
-    @apply text-xl 2xl:text-2xl  font-serif antialiased leading-tighter;
+    @apply text-xl 2xl:text-2xl  text-black font-serif antialiased leading-tighter;
   }
 
   h4 {
-    @apply text-red font-serif text-5xl 2xl:text-6xl italic antialiased leading-tightest;
+    @apply text-red font-serif text-4xl lg:text-5xl 2xl:text-6xl italic antialiased leading-tightest;
   }
 
   a {
     @apply underline;
-
-    &:hover,
-    &:focus {
-      @apply text-red;
-    }
   }
   /* Headings following paragraphs */
   p + h1,
@@ -69,7 +60,7 @@
   }
 
   .monotext {
-    @apply text-sm 2xl:text-base text-red font-mono tracking-wider uppercase antialiased;
+    @apply text-sm 2xl:text-base font-mono tracking-wider uppercase antialiased;
   }
 }
 @tailwind components;
@@ -77,15 +68,27 @@
 
 @layer utilities {
   .section {
-    @apply mt-24 mx-10;
+    @apply mt-12 lg:mt-24 mx-3 lg:mx-10;
+  }
+
+  .mx-large {
+    @apply mx-5 lg:mx-48;
+  }
+
+  .mx-medium {
+    @apply mx-5 md:mx-12 xl:mx-24 2xl:mx-32;
   }
 
   .top-margin-lg {
     @apply mt-24;
   }
 
+  .btm-margin-lg {
+    @apply mb-24;
+  }
+
   .section-full {
-    @apply mt-24 mx-5 2xl:mx-3;
+    @apply mt-24 mx-3 lg:mx-5 2xl:mx-3;
   }
 
   .top-margin-medium {
@@ -93,7 +96,7 @@
   }
 
   .top-margin-sm {
-    @apply mt-6;
+    @apply mt-3 2xl:mt-3;
   }
 
   .section-center {
@@ -117,6 +120,11 @@
     max-height: 1000px;
     height: 100% !important;
     @apply transition-all ease-linear duration-200 pb-12 md:pb-16 xl:pb-12 delay-100;
+  }
+
+  .timeline {
+    min-width: 1000px !important;
+    width: 100%;
   }
 
   .title {

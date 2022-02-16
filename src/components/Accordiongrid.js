@@ -54,7 +54,8 @@ export default function AccordionGrid({ index, excerpt, fullText }) {
                   >
                     <path
                       d="M1.305 27.132L26.354 2.084M26.354 27.132L1.306 2.083"
-                      stroke="#FBF8F2"
+                      // stroke="#FBF8F2"
+                      stroke="#333"
                       strokeWidth="3.24"
                     />
                   </svg>

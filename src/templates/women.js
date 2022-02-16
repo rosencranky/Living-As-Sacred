@@ -56,14 +56,13 @@ const WomanTemplate = ({ data: { person }, location }) => {
                   {person.name}
                 </h2>
                 <div className="flex flex-wrap relative">
-                  <div className="w-full lg:w-1/3 2xl:w-1/4 mb-8 lg:mb-0">
+                  <div className="w-full lg:w-1/3 2xl:w-1/3 mb-8 lg:mb-0">
                     {/* <Img fluid={ person.image.fluid } className="w-full object-cover mb-1 relative z-10 opacity-25 "/> */}
                     <GatsbyImage
                       image={person.image.gatsbyImageData}
                       alt={person.image.alt}
                       placeholder="blurred"
-                      aspectRatio={1 / 1}
-                      width={200}
+                      className="rounded-full  border border-green "
                     />
                   </div>
                   <div className="w-full lg:flex-1 relative z-10">
@@ -81,7 +80,7 @@ const WomanTemplate = ({ data: { person }, location }) => {
                           Social
                         </span>
                         <a
-                          className="underline flex flex-wrap lg:justify-end items-center no-underline hover:underline focus:underline"
+                          className="flex flex-wrap lg:justify-end items-center no-underline hover:underline focus:underline"
                           href={person.instagram}
                           target="_blank"
                           rel="noreferrer noopener"
@@ -145,7 +144,7 @@ export const query = graphql`
       theme
       weekNumber
       image {
-        gatsbyImageData
+        gatsbyImageData(height: 825, width: 660, imgixParams: { fit: "crop" })
         alt
       }
       instagram
