@@ -25,7 +25,7 @@
   }
 
   h2 {
-    @apply text-3xl xl:text-4xl 2xl:text-5xl text-red font-serif antialiased leading-tightest;
+    @apply text-3xl xl:text-4xl 2xl:text-5xl text-red font-serif antialiased leading-tighter;
   }
 
   h1 {
@@ -55,10 +55,6 @@
     @apply list-outside list-disc;
   }
 
-  img {
-    @apply border border-green;
-  }
-
   .monotext {
     @apply text-sm 2xl:text-base font-mono tracking-wider uppercase antialiased;
   }
@@ -76,7 +72,7 @@
   }
 
   .mx-medium {
-    @apply mx-5 md:mx-12 xl:mx-24 2xl:mx-32;
+    @apply mx-3 md:mx-12 xl:mx-24 2xl:mx-32;
   }
 
   .top-margin-lg {

@@ -8,7 +8,7 @@ function Header() {
 
   return (
     <nav className="flex flex-wrap items-center justify-between p-6 mb-6">
-      <div className="block lg:hidden">
+      <div className="block absolute top-10 right-5 z-40 lg:hidden">
         <button
           onClick={() => toggleExpansion(!isExpanded)}
           className="flex items-center px-3 py-2 text-red border border-red rounded hover:text-white hover:border-white"
@@ -26,8 +26,8 @@ function Header() {
 
       <div
         className={`${
-          isExpanded ? `block` : `hidden`
-        } w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto text-cream`}
+          isExpanded ? `block bg-red` : `hidden`
+        } w-full block flex-grow lg:flex lg:items-center lg:justify-end lg:w-auto text-red`}
       >
         <div className="monotext lg:justify-center self-center lg:mr-10 ">
           <Link

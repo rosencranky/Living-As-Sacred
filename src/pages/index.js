@@ -41,7 +41,7 @@ const IndexPage = ({ data }) => (
     <SectionBios2 content={data.content} />
     {/* <SectionSoul2 content={data.content} /> */}
     <SectionSoul1 content={data.content} />
-    {/* <Supporting content={data.content} /> */}
+    <Supporting content={data.content} />
     <Footer content={data.content} />
   </Layout>
 )
@@ -56,13 +56,13 @@ function Hero({ content }) {
       {/* bg-contain opacity-90 */}
       <Header />
       <div className="z-10 absolute top-10 left-5 ">
-        <h1 className="xl:text-7xl 2xl:text-8xl font-serif normal-case text-red tracking-tight">
+        <h1 className="text-6xl xl:text-7xl 2xl:text-8xl font-serif normal-case text-red tracking-tight">
           Living · as · Sacred
         </h1>
-        <h1 className=" xl:text-7xl 2xl:text-8xl font-serif uppercase text-red tracking-tight">
+        <h1 className=" text-6xl xl:text-7xl 2xl:text-8xl font-serif uppercase text-red tracking-tight">
           May – July 2022
         </h1>
-        <h1 className="xl:text-7xl 2xl:text-8xl font-serif uppercase text-red tracking-tight">
+        <h1 className="text-6xl xl:text-7xl 2xl:text-8xl font-serif uppercase text-red tracking-tight">
           <em>Online</em>
         </h1>
       </div>
@@ -101,21 +101,21 @@ function SectionAbout({ content }) {
           image={content.missionImage.gatsbyImageData}
           alt={content.missionImage.alt}
           placeholder="blurred"
-          className="rounded-full hover:rounded-none transition ease-in-out duration-300 p-5 m-5 border  border-green"
+          className="rounded-full hover:rounded-none transition ease-in-out duration-300 p-5 m-5 "
         />
         <p className="mx-3 leading-tight">
           <StructuredText data={content.mission} />
         </p>
       </div>
       {/* Purpose */}
-      <div className="md:col-start-2 flex flex-col justify-center items-center">
+      <div className="mt-10 md:mt-0 md:col-start-2 flex flex-col justify-center items-center">
         <h1 className="text-center">{content.purposeSectionTitle}</h1>
 
         <GatsbyImage
           image={content.purposeImage.gatsbyImageData}
           alt={content.purposeImage.alt}
           placeholder="blurred"
-          className="rounded-full hover:rounded-none transition ease-in-out duration-300 p-5 m-5 border  border-green"
+          className="rounded-full hover:rounded-none transition ease-in-out duration-300 p-5 m-5 "
         />
 
         <p className="mx-3 leading-tight">
@@ -124,13 +124,13 @@ function SectionAbout({ content }) {
         </p>
       </div>
       {/* Vision */}
-      <div className="md:col-start-3 flex flex-col justify-center items-center">
+      <div className="mt-10 md:mt-0 md:col-start-3 flex flex-col justify-center items-center">
         <h1 className="text-center">{content.visionSectionTitle}</h1>
         <GatsbyImage
           image={content.visionImage.gatsbyImageData}
           alt={content.visionImage.alt}
           placeholder="blurred"
-          className="rounded-full hover:rounded-none transition ease-in-out duration-300 delay-50 p-5 m-5 border  border-green"
+          className="rounded-full hover:rounded-none transition ease-in-out duration-300 delay-50 p-5 m-5"
         />
         <p className="mx-3 leading-tight">
           <StructuredText data={content.vision} />
@@ -156,7 +156,7 @@ function SectionValues({ content }) {
   return (
     <div className="section-full">
       <h1 className="text-center">{content.valuesSectionTitle}</h1>
-      <div className="grid grid-cols-12 place-items-center place-content-center items-center">
+      <div className="flex flex-wrap md:grid grid-cols-12 place-items-center place-content-center items-center">
         <h2 className="text-center col-start-1 col-span-3 text-black">
           <span className="hover:text-green ">
             <StructuredText data={content.valuesList[0].value} />
@@ -171,12 +171,12 @@ function SectionValues({ content }) {
           </span>
         </h2>
 
-        <div className=" flex justify-center my-10 col-start-4 col-span-6 ">
+        <div className=" flex justify-center my-5 md:my-10 col-start-4 col-span-6 ">
           <GatsbyImage
             image={content.valuesImage.gatsbyImageData}
             alt={content.valuesImage.alt}
             placeholder="blurred"
-            className="border  border-green hover:rounded-full  "
+            className="rounded-full  "
           />
         </div>
         <h2 className="text-center col-start-10 col-span-3  text-black">
@@ -198,20 +198,62 @@ function SectionValues({ content }) {
 function SectionOffering({ content }) {
   return (
     <div id="offering" className="section ">
-      <h4 className="mx-medium text-center">{content.ctaSentence}</h4>
+      <h4 className="top-margin-lg mx-medium text-center">
+        {content.ctaSentence}
+      </h4>
       <div className="flex justify-center">
         <Button cta={content.cta2} url={content.cta2Email} />
       </div>
       <h1 className="top-margin-lg text-center">
         {content.offeringSectionTitle}
       </h1>
-
-      <div className="top-margin-medium relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid-rows-2 shadow-sm hover:text-green">
+      {/* Desktop */}
+      <div className="hidden lg:grid top-margin-medium relative z-10  lg:grid-cols-4 grid-rows-2 shadow-sm hover:text-green">
         {content.offeringItem.map((block, i) => (
           <div
-            className={`border-r border-t border-green  bg-beige hover:bg-transparent text-cream hover:text-black transition ease-in duration-100 ${
-              i < 3 || i == 0 ? "border-t" : "border-b"
+            className={`border-r border-b  border-green  bg-beige hover:bg-transparent text-cream hover:text-black transition ease-in duration-100 ${
+              i < 4 ? "border-t" : ""
             } ${i % 4 == 0 ? "border-l" : ""}`}
+            key={block.id}
+            key={i}
+          >
+            {block.model.apiKey === "offering" && (
+              <AccordionGrid
+                index={i}
+                excerpt={block.offeringShortText}
+                fullText={block.offeringItemText}
+              />
+            )}
+          </div>
+        ))}
+      </div>
+      {/* Small tablet */}
+      <div className="hidden md:grid lg:hidden top-margin-medium relative z-10 md:grid-cols-2 grid-rows-2 shadow-sm hover:text-green">
+        {content.offeringItem.map((block, i) => (
+          <div
+            className={`border-r border-b  border-green  bg-beige hover:bg-transparent text-cream hover:text-black transition ease-in duration-100 ${
+              i < 2 ? "border-t-2" : ""
+            } ${i % 2 == 0 ? "border-l" : ""}`}
+            key={block.id}
+            key={i}
+          >
+            {block.model.apiKey === "offering" && (
+              <AccordionGrid
+                index={i}
+                excerpt={block.offeringShortText}
+                fullText={block.offeringItemText}
+              />
+            )}
+          </div>
+        ))}
+      </div>
+      {/* Large tablet and desktop */}
+      <div className="grid md:hidden top-margin-medium relative z-10 grid-cols-1 grid-rows-2 shadow-sm hover:text-green">
+        {content.offeringItem.map((block, i) => (
+          <div
+            className={`border-b  border-x border-green  bg-beige hover:bg-transparent text-cream hover:text-black transition ease-in duration-100 ${
+              i == 0 ? "border-t" : ""
+            } `}
             key={block.id}
             key={i}
           >
@@ -239,10 +281,10 @@ function SectionTimeline({ content }) {
           <div
             key={block.id}
             key={i}
-            className="grid grid-rows-3 gap-y-10  hover:bg-beige transition ease-in duration-100 p-3 z-10 "
+            className="grid grid-rows-3 auto-rows-min gap-y-10  hover:bg-beige transition ease-in duration-100 p-3 z-10 "
           >
             {/* Title */}
-            <div className="row-start-1 row-span-1 border-b-2 border-green self-end">
+            <div className="row-start-1 row-span-1 border-b border-green self-end">
               <h2 className="text-center leading-none pb-5">{block.title}</h2>
               <span className="flex justify-between monotext">
                 <p className="inline-block">{block.startDate}</p>
@@ -252,20 +294,22 @@ function SectionTimeline({ content }) {
             {/* Weeks */}
             <div className="row-start-2 row-span-1 flex justify-evenly ">
               {block.weeks.map((week, i) => (
-                <div key={week.id} key={i} className="">
-                  <div className="grid grid-rows-2 items-start">
-                    <h3 className="row-start-1 row-end-1 bg-green w-12 h-12 2xl:w-16 2xl:h-16 mb-16 rounded-full text-cream text-center flex justify-center items-center">
-                      {week.weekNumber}
-                    </h3>
+                <div key={week.id} key={i}>
+                  <div className="inline-block">
+                    <span className=" flex flex-col items-center justify-center">
+                      <h3 className=" bg-green w-12 h-12 2xl:w-16 2xl:h-16 mb-16 rounded-full text-cream text-center flex justify-center items-center">
+                        {week.weekNumber}
+                      </h3>
 
-                    <p className="row-start-2 transform rotate-45 monotext leading-tight uppercase ">
-                      {week.womanName}
-                    </p>
+                      <p className="leading-0 text-sm monotext text-center leading-tight uppercase inline-block relative w-full">
+                        {week.womanName}
+                      </p>
+                    </span>
                   </div>
                 </div>
               ))}
             </div>
-            <p className="row-start-3 text-sm 2xl:text-base leading-tight -mt-16 ">
+            <p className="row-start-3 text-sm 2xl:text-base leading-tight  -mt-4">
               {" "}
               <StructuredText data={block.moduleDescription} />
             </p>
@@ -278,14 +322,14 @@ function SectionTimeline({ content }) {
 
 function SectionQs({ content }) {
   return (
-    <div className="section-full pb-24">
+    <div className="section-full mt-12 pb-24">
       <div className="block lg:grid grid-rows-3 grid-cols-12 items-center ">
         <div className="z-0 col-start-1 col-span-4 row-start-1  ">
           <GatsbyImage
             image={content.valueImages[0].gatsbyImageData}
             alt={content.valueImages[0].alt}
             placeholder="blurred"
-            className="border  border-green"
+            className=""
           />
         </div>
         <h4 className="z-10 col-start-5 col-end-13  xl:mx-8 2xl:mx-32 text-center self-center  row-start-1">
@@ -300,7 +344,7 @@ function SectionQs({ content }) {
             image={content.valueImages[1].gatsbyImageData}
             alt={content.valueImages[1].alt}
             placeholder="blurred"
-            className="border  border-green"
+            className=""
           />
         </div>
         <h3 className="max-w-prose z-10 col-start-1 col-end-8  row-start-2 text-left ml-10 text-xl">
@@ -317,7 +361,7 @@ function SectionQs({ content }) {
             image={content.valueImages[2].gatsbyImageData}
             alt={content.valueImages[2].alt}
             placeholder="blurred"
-            className="border  border-green"
+            className="rounded-sm"
           />
         </div>
         <h3 className="z-10 text-xl col-start-7 col-end-13  row-start-3  text-left mr-10 self-center">
@@ -411,39 +455,42 @@ function SectionQs({ content }) {
 
 function SectionValue({ content }) {
   return (
-    <div className="section lg:mx-16 2xl:mx-10 border-2 border-red px-16  py-10 2xl:py-12 mb-12 shadow-sm bg-beige">
-      <div className="top-margin-medium md:grid grid-cols-6 gap-x-10">
+    <div className="section lg:mx-16 2xl:mx-10 border border-black px-8 md::px-16  py-10 2xl:py-12 mb-12 shadow-sm bg-beige">
+      <h1 className="text-center  ">{content.valueSectionTitle}</h1>
+      <div className="top-margin-medium  md:grid grid-cols-6 gap-x-10">
         {/* Price */}
         <div className="col-start-1 col-span-2">
-          <h1 className="text-left  ">{content.valueSectionTitle}</h1>
-          <h2 className="top-margin-sm xl:text-6xl 2xl:text-7xl text-center text-black">
+          {/* <h1 className="text-left  ">{content.valueSectionTitle}</h1> */}
+          <h2 className="text-5xl xl:text-6xl 2xl:text-7xl text-left text-black text-center">
             <StructuredText data={content.price} />
           </h2>
-          <p className="text-center ">
+          <p className="text-left text-sm">
             20% off early bird price, from 28th Feb to 6th March
           </p>
           <span className="top-margin-sm flex justify-around">
             <span>
-              <h2 className="xl:text-5xl 2xl:text-6xl text-center leading-none text-black line-through decoration-red decoration-2 inline-block mt-3">
+              <h2 className="text-4xl xl:text-5xl 2xl:text-6xl text-center leading-none text-black line-through decoration-red decoration-2 inline-block mt-3">
                 264€
                 {/* <span className="inline-block">*</span> */}
                 {/* <sup className="inline-block text-red monotext">-20%</sup> */}
               </h2>
             </span>
-            <h2 className="xl:text-5xl 2xl:text-6xl text-center leading-0 p-2 text-black border-2 border-red">
+            <h2 className="text-4xl xl:text-5xl 2xl:text-6xl text-center leading-0 p-2 text-black border-2 border-red">
               210€
             </h2>
           </span>
         </div>
 
         <div className="col-start-3 col-span-4">
-          <h1 className="text-left">{content.offerResumeSectionTitle}</h1>
+          <h1 className="text-left mt-12 md:mt-0">
+            {content.offerResumeSectionTitle}
+          </h1>
           <ul className="top-margin-sm ">
             {content.including.map((block, i) => (
               <li key={i}>{block.offeringBulletPoint}</li>
             ))}
           </ul>
-          <h1 className="top-margin-medium ">{content.paymentTermsTitle}</h1>
+          <h1 className="mt-8 md:mt-12 ">{content.paymentTermsTitle}</h1>
           <p className="top-margin-sm ">{content.paymentTerms}</p>
         </div>
 
@@ -520,7 +567,7 @@ function SectionSoul1({ content }) {
             image={content.horizontalImage.gatsbyImageData}
             alt={content.horizontalImage.alt}
             placeholder="blurred"
-            className=""
+            className="rounded rounded-full"
           />
         </div>
         <span className="order-1 w-1/2">
@@ -594,12 +641,12 @@ function SectionBios2({ content }) {
                       <div className="relative">
                         <div className="overflow-hidden pb-0 w-full relative team-member group">
                           <div className="w-full relative overflow-hidden team-member__inner">
-                            <div className="overflow-hidden">
+                            <div className="overflow-hidden mx-5 md:mx-0">
                               <GatsbyImage
                                 image={node.image.gatsbyImageData}
                                 alt={node.image.alt}
                                 placeholder="blurred"
-                                className="rounded-full  border border-green "
+                                className="rounded-full  "
                               />
                             </div>
                           </div>
