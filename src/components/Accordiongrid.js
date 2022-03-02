@@ -17,7 +17,7 @@ export default function AccordionGrid({ index, excerpt, fullText }) {
   return (
     <div className={` ${index == 0 ? "border-t" : ""}`}>
       <button
-        className="block w-full h-full text-left focus:outline-none focus:border-none group p-0 m-0 px-6 hover:text-green"
+        className="block w-full h-full text-left focus:outline-none focus:border-none group p-0 m-0 px-6 "
         onClick={() => openToggle()}
       >
         <div className="py-6 md:py-10 cursor-pointer ring-blue">
@@ -26,7 +26,7 @@ export default function AccordionGrid({ index, excerpt, fullText }) {
               <div className="flex flex-wrap items-start accordion-item--open ">
                 {!open && (
                   <h3
-                    className={`block mb-0 pb-0 px-3 flex-1  hover:text-green transition-opacity ease-in duration-200  ${
+                    className={`block mb-0 pb-0 px-3 flex-1   transition-opacity ease-in duration-200  ${
                       open ? "opacity-0" : "opacity-100"
                     }`}
                   >
@@ -55,7 +55,7 @@ export default function AccordionGrid({ index, excerpt, fullText }) {
                     <path
                       d="M1.305 27.132L26.354 2.084M26.354 27.132L1.306 2.083"
                       // stroke="#FBF8F2"
-                      stroke="#333"
+                      stroke="#6D7661"
                       strokeWidth="3.24"
                     />
                   </svg>

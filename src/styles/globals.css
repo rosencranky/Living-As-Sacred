@@ -6,18 +6,18 @@
     font-family: "panama";
     font-display: swap;
     font-style: normal;
-    src: url("../fonts/panama-demo-regular.otf");
+    src: url("../fonts/PanamaRegular.woff");
   }
 
   @font-face {
     font-family: "panama";
     font-display: swap;
     font-style: italic;
-    src: url("../fonts/panama-demo-italic.otf");
+    src: url("../fonts/PanamaItalic.woff");
   }
 
   body {
-    @apply text-black text-base 2xl:text-lg  bg-cream font-serif antialiased;
+    @apply text-blacker text-base 2xl:text-lg  bg-cream font-serif antialiased;
   }
 
   p {
@@ -25,11 +25,15 @@
   }
 
   h2 {
-    @apply text-3xl xl:text-4xl 2xl:text-5xl text-red font-serif antialiased leading-tighter;
+    @apply text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl text-black font-serif antialiased leading-tighter tracking-tight;
+  }
+
+  h2 em {
+    /* @apply text-black; */
   }
 
   h1 {
-    @apply text-black text-sm 2xl:text-base font-mono tracking-wider uppercase antialiased leading-tight mb-2;
+    @apply text-black text-sm xl:text-base font-mono tracking-wider uppercase antialiased leading-tight mb-2;
   }
 
   h3 {
@@ -37,7 +41,7 @@
   }
 
   h4 {
-    @apply text-red font-serif text-4xl lg:text-5xl 2xl:text-6xl italic antialiased leading-tightest;
+    @apply text-red font-serif text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl  antialiased leading-tightest tracking-tight;
   }
 
   a {
@@ -56,7 +60,7 @@
   }
 
   .monotext {
-    @apply text-sm 2xl:text-base font-mono tracking-wider uppercase antialiased;
+    @apply text-sm xl:text-base font-mono tracking-wider uppercase antialiased;
   }
 }
 @tailwind components;
@@ -87,12 +91,24 @@
     @apply mt-24 mx-3 lg:mx-5 2xl:mx-3;
   }
 
+  .top-margin-lg {
+    @apply mt-12 lg:mt-24;
+  }
+
   .top-margin-medium {
     @apply mt-12;
   }
 
   .top-margin-sm {
     @apply mt-3 2xl:mt-3;
+  }
+
+  .pdng {
+    @apply px-8 py-6;
+  }
+
+  .pdngsm {
+    @apply px-8 pt-1 pb-3;
   }
 
   .section-center {

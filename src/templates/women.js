@@ -14,7 +14,7 @@ const WomanTemplate = ({ data: { person }, location }) => {
       <SEO titleOverride={"Woman"} pathnameOverride={location.pathname} />
 
       <div>
-        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap text-red fixed top-0 left-0 right-0">
+        <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap fixed top-0 left-0 right-0">
           <nav className="relative z-10 w-full overflow-hidden">
             <div className="flex flex-wrap pb-0 mb-0 relative overflow-hidden ">
               <Link to="/#women" className="ml-auto">
@@ -38,10 +38,10 @@ const WomanTemplate = ({ data: { person }, location }) => {
 
       <div>
         <div className="min-h-screen">
-          <div className="flex  flex-wrap items-center h-full pt-14 md:pt-22 min-h-screen bg-beige text-red  ">
+          <div className="flex  flex-wrap items-center h-full pt-14 md:pt-22 min-h-screen bg-beige   ">
             <div className="relative  pb-24 md:pb-32 w-full ">
               <div className="w-10/12 lg:w-9/12  mx-auto relative">
-                <h2 className="block w-full pb-1 mb-6 lg:mb-10 xl:mb-14">
+                <h2 className="block w-full pb-1 mb-6 lg:mb-10 xl:mb-14 text-red">
                   {person.name}
                 </h2>
                 <div className="flex flex-wrap relative">
@@ -51,7 +51,7 @@ const WomanTemplate = ({ data: { person }, location }) => {
                       image={person.image.gatsbyImageData}
                       alt={person.image.alt}
                       placeholder="blurred"
-                      className="rounded-full "
+                      className="rounded-2xl "
                     />
                   </div>
                   <div className="w-full lg:flex-1 relative z-10">

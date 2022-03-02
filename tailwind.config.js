@@ -5,16 +5,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        cream: "#FBF8F2",
-        beige: "#EBE4CB",
-        red: "#C21F06",
-        // darkred: "#9e1905",
-        black: "140301",
-        darkgreen: "#313f27",
+        green: "#c8c9af",
+        darkgreen: "#6D7661",
+        black: "#162214",
+        blacker: "#080D08",
+        red: "#bc3602",
+        // red: "#f03304",
+        beige: "#F5EDE0",
 
-        black: "#121814",
-        lightbeige: "#F5EDE0",
-        green: "#485d3a",
+        lightgreen: "#A3A392",
+        cream: "#FBF8F2",
+        darkcream: "#cdd1b5",
       },
       fontFamily: {
         sans: ["Inconsolata", "sans-serif"],
@@ -37,11 +38,20 @@ module.exports = {
         // '7xl': '5rem',
       },
       backgroundImage: {
-        hero: "url('../images/jornada-4.jpeg')",
+        hero: "url('../images/logo-transparent.png')",
+        banner: "url('../images/jornada-4.jpeg')",
+        leaves: "url('../images/leaves.jpg')",
+        hands: "url('../images/hands.jpg')",
+        plants: "url('../images/plant-medicine.jpg')",
+        tree: "url('../images/background-2.jpg')",
       },
       lineHeight: {
         tighter: "1.05",
         tightest: "0.95",
+      },
+      height: {
+        70: "70vh",
+        90: "90vh",
       },
     },
     variants: {},
