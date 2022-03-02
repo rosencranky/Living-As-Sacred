@@ -374,9 +374,9 @@ function SectionTimeline({ content }) {
 
 function SectionValue({ content }) {
   return (
-    <div className="section mx-medium  rounded-xl px-8 py-10 2xl:py-12 mb-12  bg-beige">
+    <div className="section mx-medium  rounded-xl px-8 py-10 2xl:py-10 mb-12  bg-beige">
       {/* <h1 className="text-center">{content.valueSectionTitle}</h1> */}
-      <div className="top-margin-medium md:grid grid-cols-6 gap-x-10 place-content-center">
+      <div className="md:grid grid-cols-6 gap-x-10 place-content-center">
         {/* Price */}
         <div className="col-start-1 col-span-4">
           <h1 className="text-center">{content.valueSectionTitle}</h1>
@@ -542,7 +542,7 @@ function SectionSoul({ content }) {
 
 function Supporting({ content }) {
   return (
-    <div className="top-margin-lg btm-margin-lg  py-24 mx-medium  bg-beige rounded-2xl">
+    <div className="top-margin-lg btm-margin-lg  py-10 mx-medium  bg-beige rounded-2xl">
       <h1 className="text-center">{content.supportingSectionTitle}</h1>
 
       <div className="md:flex flex-row justify-around items-center top-margin-medium">
