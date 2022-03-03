@@ -310,7 +310,7 @@ function Timeline({ content }) {
           <div
             key={block.id}
             key={i}
-            className="grid grid-rows-3 gap-y-10hover:bg-cream rounded-2xl transition ease-in duration-100 p-3"
+            className="grid grid-rows-3 gap-y-10 hover:bg-cream rounded-2xl transition ease-in duration-100 p-3"
           >
             {/* Title */}
             <div className="md:transform -translate-y-10 row-start-1 row-span-1 border-b border-darkgreen self-end">
@@ -338,7 +338,7 @@ function Timeline({ content }) {
                 </div>
               ))}
             </div>
-            <p className="top-margin-sm row-start-3 text-sm 2xl:text-base px-2">
+            <p className="row-start-3 text-sm 2xl:text-base px-2 -mt-4">
               <StructuredText data={block.moduleDescription} />
             </p>
           </div>
@@ -444,7 +444,7 @@ function Bios({ content }) {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 w-full z-30 p-3">
                   <div className="pb-2">
-                    <h3 className="block text-center text-cream mb-1">
+                    <h3 className="block text-center text-2xl uppercase text-cream leading-tight mb-1">
                       {node.name}
                     </h3>
                   </div>
