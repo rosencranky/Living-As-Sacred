@@ -1,18 +1,14 @@
 import React from "react"
 import SEO from "../components/seo"
-// import { motion } from "framer-motion"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 import { StructuredText } from "react-datocms"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-// import Div100vh from "react-div-100vh"
-
 const WomanTemplate = ({ data: { person }, location }) => {
   return (
     <>
       <SEO titleOverride={"Woman"} pathnameOverride={location.pathname} />
-
       <div>
         <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap fixed top-0 left-0 right-0">
           <nav className="relative z-10 w-full overflow-hidden">
@@ -38,24 +34,23 @@ const WomanTemplate = ({ data: { person }, location }) => {
 
       <div>
         <div className="min-h-screen">
-          <div className="flex  flex-wrap items-center h-full pt-14 md:pt-22 min-h-screen bg-beige   ">
-            <div className="relative  pb-24 md:pb-32 w-full ">
+          <div className="flex flex-wrap items-center h-full pt-14 md:pt-22 min-h-screen bg-beige">
+            <div className="relative pb-24 md:pb-32 w-full ">
               <div className="w-10/12 lg:w-9/12  mx-auto relative">
                 <h2 className="block w-full pb-1 mb-6 lg:mb-10 xl:mb-14 text-red">
                   {person.name}
                 </h2>
                 <div className="flex flex-wrap relative">
                   <div className="w-full md:w-1/3 2xl:w-1/3 mb-8 lg:mb-0">
-                    {/* <Img fluid={ person.image.fluid } className="w-full object-cover mb-1 relative z-10 opacity-25 "/> */}
                     <GatsbyImage
                       image={person.image.gatsbyImageData}
                       alt={person.image.alt}
                       placeholder="blurred"
-                      className="rounded-2xl "
+                      className="rounded-2xl"
                     />
                   </div>
                   <div className="w-full lg:flex-1 relative z-10">
-                    <div className="lg:w-10/12 xl:w-8/12 lg:pl-8">
+                    <div className="lg:w-10/12 xl:w-10/12 lg:pl-8">
                       <div className="max-w-md leading-tight">
                         <StructuredText data={person.bio} />
                       </div>
@@ -75,6 +70,40 @@ const WomanTemplate = ({ data: { person }, location }) => {
                           rel="noreferrer noopener"
                         >
                           <span>Instagram</span>
+                          <svg
+                            className="ml-2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16.073"
+                            height="16.073"
+                            viewBox="0 0 16.073 16.073"
+                          >
+                            <g
+                              data-name="Group 151"
+                              fill="none"
+                              stroke="#C21F06"
+                            >
+                              <path
+                                data-name="Path 1"
+                                d="M10.875 14.095V5.2H1.978"
+                              />
+                              <path
+                                data-name="Path 2"
+                                d="M10.875 5.199L.354 15.719"
+                              />
+                            </g>
+                          </svg>
+                        </a>
+                      </div>
+                    )}
+                    {person.website && (
+                      <div className="top-margin-sm lg:text-right">
+                        <a
+                          className="flex flex-wrap lg:justify-end items-center no-underline hover:underline focus:underline"
+                          href={person.website}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          <span>Website</span>
                           <svg
                             className="ml-2"
                             xmlns="http://www.w3.org/2000/svg"
@@ -124,7 +153,7 @@ export default WomanTemplate
 
 export const query = graphql`
   query WomanQuery($slug: String!) {
-    person: datoCmsWoman(slug: { eq: $slug }) {
+    person: datoCmsWoman(slug: { eq: $slug }, locale: { eq: "en" }) {
       name
       slug
       bio {
@@ -137,6 +166,7 @@ export const query = graphql`
         alt
       }
       instagram
+      website
     }
   }
 `

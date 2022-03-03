@@ -12,10 +12,7 @@ module.exports = {
         red: "#bc3602",
         // red: "#f03304",
         beige: "#F5EDE0",
-
-        lightgreen: "#A3A392",
         cream: "#FBF8F2",
-        darkcream: "#cdd1b5",
       },
       fontFamily: {
         sans: ["Inconsolata", "sans-serif"],
@@ -46,7 +43,7 @@ module.exports = {
         tree: "url('../images/background-2.jpg')",
       },
       lineHeight: {
-        tighter: "1.05",
+        tighter: "1.1",
         tightest: "0.95",
       },
       height: {

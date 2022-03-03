@@ -11,7 +11,7 @@ export default function Footer() {
         <p className=" -mb-1 text-right md:text-left">
           <Link
             to={`/terms`}
-            className="monotext  no-underline hover:underline lg:ml-5"
+            className="monotext text-base no-underline hover:underline lg:ml-5"
           >
             Terms & Conditions
           </Link>
@@ -19,7 +19,7 @@ export default function Footer() {
         <p className="-mb-1 text-right md:text-left">
           <Link
             to={"/privacy"}
-            className="monotext  no-underline hover:underline md:ml-5"
+            className="monotext  text-base no-underline hover:underline md:ml-5"
           >
             Privacy
           </Link>
@@ -29,7 +29,7 @@ export default function Footer() {
             href={"https://joannaherman.com"}
             target="_blank"
             rel="noreferrer noopener"
-            className="monotext  no-underline hover:underline md:ml-5 "
+            className="monotext text-base no-underline hover:underline md:ml-5 "
           >
             Site Credit
           </a>
@@ -39,7 +39,7 @@ export default function Footer() {
             href={"mailto:livingasacred@gmail.com"}
             target="_blank"
             rel="noreferrer noopener"
-            className="monotext  no-underline hover:underline md:ml-5 md:mr-10"
+            className="monotext text-base no-underline hover:underline md:ml-5 md:mr-10"
           >
             Contact
           </a>

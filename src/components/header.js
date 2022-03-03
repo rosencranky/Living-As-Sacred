@@ -8,7 +8,7 @@ function Header() {
 
   return (
     <nav className="flex flex-wrap items-center justify-between p-6 mb-6">
-      <div className="block absolute top-10 right-5 z-40 lg:hidden">
+      <div className="block absolute top-10 right-10 z-40 lg:hidden">
         <button
           onClick={() => toggleExpansion(!isExpanded)}
           className="flex items-center px-3 py-2 text-red border border-red rounded hover:text-white hover:border-white"
@@ -33,39 +33,41 @@ function Header() {
           <Link
             to={`/#about`}
             href="#responsive-header"
-            className="block mt-4 mr-4 monotext no-underline hover:underline  lg:inline-block lg:mt-0 "
+            className="block mt-4 mr-4 monotext text-base no-underline hover:underline  lg:inline-block lg:mt-0 "
           >
             About
           </Link>
           <Link
             to={`/#timeline`}
-            className="block mt-4 mr-4 monotext no-underline hover:underline  lg:inline-block lg:mt-0 "
+            className="block mt-4 mr-4 monotext text-base no-underline hover:underline  lg:inline-block lg:mt-0 "
           >
             Timeline
           </Link>
           <Link
             to={`/#women`}
-            className="block mt-4 mr-4 monotext no-underline hover:underline  lg:inline-block lg:mt-0 "
+            className="block mt-4 mr-4 monotext text-base no-underline hover:underline  lg:inline-block lg:mt-0 "
           >
             Meet us
           </Link>
           <Link
             to={`/contact`}
-            className="block mt-4 mr-4 monotext no-underline hover:underline  lg:inline-block lg:mt-0 "
+            className="block mt-4 mr-8 monotext text-base no-underline hover:underline  lg:inline-block lg:mt-0 "
           >
             Contact
           </Link>
           <span className="inline-block text-red ">
             <Link
               to={`/`}
-              className="block mt-4   font-serif text-xl no-underline hover:underline  lg:inline-block lg:mt-0 "
+              className="block mt-4 font-serif text-xl no-underline hover:underline  lg:inline-block lg:mt-0 "
+              activeClassName="underline"
             >
               EN
             </Link>
             /
             <Link
               to={`/pt`}
-              className="block mt-4 font-serif text-xl  no-underline hover:underline  lg:inline-block lg:mt-0 "
+              className="block mt-4 font-serif text-xl active:underline  no-underline hover:underline  lg:inline-block lg:mt-0 "
+              activeClassName="underline"
             >
               PT
             </Link>

@@ -17,7 +17,7 @@
   }
 
   body {
-    @apply text-blacker text-base 2xl:text-lg  bg-cream font-serif antialiased;
+    @apply text-blacker text-sm md:text-base 2xl:text-lg  bg-cream font-serif antialiased;
   }
 
   p {
@@ -33,7 +33,7 @@
   }
 
   h1 {
-    @apply text-black text-sm xl:text-base font-mono tracking-wider uppercase antialiased leading-tight mb-2;
+    @apply text-black text-sm xl:text-xl font-mono tracking-wider uppercase antialiased leading-tight mb-2;
   }
 
   h3 {
@@ -41,7 +41,7 @@
   }
 
   h4 {
-    @apply text-red font-serif text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl  antialiased leading-tightest tracking-tight;
+    @apply text-red font-serif text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl  antialiased leading-tighter tracking-tight;
   }
 
   a {
@@ -60,7 +60,7 @@
   }
 
   .monotext {
-    @apply text-sm xl:text-base font-mono tracking-wider uppercase antialiased;
+    @apply text-sm xl:text-xl font-mono tracking-wider uppercase antialiased;
   }
 }
 @tailwind components;
@@ -107,10 +107,6 @@
     @apply px-8 py-6;
   }
 
-  .pdngsm {
-    @apply px-8 pt-1 pb-3;
-  }
-
   .section-center {
     @apply flex flex-wrap items-center justify-center;
   }
@@ -119,8 +115,8 @@
     @apply grid grid-cols-3 md:grid-cols-12 items-baseline justify-center;
   }
 
-  .image-div {
-    @apply: pb-3;
+  .beige-card {
+    @apply bg-beige rounded-xl px-5 py-10;
   }
   .accordion-item {
     @apply transition-all ease-linear duration-200 pointer-events-none delay-100;
