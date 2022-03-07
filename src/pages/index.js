@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Footer from "../components/footer"
 import SEO from "../components/seo"
@@ -55,20 +55,28 @@ function Hero() {
   return (
     <div
       id="hero"
-      className="h-screen max-h-screen bg-hero bg-center bg-contain"
+      className="h-screen max-h-screen md:bg-hero bg-center bg-contain"
     >
       <Header />
-      <div className="z-10 absolute top-10 left-5">
-        <h1 className="text-6xl xl:text-7xl 2xl:text-8xl font-serif normal-case text-red tracking-tight">
-          Living · as · Sacred
+      <div className="z-10 absolute top-32 md:top-10 left-5">
+        <h1 className="text-6xl text-center md:text-left md:text-6xl xl:text-7xl 2xl:text-8xl font-serif normal-case text-red tracking-tight">
+          Living as Sacred
         </h1>
-        <h1 className="text-6xl xl:text-7xl 2xl:text-8xl font-serif uppercase text-red tracking-tight">
+        <h1 className="text-6xl md:text-6xl xl:text-7xl 2xl:text-8xl font-serif uppercase text-red tracking-tight">
           April – July 2022
         </h1>
-        <h1 className="text-6xl xl:text-7xl 2xl:text-8xl font-serif uppercase text-red tracking-tight">
+        <h1 className="text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl font-serif uppercase text-red tracking-tight">
           <em>Online</em>
         </h1>
       </div>
+      {/* <div className=" absolute left-5 bottom-10 block md:hidden">
+        <StaticImage
+          src="../images/logo-transparent.png"
+          alt="logo"
+          placeholder="blurred"
+          className=""
+        />
+      </div> */}
     </div>
   )
 }
@@ -166,7 +174,9 @@ function JoannaMacy({ content }) {
 function Values({ content }) {
   return (
     <div className="top-margin-lg w-full py-12 bg-leaves bg-cover">
-      <h1 className="text-center text-cream">{content.valuesSectionTitle}</h1>
+      <h1 className="text-center text-black md:text-cream mb-10 md:mb-0">
+        {content.valuesSectionTitle}
+      </h1>
       <div className="flex flex-wrap md:grid grid-cols-12 place-items-center place-content-center items-center">
         <div className="col-start-1 col-span-3">
           <Value text={content.valuesList[0].value} />
@@ -175,7 +185,7 @@ function Values({ content }) {
           <h2 className="text-center text-cream">·</h2>
           <Value text={content.valuesList[2].value} />
         </div>
-        <div className="flex justify-center my-5 md:my-10 col-start-4 col-span-6 ">
+        <div className="flex justify-center my-5 md:my-10 col-start-4 col-span-6 m-3 md:m-0  ">
           <GatsbyImage
             image={content.valuesImage.gatsbyImageData}
             alt={content.valuesImage.alt}
@@ -197,7 +207,7 @@ function Values({ content }) {
 
 function Value({ text }) {
   return (
-    <h2 className="px-8 pt-1 pb-3 rounded-3xl text-black text-center bg-beige hover:bg-green">
+    <h2 className="px-6 md:px-8 pt-1 pb-3 rounded-2xl md:rounded-3xl text-black text-center bg-beige hover:bg-green">
       <StructuredText data={text} />
     </h2>
   )
@@ -234,7 +244,7 @@ function Offering({ content }) {
         ))}
       </div>
       {/* Small tablet */}
-      <div className="hidden md:grid lg:hidden top-margin-medium relative z-10 md:grid-cols-2 grid-rows-2  hover:text-green">
+      <div className="hidden md:grid lg:hidden top-margin-medium relative z-10 md:grid-cols-2 grid-rows-2">
         {content.offeringItem.map((block, i) => (
           <div
             className={`border-r border-b border-green bg-green hover:bg-beige  rounded-xl transition ease-in duration-100 ${
@@ -252,11 +262,11 @@ function Offering({ content }) {
         ))}
       </div>
       {/* mobile */}
-      <div className="grid md:hidden top-margin-medium relative z-10 grid-cols-1 grid-rows-2 hover:text-green">
+      <div className="grid md:hidden top-margin-medium relative z-10 grid-cols-1 grid-rows-2">
         {content.offeringItem.map((block, i) => (
           <div
-            className={`border-t border-green  bg-green hover:bg-beige  transition ease-in duration-100 ${
-              i === 0 ? "border-b" : ""
+            className={`border-t border-cream  bg-green hover:bg-beige rounded-xl transition ease-in duration-100 ${
+              i === 0 ? "border-t" : ""
             } `}
             key={block.id}
             key={i}
@@ -276,25 +286,33 @@ function Offering({ content }) {
 function CTAMove({ content }) {
   return (
     <div className="top-margin-lg w-full xl:mb-12 flex justify-center flex-col">
-      <div className="flex justify-between items-center">
+      <div className="flex flex-nowrap justify-between items-center">
         <GatsbyImage
           image={content.ctaImage2.gatsbyImageData}
           alt={content.ctaImage2.alt}
           placeholder="blurred"
-          className=" rounded-xl"
+          className="basis-2/3 ml-3 md:ml-0 md:basis-auto z-10 rounded-xl"
         />
         <GatsbyImage
           image={content.ctaImage3.gatsbyImageData}
           alt={content.ctaImage3.alt}
           placeholder="blurred"
-          className="md:ml-5 rounded-xl"
+          className="hidden md:block md:basis-auto z-0 md:ml-5 rounded-xl"
         />
       </div>
-      <h4 className="top-margin-medium mx-large text-center text-red">
+      <h4 className="mt-10 md:mt-12 mx-large text-center text-red">
         <StructuredText data={content.ctaS2} />
       </h4>
       <div className="flex justify-center">
         <Button cta={content.cta} />
+      </div>
+      <div className="flex md:hidden mt-10 md:mt-0 justify-end">
+        <GatsbyImage
+          image={content.ctaImage3.gatsbyImageData}
+          alt={content.ctaImage3.alt}
+          placeholder="blurred"
+          className="mx-3 rounded-xl"
+        />
       </div>
     </div>
   )
@@ -302,20 +320,27 @@ function CTAMove({ content }) {
 
 function Timeline({ content }) {
   return (
-    <div id="timeline" className="section xl:min-h-screen beige-card">
+    <div
+      id="timeline"
+      className="section xl:min-h-screen md:bg-beige rounded-xl md:px-5 py-10"
+    >
       <h1 className="text-center z-50">{content.timelineSectionTitle}</h1>
 
-      <div className="grid grid-cols-5 z-10   ">
+      <div className="md:grid grid-cols-5 z-10   ">
         {content.contentModules.map((block, i) => (
           <div
             key={block.id}
             key={i}
-            className="grid grid-rows-3 gap-y-10 hover:bg-cream rounded-2xl transition ease-in duration-100 p-3"
+            className={`my-8 md:my-0 md:grid grid-rows-3 gap-y-10 md:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:p-3 border border-green md:border-none ${
+              i % 2 === 0 ? "bg-beige" : "bg-cream md:bg-beige"
+            }`}
           >
             {/* Title */}
-            <div className="md:transform -translate-y-10 row-start-1 row-span-1 border-b border-darkgreen self-end">
+            <div className="mt-12 mb-8 md:my-0 md:transform md:-translate-y-10 row-start-1 row-span-1 border-b border-darkgreen self-end">
               <div className="flex flex-col items-stretch">
-                <h2 className="text-center leading-none pb-5">{block.title}</h2>
+                <h2 className="text-center leading-none pb-5 text-3xl md:text-xl 2xl:text-2xl">
+                  {block.title}
+                </h2>
                 <span className="flex justify-between monotext pb-1">
                   <p className="inline-block">{block.startDate}</p>
                   <p className="inline-block">{block.endDate}</p>
@@ -323,7 +348,7 @@ function Timeline({ content }) {
               </div>
             </div>
             {/* Weeks */}
-            <div className="row-start-2 row-span-1 flex flex-col justify-center ">
+            <div className="-mx-2 md:-mx-0 my-8 md:my-0 row-start-2 row-span-1 flex flex-col justify-center ">
               {block.weeks.map((week, i) => (
                 <div key={week.id} key={i}>
                   <span className="flex items-center justify-between mb-3">
@@ -338,7 +363,7 @@ function Timeline({ content }) {
                 </div>
               ))}
             </div>
-            <p className="row-start-3 text-sm 2xl:text-base px-2 -mt-4">
+            <p className="row-start-3 text-base -mx-2 md:-mx-0 md:px-2 md:-mt-4">
               <StructuredText data={block.moduleDescription} />
             </p>
           </div>
@@ -487,7 +512,7 @@ function Soul({ content }) {
   return (
     <div className="section mx-sm">
       <div className="md:flex justify-between ">
-        <div className="md:mr-10 w-2/3 ">
+        <div className="md:mr-10 w-11/12 md:w-2/3 ">
           <h4 className="text-red self-end">
             <StructuredText data={content.ifYourSoulIsCallingForIntro} />
           </h4>
@@ -498,8 +523,8 @@ function Soul({ content }) {
             className="rounded-2xl top-margin-medium "
           />
         </div>
-        <span className="w-1/3 self-end">
-          <p className="w-5/6 leading-tight">
+        <span className="md:w-1/3 self-end">
+          <p className="mt-10 md:mt-0 w-11/12 md:w-5/6 leading-tight">
             <StructuredText data={content.ifYourSoulIsCallingFor} />
           </p>
           <Button cta={content.cta} />

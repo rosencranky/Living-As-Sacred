@@ -17,7 +17,7 @@
   }
 
   body {
-    @apply text-blacker text-sm md:text-base 2xl:text-lg  bg-cream font-serif antialiased;
+    @apply text-blacker text-base md:text-base 2xl:text-lg  bg-cream font-serif antialiased;
   }
 
   p {
@@ -28,12 +28,8 @@
     @apply text-2xl md:text-3xl xl:text-4xl 2xl:text-5xl text-black font-serif antialiased leading-tighter tracking-tight;
   }
 
-  h2 em {
-    /* @apply text-black; */
-  }
-
   h1 {
-    @apply text-black text-sm xl:text-xl font-mono tracking-wider uppercase antialiased leading-tight mb-2;
+    @apply text-black text-base xl:text-xl font-mono tracking-wider uppercase antialiased leading-tight mb-2;
   }
 
   h3 {
@@ -68,7 +64,7 @@
 
 @layer utilities {
   .section {
-    @apply mt-12 lg:mt-24 mx-3 lg:mx-10;
+    @apply mt-12 md:mt-20 md:mt-24 mx-3 lg:mx-10;
   }
 
   .mx-large {
@@ -79,24 +75,16 @@
     @apply mx-3 md:mx-12 xl:mx-24 2xl:mx-32;
   }
 
-  .top-margin-lg {
-    @apply mt-24;
-  }
-
   .btm-margin-lg {
-    @apply mb-24;
-  }
-
-  .section-full {
-    @apply mt-24 mx-3 lg:mx-5 2xl:mx-3;
+    @apply mb-20 lg:mb-24;
   }
 
   .top-margin-lg {
-    @apply mt-12 lg:mt-24;
+    @apply mt-12 md:mt-20 md:mt-24;
   }
 
   .top-margin-medium {
-    @apply mt-12;
+    @apply mt-10 md:mt-12;
   }
 
   .top-margin-sm {
