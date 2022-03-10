@@ -29,7 +29,7 @@
   }
 
   h1 {
-    @apply text-black text-base xl:text-xl font-mono tracking-wider uppercase antialiased leading-tight mb-2;
+    @apply text-black text-sm md:text-base xl:text-xl font-mono tracking-wider uppercase antialiased leading-tight mb-2;
   }
 
   h3 {
@@ -60,7 +60,7 @@
   }
 
   .navlinks {
-    @apply block text-5xl text-black mb-1 xl:mr-4 xl:font-mono xl:tracking-wider xl:uppercase xl:text-base no-underline xl:hover:underline  xl:inline-block xl:mt-0;
+    @apply block text-4xl md:text-5xl text-black mb-1 xl:mr-4 xl:font-mono xl:tracking-wider xl:uppercase xl:text-base no-underline xl:hover:underline  xl:inline-block xl:mt-0;
   }
 
   .img {

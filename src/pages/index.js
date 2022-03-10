@@ -55,7 +55,7 @@ function Hero() {
   return (
     <div
       id="hero"
-      className="h-screen max-h-screen xl:bg-hero bg-center bg-contain bg-no-repeat"
+      className="h-90 xl:h-screen max-h-screen xl:bg-hero bg-center bg-contain bg-no-repeat"
     >
       <Header />
       <div className="hidden xl:block  z-10 absolute xl:top-10 left-5">
@@ -73,7 +73,7 @@ function Hero() {
         </h1>
       </div>
 
-      <div className="block xl:hidden overflow-hidden overscroll-x-none w-screen z-0 absolute left-5 bottom-0 transform rotate-45 translate-y-3">
+      <div className="block xl:hidden z-0 mt-64 xl:absolute xl:bottom-0 transform xl:rotate-45 translate-y-3">
         <StaticImage
           src="../images/living-as-sacred-logo-mobile.jpg"
           alt="logo"
@@ -81,13 +81,13 @@ function Hero() {
           className="z-0 overflow-hidden"
           width="500"
         />
-        <StaticImage
+        {/* <StaticImage
           src="../images/living-as-sacred-logo-mobile.jpg"
           alt="logo"
           placeholder="blurred"
           className="z-0 overflow-hidden"
           width="500"
-        />
+        /> */}
       </div>
     </div>
   )
@@ -117,7 +117,7 @@ function About({ content }) {
             image={content.missionImage.gatsbyImageData}
             alt={content.missionImage.alt}
             placeholder="blurred"
-            className="rounded-full m-5"
+            className="rounded-full md:m-5"
           />
         </div>
         <p className="mx-3 leading-tight">
@@ -132,7 +132,7 @@ function About({ content }) {
             image={content.purposeImage.gatsbyImageData}
             alt={content.purposeImage.alt}
             placeholder="blurred"
-            className="rounded-full m-5 transition filter duration-600"
+            className="rounded-full md:m-5 transition filter duration-600"
           />
         </div>
         <p className="mx-3 leading-tight">
@@ -147,7 +147,7 @@ function About({ content }) {
             image={content.visionImage.gatsbyImageData}
             alt={content.visionImage.alt}
             placeholder="blurred"
-            className="rounded-full m-5"
+            className="rounded-full md:m-5"
           />
         </div>
         <p className="mx-3 leading-tight">

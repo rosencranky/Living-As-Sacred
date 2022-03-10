@@ -10,7 +10,7 @@ function Header() {
       <div className="block fixed top-8 right-4 z-40 xl:hidden">
         <button
           onClick={() => toggleExpansion(!isExpanded)}
-          className={`z-40  text-red  transition ease-in-out duration-300 ${
+          className={`z-40  fixed top-8 right-4 text-red  transition ease-in-out duration-300 ${
             !isExpanded ? "rotate-0" : "rotate-45"
           }`}
         >
@@ -45,7 +45,9 @@ function Header() {
       {/* Mobile Nav */}
       <div
         className={`${
-          isExpanded ? `block xl:hidden bg-green h-screen` : `hidden`
+          isExpanded
+            ? `fixed top-0  block xl:hidden bg-green h-screen`
+            : `hidden`
         } z-20 w-full  flex-grow flex items-start `}
       >
         <div className="mt-16 ml-4">
