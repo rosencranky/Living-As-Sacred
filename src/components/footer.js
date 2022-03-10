@@ -3,12 +3,12 @@ import { Link } from "gatsby"
 
 export default function Footer() {
   return (
-    <footer className="w-full top-margin-lg flex justify-between items-end pb-5 md:pb-10 px-5 md:px-10  pt-12 md:pt-12  border-t border-green bg-darkgreen rounded-t-xl  sticky">
-      <div className="flex flex-col items-end text-beige">
+    <footer className=" w-full top-margin-lg flex justify-between items-end pb-10 px-5 xl:px-10  pt-8 xl:pt-12  bg-darkgreen rounded-t-xl">
+      <div className="flex flex-col items-end text-beige -mb-2">
         <p> © {new Date().getFullYear()} </p>
       </div>
       <div className=" flex flex-col lg:flex-row items-end text-beige">
-        <p className=" -mb-1 text-right md:text-left">
+        <p className=" -mb-1 text-right xl:text-left">
           <Link
             to={`/terms`}
             className="monotext text-base no-underline hover:underline lg:ml-5"
@@ -16,7 +16,7 @@ export default function Footer() {
             Terms & Conditions
           </Link>
         </p>
-        <p className="-mb-1 text-right md:text-left">
+        <p className="-mb-1 text-right xl:text-left">
           <Link
             to={"/privacy"}
             className="monotext  text-base no-underline hover:underline md:ml-5"
@@ -24,7 +24,7 @@ export default function Footer() {
             Privacy
           </Link>
         </p>
-        <p className="-mb-1 text-right md:text-left">
+        <p className="-mb-1 text-right xl:text-left">
           <a
             href={"https://joannaherman.com"}
             target="_blank"
@@ -34,17 +34,34 @@ export default function Footer() {
             Site Credit
           </a>
         </p>
-        <p className=" -mb-1 text-right md:text-left">
+        <p className=" -mb-1 text-right xl:text-left">
           <a
             href={"mailto:livingasacred@gmail.com"}
             target="_blank"
             rel="noreferrer noopener"
-            className="monotext text-base no-underline hover:underline md:ml-5 md:mr-10"
+            className="monotext text-base no-underline hover:underline md:ml-5 xl:mr-10"
           >
             Contact
           </a>
         </p>
-        <div className="flex justify-end mt-10 ">
+        <span className="mt-10 xl:mt-0 inline-block">
+          <Link
+            to={`/`}
+            className="font-serif text-xl hover:underline lg:ml-6"
+            activeClassName="underline"
+          >
+            EN
+          </Link>
+          /
+          <Link
+            to={`/pt`}
+            className="font-serif text-xl hover:underline lg:mr-6"
+            activeClassName="underline"
+          >
+            PT
+          </Link>
+        </span>
+        <div className="flex justify-end mt-10">
           <a
             href="https://www.instagram.com/living.as.sacred/"
             target="_blank"
@@ -78,6 +95,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
+            // TODO: ADD TEELGRAM LINK
             href="https://www.instagram.com/living.as.sacred/"
             target="_blank"
             rel="noreferrer noopener"
@@ -89,7 +107,6 @@ export default function Footer() {
             >
               <g>
                 <path
-                  // style="fill-rule:evenodd;clip-rule:evenodd;"
                   d="M0,0v455h455V0H0z M384.814,100.68l-53.458,257.136
           c-1.259,6.071-8.378,8.822-13.401,5.172l-72.975-52.981c-4.43-3.217-10.471-3.046-14.712,0.412l-40.46,32.981
           c-4.695,3.84-11.771,1.7-13.569-4.083l-28.094-90.351l-72.583-27.089c-7.373-2.762-7.436-13.171-0.084-16.003L373.36,90.959
@@ -97,7 +114,6 @@ export default function Footer() {
                   fill="currentColor"
                 />
                 <path
-                  // style="fill-rule:evenodd;clip-rule:evenodd;"
                   d="M313.567,147.179l-141.854,87.367c-5.437,3.355-7.996,9.921-6.242,16.068
           l15.337,53.891c1.091,3.818,6.631,3.428,7.162-0.517l3.986-29.553c0.753-5.564,3.406-10.693,7.522-14.522l117.069-108.822
           C318.739,149.061,316.115,145.614,313.567,147.179z"

@@ -13,7 +13,7 @@ import Marquee from "react-fast-marquee"
 
 export default function IndexPage({ data }) {
   return (
-    <Layout>
+    <>
       <SEO title="Home" description="Landing page for Living as Sacred." />
       <EarlyBirdMarquee content={data.content} />
       <Hero />
@@ -30,7 +30,7 @@ export default function IndexPage({ data }) {
       <Supporting content={data.content} />
       <Soul content={data.content} />
       <Footer content={data.content} />
-    </Layout>
+    </>
   )
 }
 
@@ -55,28 +55,40 @@ function Hero() {
   return (
     <div
       id="hero"
-      className="h-screen max-h-screen md:bg-hero bg-center bg-contain"
+      className="h-screen max-h-screen xl:bg-hero bg-center bg-contain bg-no-repeat"
     >
       <Header />
-      <div className="z-10 absolute top-32 md:top-10 left-5">
-        <h1 className="text-6xl text-center md:text-left md:text-6xl xl:text-7xl 2xl:text-8xl font-serif normal-case text-red tracking-tight">
-          Living as Sacred
-        </h1>
-        <h1 className="text-6xl md:text-6xl xl:text-7xl 2xl:text-8xl font-serif uppercase text-red tracking-tight">
-          April – July 2022
-        </h1>
-        <h1 className="text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl font-serif uppercase text-red tracking-tight">
-          <em>Online</em>
+      <div className="hidden xl:block  z-10 absolute xl:top-10 left-5">
+        <h1 className="text-left xl:text-7xl 2xl:text-8xl font-serif normal-case text-red tracking-tight leading-tight">
+          Living · as · Sacred
+          <br /> April – July 2022
+          <br /> <em>Online</em>
         </h1>
       </div>
-      {/* <div className=" absolute left-5 bottom-10 block md:hidden">
+      <div className="block xl:hidden w-screen max-w-screen overflow-hidden  z-10 absolute top-5 left-0 ">
+        <h1 className="mt-4 ml-3 text-3xl md:text-4xl lg:text-5xl font-serif normal-case text-red tracking-tight">
+          Living · as · Sacred
+          <br /> April – July 2022
+          <br /> <em>Online</em>
+        </h1>
+      </div>
+
+      <div className="block xl:hidden overflow-hidden overscroll-x-none w-screen z-0 absolute left-5 bottom-0 transform rotate-45 translate-y-3">
         <StaticImage
-          src="../images/logo-transparent.png"
+          src="../images/living-as-sacred-logo-mobile.jpg"
           alt="logo"
           placeholder="blurred"
-          className=""
+          className="z-0 overflow-hidden"
+          width="500"
         />
-      </div> */}
+        <StaticImage
+          src="../images/living-as-sacred-logo-mobile.jpg"
+          alt="logo"
+          placeholder="blurred"
+          className="z-0 overflow-hidden"
+          width="500"
+        />
+      </div>
     </div>
   )
 }
@@ -120,7 +132,7 @@ function About({ content }) {
             image={content.purposeImage.gatsbyImageData}
             alt={content.purposeImage.alt}
             placeholder="blurred"
-            className="rounded-full m-5 "
+            className="rounded-full m-5 transition filter duration-600"
           />
         </div>
         <p className="mx-3 leading-tight">

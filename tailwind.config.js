@@ -26,7 +26,7 @@ module.exports = {
         // 'tiny': '.875rem',
         // 'base': '1rem',
         // 'lg': '1.125rem',
-        // 'xl': '1.25rem',
+        xl: "1.2rem",
         // '2xl': '1.5rem',
         // '3xl': '1.875rem',
         // '4xl': '2.25rem',
@@ -35,7 +35,7 @@ module.exports = {
         // '7xl': '5rem',
       },
       backgroundImage: {
-        hero: "url('../images/logo-transparent.png')",
+        hero: "url('../images/living-as-sacred-logo-final.jpg')",
         banner: "url('../images/jornada-4.jpeg')",
         leaves: "url('../images/leaves.jpg')",
         hands: "url('../images/hands.jpg')",

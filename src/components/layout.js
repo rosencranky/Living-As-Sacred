@@ -10,6 +10,8 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
+import { Link } from "gatsby"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,7 +27,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <div
-        className=""
+        className="min-h-screen"
         style={
           {
             // margin: `0 auto`,
@@ -34,7 +36,17 @@ const Layout = ({ children }) => {
           }
         }
       >
+        <h1 className="z-0 absolute top-6 left-3 text-3xl  font-serif normal-case text-red tracking-tight">
+          <Link to="/" title="Home">
+            Living · as · Sacred
+          </Link>
+        </h1>
+        <div className="transform xl:transform-none -translate-y-5">
+          <Header />
+        </div>
         <main>{children}</main>
+
+        <Footer />
       </div>
     </>
   )

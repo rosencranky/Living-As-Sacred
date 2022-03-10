@@ -41,7 +41,7 @@
   }
 
   a {
-    @apply underline;
+    /* @apply underline; */
   }
   /* Headings following paragraphs */
   p + h1,
@@ -57,6 +57,20 @@
 
   .monotext {
     @apply text-sm xl:text-xl font-mono tracking-wider uppercase antialiased;
+  }
+
+  .navlinks {
+    @apply block text-5xl text-black mb-1 xl:mr-4 xl:font-mono xl:tracking-wider xl:uppercase xl:text-base no-underline xl:hover:underline  xl:inline-block xl:mt-0;
+  }
+
+  .img {
+    transition: filter 1s;
+    transition-property: filter;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    will-change: filter;
+    opacity: 1 !important;
   }
 }
 @tailwind components;

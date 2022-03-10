@@ -2,14 +2,12 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Header from "../components/header"
-import Footer from "../components/footer"
 
 const Contact = () => (
   <Layout>
-    <SEO title="Privacy Policy" />
-    <Header />
-    <div className="flex justify-center ">
+    <SEO title="Contact Form" />
+
+    <div className="mt-32 md:mt-48 xl:mt-12 flex justify-center overflow-y-hidden">
       <div className="w-full lg:w-1/2 xl:w-8/12 px-4 min-h-screen ">
         <h1 className="text-center top-margin-medium ">Contact us</h1>
         <form className="relative top-margin-medium  ">
@@ -59,7 +57,6 @@ const Contact = () => (
         </form>
       </div>
     </div>
-    <Footer />
   </Layout>
 )
 
