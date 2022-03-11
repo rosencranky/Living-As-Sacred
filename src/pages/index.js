@@ -55,7 +55,7 @@ function Hero() {
   return (
     <div
       id="hero"
-      className="h-screen lg:h-screen max-h-screen lg:bg-hero bg-center bg-contain bg-no-repeat"
+      className="h-screen xl:h-screen max-h-screen md:bg-hero bg-center bg-contain bg-no-repeat"
     >
       <Header />
       <div className="z-10 absolute top-6 left-0 xl:top-5 xl:left-5">
@@ -65,11 +65,7 @@ function Hero() {
           <br /> <em>Online</em>
         </h1>
       </div>
-      {/* <div className="absolute bottom-10">
-        <br /> April – July 2022
-        <br /> <em>Online</em>
-      </div> */}
-      <div className="block j lg:hidden z-0 translate-y-3 absolute bottom-[10%]">
+      <div className="block md:hidden z-0 translate-y-3 absolute bottom-[10%]">
         <StaticImage
           src="../images/living-as-sacred-logo-mobile.jpg"
           alt="logo"
@@ -84,7 +80,7 @@ function Hero() {
 
 function Intro({ content }) {
   return (
-    <div id="about" className="mt-0 md:mt-24 mx-3 lg:mx-10 section-center ">
+    <div id="about" className="mt-0 xl:mt-24 mx-3 lg:mx-10 section-center ">
       <span className="mx-medium">
         <h1 className="text-center">{content.introSectionTitle} </h1>
         <h2 className="z-10 text-center text-red leading-tighter">
@@ -106,7 +102,7 @@ function About({ content }) {
             image={content.missionImage.gatsbyImageData}
             alt={content.missionImage.alt}
             placeholder="blurred"
-            className="rounded-full md:m-5"
+            className="rounded-full xl:m-5 overflow-hidden circle"
           />
         </div>
         <div className="mx-1 md:mx-3 leading-tight top-margin-sm">
@@ -121,7 +117,7 @@ function About({ content }) {
             image={content.purposeImage.gatsbyImageData}
             alt={content.purposeImage.alt}
             placeholder="blurred"
-            className="rounded-full md:m-5 transition filter duration-600"
+            className="rounded-full xl:m-5 overflow-hidden circle"
           />
         </div>
         <div className="mx-1 md:mx-3 leading-tight top-margin-sm">
@@ -136,7 +132,7 @@ function About({ content }) {
             image={content.visionImage.gatsbyImageData}
             alt={content.visionImage.alt}
             placeholder="blurred"
-            className="rounded-full md:m-5"
+            className="rounded-full xl:m-5 overflow-hidden circle"
           />
         </div>
         <div className="mx-1 md:mx-3 leading-tight top-margin-sm">
@@ -178,23 +174,23 @@ function Values({ content }) {
       <h1 className="text-center text-black md:text-cream mb-10 md:mb-0">
         {content.valuesSectionTitle}
       </h1>
-      <div className="flex flex-wrap md:grid grid-cols-12 place-items-center place-content-center items-center">
-        <div className="col-start-1 col-span-3">
+      <div className="flex flex-wrap md:grid gap-x-5 xl:gap-x-0 grid-cols-12 place-items-center place-content-center items-center">
+        <div className="md:ml-16 xl:ml-0 col-start-1 col-span-3">
           <Value text={content.valuesList[0].value} />
           <h2 className="text-center text-cream">·</h2>
           <Value text={content.valuesList[1].value} />
           <h2 className="text-center text-cream">·</h2>
           <Value text={content.valuesList[2].value} />
         </div>
-        <div className="flex justify-center my-5 md:my-10 col-start-4 col-span-6 m-3 md:m-0  ">
+        <div className="flex justify-center my-5 md:my-10 col-start-4 col-span-6 m-3 md:m-5 xl:p-3 rounded-xl overflow-hidden ">
           <GatsbyImage
             image={content.valuesImage.gatsbyImageData}
             alt={content.valuesImage.alt}
             placeholder="blurred"
-            className="rounded-full"
+            className="rounded-xl overflow-hidden circle"
           />
         </div>
-        <div className="col-start-10 col-span-3">
+        <div className="md:mr-16 xl:mr-0 col-start-10 col-span-3">
           <Value text={content.valuesList[3].value} />
           <h2 className="text-center text-cream">·</h2>
           <Value text={content.valuesList[4].value} />
@@ -208,7 +204,7 @@ function Values({ content }) {
 
 function Value({ text }) {
   return (
-    <h2 className="px-6 md:px-8 pt-1 pb-3 rounded-2xl md:rounded-3xl text-black text-center bg-beige hover:bg-green">
+    <h2 className="px-6 md:px-4 xl:px-8 pt-1 pb-3 rounded-2xl xl:rounded-3xl text-black text-center bg-beige hover:bg-green">
       <StructuredText data={text} />
     </h2>
   )
@@ -244,26 +240,8 @@ function Offering({ content }) {
           </div>
         ))}
       </div>
-      {/* Small tablet */}
-      <div className="hidden md:grid lg:hidden top-margin-medium relative z-10 md:grid-cols-2 grid-rows-2">
-        {content.offeringItem.map((block, i) => (
-          <div
-            className={`border-r border-b border-green bg-green hover:bg-beige  rounded-xl transition ease-in duration-100 ${
-              i < 2 ? "border-t-2" : ""
-            } ${i % 2 === 0 ? "border-l" : ""}`}
-            key={block.id}
-            key={i}
-          >
-            <AccordionGrid
-              index={i}
-              excerpt={block.offeringShortText}
-              fullText={block.offeringItemText}
-            />
-          </div>
-        ))}
-      </div>
       {/* mobile */}
-      <div className="grid md:hidden top-margin-medium relative z-10 grid-cols-1 grid-rows-2">
+      <div className="grid xl:hidden top-margin-medium relative z-10 grid-cols-1 grid-rows-2">
         {content.offeringItem.map((block, i) => (
           <div
             className={`border-t border-cream  bg-green hover:bg-beige rounded-xl transition ease-in duration-100 ${
@@ -327,22 +305,21 @@ function Timeline({ content }) {
   return (
     <div
       id="timeline"
-      className="section xl:min-h-screen md:bg-beige rounded-xl md:px-5 md:py-10"
+      className="section xl:min-h-screen xl:bg-beige rounded-xl xl:px-5 xl:py-10"
     >
       <h1 className="text-center z-50">{content.timelineSectionTitle}</h1>
 
-      <div className="md:grid grid-cols-5 z-10   ">
+      <div className="xl:grid grid-cols-5 z-10  flex flex-row flex-wrap justify-center ">
         {content.contentModules.map((block, i) => (
           <div
             key={block.id}
             key={i}
-            className={`my-8 md:my-0 md:grid grid-rows-3 gap-y-0 bg-beige md:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:p-3 border border-green md:border-none 
+            className={`md:basis-5/12 md:mx-3 xl:mx-0 my-8 xl:my-0 xl:grid grid-rows-3 gap-y-0 bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 xl:p-3 border border-green xl:border-none 
             
             `}
           >
             {/* Title */}
-            <div className="my-8 md:my-0 md:transform md:-translate-y-16 row-start-1 row-span-1 border-b border-green self-end">
-              {/* <div className="flex flex-col items-stretch"> */}
+            <div className="my-8 xl:my-0 xl:transform xl:-translate-y-16 row-start-1 row-span-1 border-b border-green self-end">
               <h2 className="text-center leading-tight pb-5 text-3xl md:text-xl xl:text-4xl">
                 {block.title}
               </h2>
@@ -350,10 +327,9 @@ function Timeline({ content }) {
                 <p className="inline-block">{block.startDate}</p>
                 <p className="inline-block">{block.endDate}</p>
               </div>
-              {/* </div> */}
             </div>
             {/* Weeks */}
-            <div className="-mx-2 md:-mx-0 md:transform md:-translate-y-12 my-8 md:my-0 row-start-2 row-span-1 flex flex-col justify-center ">
+            <div className="-mx-2 xl:-mx-0 xl:transform xl:-translate-y-12 my-8 md:my-0 row-start-2 row-span-1 flex flex-col justify-center ">
               {block.weeks.map((week, i) => (
                 <div key={week.id} key={i}>
                   <span className="flex items-center justify-between mb-3">
@@ -368,7 +344,7 @@ function Timeline({ content }) {
                 </div>
               ))}
             </div>
-            <div className="row-start-3 text-basesm  md:-mt-4">
+            <div className="row-start-3 text-basesm leading-tight xl:-mt-4">
               <StructuredText data={block.moduleDescription} />
             </div>
           </div>
@@ -464,7 +440,7 @@ function Bios({ content }) {
   return (
     <div className="section  mx-medium" id="women">
       <h1 className="text-center">{content.womenSectionTitle}</h1>
-      <div className="top-margin-medium grid grid-cols-2 md:grid-cols-5 place-content-center gap-2">
+      <div className="top-margin-medium grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 place-content-center gap-2">
         {content.women.map((node, i) => {
           return (
             <Link
@@ -479,7 +455,7 @@ function Bios({ content }) {
                       image={node.image.gatsbyImageData}
                       alt={node.image.alt}
                       placeholder="blurred"
-                      className="rounded-xl"
+                      className="rounded-xl overflow-hidden circle"
                     />
                     <p className="text-5xl md:text-6xl lg:text-7xl absolute top-3 right-3 text-red ">
                       *
@@ -492,7 +468,7 @@ function Bios({ content }) {
                       image={node.image.gatsbyImageData}
                       alt={node.image.alt}
                       placeholder="blurred"
-                      className="rounded-xl"
+                      className="rounded-xl overflow-hidden circle"
                     />
                   </div>
                 )}
@@ -547,7 +523,7 @@ function Supporting({ content }) {
 
 function Soul({ content }) {
   return (
-    <div className="section mx-medium">
+    <div className="section mx-sm">
       <div className="md:flex justify-between ">
         <div className="md:mr-10  md:w-2/3 ">
           <h4 className="text-red self-end text-right md:text-left">
@@ -632,7 +608,7 @@ export const query = graphql`
         }
       }
       valuesImage {
-        gatsbyImageData(height: 600, width: 600, imgixParams: { fit: "crop" })
+        gatsbyImageData(height: 600, width: 400, imgixParams: { fit: "crop" })
         alt
       }
       offeringSectionTitle

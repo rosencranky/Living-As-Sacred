@@ -64,7 +64,8 @@ function Header() {
           <AnchorLink
             to={`/#timeline`}
             title="Timeline"
-            className="navlinks"
+            className="stripped navlinks"
+            stripHash
             onAnchorLinkClick={() => toggleExpansion(!isExpanded)}
           >
             Timeline
@@ -72,7 +73,8 @@ function Header() {
           <AnchorLink
             to={`/#women`}
             title="Meet us"
-            className="navlinks"
+            className="stripped navlinks"
+            stripHash
             onAnchorLinkClick={() => toggleExpansion(!isExpanded)}
           >
             Meet us
@@ -182,9 +184,14 @@ function Header() {
           <AnchorLink to={`/#timeline`} title="Timeline" className="navlinks">
             Timeline
           </AnchorLink>
-          <AnchorLink to={`/#women`} title="Meet us" className="navlinks">
+          <Link
+            to={`/#women`}
+            title="Meet us"
+            className="stripped navlinks"
+            stripHash
+          >
             Meet us
-          </AnchorLink>
+          </Link>
           <AnchorLink to={`/contact`} title="Contact" className="navlinks mr-6">
             Contact
           </AnchorLink>
