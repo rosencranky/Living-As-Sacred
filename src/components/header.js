@@ -4,13 +4,14 @@ import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false)
+  console.log(isExpanded)
 
   return (
-    <nav className="z-10 flex flex-wrap items-center justify-between xl:px-6 xl:pt-4 xl:mb-6">
-      <div className="block fixed top-8 right-4 z-40 xl:hidden">
+    <nav className="z-10 flex flex-wrap items-center justify-between lg:px-6 lg:pt-4 lg:mb-6">
+      <div className="block fixed top-8 right-4 z-40 lg:hidden">
         <button
           onClick={() => toggleExpansion(!isExpanded)}
-          className={`z-40  fixed top-8 right-4 text-red  transition ease-in-out duration-300 ${
+          className={`z-40  fixed top-2 right-4 text-red  transition ease-in-out duration-300 focus:outline-none ${
             !isExpanded ? "rotate-0" : "rotate-45"
           }`}
         >
@@ -28,7 +29,7 @@ function Header() {
               y2="12.5"
               fill="none"
               stroke="currentColor"
-              stroke-width="1"
+              strokeWidth="1"
             />
             <line
               y1="6"
@@ -37,7 +38,7 @@ function Header() {
               x2="12.5"
               fill="none"
               stroke="currentColor"
-              stroke-width="1"
+              strokeWidth="1"
             />
           </svg>
         </button>
@@ -46,11 +47,11 @@ function Header() {
       <div
         className={`${
           isExpanded
-            ? `fixed top-0  block xl:hidden bg-green h-screen`
+            ? `fixed top-0 w-full z-20 block lg:hidden bg-green h-screen`
             : `hidden`
-        } z-20 w-full  flex-grow flex items-start `}
+        }   `}
       >
-        <div className="mt-16 ml-4">
+        <div className="mt-16 ml-4 z-30">
           <AnchorLink to="/#about" title="About" className="navlinks">
             About
           </AnchorLink>
@@ -149,7 +150,7 @@ function Header() {
 
       {/* Desktop nav */}
       <div
-        className={`hidden xl:flex flex-grow items-center justify-end w-auto text-black`}
+        className={`hidden lg:flex flex-grow items-center justify-end w-auto text-black`}
       >
         <div className="justify-center self-center">
           <AnchorLink to="/#about" title="About" className="navlinks">

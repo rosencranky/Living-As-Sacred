@@ -2,20 +2,19 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
-import Layout from "../components/layout"
 import Footer from "../components/footer"
 import SEO from "../components/seo"
 import Button from "../components/Button"
 import { StructuredText } from "react-datocms"
 import Header from "../components/header"
 import AccordionGrid from "../components/Accordiongrid"
-import Marquee from "react-fast-marquee"
+// import Marquee from "react-fast-marquee"
 
 export default function IndexPage({ data }) {
   return (
     <>
       <SEO title="Home" description="Landing page for Living as Sacred." />
-      <EarlyBirdMarquee content={data.content} />
+      {/* <EarlyBirdMarquee content={data.content} /> */}
       <Hero />
       <Intro content={data.content} />
       <About content={data.content} />
@@ -34,60 +33,50 @@ export default function IndexPage({ data }) {
   )
 }
 
-function EarlyBirdMarquee({ content }) {
-  return (
-    <div className="z-50 sticky top-0 left-0 ">
-      <Marquee
-        className="h-6 monotext text-cream bg-red text-base"
-        gradient={false}
-      >
-        {content.priceBanner}
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        {content.priceBanner}
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        {content.priceBanner}
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      </Marquee>
-    </div>
-  )
-}
+// function EarlyBirdMarquee({ content }) {
+//   return (
+//     <div className="z-50 sticky top-0 left-0 ">
+//       <Marquee
+//         className="h-6 monotext text-cream bg-red text-base"
+//         gradient={false}
+//       >
+//         {content.priceBanner}
+//         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+//         {content.priceBanner}
+//         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+//         {content.priceBanner}
+//         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+//       </Marquee>
+//     </div>
+//   )
+// }
+
 function Hero() {
   return (
     <div
       id="hero"
-      className="h-90 xl:h-screen max-h-screen xl:bg-hero bg-center bg-contain bg-no-repeat"
+      className="h-screen lg:h-screen max-h-screen lg:bg-hero bg-center bg-contain bg-no-repeat"
     >
       <Header />
-      <div className="hidden xl:block  z-10 absolute xl:top-10 left-5">
-        <h1 className="text-left xl:text-7xl 2xl:text-8xl font-serif normal-case text-red tracking-tight leading-tight">
+      <div className="z-10 absolute top-6 left-0 xl:top-10 xl:left-5">
+        <h1 className="mt-0 ml-3 xl:mt-0 xl:ml-0 text-left text-3xl md:text-4xl lg:text-5xl xl:text-7xl 2xl:text-8xl font-serif normal-case text-red tracking-tight leading-tight">
           Living · as · Sacred
           <br /> April – July 2022
           <br /> <em>Online</em>
         </h1>
       </div>
-      <div className="block xl:hidden w-screen max-w-screen overflow-hidden  z-10 absolute top-5 left-0 ">
-        <h1 className="mt-4 ml-3 text-3xl md:text-4xl lg:text-5xl font-serif normal-case text-red tracking-tight">
-          Living · as · Sacred
-          <br /> April – July 2022
-          <br /> <em>Online</em>
-        </h1>
-      </div>
-
-      <div className="block xl:hidden z-0 mt-64 xl:absolute xl:bottom-0 transform xl:rotate-45 translate-y-3">
+      {/* <div className="absolute bottom-10">
+        <br /> April – July 2022
+        <br /> <em>Online</em>
+      </div> */}
+      <div className="block j lg:hidden z-0 translate-y-3 absolute  bottom-1/4">
         <StaticImage
           src="../images/living-as-sacred-logo-mobile.jpg"
           alt="logo"
           placeholder="blurred"
           className="z-0 overflow-hidden"
-          width="500"
+          width={500}
         />
-        {/* <StaticImage
-          src="../images/living-as-sacred-logo-mobile.jpg"
-          alt="logo"
-          placeholder="blurred"
-          className="z-0 overflow-hidden"
-          width="500"
-        /> */}
       </div>
     </div>
   )
@@ -95,10 +84,10 @@ function Hero() {
 
 function Intro({ content }) {
   return (
-    <div id="about" className="section section-center z-10">
+    <div id="about" className="mt-0 md:mt-24 mx-3 lg:mx-10 section-center ">
       <span className="mx-medium">
         <h1 className="text-center">{content.introSectionTitle} </h1>
-        <h2 className="text-center text-red leading-tighter">
+        <h2 className="z-10 text-center text-red leading-tighter">
           <StructuredText data={content.introtext1} />
         </h2>
       </span>
@@ -120,9 +109,9 @@ function About({ content }) {
             className="rounded-full md:m-5"
           />
         </div>
-        <p className="mx-3 leading-tight">
+        <div className="mx-3 leading-tight">
           <StructuredText data={content.mission} />
-        </p>
+        </div>
       </div>
       {/* Purpose */}
       <div className="mt-10 md:mt-0 md:col-start-2 flex flex-col justify-start items-center">
@@ -135,9 +124,9 @@ function About({ content }) {
             className="rounded-full md:m-5 transition filter duration-600"
           />
         </div>
-        <p className="mx-3 leading-tight">
+        <div className="mx-3 leading-tight">
           <StructuredText data={content.purpose} />
-        </p>
+        </div>
       </div>
       {/* Vision */}
       <div className="mt-10 md:mt-0 md:col-start-3 flex flex-col justify-start items-center">
@@ -150,9 +139,9 @@ function About({ content }) {
             className="rounded-full md:m-5"
           />
         </div>
-        <p className="mx-3 leading-tight">
+        <div className="mx-3 leading-tight">
           <StructuredText data={content.vision} />
-        </p>
+        </div>
       </div>
       <div className="col-span-3 flex justify-center place-self-center">
         <Button cta={content.cta} />
@@ -318,12 +307,12 @@ function CTAMove({ content }) {
       <div className="flex justify-center">
         <Button cta={content.cta} />
       </div>
-      <div className="flex md:hidden mt-10 md:mt-0 justify-end">
+      <div className="flex md:hidden mt-10 md:mt-0 justify-end rounded-xl">
         <GatsbyImage
           image={content.ctaImage3.gatsbyImageData}
           alt={content.ctaImage3.alt}
           placeholder="blurred"
-          className="mx-3 rounded-xl"
+          className="mx-3 "
         />
       </div>
     </div>
@@ -343,14 +332,14 @@ function Timeline({ content }) {
           <div
             key={block.id}
             key={i}
-            className={`my-8 md:my-0 md:grid grid-rows-3 gap-y-10 md:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:p-3 border border-green md:border-none ${
+            className={`my-8 md:my-0 md:grid grid-rows-3 gap-y-0 md:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:p-3 border border-green md:border-none ${
               i % 2 === 0 ? "bg-beige" : "bg-cream md:bg-beige"
             }`}
           >
             {/* Title */}
-            <div className="mt-12 mb-8 md:my-0 md:transform md:-translate-y-10 row-start-1 row-span-1 border-b border-darkgreen self-end">
+            <div className="my-8 md:my-0 md:transform md:-translate-y-10 row-start-1 row-span-1 border-b border-darkgreen self-end">
               <div className="flex flex-col items-stretch">
-                <h2 className="text-center leading-none pb-5 text-3xl md:text-xl 2xl:text-2xl">
+                <h2 className="text-center leading-none pb-5 text-3xl md:text-xl xl:text-4xl uppercase">
                   {block.title}
                 </h2>
                 <span className="flex justify-between monotext pb-1">
@@ -364,7 +353,7 @@ function Timeline({ content }) {
               {block.weeks.map((week, i) => (
                 <div key={week.id} key={i}>
                   <span className="flex items-center justify-between mb-3">
-                    <h3 className="bg-darkgreen w-12 h-12 2xl:w-14 2xl:h-14  rounded-full text-cream text-center flex justify-center items-center">
+                    <h3 className="bg-darkgreen w-10 h-10 2xl:w-14 2xl:h-14  rounded-full text-cream text-center flex justify-center items-center">
                       {week.weekNumber}
                     </h3>
 
@@ -375,9 +364,9 @@ function Timeline({ content }) {
                 </div>
               ))}
             </div>
-            <p className="row-start-3 text-base -mx-2 md:-mx-0 md:px-2 md:-mt-4">
+            <div className="row-start-3 text-base  md:px-2 md:-mt-4">
               <StructuredText data={block.moduleDescription} />
-            </p>
+            </div>
           </div>
         ))}
       </div>
@@ -396,44 +385,70 @@ function CTAPlants({ content }) {
   )
 }
 
+// function Price({ content }) {
+//   return (
+//     <div className="section mx-medium beige-card mb-12">
+//       <div className="md:grid grid-cols-6 gap-x-10 place-content-center">
+//         <div className="col-start-1 col-span-4">
+//           <h1 className="text-center">{content.valueSectionTitle}</h1>
+//           <h2 className="mt-12 text-5xl xl:text-7xl text-center">
+//             {content.price}
+//           </h2>
+//           <p className="text-center monotext text-sm xl:text-base text-red mt-6">
+//             {content.priceSubtext}
+//           </p>
+//           <div className="top-margin-sm flex justify-center">
+//             <h2 className="text-4xl xl:text-5xl 2xl:text-6xl text-center line-through decoration-red decoration-2 top-margin-sm">
+//               {content.price}
+//             </h2>
+
+//             <h2 className="text-4xl xl:text-5xl 2xl:text-6xl text-center leading-0 ml-5 p-2 border-2 border-red rounded-xl">
+//               210€
+//             </h2>
+//           </div>
+//         </div>
+//         {/* Price summary */}
+//         <div className="col-start-1 col-span-12">
+//           <h1 className="mt-12 md:mt-0">{content.offerResumeSectionTitle}</h1>
+//           <ul className="top-margin-sm">
+//             {content.including.map((block, i) => (
+//               <li key={i}>{block.offeringBulletPoint}</li>
+//             ))}
+//           </ul>
+//           <h1 className="mt-8 md:mt-12 ">{content.paymentTermsTitle}</h1>
+//           <p className="top-margin-sm ">{content.paymentTerms}</p>
+//         </div>
+//       </div>
+//       <div className="flex justify-center mt-6">
+//         <Button cta={content.cta} />
+//       </div>
+//     </div>
+//   )
+// }
+
 function Price({ content }) {
   return (
-    <div className="section mx-medium beige-card mb-12">
-      <div className="md:grid grid-cols-6 gap-x-10 place-content-center">
-        {/* Price */}
-        <div className="col-start-1 col-span-4">
-          <h1 className="text-center">{content.valueSectionTitle}</h1>
-          <h2 className="mt-12 text-5xl xl:text-7xl text-center">
-            {content.price}
-          </h2>
-          <p className="text-center monotext text-sm xl:text-base text-red mt-6">
-            {content.priceSubtext}
-          </p>
-          <div className="top-margin-sm flex justify-center">
-            {/* <span> */}
-            <h2 className="text-4xl xl:text-5xl 2xl:text-6xl text-center line-through decoration-red decoration-2 top-margin-sm">
-              {content.price}
-              {/* <span className="inline-block">*</span> */}
-              {/* <sup className="inline-block text-red monotext">-20%</sup> */}
-            </h2>
-            {/* </span> */}
-            <h2 className="text-4xl xl:text-5xl 2xl:text-6xl text-center leading-0 ml-5 p-2 border-2 border-red rounded-xl">
-              210€
-            </h2>
-          </div>
-        </div>
-        {/* Price summary */}
-        <div className="col-start-5 col-span-4">
-          <h1 className="mt-12 md:mt-0">{content.offerResumeSectionTitle}</h1>
-          <ul className="top-margin-sm">
-            {content.including.map((block, i) => (
-              <li key={i}>{block.offeringBulletPoint}</li>
-            ))}
-          </ul>
-          <h1 className="mt-8 md:mt-12 ">{content.paymentTermsTitle}</h1>
-          <p className="top-margin-sm ">{content.paymentTerms}</p>
-        </div>
-      </div>
+    <div className="section mx-medium beige-card mb-12 flex flex-col items-center text-center">
+      {/* Price summary */}
+
+      <h1 className="text-center">{content.valueSectionTitle}</h1>
+
+      <h2 className="mt-12 text-7xl xl:text-7xl text-center">
+        {content.price}
+      </h2>
+      <h1 className="top-margin-medium">{content.offerResumeSectionTitle}</h1>
+      <h3>
+        <ul className="top-margin-sm mx-0 md:mx-12 xl:mx-24 2xl:mx-32 text-center list-none">
+          {content.including.map((block, i) => (
+            <li className="mb-2" key={i}>
+              + {block.offeringBulletPoint}
+            </li>
+          ))}
+        </ul>
+      </h3>
+      <h1 className="top-margin-medium">{content.paymentTermsTitle}</h1>
+      <p className="top-margin-sm ">{content.paymentTerms}</p>
+
       <div className="flex justify-center mt-6">
         <Button cta={content.cta} />
       </div>
@@ -450,7 +465,7 @@ function Bios({ content }) {
           return (
             <Link
               to={`/women/${node.slug}`}
-              className="block cursor-pointer relative"
+              className="block cursor-pointer  z-10"
               key={i}
             >
               <div className="relative overflow-hidden">
@@ -479,7 +494,7 @@ function Bios({ content }) {
                     Read Bio
                   </p>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 w-full z-30 p-3">
+                <div className="absolute bottom-0 left-0 right-0 w-full p-3">
                   <div className="pb-2">
                     <h3 className="block text-center text-2xl uppercase text-cream leading-tight mb-1">
                       {node.name}
@@ -501,8 +516,8 @@ function Supporting({ content }) {
       <h1 className="text-center">{content.supportingSectionTitle}</h1>
       <div className="md:flex flex-row justify-around items-center top-margin-medium">
         {content.supportedProject.map((block, i) => (
-          <div>
-            <h2 className="text-center top-margin-sm" key={i}>
+          <div key={i}>
+            <h2 className="text-center top-margin-sm">
               <a
                 href={block.link}
                 target="_blank"
@@ -524,8 +539,8 @@ function Soul({ content }) {
   return (
     <div className="section mx-sm">
       <div className="md:flex justify-between ">
-        <div className="md:mr-10 w-11/12 md:w-2/3 ">
-          <h4 className="text-red self-end">
+        <div className="md:mr-10  md:w-2/3 ">
+          <h4 className="text-red self-end text-right md:text-left">
             <StructuredText data={content.ifYourSoulIsCallingForIntro} />
           </h4>
           <GatsbyImage
@@ -688,7 +703,7 @@ export const query = graphql`
           }
           image {
             gatsbyImageData(
-              height: 750
+              height: 800
               width: 600
               imgixParams: { fit: "crop" }
             )

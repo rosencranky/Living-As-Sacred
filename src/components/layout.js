@@ -36,14 +36,16 @@ const Layout = ({ children }) => {
           }
         }
       >
-        <h1 className="z-0 absolute top-6 left-3 text-3xl  font-serif normal-case text-red tracking-tight">
-          <Link to="/" title="Home">
-            Living · as · Sacred
-          </Link>
-        </h1>
-        <div className="transform xl:transform-none -translate-y-5">
-          <Header />
+        <div className="z-0 absolute top-6 left-3 ">
+          <h1 className="text-3xl  font-serif normal-case text-red tracking-tight">
+            <Link to="/" title="Home">
+              Living · as · Sacred
+            </Link>
+          </h1>
         </div>
+
+        <Header />
+
         <main>{children}</main>
 
         <Footer />

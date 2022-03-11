@@ -60,7 +60,7 @@
   }
 
   .navlinks {
-    @apply block text-4xl md:text-5xl text-black mb-1 xl:mr-4 xl:font-mono xl:tracking-wider xl:uppercase xl:text-base no-underline xl:hover:underline  xl:inline-block xl:mt-0;
+    @apply z-30 block text-4xl md:text-5xl text-black mb-1 lg:mr-4 lg:font-mono lg:tracking-wider lg:uppercase lg:text-base no-underline lg:hover:underline  lg:inline-block lg:mt-0;
   }
 
   .img {
@@ -82,11 +82,11 @@
   }
 
   .mx-large {
-    @apply mx-5 lg:mx-48;
+    @apply mx-3 md:mx-5 lg:mx-48;
   }
 
   .mx-medium {
-    @apply mx-3 md:mx-12 xl:mx-24 2xl:mx-32;
+    @apply mx-2 md:mx-12 xl:mx-24 2xl:mx-32;
   }
 
   .btm-margin-lg {
@@ -118,7 +118,7 @@
   }
 
   .beige-card {
-    @apply bg-beige rounded-xl px-5 py-10;
+    @apply bg-beige rounded-xl px-6 py-10;
   }
   .accordion-item {
     @apply transition-all ease-linear duration-200 pointer-events-none delay-100;

@@ -37,11 +37,11 @@ const Contact = () => (
             {/* Message: */}
             <div className=" border border-darkgreen rounded-xl w-full  mt-12 h-full">
               <input
-                className="p-3 md:p-6 bg-beige text-black rounded-xl  w-full  focus:outline-none ring-white"
+                className="h-24 p-3 md:p-6 bg-beige text-black rounded-xl  w-full  focus:outline-none ring-white"
                 name="message"
                 type="text"
                 role="textbox"
-                value="I want to sign up for Living as Sacred journey. Can you please send me payment details?"
+                // value="I want to sign up for Living as Sacred journey. Can you please send me payment details?"
               />
             </div>
           </label>
