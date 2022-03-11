@@ -5,11 +5,11 @@ import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import { StructuredText } from "react-datocms"
 
-export default function TermsPage({ data }) {
+export default function TermsPagePt({ data }) {
   console.log(data)
   return (
     <Layout>
-      <SEO title="Terms and Conditions" />
+      <SEO title="Termos de Compra e Condições Contratuais" />
       <div className="section min-h-screen">
         <div className="mx-medium mt-48 xl:mt-36">
           <StructuredText data={data.content.text} />
@@ -20,8 +20,8 @@ export default function TermsPage({ data }) {
 }
 
 export const query = graphql`
-  query TermsQuery {
-    content: datoCmsTerm(locale: { eq: "en" }) {
+  query TermsQueryPt {
+    content: datoCmsTerm(locale: { eq: "pt" }) {
       text {
         value
       }

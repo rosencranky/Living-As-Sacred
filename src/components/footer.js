@@ -13,15 +13,7 @@ export default function Footer() {
             to={`/terms`}
             className="monotext text-base no-underline hover:underline lg:ml-5"
           >
-            Terms & Conditions
-          </Link>
-        </p>
-        <p className="-mb-1 text-right xl:text-left">
-          <Link
-            to={"/privacy"}
-            className="monotext  text-base no-underline hover:underline md:ml-5"
-          >
-            Privacy
+            Terms & Privacy
           </Link>
         </p>
         <p className="-mb-1 text-right xl:text-left">

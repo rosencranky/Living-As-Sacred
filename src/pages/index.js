@@ -292,7 +292,7 @@ function CTAMove({ content }) {
           image={content.ctaImage2.gatsbyImageData}
           alt={content.ctaImage2.alt}
           placeholder="blurred"
-          className="basis-2/3 ml-3 md:ml-0 md:basis-auto z-10 rounded-xl"
+          className="mx-5 xl:mx-0lg:z-10 rounded-xl"
         />
         <GatsbyImage
           image={content.ctaImage3.gatsbyImageData}
@@ -307,12 +307,12 @@ function CTAMove({ content }) {
       <div className="flex justify-center">
         <Button cta={content.cta} />
       </div>
-      <div className="flex md:hidden mt-10 md:mt-0 justify-end rounded-xl">
+      <div className="block md:hidden mx-5 mt-10 md:mt-0 ">
         <GatsbyImage
           image={content.ctaImage3.gatsbyImageData}
           alt={content.ctaImage3.alt}
           placeholder="blurred"
-          className="mx-3 "
+          className="rounded-xl"
         />
       </div>
     </div>
@@ -551,9 +551,9 @@ function Soul({ content }) {
           />
         </div>
         <span className="md:w-1/3 self-end">
-          <p className="mt-10 md:mt-0 w-11/12 md:w-5/6 leading-tight">
+          <div className="mt-10 md:mt-0 w-11/12 md:w-5/6 leading-tight">
             <StructuredText data={content.ifYourSoulIsCallingFor} />
-          </p>
+          </div>
           <Button cta={content.cta} />
         </span>
       </div>
