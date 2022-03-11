@@ -368,7 +368,7 @@ function Timeline({ content }) {
                 </div>
               ))}
             </div>
-            <div className="row-start-3 text-base  md:px-2 md:-mt-4">
+            <div className="row-start-3 text-basesm  md:-mt-4">
               <StructuredText data={block.moduleDescription} />
             </div>
           </div>
@@ -615,11 +615,11 @@ export const query = graphql`
         value
       }
       ctaImage2 {
-        gatsbyImageData(width: 500, imgixParams: { fit: "crop" })
+        gatsbyImageData(width: 450, imgixParams: { fit: "crop" })
         alt
       }
       ctaImage3 {
-        gatsbyImageData(height: 500, imgixParams: { fit: "crop" })
+        gatsbyImageData(height: 450, imgixParams: { fit: "crop" })
         alt
       }
       valuesSectionTitle
@@ -638,10 +638,6 @@ export const query = graphql`
       offeringSectionTitle
       offeringItem {
         ... on DatoCmsOffering {
-          id
-          model {
-            apiKey
-          }
           offeringShortText {
             value
           }
@@ -653,11 +649,6 @@ export const query = graphql`
       timelineSectionTitle
       contentModules {
         ... on DatoCmsModule {
-          id
-          model {
-            apiKey
-          }
-          order
           title
           startDate(formatString: "DD/MM")
           endDate(formatString: "DD/MM")
@@ -666,7 +657,6 @@ export const query = graphql`
           }
           weeks {
             ... on DatoCmsWeekContent {
-              id
               model {
                 apiKey
               }
@@ -680,14 +670,9 @@ export const query = graphql`
       price
       paymentTerms
       paymentTermsTitle
-      priceSubtext
       offerResumeSectionTitle
       including {
         ... on DatoCmsIncluding {
-          id
-          model {
-            apiKey
-          }
           offeringBulletPoint
         }
       }
@@ -724,10 +709,6 @@ export const query = graphql`
       supportingSectionTitle
       supportedProject {
         ... on DatoCmsSupportedProject {
-          id
-          model {
-            apiKey
-          }
           projectName
           link
           description

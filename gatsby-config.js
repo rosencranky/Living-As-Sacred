@@ -5,7 +5,8 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Living as Sacred`,
-    description: `Living as Sacred is a gathering...`,
+    description: `Living as Sacred is a movement to remember what it means to live in connection with our mother, ourselves, honouring all the relations with all the beings. 
+    Journey with us online April – July 2022.`,
     author: `@jher123`,
   },
   flags: {
