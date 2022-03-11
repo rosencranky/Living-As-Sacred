@@ -78,7 +78,7 @@
 
 @layer utilities {
   .section {
-    @apply mt-12 md:mt-20 md:mt-24 mx-3 lg:mx-10;
+    @apply mt-20 md:mt-24 mx-3 lg:mx-10;
   }
 
   .mx-large {
@@ -86,7 +86,7 @@
   }
 
   .mx-medium {
-    @apply mx-2 md:mx-12 xl:mx-24 2xl:mx-32;
+    @apply mx-3 md:mx-12 xl:mx-24 2xl:mx-32;
   }
 
   .btm-margin-lg {
@@ -94,7 +94,7 @@
   }
 
   .top-margin-lg {
-    @apply mt-12 md:mt-20 md:mt-24;
+    @apply mt-20 md:mt-24;
   }
 
   .top-margin-medium {

@@ -69,7 +69,7 @@ function Hero() {
         <br /> April – July 2022
         <br /> <em>Online</em>
       </div> */}
-      <div className="block j lg:hidden z-0 translate-y-3 absolute  bottom-1/4">
+      <div className="block j lg:hidden z-0 translate-y-3 absolute bottom-[10%]">
         <StaticImage
           src="../images/living-as-sacred-logo-mobile.jpg"
           alt="logo"
@@ -109,7 +109,7 @@ function About({ content }) {
             className="rounded-full md:m-5"
           />
         </div>
-        <div className="mx-3 leading-tight">
+        <div className="mx-3 leading-tight top-margin-sm">
           <StructuredText data={content.mission} />
         </div>
       </div>
@@ -124,7 +124,7 @@ function About({ content }) {
             className="rounded-full md:m-5 transition filter duration-600"
           />
         </div>
-        <div className="mx-3 leading-tight">
+        <div className="mx-3 leading-tight top-margin-sm">
           <StructuredText data={content.purpose} />
         </div>
       </div>
@@ -139,7 +139,7 @@ function About({ content }) {
             className="rounded-full md:m-5"
           />
         </div>
-        <div className="mx-3 leading-tight">
+        <div className="mx-3 leading-tight top-margin-sm">
           <StructuredText data={content.vision} />
         </div>
       </div>
@@ -216,8 +216,8 @@ function Value({ text }) {
 
 function Offering({ content }) {
   return (
-    <div id="offering" className="section">
-      <h4 className="top-margin-lg mx-large text-center">
+    <div id="offering" className="section mx-medium">
+      <h4 className="top-margin-lg mx-medium text-center">
         <StructuredText data={content.ctaS1} />
       </h4>
       <div className="flex justify-center">
@@ -288,18 +288,22 @@ function CTAMove({ content }) {
   return (
     <div className="top-margin-lg w-full xl:mb-12 flex justify-center flex-col">
       <div className="flex flex-nowrap justify-between items-center">
-        <GatsbyImage
-          image={content.ctaImage2.gatsbyImageData}
-          alt={content.ctaImage2.alt}
-          placeholder="blurred"
-          className="mx-5 xl:mx-0lg:z-10 rounded-xl"
-        />
-        <GatsbyImage
-          image={content.ctaImage3.gatsbyImageData}
-          alt={content.ctaImage3.alt}
-          placeholder="blurred"
-          className="hidden md:block md:basis-auto z-0 md:ml-5 rounded-xl"
-        />
+        <div>
+          <GatsbyImage
+            image={content.ctaImage2.gatsbyImageData}
+            alt={content.ctaImage2.alt}
+            placeholder="blurred"
+            className="mx-5 xl:mx-0 lg:z-10 rounded-xl"
+          />
+        </div>
+        <div className="hidden md:block ">
+          <GatsbyImage
+            image={content.ctaImage3.gatsbyImageData}
+            alt={content.ctaImage3.alt}
+            placeholder="blurred"
+            className="md:basis-auto z-0 md:ml-5 rounded-xl"
+          />
+        </div>
       </div>
       <h4 className="mt-10 md:mt-12 mx-large text-center text-red">
         <StructuredText data={content.ctaS2} />
@@ -323,7 +327,7 @@ function Timeline({ content }) {
   return (
     <div
       id="timeline"
-      className="section xl:min-h-screen md:bg-beige rounded-xl md:px-5 py-10"
+      className="section xl:min-h-screen md:bg-beige rounded-xl md:px-5 md:py-10"
     >
       <h1 className="text-center z-50">{content.timelineSectionTitle}</h1>
 
@@ -332,14 +336,14 @@ function Timeline({ content }) {
           <div
             key={block.id}
             key={i}
-            className={`my-8 md:my-0 md:grid grid-rows-3 gap-y-0 md:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:p-3 border border-green md:border-none ${
-              i % 2 === 0 ? "bg-beige" : "bg-cream md:bg-beige"
-            }`}
+            className={`my-8 md:my-0 md:grid grid-rows-3 gap-y-0 bg-beige md:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:p-3 border border-green md:border-none 
+            
+            `}
           >
             {/* Title */}
-            <div className="my-8 md:my-0 md:transform md:-translate-y-10 row-start-1 row-span-1 border-b border-darkgreen self-end">
+            <div className="my-8 md:my-0 md:transform md:-translate-y-24 row-start-1 row-span-1 border-b border-darkgreen self-end">
               <div className="flex flex-col items-stretch">
-                <h2 className="text-center leading-none pb-5 text-3xl md:text-xl xl:text-4xl uppercase">
+                <h2 className="text-center leading-tight pb-5 text-3xl md:text-xl xl:text-4xl">
                   {block.title}
                 </h2>
                 <span className="flex justify-between monotext pb-1">
@@ -349,7 +353,7 @@ function Timeline({ content }) {
               </div>
             </div>
             {/* Weeks */}
-            <div className="-mx-2 md:-mx-0 my-8 md:my-0 row-start-2 row-span-1 flex flex-col justify-center ">
+            <div className="-mx-2 md:-mx-0 md:transform md:-translate-y-12 my-8 md:my-0 row-start-2 row-span-1 flex flex-col justify-center ">
               {block.weeks.map((week, i) => (
                 <div key={week.id} key={i}>
                   <span className="flex items-center justify-between mb-3">
@@ -438,7 +442,7 @@ function Price({ content }) {
       </h2>
       <h1 className="top-margin-medium">{content.offerResumeSectionTitle}</h1>
       <h3>
-        <ul className="top-margin-sm mx-0 md:mx-12 xl:mx-24 2xl:mx-32 text-center list-none">
+        <ul className="top-margin-sm -mx-2 md:mx-12 xl:mx-24 2xl:mx-32 text-center list-none">
           {content.including.map((block, i) => (
             <li className="mb-2" key={i}>
               + {block.offeringBulletPoint}
@@ -537,7 +541,7 @@ function Supporting({ content }) {
 
 function Soul({ content }) {
   return (
-    <div className="section mx-sm">
+    <div className="section mx-medium">
       <div className="md:flex justify-between ">
         <div className="md:mr-10  md:w-2/3 ">
           <h4 className="text-red self-end text-right md:text-left">
@@ -547,11 +551,11 @@ function Soul({ content }) {
             image={content.soulImage.gatsbyImageData}
             alt={content.soulImage.alt}
             placeholder="blurred"
-            className="rounded-2xl top-margin-medium "
+            className="rounded-2xl top-margin-medium mx-1 md:mx-0"
           />
         </div>
         <span className="md:w-1/3 self-end">
-          <div className="mt-10 md:mt-0 w-11/12 md:w-5/6 leading-tight">
+          <div className="mx-2 md:mx-0 mt-10 md:mt-0 w-11/12 md:w-5/6 leading-tight">
             <StructuredText data={content.ifYourSoulIsCallingFor} />
           </div>
           <Button cta={content.cta} />
