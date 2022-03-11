@@ -7,7 +7,7 @@ import { Link } from "gatsby"
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
-    <div className="section h-90">
+    <div className="section h-90 flex justify-center">
       <h2 className="text-5xl md:text-6xl xl:text-8xl text-center text-red absolute top-1/2">
         Page not found :(
       </h2>

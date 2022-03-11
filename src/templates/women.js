@@ -1,6 +1,7 @@
 import React from "react"
 import SEO from "../components/seo"
 import { Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { graphql } from "gatsby"
 import { StructuredText } from "react-datocms"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -13,7 +14,7 @@ const WomanTemplate = ({ data: { person }, location }) => {
         <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap fixed top-0 left-0 right-0">
           <nav className="relative z-10 w-full overflow-hidden">
             <div className="flex flex-wrap pb-0 mb-0 relative overflow-hidden ">
-              <Link to="/#women" className="ml-auto">
+              <AnchorLink to="/#women" className="ml-auto">
                 <svg
                   className={`w-5 md:w-6 transform mt-[6px] md:mt-1 transition ease-in-out duration-300 `}
                   viewBox="0 0 28 29"
@@ -26,7 +27,7 @@ const WomanTemplate = ({ data: { person }, location }) => {
                     strokeWidth="3.24"
                   />
                 </svg>
-              </Link>
+              </AnchorLink>
             </div>
           </nav>
         </header>
@@ -96,7 +97,7 @@ const WomanTemplate = ({ data: { person }, location }) => {
                       </div>
                     )}
                     {person.website && (
-                      <div className="top-margin-sm lg:text-right">
+                      <div className="mt-1 lg:text-right">
                         <a
                           className="flex flex-wrap lg:justify-end items-center no-underline hover:underline focus:underline"
                           href={person.website}
@@ -162,7 +163,7 @@ export const query = graphql`
       theme
       weekNumber
       image {
-        gatsbyImageData(height: 825, width: 660, imgixParams: { fit: "crop" })
+        gatsbyImageData(height: 925, width: 660, imgixParams: { fit: "crop" })
         alt
       }
       instagram

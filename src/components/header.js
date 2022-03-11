@@ -1,6 +1,6 @@
 import React, { useState } from "react"
-import Button from "../components/Button"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { Link } from "gatsby"
 
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false)
@@ -51,17 +51,38 @@ function Header() {
             : `hidden`
         }   `}
       >
-        <div className="mt-16 ml-4 z-30">
-          <AnchorLink to="/#about" title="About" className="navlinks">
+        <div className="mt-10 ml-4 z-30">
+          <AnchorLink
+            to="/#about"
+            title="About"
+            className="stripped navlinks"
+            stripHash
+            onAnchorLinkClick={() => toggleExpansion(!isExpanded)}
+          >
             About
           </AnchorLink>
-          <AnchorLink to={`/#timeline`} title="Timeline" className="navlinks">
+          <AnchorLink
+            to={`/#timeline`}
+            title="Timeline"
+            className="navlinks"
+            onAnchorLinkClick={() => toggleExpansion(!isExpanded)}
+          >
             Timeline
           </AnchorLink>
-          <AnchorLink to={`/#women`} title="Meet us" className="navlinks">
+          <AnchorLink
+            to={`/#women`}
+            title="Meet us"
+            className="navlinks"
+            onAnchorLinkClick={() => toggleExpansion(!isExpanded)}
+          >
             Meet us
           </AnchorLink>
-          <AnchorLink to={`/contact`} title="Contact" className="navlinks">
+          <AnchorLink
+            to={`/contact`}
+            title="Contact"
+            className="navlinks"
+            onAnchorLinkClick={() => toggleExpansion(!isExpanded)}
+          >
             Contact
           </AnchorLink>
           <span className="inline-block text-red navlinks mt-10">
@@ -70,6 +91,7 @@ function Header() {
               className="inline-block"
               title="Home"
               activeClassName="underline"
+              onAnchorLinkClick={() => toggleExpansion(!isExpanded)}
             >
               EN
             </AnchorLink>
@@ -79,6 +101,7 @@ function Header() {
               className="inline-block "
               title="Home"
               activeClassName="underline"
+              onAnchorLinkClick={() => toggleExpansion(!isExpanded)}
             >
               PT
             </AnchorLink>
@@ -168,7 +191,7 @@ function Header() {
           <span className="text-red ">
             <AnchorLink
               to={`/`}
-              className="text-2xl inline-block mt-0"
+              className="text-2xl leading-none inline-block mt-0 "
               title="Home"
               activeClassName="underline"
             >
@@ -177,7 +200,7 @@ function Header() {
             /
             <AnchorLink
               to={`/pt`}
-              className="text-2xl inline-block mt-0 "
+              className="text-2xl leading-none inline-block mt-0 "
               title="Home"
               activeClassName="underline"
             >

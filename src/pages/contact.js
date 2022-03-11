@@ -6,9 +6,9 @@ import SEO from "../components/seo"
 const Contact = () => (
   <Layout>
     <SEO title="Contact Form" />
-
-    <div className="mt-32 md:mt-48 xl:mt-12 flex justify-center overflow-y-hidden ">
-      <div className="w-full lg:w-1/2 xl:w-8/12 px-4 min-h-screen ">
+    {/* mt-32 md:mt-48 xl:mt-12  */}
+    <div className="flex justify-center h-90 items-center overflow-y-hidden ">
+      <div className="w-full lg:w-1/2 xl:w-8/12 px-4  ">
         <h1 className="text-center top-margin-medium ">Contact us</h1>
 
         <form
@@ -17,6 +17,7 @@ const Contact = () => (
           netlify-honeypot="bot-field"
           data-netlify="true"
           name="contact"
+          action="/contact-success"
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
@@ -24,10 +25,11 @@ const Contact = () => (
           <label>
             <div className="mt-12  flex justify-center">
               <input
-                className="p-3 md:p-6 bg-beige  border border-darkgreen rounded-xl focus:outline-none ring-white   w-3/4"
+                className="p-3 md:p-6 bg-beige  border border-darkgreen rounded-xl focus:outline-none ring-white  w-3/4"
                 type="text"
                 name="name"
                 placeholder="Name"
+                required
               />
             </div>
           </label>
@@ -39,6 +41,7 @@ const Contact = () => (
                 type="text"
                 name="email"
                 placeholder="Email address"
+                required
               />
             </div>
           </label>
@@ -46,12 +49,13 @@ const Contact = () => (
           <label className="">
             {/* Message: */}
             <div className=" border border-darkgreen rounded-xl w-full  mt-12 h-full">
-              <input
-                className="h-24 p-3 md:p-6 bg-beige text-black rounded-xl  w-full  focus:outline-none ring-white"
+              <textarea
+                className="h-24 p-3 md:p-6 bg-beige text-black rounded-xl  w-full  focus:outline-none outline-none ring-none -mb-1"
                 name="message"
                 type="text"
-                role="textbox"
-                // value="I want to sign up for Living as Sacred journey. Can you please send me payment details?"
+                // role="textbox"
+                placeholder="I want to sign up for Living as Sacred journey. Can you please send me payment details?"
+                required
               />
             </div>
           </label>

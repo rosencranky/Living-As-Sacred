@@ -59,7 +59,7 @@ function Hero() {
     >
       <Header />
       <div className="z-10 absolute top-6 left-0 xl:top-5 xl:left-5">
-        <h1 className="mt-0 ml-3 xl:mt-0 xl:ml-0 text-left text-3xl md:text-4xl lg:text-5xl xl:text-7xl 2xl:text-8xl font-serif normal-case text-red tracking-tight leading-tight">
+        <h1 className="mt-0 ml-3 xl:mt-0 xl:ml-0 text-left text-3xl md:text-4xl lg:text-5xl xl:text-7xl  font-serif normal-case text-red tracking-tight leading-tighter">
           Living · as · Sacred
           <br /> April – July 2022
           <br /> <em>Online</em>
@@ -109,7 +109,7 @@ function About({ content }) {
             className="rounded-full md:m-5"
           />
         </div>
-        <div className="mx-3 leading-tight top-margin-sm">
+        <div className="mx-1 md:mx-3 leading-tight top-margin-sm">
           <StructuredText data={content.mission} />
         </div>
       </div>
@@ -124,7 +124,7 @@ function About({ content }) {
             className="rounded-full md:m-5 transition filter duration-600"
           />
         </div>
-        <div className="mx-3 leading-tight top-margin-sm">
+        <div className="mx-1 md:mx-3 leading-tight top-margin-sm">
           <StructuredText data={content.purpose} />
         </div>
       </div>
@@ -139,7 +139,7 @@ function About({ content }) {
             className="rounded-full md:m-5"
           />
         </div>
-        <div className="mx-3 leading-tight top-margin-sm">
+        <div className="mx-1 md:mx-3 leading-tight top-margin-sm">
           <StructuredText data={content.vision} />
         </div>
       </div>
@@ -216,7 +216,7 @@ function Value({ text }) {
 
 function Offering({ content }) {
   return (
-    <div id="offering" className="section mx-medium">
+    <div id="offering" className="section mx-3 md:mx-12 lg:mx-8  2xl:mx-16">
       <h4 className="top-margin-lg mx-medium text-center">
         <StructuredText data={content.ctaS1} />
       </h4>
@@ -341,23 +341,23 @@ function Timeline({ content }) {
             `}
           >
             {/* Title */}
-            <div className="my-8 md:my-0 md:transform md:-translate-y-24 row-start-1 row-span-1 border-b border-darkgreen self-end">
-              <div className="flex flex-col items-stretch">
-                <h2 className="text-center leading-tight pb-5 text-3xl md:text-xl xl:text-4xl">
-                  {block.title}
-                </h2>
-                <span className="flex justify-between monotext pb-1">
-                  <p className="inline-block">{block.startDate}</p>
-                  <p className="inline-block">{block.endDate}</p>
-                </span>
+            <div className="my-8 md:my-0 md:transform md:-translate-y-16 row-start-1 row-span-1 border-b border-green self-end">
+              {/* <div className="flex flex-col items-stretch"> */}
+              <h2 className="text-center leading-tight pb-5 text-3xl md:text-xl xl:text-4xl">
+                {block.title}
+              </h2>
+              <div className="flex justify-between monotext pb-1 place-self-end self-end">
+                <p className="inline-block">{block.startDate}</p>
+                <p className="inline-block">{block.endDate}</p>
               </div>
+              {/* </div> */}
             </div>
             {/* Weeks */}
             <div className="-mx-2 md:-mx-0 md:transform md:-translate-y-12 my-8 md:my-0 row-start-2 row-span-1 flex flex-col justify-center ">
               {block.weeks.map((week, i) => (
                 <div key={week.id} key={i}>
                   <span className="flex items-center justify-between mb-3">
-                    <h3 className="bg-darkgreen w-10 h-10 2xl:w-14 2xl:h-14  rounded-full text-cream text-center flex justify-center items-center">
+                    <h3 className="bg-red w-10 h-10 2xl:w-14 2xl:h-14  rounded-full text-cream text-center flex justify-center items-center">
                       {week.weekNumber}
                     </h3>
 
@@ -437,14 +437,14 @@ function Price({ content }) {
 
       <h1 className="text-center">{content.valueSectionTitle}</h1>
 
-      <h2 className="mt-12 text-7xl xl:text-7xl text-center">
+      <h2 className="mt-12 text-7xl xl:text-7xl text-red text-center">
         {content.price}
       </h2>
       <h1 className="top-margin-medium">{content.offerResumeSectionTitle}</h1>
       <h3>
-        <ul className="top-margin-sm -mx-2 md:mx-12 xl:mx-24 2xl:mx-32 text-center list-none">
+        <ul className="top-margin-sm mx-1 md:mx-12 xl:mx-24 2xl:mx-32 text-center list-none">
           {content.including.map((block, i) => (
-            <li className="mb-2" key={i}>
+            <li className="mb-3" key={i}>
               + {block.offeringBulletPoint}
             </li>
           ))}
@@ -462,7 +462,7 @@ function Price({ content }) {
 
 function Bios({ content }) {
   return (
-    <div className="section section-center mx-medium" id="women">
+    <div className="section  mx-medium" id="women">
       <h1 className="text-center">{content.womenSectionTitle}</h1>
       <div className="top-margin-medium grid grid-cols-2 md:grid-cols-5 place-content-center gap-2">
         {content.women.map((node, i) => {
@@ -481,6 +481,9 @@ function Bios({ content }) {
                       placeholder="blurred"
                       className="rounded-xl"
                     />
+                    <p className="text-5xl md:text-6xl lg:text-7xl absolute top-3 right-3 text-red ">
+                      *
+                    </p>
                   </div>
                 )}
                 {!node.isMainOrganiser && (
@@ -510,6 +513,9 @@ function Bios({ content }) {
           )
         })}
       </div>
+      <p className="text-left top-margin-medium text-red text-2xl md:text-3xl  2xl:text-4xl">
+        * Core Team
+      </p>
     </div>
   )
 }
