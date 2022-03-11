@@ -271,7 +271,7 @@ function CTAMove({ content }) {
             image={content.ctaImage2.gatsbyImageData}
             alt={content.ctaImage2.alt}
             placeholder="blurred"
-            className="mx-5 xl:mx-0 lg:z-10 rounded-xl"
+            className="mx-5 xl:mx-0 lg:z-10 rounded-xl circle overflow-hidden"
           />
         </div>
         <div className="hidden md:block ">
@@ -279,7 +279,7 @@ function CTAMove({ content }) {
             image={content.ctaImage3.gatsbyImageData}
             alt={content.ctaImage3.alt}
             placeholder="blurred"
-            className="md:basis-auto z-0 md:ml-5 rounded-xl"
+            className="md:basis-auto z-0 md:ml-5 rounded-xl circle overflow-hidden"
           />
         </div>
       </div>
@@ -294,7 +294,7 @@ function CTAMove({ content }) {
           image={content.ctaImage3.gatsbyImageData}
           alt={content.ctaImage3.alt}
           placeholder="blurred"
-          className="rounded-xl"
+          className="rounded-xl circle overflow-hidden"
         />
       </div>
     </div>
@@ -533,7 +533,7 @@ function Soul({ content }) {
             image={content.soulImage.gatsbyImageData}
             alt={content.soulImage.alt}
             placeholder="blurred"
-            className="rounded-2xl top-margin-medium mx-1 md:mx-0"
+            className="rounded-2xl top-margin-medium mx-1 md:mx-0 overflow-hidden circle"
           />
         </div>
         <span className="md:w-1/3 self-end">

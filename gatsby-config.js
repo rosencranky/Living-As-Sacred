@@ -23,7 +23,7 @@ module.exports = {
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-anchor-links`,
+    // `gatsby-plugin-anchor-links`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,

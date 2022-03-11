@@ -9,7 +9,6 @@
     "autoprefixer": "^10.4.2",
     "dotenv": "^16.0.0",
     "gatsby": "^4.5.3",
-    "gatsby-plugin-anchor-links": "^1.2.1",
     "gatsby-plugin-image": "^2.5.2",
     "gatsby-plugin-manifest": "^4.5.2",
     "gatsby-plugin-offline": "^5.5.2",

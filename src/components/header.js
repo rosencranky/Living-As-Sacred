@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { AnchorLink } from "gatsby-plugin-anchor-links"
+// import { Link } from "gatsby-plugin-anchor-links"
 import { Link } from "gatsby"
 
 function Header() {
@@ -52,61 +52,61 @@ function Header() {
         }   `}
       >
         <div className="mt-10 ml-4 z-30">
-          <AnchorLink
+          <Link
             to="/#about"
             title="About"
             className="stripped navlinks"
             stripHash
-            onAnchorLinkClick={() => toggleExpansion(!isExpanded)}
+            onLinkClick={() => toggleExpansion(!isExpanded)}
           >
             About
-          </AnchorLink>
-          <AnchorLink
+          </Link>
+          <Link
             to={`/#timeline`}
             title="Timeline"
             className="stripped navlinks"
             stripHash
-            onAnchorLinkClick={() => toggleExpansion(!isExpanded)}
+            onLinkClick={() => toggleExpansion(!isExpanded)}
           >
             Timeline
-          </AnchorLink>
-          <AnchorLink
+          </Link>
+          <Link
             to={`/#women`}
             title="Meet us"
             className="stripped navlinks"
             stripHash
-            onAnchorLinkClick={() => toggleExpansion(!isExpanded)}
+            onLinkClick={() => toggleExpansion(!isExpanded)}
           >
             Meet us
-          </AnchorLink>
-          <AnchorLink
+          </Link>
+          <Link
             to={`/contact`}
             title="Contact"
             className="navlinks"
-            onAnchorLinkClick={() => toggleExpansion(!isExpanded)}
+            onLinkClick={() => toggleExpansion(!isExpanded)}
           >
             Contact
-          </AnchorLink>
+          </Link>
           <span className="inline-block text-red navlinks mt-10">
-            <AnchorLink
+            <Link
               to={`/`}
               className="inline-block"
               title="Home"
               activeClassName="underline"
-              onAnchorLinkClick={() => toggleExpansion(!isExpanded)}
+              onLinkClick={() => toggleExpansion(!isExpanded)}
             >
               EN
-            </AnchorLink>
+            </Link>
             /
-            <AnchorLink
+            <Link
               to={`/pt`}
               className="inline-block "
               title="Home"
               activeClassName="underline"
-              onAnchorLinkClick={() => toggleExpansion(!isExpanded)}
+              onLinkClick={() => toggleExpansion(!isExpanded)}
             >
               PT
-            </AnchorLink>
+            </Link>
           </span>
           <div className="flex justify-start mt-10 text-red ">
             <a
@@ -178,41 +178,36 @@ function Header() {
         className={`hidden lg:flex flex-grow items-center justify-end w-auto text-black`}
       >
         <div className="justify-center self-center">
-          <AnchorLink to="/#about" title="About" className="navlinks">
+          <Link to="/#about" title="About" className="navlinks">
             About
-          </AnchorLink>
-          <AnchorLink to={`/#timeline`} title="Timeline" className="navlinks">
+          </Link>
+          <Link to={`/#timeline`} title="Timeline" className="navlinks">
             Timeline
-          </AnchorLink>
-          <Link
-            to={`/#women`}
-            title="Meet us"
-            className="stripped navlinks"
-            stripHash
-          >
+          </Link>
+          <Link to={`/#women`} title="Meet us" className=" navlinks">
             Meet us
           </Link>
-          <AnchorLink to={`/contact`} title="Contact" className="navlinks mr-6">
+          <Link to={`/contact`} title="Contact" className="navlinks mr-6">
             Contact
-          </AnchorLink>
+          </Link>
           <span className="text-red ">
-            <AnchorLink
+            <Link
               to={`/`}
               className="text-2xl leading-none inline-block mt-0 "
               title="Home"
               activeClassName="underline"
             >
               EN
-            </AnchorLink>
+            </Link>
             /
-            <AnchorLink
+            <Link
               to={`/pt`}
               className="text-2xl leading-none inline-block mt-0 "
               title="Home"
               activeClassName="underline"
             >
               PT
-            </AnchorLink>
+            </Link>
           </span>
         </div>
       </div>
