@@ -10,7 +10,17 @@ const Contact = () => (
     <div className="mt-32 md:mt-48 xl:mt-12 flex justify-center overflow-y-hidden ">
       <div className="w-full lg:w-1/2 xl:w-8/12 px-4 min-h-screen ">
         <h1 className="text-center top-margin-medium ">Contact us</h1>
-        <form className=" top-margin-medium z-0 ">
+
+        <form
+          className=" top-margin-medium z-0 "
+          method="post"
+          netlify-honeypot="bot-field"
+          data-netlify="true"
+          name="contact"
+        >
+          <input type="hidden" name="bot-field" />
+          <input type="hidden" name="form-name" value="contact" />
+
           <label>
             <div className="mt-12  flex justify-center">
               <input

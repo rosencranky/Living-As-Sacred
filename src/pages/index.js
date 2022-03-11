@@ -58,7 +58,7 @@ function Hero() {
       className="h-screen lg:h-screen max-h-screen lg:bg-hero bg-center bg-contain bg-no-repeat"
     >
       <Header />
-      <div className="z-10 absolute top-6 left-0 xl:top-10 xl:left-5">
+      <div className="z-10 absolute top-6 left-0 xl:top-5 xl:left-5">
         <h1 className="mt-0 ml-3 xl:mt-0 xl:ml-0 text-left text-3xl md:text-4xl lg:text-5xl xl:text-7xl 2xl:text-8xl font-serif normal-case text-red tracking-tight leading-tight">
           Living · as · Sacred
           <br /> April – July 2022

@@ -82,7 +82,7 @@
   }
 
   .mx-large {
-    @apply mx-3 md:mx-5 lg:mx-48;
+    @apply mx-3 md:mx-5 lg:mx-48 2xl:mx-64;
   }
 
   .mx-medium {
@@ -106,7 +106,7 @@
   }
 
   .pdng {
-    @apply px-8 py-6;
+    @apply px-8 py-6 2xl:py-10;
   }
 
   .section-center {
