@@ -9,13 +9,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import HeaderPt from "./headerPt"
 import { Link } from "gatsby"
-import Footer from "./footer"
+import FooterPt from "./footerPt"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query SiteTitleQueryPt {
       site {
         siteMetadata {
           title
@@ -29,14 +29,14 @@ const Layout = ({ children }) => {
       <div className="min-h-screen">
         <div className="z-0 absolute top-6 left-3 ">
           <h1 className="text-3xl  font-serif normal-case text-red tracking-tight">
-            <Link to="/" title="Home">
+            <Link to="/pt" title="Home">
               Living · as · Sacred
             </Link>
           </h1>
         </div>
-        <Header />
+        <HeaderPt />
         <main>{children}</main>
-        <Footer />
+        <FooterPt />
       </div>
     </>
   )

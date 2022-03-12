@@ -5,7 +5,7 @@ import { graphql } from "gatsby"
 import { StructuredText } from "react-datocms"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-export default function WomanTemplate({ data: { person } }) {
+export default function WomanTemplatePt({ data: { person } }) {
   return (
     <>
       <SEO title={person.name} />
@@ -13,7 +13,7 @@ export default function WomanTemplate({ data: { person } }) {
         <header className="p-4 pb-0 md:p-6 md:pb-0 h-14 md:h-22 z-50 flex flex-wrap fixed top-0 left-0 right-0">
           <nav className="relative z-10 w-full overflow-hidden">
             <div className="flex flex-wrap pb-0 mb-0 relative overflow-hidden">
-              <Link to="/#women" className="ml-auto">
+              <Link to="/pt#mulheres" className="ml-auto">
                 <svg
                   className={`w-5 md:w-6 transform mt-[6px] md:mt-1 transition ease-in-out duration-300 `}
                   viewBox="0 0 28 29"
@@ -150,8 +150,8 @@ export default function WomanTemplate({ data: { person } }) {
 }
 
 export const query = graphql`
-  query WomanQuery($slug: String!) {
-    person: datoCmsWoman(slug: { eq: $slug }, locale: { eq: "en" }) {
+  query WomanQueryPt($slug: String!) {
+    person: datoCmsWoman(slug: { eq: $slug }, locale: { eq: "pt" }) {
       name
       slug
       bio {

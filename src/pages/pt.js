@@ -1,26 +1,24 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import Layout from "../components/layout"
-import Footer from "../components/footer"
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
+import FooterPt from "../components/footerPt"
 import SEO from "../components/seo"
 import Button from "../components/Button"
 import { StructuredText } from "react-datocms"
-import Header from "../components/header"
-import AccordionGrid from "../components/Accordiongrid"
-import Marquee from "react-fast-marquee"
+import HeaderPt from "../components/headerPt"
+import Accordion from "../components/Accordion"
 
 export default function IndexPagePt({ data }) {
   return (
-    <Layout>
-      <SEO title="Home" description="Landing page for Living as Sacred." />
-      <EarlyBirdMarquee content={data.content} />
+    <>
+      <SEO title="Home" description="Living as Sacred online journey" />
       <Hero />
       <Intro content={data.content} />
       <About content={data.content} />
       <JoannaMacy content={data.content} />
       <Values content={data.content} />
+      <CTASection content={data.content} />
       <Offering content={data.content} />
       <CTAMove content={data.content} />
       <Timeline content={data.content} />
@@ -29,45 +27,33 @@ export default function IndexPagePt({ data }) {
       <Bios content={data.content} />
       <Supporting content={data.content} />
       <Soul content={data.content} />
-      <Footer content={data.content} />
-    </Layout>
+      <FooterPt content={data.content} />
+    </>
   )
 }
 
-function EarlyBirdMarquee({ content }) {
-  return (
-    <div className="z-50 sticky top-0 left-0 ">
-      <Marquee
-        className="h-6 monotext text-cream bg-red text-base"
-        gradient={false}
-      >
-        {content.priceBanner}
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        {content.priceBanner}
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-        {content.priceBanner}
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-      </Marquee>
-    </div>
-  )
-}
 function Hero() {
   return (
     <div
       id="hero"
-      className="h-screen max-h-screen bg-hero bg-center bg-contain"
+      className="h-screen xl:h-screen max-h-screen md:bg-hero bg-center bg-contain bg-no-repeat"
     >
-      <Header />
-      <div className="z-10 absolute top-10 left-5">
-        <h1 className="text-6xl xl:text-7xl 2xl:text-8xl font-serif normal-case text-red tracking-tight">
+      <HeaderPt />
+      <div className="z-10 absolute top-6 left-0 xl:top-5 xl:left-5">
+        <h1 className="mt-0 ml-3 xl:mt-0 xl:ml-0 text-left text-3xl md:text-4xl lg:text-5xl xl:text-7xl  font-serif normal-case text-red tracking-tight leading-tighter">
           Living · as · Sacred
+          <br /> Abril – Julho 2022
+          <br /> <em>Online</em>
         </h1>
-        <h1 className="text-6xl xl:text-7xl 2xl:text-8xl font-serif uppercase text-red tracking-tight">
-          Abril – Julho 2022
-        </h1>
-        <h1 className="text-6xl xl:text-7xl 2xl:text-8xl font-serif uppercase text-red tracking-tight">
-          <em>Online</em>
-        </h1>
+      </div>
+      <div className="block md:hidden z-0 translate-y-3 absolute bottom-[10%]">
+        <StaticImage
+          src="../images/living-as-sacred-logo-mobile.jpg"
+          alt="logo"
+          placeholder="blurred"
+          className="z-0 overflow-hidden"
+          width={500}
+        />
       </div>
     </div>
   )
@@ -75,10 +61,10 @@ function Hero() {
 
 function Intro({ content }) {
   return (
-    <div id="about" className="section section-center z-10">
+    <div id="sobre" className="mt-0 xl:mt-24 mx-3 lg:mx-10 section-center ">
       <span className="mx-medium">
         <h1 className="text-center">{content.introSectionTitle} </h1>
-        <h2 className="text-center text-red leading-tighter">
+        <h2 className="z-10 text-center text-red leading-tighter">
           <StructuredText data={content.introtext1} />
         </h2>
       </span>
@@ -88,7 +74,7 @@ function Intro({ content }) {
 
 function About({ content }) {
   return (
-    <div className="section block md:grid mx-medium grid-cols-3 gap-x-3 beige-card ">
+    <div className="section block md:grid mx-medium grid-cols-3 gap-x-3 beige-card">
       {/* Mission */}
       <div className="col-start-1 flex flex-col justify-start items-center">
         <h1 className="text-center">{content.missionSectionTitle}</h1>
@@ -97,12 +83,12 @@ function About({ content }) {
             image={content.missionImage.gatsbyImageData}
             alt={content.missionImage.alt}
             placeholder="blurred"
-            className="rounded-full m-5"
+            className="rounded-full xl:m-5 overflow-hidden circle"
           />
         </div>
-        <p className="mx-3 leading-tight">
+        <div className="mx-1 md:mx-3 leading-tight top-margin-sm">
           <StructuredText data={content.mission} />
-        </p>
+        </div>
       </div>
       {/* Purpose */}
       <div className="mt-10 md:mt-0 md:col-start-2 flex flex-col justify-start items-center">
@@ -112,12 +98,12 @@ function About({ content }) {
             image={content.purposeImage.gatsbyImageData}
             alt={content.purposeImage.alt}
             placeholder="blurred"
-            className="rounded-full m-5 "
+            className="rounded-full xl:m-5 overflow-hidden circle"
           />
         </div>
-        <p className="mx-3 leading-tight">
+        <div className="mx-1 md:mx-3 leading-tight top-margin-sm">
           <StructuredText data={content.purpose} />
-        </p>
+        </div>
       </div>
       {/* Vision */}
       <div className="mt-10 md:mt-0 md:col-start-3 flex flex-col justify-start items-center">
@@ -127,29 +113,16 @@ function About({ content }) {
             image={content.visionImage.gatsbyImageData}
             alt={content.visionImage.alt}
             placeholder="blurred"
-            className="rounded-full m-5"
+            className="rounded-full xl:m-5 overflow-hidden circle"
           />
         </div>
-        <p className="mx-3 leading-tight">
+        <div className="mx-1 md:mx-3 leading-tight top-margin-sm">
           <StructuredText data={content.vision} />
-        </p>
+        </div>
       </div>
       <div className="col-span-3 flex justify-center place-self-center">
         <Button cta={content.cta} />
       </div>
-    </div>
-  )
-}
-
-function ButtonBeige({ cta }) {
-  return (
-    <div className="mt-10 mb-3">
-      <Link
-        to="/contact"
-        className="z-20 inline-block border border-green rounded-2xl bg-beige hover:bg-green text-black px-5 py-2 monotext text-sm 2xl:text-base no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
-      >
-        {cta}
-      </Link>
     </div>
   )
 }
@@ -166,24 +139,26 @@ function JoannaMacy({ content }) {
 function Values({ content }) {
   return (
     <div className="top-margin-lg w-full py-12 bg-leaves bg-cover">
-      <h1 className="text-center text-cream">{content.valuesSectionTitle}</h1>
-      <div className="flex flex-wrap md:grid grid-cols-12 place-items-center place-content-center items-center">
-        <div className="col-start-1 col-span-3">
+      <h1 className="text-center text-black md:text-cream mb-10 md:mb-0">
+        {content.valuesSectionTitle}
+      </h1>
+      <div className="flex flex-wrap md:grid gap-x-5 xl:gap-x-0 grid-cols-12 place-items-center place-content-center items-center">
+        <div className="md:ml-16 xl:ml-0 col-start-1 col-span-3">
           <Value text={content.valuesList[0].value} />
           <h2 className="text-center text-cream">·</h2>
           <Value text={content.valuesList[1].value} />
           <h2 className="text-center text-cream">·</h2>
           <Value text={content.valuesList[2].value} />
         </div>
-        <div className="flex justify-center my-5 md:my-10 col-start-4 col-span-6 ">
+        <div className="flex justify-center my-5 md:my-10 col-start-4 col-span-6 m-3 md:m-5 xl:p-3 rounded-xl overflow-hidden ">
           <GatsbyImage
             image={content.valuesImage.gatsbyImageData}
             alt={content.valuesImage.alt}
             placeholder="blurred"
-            className="rounded-full"
+            className="rounded-xl overflow-hidden circle"
           />
         </div>
-        <div className="col-start-10 col-span-3">
+        <div className="md:mr-16 xl:mr-0 col-start-10 col-span-3">
           <Value text={content.valuesList[3].value} />
           <h2 className="text-center text-cream">·</h2>
           <Value text={content.valuesList[4].value} />
@@ -197,71 +172,38 @@ function Values({ content }) {
 
 function Value({ text }) {
   return (
-    <h2 className="px-8 pt-1 pb-3 rounded-3xl text-black text-center bg-beige hover:bg-green">
+    <h2 className="px-6 md:px-4 xl:px-8 pt-1 pb-3 rounded-2xl xl:rounded-3xl text-black text-center bg-beige hover:bg-green">
       <StructuredText data={text} />
     </h2>
   )
 }
 
-function Offering({ content }) {
+function CTASection({ content }) {
   return (
-    <div id="offering" className="section">
-      <h4 className="top-margin-lg mx-large text-center">
+    <div className="section section-center mx-medium">
+      <h4 className="text-center">
         <StructuredText data={content.ctaS1} />
       </h4>
-      <div className="flex justify-center">
-        <Button cta={content.cta} />
-      </div>
-      <h1 className="top-margin-lg text-center">
-        {content.offeringSectionTitle}
-      </h1>
-      {/* Desktop */}
-      <div className="hidden lg:grid top-margin-medium relative z-10 grid-cols-4 grid-rows-2">
+      <Button cta={content.cta} />
+    </div>
+  )
+}
+
+function Offering({ content }) {
+  return (
+    <div id="offering" className="section mx-3 md:mx-12 lg:mx-8  2xl:mx-16">
+      <h1 className="text-center">{content.offeringSectionTitle}</h1>
+      {/* Accordion */}
+      <div className="grid top-margin-medium relative z-10 grid-cols-1 xl:grid-cols-4 grid-rows-2">
         {content.offeringItem.map((block, i) => (
           <div
-            className={`border-cream border-l bg-green hover:bg-beige transition ease-in duration-100 rounded-xl ${
-              i < 4 ? "border-b" : ""
+            className={`border-cream border-l border-b bg-green hover:bg-beige transition ease-in duration-100 rounded-xl ${
+              i < 4 ? "xl:border-b" : "" && i === 0 ? "border-t" : ""
             }`}
             key={block.id}
             key={i}
           >
-            <AccordionGrid
-              index={i}
-              excerpt={block.offeringShortText}
-              fullText={block.offeringItemText}
-            />
-          </div>
-        ))}
-      </div>
-      {/* Small tablet */}
-      <div className="hidden md:grid lg:hidden top-margin-medium relative z-10 md:grid-cols-2 grid-rows-2  hover:text-green">
-        {content.offeringItem.map((block, i) => (
-          <div
-            className={`border-r border-b border-green bg-green hover:bg-beige  rounded-xl transition ease-in duration-100 ${
-              i < 2 ? "border-t-2" : ""
-            } ${i % 2 === 0 ? "border-l" : ""}`}
-            key={block.id}
-            key={i}
-          >
-            <AccordionGrid
-              index={i}
-              excerpt={block.offeringShortText}
-              fullText={block.offeringItemText}
-            />
-          </div>
-        ))}
-      </div>
-      {/* mobile */}
-      <div className="grid md:hidden top-margin-medium relative z-10 grid-cols-1 grid-rows-2 hover:text-green">
-        {content.offeringItem.map((block, i) => (
-          <div
-            className={`border-t border-green  bg-green hover:bg-beige  transition ease-in duration-100 ${
-              i === 0 ? "border-b" : ""
-            } `}
-            key={block.id}
-            key={i}
-          >
-            <AccordionGrid
+            <Accordion
               index={i}
               excerpt={block.offeringShortText}
               fullText={block.offeringItemText}
@@ -276,25 +218,35 @@ function Offering({ content }) {
 function CTAMove({ content }) {
   return (
     <div className="top-margin-lg w-full xl:mb-12 flex justify-center flex-col">
-      <div className="flex justify-between items-center">
-        <GatsbyImage
-          image={content.ctaImage2.gatsbyImageData}
-          alt={content.ctaImage2.alt}
-          placeholder="blurred"
-          className=" rounded-xl"
-        />
+      <div className="flex flex-nowrap justify-between items-center">
+        <div>
+          <GatsbyImage
+            image={content.ctaImage2.gatsbyImageData}
+            alt={content.ctaImage2.alt}
+            placeholder="blurred"
+            className="mx-5 xl:mx-0 lg:z-10 rounded-xl circle overflow-hidden"
+          />
+        </div>
+        <div className="hidden md:block ">
+          <GatsbyImage
+            image={content.ctaImage3.gatsbyImageData}
+            alt={content.ctaImage3.alt}
+            placeholder="blurred"
+            className="md:basis-auto z-0 md:ml-5 rounded-xl circle overflow-hidden"
+          />
+        </div>
+      </div>
+      <h4 className="mt-10 md:mt-12 mx-large text-center text-red">
+        <StructuredText data={content.ctaS2} />
+      </h4>
+      <Button cta={content.cta} />
+      <div className="block md:hidden mx-5 mt-10 md:mt-0 ">
         <GatsbyImage
           image={content.ctaImage3.gatsbyImageData}
           alt={content.ctaImage3.alt}
           placeholder="blurred"
-          className="md:ml-5 rounded-xl"
+          className="rounded-xl circle overflow-hidden"
         />
-      </div>
-      <h4 className="top-margin-medium mx-large text-center text-red">
-        <StructuredText data={content.ctaS2} />
-      </h4>
-      <div className="flex justify-center">
-        <Button cta={content.cta} />
       </div>
     </div>
   )
@@ -302,32 +254,34 @@ function CTAMove({ content }) {
 
 function Timeline({ content }) {
   return (
-    <div id="timeline" className="section xl:min-h-screen beige-card">
+    <div
+      id="linha"
+      className="section xl:min-h-screen xl:bg-beige rounded-xl xl:px-5 xl:py-10"
+    >
       <h1 className="text-center z-50">{content.timelineSectionTitle}</h1>
-
-      <div className="grid grid-cols-5 z-10   ">
+      <div className="xl:grid grid-cols-5 z-10  flex flex-row flex-wrap justify-center ">
         {content.contentModules.map((block, i) => (
           <div
             key={block.id}
             key={i}
-            className="grid grid-rows-3 gap-y-10hover:bg-cream rounded-2xl transition ease-in duration-100 p-3"
+            className="md:basis-5/12 md:mx-3 xl:mx-0 my-8 xl:my-0 xl:grid grid-rows-3 gap-y-0 bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 xl:p-3 border border-green xl:border-none"
           >
             {/* Title */}
-            <div className="md:transform -translate-y-10 row-start-1 row-span-1 border-b border-darkgreen self-end">
-              <div className="flex flex-col items-stretch">
-                <h2 className="text-center leading-none pb-5">{block.title}</h2>
-                <span className="flex justify-between monotext pb-1">
-                  <p className="inline-block">{block.startDate}</p>
-                  <p className="inline-block">{block.endDate}</p>
-                </span>
+            <div className="my-8 xl:my-0 xl:transform xl:-translate-y-16 row-start-1 row-span-1 border-b border-green self-end">
+              <h2 className="text-center leading-tight pb-5 text-3xl md:text-xl xl:text-4xl">
+                {block.title}
+              </h2>
+              <div className="flex justify-between monotext pb-1 place-self-end self-end">
+                <p className="inline-block">{block.startDate}</p>
+                <p className="inline-block">{block.endDate}</p>
               </div>
             </div>
             {/* Weeks */}
-            <div className="row-start-2 row-span-1 flex flex-col justify-center ">
+            <div className="-mx-2 xl:-mx-0 xl:transform xl:-translate-y-12 my-8 md:my-0 row-start-2 row-span-1 flex flex-col justify-center ">
               {block.weeks.map((week, i) => (
                 <div key={week.id} key={i}>
                   <span className="flex items-center justify-between mb-3">
-                    <h3 className="bg-darkgreen w-12 h-12 2xl:w-14 2xl:h-14  rounded-full text-cream text-center flex justify-center items-center">
+                    <h3 className="bg-red w-10 h-10 2xl:w-14 2xl:h-14  rounded-full text-cream text-center flex justify-center items-center">
                       {week.weekNumber}
                     </h3>
 
@@ -338,9 +292,9 @@ function Timeline({ content }) {
                 </div>
               ))}
             </div>
-            <p className="top-margin-sm row-start-3 text-sm 2xl:text-base px-2">
+            <div className="row-start-3 text-basesm leading-tight xl:-mt-4">
               <StructuredText data={block.moduleDescription} />
-            </p>
+            </div>
           </div>
         ))}
       </div>
@@ -354,97 +308,76 @@ function CTAPlants({ content }) {
       <h4 className="mx-medium  text-center text-beige rounded-2xl pdng bg-darkgreen">
         <StructuredText data={content.ctaS3} />
       </h4>
-      <ButtonBeige cta={content.cta} />
+      <button className="mt-10 mb-3 focus:outline-none">
+        <Link
+          to="/contato"
+          className="z-20 inline-block border border-green rounded-2xl bg-beige hover:bg-green text-black px-5 py-2 monotext text-sm 2xl:text-base no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
+        >
+          {content.cta}
+        </Link>
+      </button>
     </div>
   )
 }
 
 function Price({ content }) {
   return (
-    <div className="section mx-medium beige-card mb-12">
-      <div className="md:grid grid-cols-6 gap-x-10 place-content-center">
-        {/* Price */}
-        <div className="col-start-1 col-span-4">
-          <h1 className="text-center">{content.valueSectionTitle}</h1>
-          <h2 className="mt-12 text-5xl xl:text-7xl text-center">
-            {content.price}
-          </h2>
-          <p className="text-center monotext text-sm xl:text-base text-red mt-6">
-            {content.priceSubtext}
-          </p>
-          <div className="top-margin-sm flex justify-center">
-            {/* <span> */}
-            <h2 className="text-4xl xl:text-5xl 2xl:text-6xl text-center line-through decoration-red decoration-2 top-margin-sm">
-              {content.price}
-              {/* <span className="inline-block">*</span> */}
-              {/* <sup className="inline-block text-red monotext">-20%</sup> */}
-            </h2>
-            {/* </span> */}
-            <h2 className="text-4xl xl:text-5xl 2xl:text-6xl text-center leading-0 ml-5 p-2 border-2 border-red rounded-xl">
-              210€
-            </h2>
-          </div>
-        </div>
-        {/* Price summary */}
-        <div className="col-start-5 col-span-4">
-          <h1 className="mt-12 md:mt-0">{content.offerResumeSectionTitle}</h1>
-          <ul className="top-margin-sm">
-            {content.including.map((block, i) => (
-              <li key={i}>{block.offeringBulletPoint}</li>
-            ))}
-          </ul>
-          <h1 className="mt-8 md:mt-12 ">{content.paymentTermsTitle}</h1>
-          <p className="top-margin-sm ">{content.paymentTerms}</p>
-        </div>
-      </div>
-      <div className="flex justify-center mt-6">
-        <Button cta={content.cta} />
-      </div>
+    <div className="section mx-medium beige-card mb-12 flex flex-col items-center text-center">
+      <h1 className="text-center">{content.valueSectionTitle}</h1>
+      <h2 className="mt-8 text-7xl xl:text-7xl text-red text-center">
+        {content.price}
+      </h2>
+      <h1 className="mt-8">{content.offerResumeSectionTitle}</h1>
+      <h3>
+        <ul className="top-margin-sm mx-1 md:mx-12 xl:mx-24 2xl:mx-32 text-center list-none">
+          {content.including.map((block, i) => (
+            <li className="mb-3" key={i}>
+              + {block.offeringBulletPoint}
+            </li>
+          ))}
+        </ul>
+      </h3>
+      <h1 className="pt-3 top-margin-sm">{content.paymentTermsTitle}</h1>
+      <p className="top-margin-sm">{content.paymentTerms}</p>
+      <Button cta={content.cta} />
     </div>
   )
 }
 
 function Bios({ content }) {
   return (
-    <div className="section section-center mx-medium" id="women">
+    <div className="section  mx-medium" id="mulheres">
       <h1 className="text-center">{content.womenSectionTitle}</h1>
-      <div className="top-margin-medium grid grid-cols-2 md:grid-cols-5 place-content-center gap-2">
+      <div className="top-margin-medium grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 place-content-center gap-2">
         {content.women.map((node, i) => {
           return (
             <Link
-              to={`/women/${node.slug}`}
-              className="block cursor-pointer relative"
+              to={`/mulheres/${node.slug}`}
+              className="block cursor-pointer  z-10"
               key={i}
             >
               <div className="relative overflow-hidden">
-                {node.isMainOrganiser && (
-                  <div className="z-0">
-                    <GatsbyImage
-                      image={node.image.gatsbyImageData}
-                      alt={node.image.alt}
-                      placeholder="blurred"
-                      className="rounded-xl"
-                    />
-                  </div>
-                )}
-                {!node.isMainOrganiser && (
-                  <div className="z-0">
-                    <GatsbyImage
-                      image={node.image.gatsbyImageData}
-                      alt={node.image.alt}
-                      placeholder="blurred"
-                      className="rounded-xl"
-                    />
-                  </div>
-                )}
+                <div className="z-0">
+                  <GatsbyImage
+                    image={node.image.gatsbyImageData}
+                    alt={node.image.alt}
+                    placeholder="blurred"
+                    className="rounded-xl overflow-hidden circle"
+                  />
+                  {node.isMainOrganiser && (
+                    <p className="text-5xl md:text-6xl lg:text-7xl absolute top-3 right-3 text-red ">
+                      *
+                    </p>
+                  )}
+                </div>
                 <div className="absolute top-0 left-0 right-0 bottom-0 w-full z-30 text-white opacity-0 hover:opacity-100 flex flex-wrap items-center justify-center text-lg">
                   <p className="block top-0 left-0 -mt-6 monotext text-red z-40">
                     Read Bio
                   </p>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 w-full z-30 p-3">
+                <div className="absolute bottom-0 left-0 right-0 w-full p-3">
                   <div className="pb-2">
-                    <h3 className="block text-center text-cream mb-1">
+                    <h3 className="block text-center text-2xl uppercase text-cream leading-tight mb-1">
                       {node.name}
                     </h3>
                   </div>
@@ -454,6 +387,9 @@ function Bios({ content }) {
           )
         })}
       </div>
+      <p className="text-left top-margin-medium text-red text-2xl md:text-3xl  2xl:text-4xl">
+        * Core Team
+      </p>
     </div>
   )
 }
@@ -464,8 +400,8 @@ function Supporting({ content }) {
       <h1 className="text-center">{content.supportingSectionTitle}</h1>
       <div className="md:flex flex-row justify-around items-center top-margin-medium">
         {content.supportedProject.map((block, i) => (
-          <div>
-            <h2 className="text-center top-margin-sm" key={i}>
+          <div key={i}>
+            <h2 className="text-center top-margin-sm">
               <a
                 href={block.link}
                 target="_blank"
@@ -487,21 +423,21 @@ function Soul({ content }) {
   return (
     <div className="section mx-sm">
       <div className="md:flex justify-between ">
-        <div className="md:mr-10 w-2/3 ">
-          <h4 className="text-red self-end">
+        <div className="md:mr-10  md:w-2/3 ">
+          <h4 className="text-red self-end text-right md:text-left">
             <StructuredText data={content.ifYourSoulIsCallingForIntro} />
           </h4>
           <GatsbyImage
             image={content.soulImage.gatsbyImageData}
             alt={content.soulImage.alt}
             placeholder="blurred"
-            className="rounded-2xl top-margin-medium "
+            className="rounded-2xl top-margin-medium mx-1 md:mx-0 overflow-hidden circle"
           />
         </div>
-        <span className="w-1/3 self-end">
-          <p className="w-5/6 leading-tight">
+        <span className="md:w-1/3 self-end">
+          <div className="mx-2 md:mx-0 mt-10 md:mt-0 w-11/12 md:w-5/6 leading-tight">
             <StructuredText data={content.ifYourSoulIsCallingFor} />
-          </p>
+          </div>
           <Button cta={content.cta} />
         </span>
       </div>
@@ -553,11 +489,11 @@ export const query = graphql`
         value
       }
       ctaImage2 {
-        gatsbyImageData(width: 500, imgixParams: { fit: "crop" })
+        gatsbyImageData(width: 450, imgixParams: { fit: "crop" })
         alt
       }
       ctaImage3 {
-        gatsbyImageData(height: 500, imgixParams: { fit: "crop" })
+        gatsbyImageData(height: 450, imgixParams: { fit: "crop" })
         alt
       }
       valuesSectionTitle
@@ -570,16 +506,12 @@ export const query = graphql`
         }
       }
       valuesImage {
-        gatsbyImageData(height: 600, width: 600, imgixParams: { fit: "crop" })
+        gatsbyImageData(height: 600, width: 400, imgixParams: { fit: "crop" })
         alt
       }
       offeringSectionTitle
       offeringItem {
         ... on DatoCmsOffering {
-          id
-          model {
-            apiKey
-          }
           offeringShortText {
             value
           }
@@ -591,11 +523,6 @@ export const query = graphql`
       timelineSectionTitle
       contentModules {
         ... on DatoCmsModule {
-          id
-          model {
-            apiKey
-          }
-          order
           title
           startDate(formatString: "DD/MM")
           endDate(formatString: "DD/MM")
@@ -604,7 +531,6 @@ export const query = graphql`
           }
           weeks {
             ... on DatoCmsWeekContent {
-              id
               model {
                 apiKey
               }
@@ -618,14 +544,9 @@ export const query = graphql`
       price
       paymentTerms
       paymentTermsTitle
-      priceSubtext
       offerResumeSectionTitle
       including {
         ... on DatoCmsIncluding {
-          id
-          model {
-            apiKey
-          }
           offeringBulletPoint
         }
       }
@@ -651,7 +572,7 @@ export const query = graphql`
           }
           image {
             gatsbyImageData(
-              height: 750
+              height: 800
               width: 600
               imgixParams: { fit: "crop" }
             )
@@ -662,10 +583,6 @@ export const query = graphql`
       supportingSectionTitle
       supportedProject {
         ... on DatoCmsSupportedProject {
-          id
-          model {
-            apiKey
-          }
           projectName
           link
           description

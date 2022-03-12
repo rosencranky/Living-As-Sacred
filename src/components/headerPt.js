@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 
-export default function Header() {
+export default function HeaderPt() {
   const [isExpanded, toggleExpansion] = useState(false)
   return (
     <nav className="z-10 flex flex-wrap items-center justify-between lg:px-6 lg:pt-4 lg:mb-6">
@@ -50,15 +50,15 @@ export default function Header() {
       >
         <div className="mt-10 ml-4 z-30">
           <Link
-            to="/#about"
-            title="About"
+            to="/pt#sobre"
+            title="Sobre"
             className="navlinks"
             onClick={() => toggleExpansion(!isExpanded)}
           >
-            About
+            Sobre
           </Link>
           <Link
-            to={`/#timeline`}
+            to={`/pt#linha`}
             title="Timeline"
             className="navlinks"
             onClick={() => toggleExpansion(!isExpanded)}
@@ -66,20 +66,20 @@ export default function Header() {
             Timeline
           </Link>
           <Link
-            to={`/#women`}
-            title="Meet us"
+            to={`/pt#mulheres`}
+            title="Encontre-nos"
             className="navlinks"
             onClick={() => toggleExpansion(!isExpanded)}
           >
-            Meet us
+            Encontre-nos
           </Link>
           <Link
-            to={`/contact`}
-            title="Contact"
+            to={`/contato`}
+            title="Contato"
             className="navlinks"
             onClick={() => toggleExpansion(!isExpanded)}
           >
-            Contact
+            Contato
           </Link>
           <span className="inline-block text-red navlinks mt-10">
             <Link
@@ -172,17 +172,17 @@ export default function Header() {
         className={`hidden lg:flex flex-grow items-center justify-end w-auto text-black`}
       >
         <div className="justify-center self-center">
-          <Link to="/#about" title="About" className="navlinks">
-            About
+          <Link to="/pt#sobre" title="About" className="navlinks">
+            Sobre
           </Link>
-          <Link to={`/#timeline`} title="Timeline" className="navlinks">
+          <Link to={`/pt#linha`} title="Timeline" className="navlinks">
             Timeline
           </Link>
-          <Link to={`/#women`} title="Meet us" className=" navlinks">
-            Meet us
+          <Link to={`/pt#mulheres`} title="Meet us" className=" navlinks">
+            Encontre-nos
           </Link>
-          <Link to={`/contact`} title="Contact" className="navlinks mr-6">
-            Contact
+          <Link to={`/contato`} title="Contato" className="navlinks mr-6">
+            Contato
           </Link>
           <span className="text-red ">
             <Link

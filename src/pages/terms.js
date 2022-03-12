@@ -1,12 +1,10 @@
 import React from "react"
-
 import Layout from "../components/layout"
 import { graphql } from "gatsby"
 import SEO from "../components/seo"
 import { StructuredText } from "react-datocms"
 
 export default function TermsPage({ data }) {
-  console.log(data)
   return (
     <Layout>
       <SEO title="Terms and Conditions" />

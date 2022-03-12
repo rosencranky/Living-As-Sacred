@@ -1,21 +1,21 @@
 import React from "react"
-import Layout from "../components/layout"
+import LayoutPt from "../components/layoutPt"
 import SEO from "../components/seo"
 
-export default function Contact() {
+export default function ContactPt() {
   return (
-    <Layout>
+    <LayoutPt>
       <SEO title="Contact" />
       <div className="flex justify-center h-90 items-center overflow-y-hidden ">
         <div className="w-full lg:w-1/2 xl:w-8/12 px-4  ">
-          <h1 className="text-center top-margin-medium ">Contact us</h1>
+          <h1 className="text-center top-margin-medium ">Contate-Nos</h1>
 
           <form
             className=" top-margin-medium z-0 "
             method="post"
             netlify-honeypot="bot-field"
             data-netlify="true"
-            name="contact"
+            name="contato"
             action="/contact-success"
           >
             <input type="hidden" name="bot-field" />
@@ -27,7 +27,7 @@ export default function Contact() {
                   className="p-3 md:p-6 bg-beige  border border-darkgreen rounded-xl focus:outline-none ring-white  w-3/4"
                   type="text"
                   name="name"
-                  placeholder="Name"
+                  placeholder="Nome"
                   required
                 />
               </div>
@@ -39,7 +39,7 @@ export default function Contact() {
                   className=" p-3 md:p-6 bg-beige  border border-darkgreen rounded-xl focus:outline-none ring-white   w-3/4"
                   type="text"
                   name="email"
-                  placeholder="Email address"
+                  placeholder="Endereço de e-mail"
                   required
                 />
               </div>
@@ -53,7 +53,7 @@ export default function Contact() {
                   name="message"
                   type="text"
                   // role="textbox"
-                  placeholder="I want to sign up for Living as Sacred journey. Can you please send me payment details?"
+                  placeholder="Quer se inscrever na jornada Living as Sacred. Por favor, pode me enviar os dados de pagamento?"
                   required
                 />
               </div>
@@ -64,12 +64,12 @@ export default function Contact() {
               text-sm 2xl:text-base no-underline  leading-none shadow-sm  ring-white transition ease-in-out duration-300"
                 type="submit"
               >
-                Send
+                Mandar
               </button>
             </div>
           </form>
         </div>
       </div>
-    </Layout>
+    </LayoutPt>
   )
 }

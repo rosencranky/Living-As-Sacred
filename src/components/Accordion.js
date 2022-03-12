@@ -2,7 +2,7 @@ import React from "react"
 import { useState } from "react"
 import { StructuredText } from "react-datocms"
 
-export default function AccordionGrid({ index, excerpt, fullText }) {
+export default function Accordion({ index, excerpt, fullText }) {
   const [open, setOpen] = useState()
   function openToggle() {
     setOpen(!open)
@@ -28,13 +28,13 @@ export default function AccordionGrid({ index, excerpt, fullText }) {
                   </h3>
                 )}
                 {open && (
-                  <p
+                  <div
                     className={`leading-tight block mb-0 pb-0 px-3 flex-1 transition-opacity ease-in duration-200 delay-50 ${
                       open ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     <StructuredText data={fullText} />
-                  </p>
+                  </div>
                 )}
 
                 <div className="px-3 ml-auto ">
@@ -57,15 +57,6 @@ export default function AccordionGrid({ index, excerpt, fullText }) {
             </div>
           </div>
         </div>
-        {/* <div className={` origin-top accordion-item `}>
-          <div
-            className={`content max-w-2xl transition-opacity ease-in duration-200 delay-50 ${
-              open ? "opacity-100" : "opacity-0"
-            }`}
-          >
-            <StructuredText data={fullText} />
-          </div>
-        </div> */}
       </button>
     </div>
   )

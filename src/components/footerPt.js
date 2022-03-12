@@ -7,13 +7,13 @@ export default function Footer() {
       <div className="flex flex-col items-end text-beige -mb-2">
         <p> © {new Date().getFullYear()} </p>
       </div>
-      <div className=" flex flex-col lg:flex-row items-end text-beige">
+      <div className="flex flex-col lg:flex-row items-end text-beige">
         <p className="text-right xl:text-left">
           <Link
-            to={`/terms`}
+            to={`/termos`}
             className="monotext text-base no-underline hover:underline lg:ml-5"
           >
-            Terms & Privacy
+            Termos & Privacidade
           </Link>
         </p>
         <p className="text-right xl:text-left">
@@ -23,7 +23,7 @@ export default function Footer() {
             rel="noreferrer noopener"
             className="monotext text-base no-underline hover:underline md:ml-5 "
           >
-            Site by Joanna Herman
+            Site por Joanna Herman
           </a>
         </p>
         <p className="text-right xl:text-left">
@@ -33,14 +33,14 @@ export default function Footer() {
             rel="noreferrer noopener"
             className="monotext text-base no-underline hover:underline md:ml-5 xl:mr-10"
           >
-            Contact
+            Contato
           </a>
         </p>
         <span className="mt-10 xl:mt-0 inline-block">
           <Link
             to={`/`}
             className="font-serif text-xl hover:underline lg:ml-6"
-            activeClassName=""
+            activeClassName="underline"
           >
             EN
           </Link>

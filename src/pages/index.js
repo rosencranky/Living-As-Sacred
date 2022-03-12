@@ -7,19 +7,18 @@ import SEO from "../components/seo"
 import Button from "../components/Button"
 import { StructuredText } from "react-datocms"
 import Header from "../components/header"
-import AccordionGrid from "../components/Accordiongrid"
-// import Marquee from "react-fast-marquee"
+import Accordion from "../components/Accordion"
 
 export default function IndexPage({ data }) {
   return (
     <>
-      <SEO title="Home" description="Landing page for Living as Sacred." />
-      {/* <EarlyBirdMarquee content={data.content} /> */}
+      <SEO title="Home" description="Living as Sacred online journey" />
       <Hero />
       <Intro content={data.content} />
       <About content={data.content} />
       <JoannaMacy content={data.content} />
       <Values content={data.content} />
+      <CTASection content={data.content} />
       <Offering content={data.content} />
       <CTAMove content={data.content} />
       <Timeline content={data.content} />
@@ -32,24 +31,6 @@ export default function IndexPage({ data }) {
     </>
   )
 }
-
-// function EarlyBirdMarquee({ content }) {
-//   return (
-//     <div className="z-50 sticky top-0 left-0 ">
-//       <Marquee
-//         className="h-6 monotext text-cream bg-red text-base"
-//         gradient={false}
-//       >
-//         {content.priceBanner}
-//         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-//         {content.priceBanner}
-//         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-//         {content.priceBanner}
-//         &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-//       </Marquee>
-//     </div>
-//   )
-// }
 
 function Hero() {
   return (
@@ -93,7 +74,7 @@ function Intro({ content }) {
 
 function About({ content }) {
   return (
-    <div className="section block md:grid mx-medium grid-cols-3 gap-x-3 beige-card ">
+    <div className="section block md:grid mx-medium grid-cols-3 gap-x-3 beige-card">
       {/* Mission */}
       <div className="col-start-1 flex flex-col justify-start items-center">
         <h1 className="text-center">{content.missionSectionTitle}</h1>
@@ -142,19 +123,6 @@ function About({ content }) {
       <div className="col-span-3 flex justify-center place-self-center">
         <Button cta={content.cta} />
       </div>
-    </div>
-  )
-}
-
-function ButtonBeige({ cta }) {
-  return (
-    <div className="mt-10 mb-3">
-      <Link
-        to="/contact"
-        className="z-20 inline-block border border-green rounded-2xl bg-beige hover:bg-green text-black px-5 py-2 monotext text-sm 2xl:text-base no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
-      >
-        {cta}
-      </Link>
     </div>
   )
 }
@@ -210,47 +178,32 @@ function Value({ text }) {
   )
 }
 
+function CTASection({ content }) {
+  return (
+    <div className="section section-center mx-medium">
+      <h4 className="text-center">
+        <StructuredText data={content.ctaS1} />
+      </h4>
+      <Button cta={content.cta} />
+    </div>
+  )
+}
+
 function Offering({ content }) {
   return (
     <div id="offering" className="section mx-3 md:mx-12 lg:mx-8  2xl:mx-16">
-      <h4 className="top-margin-lg mx-medium text-center">
-        <StructuredText data={content.ctaS1} />
-      </h4>
-      <div className="flex justify-center">
-        <Button cta={content.cta} />
-      </div>
-      <h1 className="top-margin-lg text-center">
-        {content.offeringSectionTitle}
-      </h1>
-      {/* Desktop */}
-      <div className="hidden lg:grid top-margin-medium relative z-10 grid-cols-4 grid-rows-2">
+      <h1 className="text-center">{content.offeringSectionTitle}</h1>
+      {/* Accordion */}
+      <div className="grid top-margin-medium relative z-10 grid-cols-1 xl:grid-cols-4 grid-rows-2">
         {content.offeringItem.map((block, i) => (
           <div
-            className={`border-cream border-l bg-green hover:bg-beige transition ease-in duration-100 rounded-xl ${
-              i < 4 ? "border-b" : ""
+            className={`border-cream border-l border-b bg-green hover:bg-beige transition ease-in duration-100 rounded-xl ${
+              i < 4 ? "xl:border-b" : "" && i === 0 ? "border-t" : ""
             }`}
             key={block.id}
             key={i}
           >
-            <AccordionGrid
-              index={i}
-              excerpt={block.offeringShortText}
-              fullText={block.offeringItemText}
-            />
-          </div>
-        ))}
-      </div>
-      {/* mobile */}
-      <div className="grid xl:hidden top-margin-medium relative z-10 grid-cols-1 grid-rows-2">
-        {content.offeringItem.map((block, i) => (
-          <div
-            className={`border-t border-cream  bg-green hover:bg-beige rounded-xl transition ease-in duration-100 ${
-              i === 0 ? "border-t" : ""
-            } `}
-            key={block.id}
-            key={i}
-          >
-            <AccordionGrid
+            <Accordion
               index={i}
               excerpt={block.offeringShortText}
               fullText={block.offeringItemText}
@@ -286,9 +239,7 @@ function CTAMove({ content }) {
       <h4 className="mt-10 md:mt-12 mx-large text-center text-red">
         <StructuredText data={content.ctaS2} />
       </h4>
-      <div className="flex justify-center">
-        <Button cta={content.cta} />
-      </div>
+      <Button cta={content.cta} />
       <div className="block md:hidden mx-5 mt-10 md:mt-0 ">
         <GatsbyImage
           image={content.ctaImage3.gatsbyImageData}
@@ -308,15 +259,12 @@ function Timeline({ content }) {
       className="section xl:min-h-screen xl:bg-beige rounded-xl xl:px-5 xl:py-10"
     >
       <h1 className="text-center z-50">{content.timelineSectionTitle}</h1>
-
       <div className="xl:grid grid-cols-5 z-10  flex flex-row flex-wrap justify-center ">
         {content.contentModules.map((block, i) => (
           <div
             key={block.id}
             key={i}
-            className={`md:basis-5/12 md:mx-3 xl:mx-0 my-8 xl:my-0 xl:grid grid-rows-3 gap-y-0 bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 xl:p-3 border border-green xl:border-none 
-            
-            `}
+            className="md:basis-5/12 md:mx-3 xl:mx-0 my-8 xl:my-0 xl:grid grid-rows-3 gap-y-0 bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 xl:p-3 border border-green xl:border-none"
           >
             {/* Title */}
             <div className="my-8 xl:my-0 xl:transform xl:-translate-y-16 row-start-1 row-span-1 border-b border-green self-end">
@@ -360,63 +308,26 @@ function CTAPlants({ content }) {
       <h4 className="mx-medium  text-center text-beige rounded-2xl pdng bg-darkgreen">
         <StructuredText data={content.ctaS3} />
       </h4>
-      <ButtonBeige cta={content.cta} />
+      <button className="mt-10 mb-3 focus:outline-none">
+        <Link
+          to="/contact"
+          className="z-20 inline-block border border-green rounded-2xl bg-beige hover:bg-green text-black px-5 py-2 monotext text-sm 2xl:text-base no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
+        >
+          {content.cta}
+        </Link>
+      </button>
     </div>
   )
 }
 
-// function Price({ content }) {
-//   return (
-//     <div className="section mx-medium beige-card mb-12">
-//       <div className="md:grid grid-cols-6 gap-x-10 place-content-center">
-//         <div className="col-start-1 col-span-4">
-//           <h1 className="text-center">{content.valueSectionTitle}</h1>
-//           <h2 className="mt-12 text-5xl xl:text-7xl text-center">
-//             {content.price}
-//           </h2>
-//           <p className="text-center monotext text-sm xl:text-base text-red mt-6">
-//             {content.priceSubtext}
-//           </p>
-//           <div className="top-margin-sm flex justify-center">
-//             <h2 className="text-4xl xl:text-5xl 2xl:text-6xl text-center line-through decoration-red decoration-2 top-margin-sm">
-//               {content.price}
-//             </h2>
-
-//             <h2 className="text-4xl xl:text-5xl 2xl:text-6xl text-center leading-0 ml-5 p-2 border-2 border-red rounded-xl">
-//               210€
-//             </h2>
-//           </div>
-//         </div>
-//         {/* Price summary */}
-//         <div className="col-start-1 col-span-12">
-//           <h1 className="mt-12 md:mt-0">{content.offerResumeSectionTitle}</h1>
-//           <ul className="top-margin-sm">
-//             {content.including.map((block, i) => (
-//               <li key={i}>{block.offeringBulletPoint}</li>
-//             ))}
-//           </ul>
-//           <h1 className="mt-8 md:mt-12 ">{content.paymentTermsTitle}</h1>
-//           <p className="top-margin-sm ">{content.paymentTerms}</p>
-//         </div>
-//       </div>
-//       <div className="flex justify-center mt-6">
-//         <Button cta={content.cta} />
-//       </div>
-//     </div>
-//   )
-// }
-
 function Price({ content }) {
   return (
     <div className="section mx-medium beige-card mb-12 flex flex-col items-center text-center">
-      {/* Price summary */}
-
       <h1 className="text-center">{content.valueSectionTitle}</h1>
-
-      <h2 className="mt-12 text-7xl xl:text-7xl text-red text-center">
+      <h2 className="mt-8 text-7xl xl:text-7xl text-red text-center">
         {content.price}
       </h2>
-      <h1 className="top-margin-medium">{content.offerResumeSectionTitle}</h1>
+      <h1 className="mt-8">{content.offerResumeSectionTitle}</h1>
       <h3>
         <ul className="top-margin-sm mx-1 md:mx-12 xl:mx-24 2xl:mx-32 text-center list-none">
           {content.including.map((block, i) => (
@@ -426,12 +337,9 @@ function Price({ content }) {
           ))}
         </ul>
       </h3>
-      <h1 className="top-margin-medium">{content.paymentTermsTitle}</h1>
-      <p className="top-margin-sm ">{content.paymentTerms}</p>
-
-      <div className="flex justify-center mt-6">
-        <Button cta={content.cta} />
-      </div>
+      <h1 className="pt-3 top-margin-sm">{content.paymentTermsTitle}</h1>
+      <p className="top-margin-sm">{content.paymentTerms}</p>
+      <Button cta={content.cta} />
     </div>
   )
 }
@@ -449,29 +357,19 @@ function Bios({ content }) {
               key={i}
             >
               <div className="relative overflow-hidden">
-                {node.isMainOrganiser && (
-                  <div className="z-0">
-                    <GatsbyImage
-                      image={node.image.gatsbyImageData}
-                      alt={node.image.alt}
-                      placeholder="blurred"
-                      className="rounded-xl overflow-hidden circle"
-                    />
+                <div className="z-0">
+                  <GatsbyImage
+                    image={node.image.gatsbyImageData}
+                    alt={node.image.alt}
+                    placeholder="blurred"
+                    className="rounded-xl overflow-hidden circle"
+                  />
+                  {node.isMainOrganiser && (
                     <p className="text-5xl md:text-6xl lg:text-7xl absolute top-3 right-3 text-red ">
                       *
                     </p>
-                  </div>
-                )}
-                {!node.isMainOrganiser && (
-                  <div className="z-0">
-                    <GatsbyImage
-                      image={node.image.gatsbyImageData}
-                      alt={node.image.alt}
-                      placeholder="blurred"
-                      className="rounded-xl overflow-hidden circle"
-                    />
-                  </div>
-                )}
+                  )}
+                </div>
                 <div className="absolute top-0 left-0 right-0 bottom-0 w-full z-30 text-white opacity-0 hover:opacity-100 flex flex-wrap items-center justify-center text-lg">
                   <p className="block top-0 left-0 -mt-6 monotext text-red z-40">
                     Read Bio
