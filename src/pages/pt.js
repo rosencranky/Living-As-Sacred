@@ -369,7 +369,7 @@ function Bios({ content }) {
                 </div>
                 <div className="absolute top-0 left-0 right-0 bottom-0 w-full z-30 text-white opacity-0 hover:opacity-100 flex flex-wrap items-center justify-center text-lg">
                   <p className="block top-0 left-0 -mt-6 monotext text-red z-40">
-                    Read Bio
+                    Leia Bio
                   </p>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 w-full p-3">
