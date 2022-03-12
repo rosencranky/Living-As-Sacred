@@ -9,7 +9,7 @@ export default function Accordion({ index, excerpt, fullText }) {
   }
 
   return (
-    <div className={` ${index == 0 ? "border-t" : ""}`}>
+    <div>
       <button
         className="block w-full h-full text-left focus:outline-none focus:border-none group p-0 m-0 px-6 "
         onClick={() => openToggle()}

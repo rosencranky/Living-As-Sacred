@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 import FooterPt from "../components/footerPt"
 import SEO from "../components/seo"
-import Button from "../components/Button"
 import { StructuredText } from "react-datocms"
 import HeaderPt from "../components/headerPt"
 import Accordion from "../components/Accordion"
@@ -121,7 +120,7 @@ function About({ content }) {
         </div>
       </div>
       <div className="col-span-3 flex justify-center place-self-center">
-        <Button cta={content.cta} />
+        <ButtonPt cta={content.cta} />
       </div>
     </div>
   )
@@ -184,7 +183,7 @@ function CTASection({ content }) {
       <h4 className="text-center">
         <StructuredText data={content.ctaS1} />
       </h4>
-      <Button cta={content.cta} />
+      <ButtonPt cta={content.cta} />
     </div>
   )
 }
@@ -200,7 +199,6 @@ function Offering({ content }) {
             className={`border-cream border-l border-b bg-green hover:bg-beige transition ease-in duration-100 rounded-xl ${
               i < 4 ? "xl:border-b" : "" && i === 0 ? "border-t" : ""
             }`}
-            key={block.id}
             key={i}
           >
             <Accordion
@@ -239,7 +237,7 @@ function CTAMove({ content }) {
       <h4 className="mt-10 md:mt-12 mx-large text-center text-red">
         <StructuredText data={content.ctaS2} />
       </h4>
-      <Button cta={content.cta} />
+      <ButtonPt cta={content.cta} />
       <div className="block md:hidden mx-5 mt-10 md:mt-0 ">
         <GatsbyImage
           image={content.ctaImage3.gatsbyImageData}
@@ -262,7 +260,6 @@ function Timeline({ content }) {
       <div className="xl:grid grid-cols-5 z-10  flex flex-row flex-wrap justify-center ">
         {content.contentModules.map((block, i) => (
           <div
-            key={block.id}
             key={i}
             className="md:basis-5/12 md:mx-3 xl:mx-0 my-8 xl:my-0 xl:grid grid-rows-3 gap-y-0 bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 xl:p-3 border border-green xl:border-none"
           >
@@ -279,7 +276,7 @@ function Timeline({ content }) {
             {/* Weeks */}
             <div className="-mx-2 xl:-mx-0 xl:transform xl:-translate-y-12 my-8 md:my-0 row-start-2 row-span-1 flex flex-col justify-center ">
               {block.weeks.map((week, i) => (
-                <div key={week.id} key={i}>
+                <div key={i}>
                   <span className="flex items-center justify-between mb-3">
                     <h3 className="bg-red w-10 h-10 2xl:w-14 2xl:h-14  rounded-full text-cream text-center flex justify-center items-center">
                       {week.weekNumber}
@@ -339,7 +336,7 @@ function Price({ content }) {
       </h3>
       <h1 className="pt-3 top-margin-sm">{content.paymentTermsTitle}</h1>
       <p className="top-margin-sm">{content.paymentTerms}</p>
-      <Button cta={content.cta} />
+      <ButtonPt cta={content.cta} />
     </div>
   )
 }
@@ -438,10 +435,23 @@ function Soul({ content }) {
           <div className="mx-2 md:mx-0 mt-10 md:mt-0 w-11/12 md:w-5/6 leading-tight">
             <StructuredText data={content.ifYourSoulIsCallingFor} />
           </div>
-          <Button cta={content.cta} />
+          <ButtonPt cta={content.cta} />
         </span>
       </div>
     </div>
+  )
+}
+
+function ButtonPt({ cta }) {
+  return (
+    <button className="mt-8 md:mt-10 mb-3 flex justify-center place-self-center focus:outline-none">
+      <Link
+        to="/contato"
+        className="z-20 inline-block  border border-green rounded-2xl bg-green hover:bg-beige  text-black px-5 py-2 monotext text-sm 2xl:text-base no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
+      >
+        {cta}
+      </Link>
+    </button>
   )
 }
 

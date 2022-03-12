@@ -200,7 +200,6 @@ function Offering({ content }) {
             className={`border-cream border-l border-b bg-green hover:bg-beige transition ease-in duration-100 rounded-xl ${
               i < 4 ? "xl:border-b" : "" && i === 0 ? "border-t" : ""
             }`}
-            key={block.id}
             key={i}
           >
             <Accordion
@@ -262,7 +261,6 @@ function Timeline({ content }) {
       <div className="xl:grid grid-cols-5 z-10  flex flex-row flex-wrap justify-center ">
         {content.contentModules.map((block, i) => (
           <div
-            key={block.id}
             key={i}
             className="md:basis-5/12 md:mx-3 xl:mx-0 my-8 xl:my-0 xl:grid grid-rows-3 gap-y-0 bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 xl:p-3 border border-green xl:border-none"
           >
@@ -279,7 +277,7 @@ function Timeline({ content }) {
             {/* Weeks */}
             <div className="-mx-2 xl:-mx-0 xl:transform xl:-translate-y-12 my-8 md:my-0 row-start-2 row-span-1 flex flex-col justify-center ">
               {block.weeks.map((week, i) => (
-                <div key={week.id} key={i}>
+                <div key={i}>
                   <span className="flex items-center justify-between mb-3">
                     <h3 className="bg-red w-10 h-10 2xl:w-14 2xl:h-14  rounded-full text-cream text-center flex justify-center items-center">
                       {week.weekNumber}
