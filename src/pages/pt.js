@@ -23,12 +23,12 @@ export default function IndexPagePt({ data }) {
       <CTASection content={data.content} />
       <Offering content={data.content} />
       <CTAMove content={data.content} />
+      <Bios content={data.content} />
       <Timeline content={data.content} />
       <CTAPlants content={data.content} />
       <Price content={data.content} />
-      <Bios content={data.content} />
-      <Supporting content={data.content} />
       <Soul content={data.content} />
+      <Supporting content={data.content} />
       <FooterPt content={data.content} />
     </>
   )
