@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata&family=Nanum+Myeongjo&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
 
 @tailwind base;
 @layer base {
@@ -62,16 +62,6 @@
   .navlinks {
     @apply z-30 block text-4xl md:text-5xl text-black mb-1 lg:mr-4 lg:font-mono lg:tracking-wider lg:uppercase lg:text-base no-underline lg:hover:underline  lg:inline-block lg:mt-0;
   }
-
-  .img {
-    transition: filter 1s;
-    transition-property: filter;
-    transition-duration: 1s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-    will-change: filter;
-    opacity: 1 !important;
-  }
 }
 @tailwind components;
 @tailwind utilities;
@@ -111,10 +101,6 @@
 
   .section-center {
     @apply flex flex-wrap items-center justify-center;
-  }
-
-  .section-grid {
-    @apply grid grid-cols-3 md:grid-cols-12 items-baseline justify-center;
   }
 
   .beige-card {

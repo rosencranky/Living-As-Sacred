@@ -8,6 +8,7 @@ export default function Header() {
       <div className="block fixed top-8 right-4 z-40 lg:hidden">
         <button
           onClick={() => toggleExpansion(!isExpanded)}
+          aria-label="Menu"
           className={`z-40  fixed top-2 right-4 text-red  transition ease-in-out duration-300 focus:outline-none ${
             !isExpanded ? "rotate-0" : "rotate-45"
           }`}
@@ -106,6 +107,7 @@ export default function Header() {
             <a
               href="https://www.instagram.com/living.as.sacred/"
               target="_blank"
+              aria-label="Instagram"
               rel="noreferrer noopener"
               className="mr-3 md:mr-0"
             >
@@ -139,6 +141,7 @@ export default function Header() {
               // TODO: ADD TEELGRAM LINK
               href="https://www.instagram.com/living.as.sacred/"
               target="_blank"
+              aria-label="Telegram"
               rel="noreferrer noopener"
             >
               <svg

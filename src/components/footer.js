@@ -57,6 +57,7 @@ export default function Footer() {
           <a
             href="https://www.instagram.com/living.as.sacred/"
             target="_blank"
+            aria-label="Instagram"
             rel="noreferrer noopener"
             className="mr-3 md:mr-0"
           >
@@ -90,6 +91,7 @@ export default function Footer() {
             // TODO: ADD TEELGRAM LINK
             href="https://www.instagram.com/living.as.sacred/"
             target="_blank"
+            aria-label="Telegram"
             rel="noreferrer noopener"
           >
             <svg

@@ -11,7 +11,10 @@ import Accordion from "../components/Accordion"
 export default function IndexPagePt({ data }) {
   return (
     <>
-      <SEO title="Home" description="Living as Sacred online journey" />
+      <SEO
+        title="Home"
+        description="Living as Sacred is a movement to remember what it means to live in connection with our mother, ourselves, honouring all the relations with all the beings. "
+      />
       <Hero />
       <Intro content={data.content} />
       <About content={data.content} />

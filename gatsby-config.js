@@ -5,6 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Living as Sacred`,
+    siteUrl: `https://www.livingasacred.com`,
     description: `Living as Sacred is a movement to remember what it means to live in connection with our mother, ourselves, honouring all the relations with all the beings. 
     Journey with us online April – July 2022.`,
     author: `@jher123`,
@@ -14,6 +15,14 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://www.livingasacred.com",
+        sitemap: "https://www.livingasacred.com/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -27,13 +36,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `living-as-sacred`,
+        short_name: `las`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#FBF8F29`,
+        theme_color: `#FBF8F2`,
         display: `minimal-ui`,
-        icon: `src/images/favicon-196x196.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {

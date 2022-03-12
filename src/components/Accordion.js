@@ -12,6 +12,7 @@ export default function Accordion({ index, excerpt, fullText }) {
     <div>
       <button
         className="block w-full h-full text-left focus:outline-none focus:border-none group p-0 m-0 px-6 "
+        aria-label="Open"
         onClick={() => openToggle()}
       >
         <div className="py-6 md:py-10 cursor-pointer ring-blue">
