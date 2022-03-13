@@ -19,7 +19,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://www.livingasacred.com",
-        sitemap: "https://www.livingasacred.com/sitemap.xml",
+        sitemap: "https://www.livingasacred.com/sitemap/sitemap-0.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
@@ -32,6 +32,7 @@ module.exports = {
     },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sitemap`,
     `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
