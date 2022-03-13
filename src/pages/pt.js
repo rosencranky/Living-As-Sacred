@@ -13,7 +13,8 @@ export default function IndexPagePt({ data }) {
     <>
       <SEO
         title="Home"
-        description="Living as Sacred is a movement to remember what it means to live in connection with our mother, ourselves, honouring all the relations with all the beings. "
+        lang="pt"
+        description="Living as Sacred teceu uma jornada com 13 mulheres, que vão partilhar os seus conhecimentos, para inspirar, trazer a mudança e relembrar o que é e como podemos viver de uma forma mais sagrada."
       />
       <Hero />
       <Intro content={data.content} />

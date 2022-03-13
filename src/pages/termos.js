@@ -8,7 +8,7 @@ import { StructuredText } from "react-datocms"
 export default function TermsPagePt({ data }) {
   return (
     <LayoutPt>
-      <SEO title="Termos de Compra e Condições Contratuais" />
+      <SEO title="Termos de Compra e Condições Contratuais" lang="pt" />
       <div className="section min-h-screen">
         <div className="mx-medium mt-48 xl:mt-36">
           <StructuredText data={data.content.text} />

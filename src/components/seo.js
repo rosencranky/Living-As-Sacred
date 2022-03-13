@@ -9,26 +9,59 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import metaImage from "../images/hands.jpg"
 
 function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
+  // const { site } = useStaticQuery(
+  //   graphql`
+  //     query {
+  //       site {
+  //         siteMetadata {
+  //           title
+  //           description
+  //           author
+  //         }
+  //       }
+  //     }
+  //   `
+  // )
+
+  const {
+    site,
+    datoCmsSite: {
+      globalSeo: {
+        siteName,
+
+        fallbackSeo: {
+          image: { url },
+        },
+      },
+    },
+  } = useStaticQuery(graphql`
+    query SiteMetadata {
+      site {
+        siteMetadata {
+          title
+          description
+          author
+        }
+      }
+
+      datoCmsSite {
+        globalSeo {
+          siteName
+
+          fallbackSeo {
+            image {
+              url
+            }
           }
         }
       }
-    `
-  )
+    }
+  `)
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
-  const siteImage = metaImage
 
   return (
     <Helmet
@@ -47,6 +80,10 @@ function SEO({ description, lang, meta, title }) {
           content: title,
         },
         {
+          property: `og:site_name`,
+          content: { siteName },
+        },
+        {
           property: `og:description`,
           content: metaDescription,
         },
@@ -56,7 +93,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: `/static/hands.jpg`,
+          content: { url },
         },
 
         {

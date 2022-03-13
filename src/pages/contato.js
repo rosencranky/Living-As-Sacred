@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 export default function ContactPt() {
   return (
     <LayoutPt>
-      <SEO title="Contact" />
+      <SEO title="Contato" lang="pt" />
       <div className="flex justify-center h-90 items-center overflow-y-hidden ">
         <div className="w-full lg:w-1/2 xl:w-8/12 px-4  ">
           <h1 className="text-center top-margin-medium ">Contate-Nos</h1>
