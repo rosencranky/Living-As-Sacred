@@ -36,8 +36,7 @@ module.exports = {
       },
       backgroundImage: {
         hero: "url('../images/living-as-sacred-logo-final.jpg')",
-        banner: "url('../images/jornada-4.jpeg')",
-        leaves: "url('../images/leaves.jpg')",
+        leaves: "url('../images/cultura-da-mulher-2.jpg')",
         hands: "url('../images/hands.jpg')",
         plants: "url('../images/plant-medicine.jpg')",
         tree: "url('../images/background-2.jpg')",
