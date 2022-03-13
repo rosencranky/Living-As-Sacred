@@ -45,7 +45,7 @@ export default function HeaderPt() {
       <div
         className={`${
           isExpanded
-            ? `fixed top-0 w-full z-20 block lg:hidden bg-green h-screen`
+            ? `fixed top-0 w-full z-30 block lg:hidden bg-green h-screen`
             : `hidden`
         }   `}
       >
