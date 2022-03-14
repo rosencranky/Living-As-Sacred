@@ -323,7 +323,10 @@ function CTAPlants({ content }) {
 
 function Price({ content }) {
   return (
-    <div className="section mx-medium beige-card mb-12 flex flex-col items-center text-center">
+    <div
+      id="valor"
+      className="section mx-medium beige-card mb-12 flex flex-col items-center text-center"
+    >
       <h1 className="text-center">{content.valueSectionTitle}</h1>
       <h2 className="mt-8 text-7xl xl:text-7xl text-red text-center">
         {content.price}
@@ -340,7 +343,15 @@ function Price({ content }) {
       </h3>
       <h1 className="pt-3 top-margin-sm">{content.paymentTermsTitle}</h1>
       <p className="top-margin-sm">{content.paymentTerms}</p>
-      <ButtonPt cta={content.cta} />
+      {/* <ButtonPt cta={content.cta} /> */}
+      <button className="mt-8 md:mt-10 mb-3 flex justify-center place-self-center focus:outline-none">
+        <Link
+          to="/contato"
+          className="z-20 inline-block  border border-green rounded-2xl bg-green hover:bg-beige  text-black px-5 py-2 monotext text-sm 2xl:text-base no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
+        >
+          {content.cta}
+        </Link>
+      </button>
     </div>
   )
 }
@@ -450,7 +461,7 @@ function ButtonPt({ cta }) {
   return (
     <button className="mt-8 md:mt-10 mb-3 flex justify-center place-self-center focus:outline-none">
       <Link
-        to="/contato"
+        to="/pt#valor"
         className="z-20 inline-block  border border-green rounded-2xl bg-green hover:bg-beige  text-black px-5 py-2 monotext text-sm 2xl:text-base no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
       >
         {cta}

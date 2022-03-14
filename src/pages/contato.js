@@ -9,7 +9,10 @@ export default function ContactPt() {
       <div className="flex justify-center h-90 items-center overflow-y-hidden ">
         <div className="w-full lg:w-1/2 xl:w-8/12 px-4  ">
           <h1 className="text-center top-margin-medium ">Contate-Nos</h1>
-
+          <p className="top-margin-medium text-center">
+            Por favor, envie-nos uma mensagem para se inscrever na viagem e
+            obter os detalhes de pagamento.
+          </p>
           <form
             className=" top-margin-medium z-0 "
             method="post"

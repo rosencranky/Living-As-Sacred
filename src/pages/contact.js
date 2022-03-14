@@ -9,7 +9,10 @@ export default function Contact() {
       <div className="flex justify-center h-90 items-center overflow-y-hidden ">
         <div className="w-full lg:w-1/2 xl:w-8/12 px-4  ">
           <h1 className="text-center top-margin-medium ">Contact us</h1>
-
+          <p className="top-margin-medium text-center">
+            Please send us a message to sign up for the journey and get payment
+            details.
+          </p>
           <form
             className=" top-margin-medium z-0 "
             method="post"
