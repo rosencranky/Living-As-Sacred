@@ -139,7 +139,7 @@ export default function HeaderPt() {
             </a>
             <a
               // TODO: ADD TEELGRAM LINK
-              href="https://www.instagram.com/living.as.sacred/"
+              href="https://t.me/apoemapormaria"
               target="_blank"
               aria-label="Telegram"
               rel="noreferrer noopener"
