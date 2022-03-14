@@ -30,7 +30,6 @@ function SEO({ description, lang, meta, title }) {
     datoCmsSite: {
       globalSeo: {
         siteName,
-
         fallbackSeo: {
           image: { url },
         },
@@ -93,9 +92,17 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: { url },
+          content:
+            "https://www.datocms-assets.com/62776/1647173697-cultura-da-mulher-0491.jpeg",
         },
-
+        {
+          property: `og:image:width`,
+          content: "1160",
+        },
+        {
+          property: `og:image:height`,
+          content: "1740",
+        },
         {
           name: `twitter:card`,
           content: `summary`,
