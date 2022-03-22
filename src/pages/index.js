@@ -265,7 +265,7 @@ function Timeline({ content }) {
         {content.contentModules.map((block, i) => (
           <div
             key={i}
-            className="md:basis-5/12 md:mx-3 xl:mx-0 my-4 xl:my-0 xl:grid grid-rows-3 gap-y-0 bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 xl:p-3 border border-green xl:border-none"
+            className="lg:h-[78vh] xl:h-auto md:basis-5/12 md:mx-3 xl:mx-0 my-4 xl:my-0 md:grid grid-rows-3 gap-y-0 bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:py-5 xl:p-3 border border-green xl:border-none"
           >
             {/* Title */}
             <div className="my-8 xl:my-0 xl:transform xl:-translate-y-16 row-start-1 row-span-1 border-b border-green self-end">
@@ -278,7 +278,7 @@ function Timeline({ content }) {
               </div>
             </div>
             {/* Weeks */}
-            <div className="-mx-2 xl:-mx-0 xl:transform xl:-translate-y-12 my-8 md:my-0 row-start-2 row-span-1 flex flex-col justify-center ">
+            <div className="-mx-2 xl:-mx-0 xl:transform xl:-translate-y-12 my-8 md:my-10 xl:my-0 row-start-2 row-span-1 flex flex-col justify-center ">
               {block.weeks.map((week, i) => (
                 <div key={i}>
                   <span className="flex items-center justify-between mb-3">
@@ -293,7 +293,7 @@ function Timeline({ content }) {
                 </div>
               ))}
             </div>
-            <div className="row-start-3 text-basesm leading-tight xl:-mt-4">
+            <div className="row-start-3 text-basesm leading-tight  xl:-mt-4">
               <StructuredText data={block.moduleDescription} />
             </div>
           </div>
