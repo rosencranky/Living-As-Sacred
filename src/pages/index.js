@@ -45,7 +45,7 @@ function Hero() {
       <div className="z-10 absolute top-6 left-0 xl:top-5 xl:left-5">
         <h1 className="mt-0 ml-3 xl:mt-0 xl:ml-0 text-left text-3xl md:text-4xl lg:text-5xl xl:text-7xl  font-serif normal-case text-red tracking-tight leading-tighter">
           Living · as · Sacred
-          <br /> April – July 2022
+          <br /> 30 October – 30 April
           <br /> <em>Online</em>
         </h1>
       </div>
@@ -331,6 +331,7 @@ function Price({ content }) {
       <h2 className="mt-8 text-7xl xl:text-7xl text-red text-center">
         {content.price}
       </h2>
+      <h3 className="mt-2 text-red"> * Early bird until 29.SEP </h3>
       <h1 className="mt-8">{content.offerResumeSectionTitle}</h1>
       <h3>
         <ul className="top-margin-sm mx-1 md:mx-12 xl:mx-24 2xl:mx-32 text-center list-none">
