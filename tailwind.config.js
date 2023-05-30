@@ -6,12 +6,12 @@ module.exports = {
     extend: {
       colors: {
         green: "#c8c9af",
-        darkgreen: "#6D7661",
+        darkgreen: "#945F4D",
         black: "#162214",
         blacker: "#000",
-        red: "#bc3602",
+        red: "#BC3601",
         beige: "#F5EDE0",
-        cream: "#FBF8F2",
+        cream: "#ECE6D7",
       },
       fontFamily: {
         sans: ["Inconsolata", "sans-serif"],

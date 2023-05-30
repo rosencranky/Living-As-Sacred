@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 export default function Footer() {
   return (
-    <footer className=" w-full top-margin-lg flex justify-between items-end pb-10 px-5 xl:px-10  pt-8 xl:pt-12  bg-darkgreen rounded-t-xl">
+    <footer className=" w-full  flex justify-between items-end pb-10 px-5 xl:px-10  pt-8 xl:pt-12  bg-darkgreen rounded-t-xl">
       <div className="flex flex-col items-end text-beige -mb-2">
         <p> © {new Date().getFullYear()} </p>
       </div>
@@ -36,7 +36,7 @@ export default function Footer() {
             Contact
           </a>
         </p>
-        <span className="mt-10 xl:mt-0 inline-block">
+        {/*<span className="mt-10 xl:mt-0 inline-block">
           <Link
             to={`/`}
             className="font-serif text-xl hover:underline lg:ml-6"
@@ -52,7 +52,7 @@ export default function Footer() {
           >
             PT
           </Link>
-        </span>
+  </span>*/}
         <div className="flex justify-end mt-10">
           <a
             href="https://www.instagram.com/living.as.sacred/"
