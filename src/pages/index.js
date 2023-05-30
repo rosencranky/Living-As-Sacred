@@ -17,7 +17,8 @@ export default function IndexPage({ data }) {
         description="Living as Sacred is a movement to remember what it means to live in connection with our mother, ourselves, honouring all the relations with all the beings."
       />
       <Hero />
-      <Intro content={data.content} />
+
+      {/*<Intro content={data.content} />
       <About content={data.content} />
       <JoannaMacy content={data.content} />
       <Values content={data.content} />
@@ -29,7 +30,7 @@ export default function IndexPage({ data }) {
       <CTAPlants content={data.content} />
       <Price content={data.content} />
       <Soul content={data.content} />
-      <Supporting content={data.content} />
+  <Supporting content={data.content} />*/}
       <Footer content={data.content} />
     </>
   )
@@ -39,17 +40,18 @@ function Hero() {
   return (
     <div
       id="hero"
-      className="h-screen xl:h-screen max-h-screen md:bg-hero bg-center bg-contain bg-no-repeat"
+      className="h-screen xl:h-screen max-h-screen bg-center bg-contain bg-no-repeat"
     >
-      <Header />
+      {/*<Header />*/}
       <div className="z-10 absolute top-6 left-0 xl:top-5 xl:left-5">
         <h1 className="mt-0 ml-3 xl:mt-0 xl:ml-0 text-left text-3xl md:text-4xl lg:text-5xl xl:text-7xl  font-serif normal-case text-red tracking-tight leading-tighter">
           Living · as · Sacred
-          <br /> 30 October – 30 April
+          <br /> 1 October – 14 April
           <br /> <em>Online</em>
         </h1>
       </div>
-      <div className="block md:hidden z-0 translate-y-3 absolute bottom-[10%]">
+        <Building ></Building>
+      {/*<div className="block md:hidden z-0 translate-y-3 absolute bottom-[10%]">
         <StaticImage
           src="../images/living-as-sacred-logo-mobile.jpg"
           alt="logo"
@@ -57,7 +59,20 @@ function Hero() {
           className="z-0 overflow-hidden"
           width={500}
         />
-      </div>
+  </div>*/}
+    </div>
+  )
+}
+
+function Building() {
+  return (
+    <div id="about" className="mt-80 xl:mt-96 mx-3 lg:mx-10 section-center">
+      <span className="mx-medium">
+        <h2 className="text-center">Estamos a atualizar o site, novidades em breve! </h2>
+        <h2 className="text-center text-red ">
+          We're updating our site, check back soon for more news!
+        </h2>
+      </span>
     </div>
   )
 }
