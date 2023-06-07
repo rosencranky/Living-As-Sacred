@@ -5,13 +5,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        green: "#c8c9af",
+        spice:"#945F4D",
+        rust:"#9F5043",
+        khaki: "#c5a188",
         darkgreen: "#6D7661",
-        black: "#162214",
+        black: "#2C2726",
         blacker: "#000",
-        red: "#bc3602",
-        beige: "#F5EDE0",
-        cream: "#FBF8F2",
+        red: "#bc3601",
+        beige: "#E0D1BF",
+        cream: "#ECE6D7",
       },
       fontFamily: {
         sans: ["Inconsolata", "sans-serif"],
