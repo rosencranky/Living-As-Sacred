@@ -77,7 +77,13 @@ function Intro({ content }) {
 
 function About({ content }) {
   return (
-    <div className="section block md:grid mx-medium grid-cols-3 gap-x-3 beige-card">
+    <div>
+      <div className="mt-40 xl:mt-24 mx-3 lg:mx-10 section-center">
+      <span className="mx-medium content-end">
+        <h1 className="text-center">{content.introSectionTitle} </h1>
+      </span>
+      </div>
+    <div className="section block md:grid mx-medium grid-cols-3 gap-x-3 beige-card ">
       {/* Mission */}
       <div className="col-start-1 flex flex-col justify-start items-center">
         <h1 className="text-center">{content.missionSectionTitle}</h1>
@@ -126,6 +132,7 @@ function About({ content }) {
       <div className="col-span-3 flex justify-center place-self-center">
         <Button cta={content.cta} />
       </div>
+    </div>
     </div>
   )
 }
@@ -200,7 +207,7 @@ function Offering({ content }) {
       <div className="grid top-margin-medium relative z-10 grid-cols-1 xl:grid-cols-4 grid-rows-2">
         {content.offeringItem.map((block, i) => (
           <div
-            className={`border-cream border-l border-b bg-green hover:bg-beige transition ease-in duration-100 rounded-xl ${
+            className={`border-cream border-l border-b bg-beige hover:bg-beige transition ease-in duration-100 rounded-xl ${
               i < 4 ? "xl:border-b" : "" && i === 0 ? "border-t" : ""
             }`}
             key={i}
@@ -467,6 +474,7 @@ export const query = graphql`
       introtext1 {
         value
       }
+      aboutSectionTitle
       missionSectionTitle
       visionSectionTitle
       purposeSectionTitle
