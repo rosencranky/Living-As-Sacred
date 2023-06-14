@@ -42,10 +42,10 @@ function Hero() {
       className="h-screen xl:h-screen max-h-screen md:bg-hero bg-center bg-contain bg-no-repeat"
     >
       <Header />
-      <div className="z-10 absolute top-6 left-0 xl:top-5 xl:left-5">
+      <div className="z-10 absolute top-6 left-0 xl:top-10 xl:left-10">
         <h1 className="mt-0 ml-3 xl:mt-0 xl:ml-0 text-left text-3xl md:text-4xl lg:text-5xl xl:text-7xl  font-serif normal-case text-red tracking-tight leading-tighter">
           Living · as · Sacred
-          <br /> 30 October – 30 April
+          <br /> 1 October – 14 April
           <br /> <em>Online</em>
         </h1>
       </div>
@@ -64,10 +64,10 @@ function Hero() {
 
 function Intro({ content }) {
   return (
-    <div id="about" className="mt-0 xl:mt-24 mx-3 lg:mx-10 section-center ">
-      <span className="mx-medium">
+    <div id="about" className="mt-0 xl:mt-24 xl:mx-24 mx-3 lg:mx-10 section-center ">
+      <span className="xl:mx-9">
         <h1 className="text-center">{content.introSectionTitle} </h1>
-        <h2 className="z-10 text-center text-red leading-tighter">
+        <h2 className="z-10 text-center blockquote-sm xl:mt-10">
           <StructuredText data={content.introtext1} />
         </h2>
       </span>
@@ -80,7 +80,7 @@ function About({ content }) {
     <div>
       <div className="mt-40 xl:mt-24 mx-3 lg:mx-10 section-center">
       <span className="mx-medium content-end">
-        <h1 className="text-center">{content.introSectionTitle} </h1>
+        <h1 className="text-center">{content.aboutSectionTitle} </h1>
       </span>
       </div>
     <div className="section block md:grid mx-medium grid-cols-3 gap-x-3 beige-card ">

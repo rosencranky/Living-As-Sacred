@@ -34,7 +34,12 @@ module.exports = {
         // '4xl': '2.25rem',
         // '5xl': '3rem',
         // '6xl': '4rem',
-        // '7xl': '5rem',
+        '7xl': ["74px", "72px"], 
+        '40block': ["40px", {
+          lineHeight: '54px',
+          letterSpacing: '-1.2px',
+          fontWeight: '400',
+        }]
       },
       backgroundImage: {
         hero: "url('../images/living-as-sacred-logo-final.jpg')",

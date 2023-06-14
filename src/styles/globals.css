@@ -62,6 +62,10 @@
   .navlinks {
     @apply z-30 block text-4xl md:text-5xl text-black mb-1 lg:mr-4 lg:font-mono lg:tracking-wider lg:uppercase lg:text-base no-underline lg:hover:underline  lg:inline-block lg:mt-0;
   }
+
+  .blockquote-sm {
+    @apply text-red xl:text-40block -tracking-[1.2px]
+  }
 }
 @tailwind components;
 @tailwind utilities;
