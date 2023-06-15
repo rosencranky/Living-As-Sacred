@@ -76,7 +76,7 @@
   }
 
   .mx-large {
-    @apply mx-3 md:mx-5 xl:mx-48 2xl:mx-64;
+    @apply mx-3 md:mx-5 xl:mx-44 2xl:mx-44;
   }
 
   .mx-medium {
