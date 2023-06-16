@@ -64,7 +64,7 @@ function Hero() {
 
 function Intro({ content }) {
   return (
-    <div id="about" className="mt-0 xl:mt-24 xl:mx-24 mx-3 lg:mx-10 section-center ">
+    <div id="about" className="mt-0 xl:mt-52 xl:mx-24 mx-3 lg:mx-10 section-center ">
       <span className="xl:mx-9">
         <h1 className="text-center">{content.introSectionTitle} </h1>
         <h2 className="z-10 text-center blockquote-sm xl:mt-10">
@@ -77,17 +77,17 @@ function Intro({ content }) {
 
 function About({ content }) {
   return (
-    <div>
-      <div className="mt-40 xl:mt-24 mx-3 lg:mx-10 section-center">
+    <div className="xl:mt-52">
+      <div className="xl:mb- mt-40 mx-3 lg:mx-10 section-center">
       <span className="mx-medium content-end">
         <h1 className="text-center">{content.aboutSectionTitle} </h1>
       </span>
       </div>
-    <div className="section block md:grid mx-medium grid-cols-3 gap-x-3 beige-card ">
+    <div className="section block xl:mt-16 md:grid mx-medium grid-cols-3 gap-x-24 beige-card ">
       {/* Mission */}
       <div className="col-start-1 flex flex-col justify-start items-center">
         <h1 className="text-center xl:text-2xl-lg">{content.missionSectionTitle}</h1>
-        <div className="top-margin-sm">
+        <div className="mt-5">
           <GatsbyImage
             image={content.missionImage.gatsbyImageData}
             alt={content.missionImage.alt}
@@ -95,14 +95,14 @@ function About({ content }) {
             className="rounded-full xl:m-5 overflow-hidden circle"
           />
         </div>
-        <div className="mx-1 md:mx-3 leading-tight top-margin-sm">
+        <div className="mx-1 md:mx-3 leading-tight top-margin-sm text-center" >
           <StructuredText data={content.mission} />
         </div>
       </div>
       {/* Purpose */}
       <div className="mt-10 md:mt-0 md:col-start-2 flex flex-col justify-start items-center">
         <h1 className="text-center xl:text-2xl-lg">{content.purposeSectionTitle}</h1>
-        <div className="top-margin-sm">
+        <div className="mt-5">
           <GatsbyImage
             image={content.purposeImage.gatsbyImageData}
             alt={content.purposeImage.alt}
@@ -110,14 +110,14 @@ function About({ content }) {
             className="rounded-full xl:m-5 overflow-hidden circle"
           />
         </div>
-        <div className="mx-1 md:mx-3 leading-tight top-margin-sm">
+        <div className="mx-1 md:mx-3 leading-tight top-margin-sm text-center">
           <StructuredText data={content.purpose} />
         </div>
       </div>
       {/* Vision */}
       <div className="mt-10 md:mt-0 md:col-start-3 flex flex-col justify-start items-center">
         <h1 className="text-center xl:text-2xl-lg">{content.visionSectionTitle}</h1>
-        <div className="top-margin-sm">
+        <div className="mt-5">
           <GatsbyImage
             image={content.visionImage.gatsbyImageData}
             alt={content.visionImage.alt}
@@ -125,7 +125,7 @@ function About({ content }) {
             className="rounded-full xl:m-5 overflow-hidden circle"
           />
         </div>
-        <div className="mx-1 md:mx-3 leading-tight top-margin-sm">
+        <div className="mx-1 md:mx-3 leading-tight top-margin-sm text-center">
           <StructuredText data={content.vision} />
         </div>
       </div>
