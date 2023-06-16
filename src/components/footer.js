@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 export default function Footer() {
   return (
-    <footer className=" w-full top-margin-lg flex justify-between items-end pb-10 px-5 xl:px-10  pt-8 xl:pt-12  bg-darkgreen rounded-t-xl">
+    <footer className=" w-full top-margin-lg flex justify-between items-end pb-10 px-5 xl:px-10  pt-8 xl:pt-12  bg-spice rounded-t-xl">
       <div className="flex flex-col items-end text-beige -mb-2">
         <p> © {new Date().getFullYear()} </p>
       </div>

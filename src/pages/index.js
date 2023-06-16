@@ -86,7 +86,7 @@ function About({ content }) {
     <div className="section block md:grid mx-medium grid-cols-3 gap-x-3 beige-card ">
       {/* Mission */}
       <div className="col-start-1 flex flex-col justify-start items-center">
-        <h1 className="text-center">{content.missionSectionTitle}</h1>
+        <h1 className="text-center xl:text-2xl-lg">{content.missionSectionTitle}</h1>
         <div className="top-margin-sm">
           <GatsbyImage
             image={content.missionImage.gatsbyImageData}
@@ -101,7 +101,7 @@ function About({ content }) {
       </div>
       {/* Purpose */}
       <div className="mt-10 md:mt-0 md:col-start-2 flex flex-col justify-start items-center">
-        <h1 className="text-center">{content.purposeSectionTitle}</h1>
+        <h1 className="text-center xl:text-2xl-lg">{content.purposeSectionTitle}</h1>
         <div className="top-margin-sm">
           <GatsbyImage
             image={content.purposeImage.gatsbyImageData}
@@ -116,7 +116,7 @@ function About({ content }) {
       </div>
       {/* Vision */}
       <div className="mt-10 md:mt-0 md:col-start-3 flex flex-col justify-start items-center">
-        <h1 className="text-center">{content.visionSectionTitle}</h1>
+        <h1 className="text-center xl:text-2xl-lg">{content.visionSectionTitle}</h1>
         <div className="top-margin-sm">
           <GatsbyImage
             image={content.visionImage.gatsbyImageData}
@@ -148,32 +148,24 @@ function Quote({ content }) {
 
 function Values({ content }) {
   return (
-    <div className="top-margin-lg w-full py-12 bg-leaves bg-cover">
-      <h1 className="text-center text-black md:text-cream mb-10 md:mb-0">
+    <div>
+    <div className="top-margin-lg w-full py-12">
+      <h1 className="text-center text-black mb-10 md:mb-0">
         {content.valuesSectionTitle}
       </h1>
-      <div className="flex flex-wrap md:grid gap-x-5 xl:gap-x-0 grid-cols-12 place-items-center place-content-center items-center">
+      </div>
+      <div className="flex flex-wrap md:grid gap-x-5 xl:gap-x-0 grid-cols-12 place-items-center place-content-center items-center bg-leaves bg-cover">
         <div className="md:ml-16 xl:ml-0 col-start-1 col-span-3">
           <Value text={content.valuesList[0].value} />
-          <h2 className="text-center text-cream">·</h2>
           <Value text={content.valuesList[1].value} />
-          <h2 className="text-center text-cream">·</h2>
           <Value text={content.valuesList[2].value} />
-        </div>
-        <div className="flex justify-center my-5 md:my-10 col-start-4 col-span-6 m-3 md:m-5 xl:p-3 rounded-xl overflow-hidden ">
-          <GatsbyImage
-            image={content.valuesImage.gatsbyImageData}
-            alt={content.valuesImage.alt}
-            placeholder="blurred"
-            className="rounded-xl overflow-hidden circle"
-          />
+          <Value text={content.valuesList[3].value} />
         </div>
         <div className="md:mr-16 xl:mr-0 col-start-10 col-span-3">
-          <Value text={content.valuesList[3].value} />
-          <h2 className="text-center text-cream">·</h2>
           <Value text={content.valuesList[4].value} />
-          <h2 className="text-center text-cream">·</h2>
           <Value text={content.valuesList[5].value} />
+          <Value text={content.valuesList[6].value} />
+          <Value text={content.valuesList[7].value} />
         </div>
       </div>
     </div>
@@ -182,7 +174,7 @@ function Values({ content }) {
 
 function Value({ text }) {
   return (
-    <h2 className="px-6 md:px-4 xl:px-8 pt-1 pb-3 rounded-2xl xl:rounded-3xl text-black text-center bg-beige hover:bg-green">
+    <h2 className="px-6 md:px-4 xl:px-8 pt-1 pb-3 rounded-2xl xl:rounded-3xl text-black text-center bg-beige hover:bg-green xl:text-3xl">
       <StructuredText data={text} />
     </h2>
   )
@@ -330,16 +322,20 @@ function CTAPlants({ content }) {
 
 function Price({ content }) {
   return (
+    <div>
+      <div>
+      <h1 className="text-center">{content.valueSectionTitle}</h1>
+      </div>
     <div
       id="value"
       className="section mx-medium beige-card mb-12 flex flex-col items-center text-center"
     >
-      <h1 className="text-center">{content.valueSectionTitle}</h1>
+      
       <h2 className="mt-8 text-7xl xl:text-7xl text-red text-center">
         {content.price}
       </h2>
-      <h3 className="mt-2 text-red"> * Early bird until 29.SEP </h3>
-      <h1 className="mt-8">{content.offerResumeSectionTitle}</h1>
+      <h3 className="mt-2 text-red"> {content.priceSubtext}</h3>
+      <h1 className="mt-8 xl:text-2xl-lg">{content.offerResumeSectionTitle}</h1>
       <h3>
         <ul className="top-margin-sm mx-1 md:mx-12 xl:mx-24 2xl:mx-32 text-center list-none">
           {content.including.map((block, i) => (
@@ -349,17 +345,18 @@ function Price({ content }) {
           ))}
         </ul>
       </h3>
-      <h1 className="pt-3 top-margin-sm">{content.paymentTermsTitle}</h1>
-      <p className="top-margin-sm">{content.paymentTerms}</p>
+      <h1 className="pt-3 top-margin-sm xl:text-2xl-lg">{content.paymentTermsTitle}</h1>
+      <h3 className="top-margin-sm">{content.paymentTerms}</h3>
       {/* <Button cta={content.cta} /> */}
       <button className="mt-8 md:mt-10 mb-3 flex justify-center place-self-center focus:outline-none">
         <Link
           to="/contact"
-          className="z-20 inline-block  border border-green rounded-2xl bg-green hover:bg-beige  text-black px-5 py-2 monotext text-sm 2xl:text-base no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
+          className="z-20 inline-block  border border-green rounded-2xl bg-green hover:bg-beige  text-black px-5 py-2 monotext text-sm xl:text-2xl no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
         >
-          {content.cta}
+          I want more information
         </Link>
       </button>
+    </div>
     </div>
   )
 }
@@ -421,7 +418,7 @@ function Supporting({ content }) {
       <div className="md:flex flex-row justify-around items-center top-margin-medium">
         {content.supportedProject.map((block, i) => (
           <div key={i}>
-            <h2 className="text-center top-margin-sm">
+            <h2 className="text-center top-margin-sm xl:text-4xl">
               <a
                 href={block.link}
                 target="_blank"
@@ -441,12 +438,13 @@ function Supporting({ content }) {
 
 function Soul({ content }) {
   return (
-    <div className="section mx-sm">
-      <div className="md:flex justify-between ">
+    <div className="section mx-sm flex flex-col items-center">
+      <div className="section mx-large">
+      <h4 className="text-center italic"><StructuredText data={content.ifYourSoulIsCallingForIntro} /></h4>
+      <p className="text-center monotext text-sm xl:text-2xl">— Robin Wall Kimmerer</p>
+    </div>
+      <div className=" ">
         <div className="md:mr-10  md:w-2/3 ">
-          <h4 className="text-red self-end text-right md:text-left">
-            <StructuredText data={content.ifYourSoulIsCallingForIntro} />
-          </h4>
           <GatsbyImage
             image={content.soulImage.gatsbyImageData}
             alt={content.soulImage.alt}
@@ -458,8 +456,11 @@ function Soul({ content }) {
           <div className="mx-2 md:mx-0 mt-10 md:mt-0 w-11/12 md:w-5/6 leading-tight">
             <StructuredText data={content.ifYourSoulIsCallingFor} />
           </div>
-          <Button cta={content.cta} />
+         
         </span>
+      </div>
+      <div className="section mx-large text-center">
+      <Button cta={content.cta} />
       </div>
     </div>
   )
@@ -563,6 +564,7 @@ export const query = graphql`
       }
       valueSectionTitle
       price
+      priceSubtext
       paymentTerms
       paymentTermsTitle
       offerResumeSectionTitle

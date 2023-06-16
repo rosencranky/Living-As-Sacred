@@ -21,7 +21,7 @@ export default function Accordion({ index, excerpt, fullText }) {
               <div className="flex flex-wrap items-start accordion-item--open ">
                 {!open && (
                   <h3
-                    className={`block mb-0 pb-0 px-3 flex-1   transition-opacity ease-in duration-200  ${
+                    className={`block mb-0 pb-0 px-3 flex-1  xl:text-3xl transition-opacity ease-in duration-200  ${
                       open ? "opacity-0" : "opacity-100"
                     }`}
                   >

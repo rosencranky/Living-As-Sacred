@@ -34,7 +34,7 @@ module.exports = {
         // '3xl': '1.875rem',
         '4xl': ["2.5rem", "1.25rem"],
         '5xl': ["3rem", "3rem"],
-        '6xl': ["3.125rem", "3.125rem"],
+        '6xl': ["3.75rem", "3.75rem"],
         '7xl': ["4.5rem", "4.5rem"], 
         '40block': ["40px", {
           lineHeight: '54px',

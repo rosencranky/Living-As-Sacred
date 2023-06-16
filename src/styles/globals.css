@@ -29,7 +29,7 @@
   }
 
   h1 {
-    @apply text-black text-sm md:text-base xl:text-xl font-mono tracking-wider uppercase antialiased leading-tight mb-2;
+    @apply text-black text-sm md:text-3xl xl:text-4xl font-mono tracking-wider uppercase antialiased leading-tight mb-2;
   }
 
   h3 {
