@@ -184,28 +184,9 @@ export default function Header() {
           <Link to={`/#women`} title="Meet us" className=" navlinks">
             Meet us
           </Link>
-          <Link to={`/contact`} title="Contact" className="navlinks mr-6">
+          <Link to={`/contact`} title="Contact" className="navlinks mr-3.5">
             Contact
           </Link>
-          <span className="text-red ">
-            <Link
-              to={`/`}
-              className="text-2xl leading-none inline-block mt-0 "
-              title="Home"
-              activeClassName="underline"
-            >
-              EN
-            </Link>
-            /
-            <Link
-              to={`/pt`}
-              className="text-2xl leading-none inline-block mt-0 "
-              title="Home"
-              activeClassName="underline"
-            >
-              PT
-            </Link>
-          </span>
         </div>
       </div>
     </nav>
