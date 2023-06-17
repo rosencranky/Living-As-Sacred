@@ -184,11 +184,11 @@ function Value({ text }) {
 
 function CTASection({ content }) {
   return (
-    <div className="section section-center mx-medium">
+    <div className="section section-center mx-medium xl:mt-52">
       <h4 className="text-center">
         <StructuredText data={content.ctaS1} />
       </h4>
-      <Button cta={content.cta} />
+      <span className="xl:mt-20"><Button cta={content.cta} /></span>
     </div>
   )
 }
