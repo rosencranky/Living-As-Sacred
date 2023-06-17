@@ -154,18 +154,20 @@ function Values({ content }) {
         {content.valuesSectionTitle}
       </h1>
       </div>
-      <div className="flex flex-wrap md:grid gap-x-5 xl:gap-x-0 grid-cols-12 place-items-center place-content-center items-center bg-leaves bg-cover">
-        <div className="md:ml-16 xl:ml-0 col-start-1 col-span-3">
-          <Value text={content.valuesList[0].value} />
-          <Value text={content.valuesList[1].value} />
-          <Value text={content.valuesList[2].value} />
-          <Value text={content.valuesList[3].value} />
-        </div>
-        <div className="md:mr-16 xl:mr-0 col-start-10 col-span-3">
-          <Value text={content.valuesList[4].value} />
-          <Value text={content.valuesList[5].value} />
-          <Value text={content.valuesList[6].value} />
-          <Value text={content.valuesList[7].value} />
+      <div className="xl:h-[820px]  bg-values bg-cover bg-center py-[177px] px-[565px]">
+        <div className="flex flex-row items-start gap-40 justify-between">
+          <div className="flex flex-col items-start gap-20 ">
+            <Value text={content.valuesList[0].value} />
+            <Value text={content.valuesList[1].value} />
+            <Value text={content.valuesList[2].value} />
+            <Value text={content.valuesList[3].value} />
+          </div>
+          <div className="flex flex-col items-start gap-20">
+            <Value text={content.valuesList[4].value} />
+            <Value text={content.valuesList[5].value} />
+            <Value text={content.valuesList[6].value} />
+            <Value text={content.valuesList[7].value} />
+          </div>
         </div>
       </div>
     </div>
@@ -174,7 +176,7 @@ function Values({ content }) {
 
 function Value({ text }) {
   return (
-    <h2 className="px-6 md:px-4 xl:px-8 pt-1 pb-3 rounded-2xl xl:rounded-3xl text-black text-center bg-beige hover:bg-green xl:text-3xl">
+    <h2 className="px-6 md:px-4 xl:px-8 pt-1 pb-3 rounded-2xl xl:rounded-4xl xl:w-80 text-black text-center bg-beige hover:bg-green xl:text-3xl">
       <StructuredText data={text} />
     </h2>
   )

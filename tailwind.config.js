@@ -44,7 +44,7 @@ module.exports = {
       },
       backgroundImage: {
         hero: "url('../images/living-as-sacred-logo-final.jpg')",
-        leaves: "url('../images/cultura-da-mulher-2.jpg')",
+        values: "url('../images/values.jpg')",
         hands: "url('../images/hands.jpg')",
         plants: "url('../images/plant-medicine.jpg')",
         tree: "url('../images/background-2.jpg')",
@@ -58,6 +58,9 @@ module.exports = {
         80: "80vh",
         90: "90vh",
       },
+      borderRadius: {
+        '4xl': "30px"
+      }
     },
     variants: {},
     plugins: [],
