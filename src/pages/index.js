@@ -306,7 +306,7 @@ function Timeline({ content }) {
 
 function CTAPlants({ content }) {
   return (
-    <div className="top-margin-lg btm-margin-lg w-full h-90 flex flex-col justify-center items-center bg-plants bg-center bg-cover bg-no-repeat">
+    <div className="top-margin-lg btm-margin-lg w-full h-90 flex flex-col justify-center items-center bg-cta3 bg-center bg-cover bg-no-repeat">
       <h4 className="mx-medium  text-center text-beige rounded-2xl pdng bg-darkgreen">
         <StructuredText data={content.ctaS3} />
       </h4>

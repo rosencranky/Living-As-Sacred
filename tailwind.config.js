@@ -46,7 +46,7 @@ module.exports = {
         hero: "url('../images/living-as-sacred-logo-final.jpg')",
         values: "url('../images/values.jpg')",
         hands: "url('../images/hands.jpg')",
-        plants: "url('../images/plant-medicine.jpg')",
+        cta3: "url('../images/cta3.jpg')",
         tree: "url('../images/background-2.jpg')",
       },
       lineHeight: {
