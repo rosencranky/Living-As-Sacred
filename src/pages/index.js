@@ -198,20 +198,15 @@ function Offering({ content }) {
     <div id="offering" className="section top-margin-xl mx-3 md:mx-12 lg:mx-8  2xl:mx-16">
       <h1 className="text-center">{content.offeringSectionTitle}</h1>
       {/* Accordion */}
-      <div className="grid top-margin-medium relative z-10 grid-cols-1 xl:grid-cols-4 grid-rows-2">
+      <div className="grid top-margin-medium relative z-10 grid-cols-1 xl:grid-cols-2">
         {content.offeringItem.map((block, i) => (
-          <div
-            className={`border-cream border-l border-b bg-beige hover:bg-beige transition ease-in duration-100 rounded-xl ${
-              i < 4 ? "xl:border-b" : "" && i === 0 ? "border-t" : ""
-            }`}
-            key={i}
-          >
+          
             <Accordion
               index={i}
               excerpt={block.offeringShortText}
               fullText={block.offeringItemText}
             />
-          </div>
+    
         ))}
       </div>
     </div>
