@@ -220,37 +220,19 @@ function Offering({ content }) {
 
 function CTAMove({ content }) {
   return (
-    <div className="top-margin-lg w-full xl:mb-12 flex justify-center flex-col">
-      <div className="flex flex-nowrap justify-between items-center">
+    <div className="top-margin-xl w-full flex flex-col items-center"> 
         <div>
           <GatsbyImage
             image={content.ctaImage2.gatsbyImageData}
             alt={content.ctaImage2.alt}
             placeholder="blurred"
-            className="mx-5 xl:mx-0 lg:z-10 rounded-xl circle overflow-hidden"
+            className="rounded-xl circle overflow-hidden"
           />
         </div>
-        <div className="hidden md:block ">
-          <GatsbyImage
-            image={content.ctaImage3.gatsbyImageData}
-            alt={content.ctaImage3.alt}
-            placeholder="blurred"
-            className="md:basis-auto z-0 md:ml-5 rounded-xl circle overflow-hidden"
-          />
-        </div>
-      </div>
-      <h4 className="mt-10 md:mt-12 mx-large text-center text-red">
+      <h4 className="top-margin-xl mx-large text-center text-red">
         <StructuredText data={content.ctaS2} />
       </h4>
-      <Button cta={content.cta} />
-      <div className="block md:hidden mx-5 mt-10 md:mt-0 ">
-        <GatsbyImage
-          image={content.ctaImage3.gatsbyImageData}
-          alt={content.ctaImage3.alt}
-          placeholder="blurred"
-          className="rounded-xl circle overflow-hidden"
-        />
-      </div>
+      <span className="mt-20"><Button cta={content.cta} /></span>
     </div>
   )
 }
