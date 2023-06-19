@@ -288,7 +288,7 @@ function Timeline({ content }) {
 
 function CTAPlants({ content }) {
   return (
-    <div className="top-margin-lg btm-margin-lg w-full h-90 flex flex-col justify-center items-center bg-cta3 bg-center bg-cover bg-no-repeat ">
+    <div className="top-margin-lg w-full h-90 flex flex-col justify-center items-center bg-cta3 bg-center bg-cover bg-no-repeat ">
       <h4 className="mx-medium  text-center text-beige rounded-2xl pdng bg-spice leading-extra-loose tracking-tightest">
         <StructuredText data={content.ctaS3} />
       </h4>
@@ -301,7 +301,7 @@ function CTAPlants({ content }) {
 
 function Price({ content }) {
   return (
-    <div>
+    <div className="top-margin-xl">
       <div>
       <h1 className="text-center">{content.valueSectionTitle}</h1>
       </div>
@@ -310,11 +310,11 @@ function Price({ content }) {
       className="section mx-medium beige-card mb-12 flex flex-col items-center text-center"
     >
       
-      <h2 className="mt-8 text-7xl xl:text-7xl text-red text-center">
+      <h2 className="text-7xl xl:text-7xl text-red text-center">
         {content.price}
       </h2>
-      <h3 className="mt-2 text-red"> {content.priceSubtext}</h3>
-      <h1 className="mt-8 xl:text-2xl-lg">{content.offerResumeSectionTitle}</h1>
+      <h3 className="mt-3 xl:mt-5 text-red"> {content.priceSubtext}</h3>
+      <h1 className="mt-8 xl:mt-16 xl:text-2xl-lg">{content.offerResumeSectionTitle}</h1>
       <h3>
         <ul className="top-margin-sm mx-1 md:mx-12 xl:mx-24 2xl:mx-32 text-center list-none">
           {content.including.map((block, i) => (
@@ -324,13 +324,13 @@ function Price({ content }) {
           ))}
         </ul>
       </h3>
-      <h1 className="pt-3 top-margin-sm xl:text-2xl-lg">{content.paymentTermsTitle}</h1>
+      <h1 className="pt-3 mt-3 xl:mt-16 xl:text-2xl-lg">{content.paymentTermsTitle}</h1>
       <h3 className="top-margin-sm">{content.paymentTerms}</h3>
       {/* <Button cta={content.cta} /> */}
       <button className="mt-8 md:mt-10 mb-3 flex justify-center place-self-center focus:outline-none">
         <Link
           to="/contact"
-          className="z-20 inline-block  border border-green rounded-2xl bg-green hover:bg-beige  text-black px-5 py-2 monotext text-sm xl:text-2xl no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
+          className="z-20 inline-block  border border-green rounded-2xl xl:rounded-4xl bg-khaki hover:bg-beige hover:border-khaki text-black px-5 py-2 monotext text-sm xl:text-2xl no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
         >
           I want more information
         </Link>
