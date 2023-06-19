@@ -417,27 +417,23 @@ function Supporting({ content }) {
 
 function Soul({ content }) {
   return (
-    <div className="section mx-sm flex flex-col items-center">
-      <div className="section mx-large">
-      <h4 className="text-center italic"><StructuredText data={content.ifYourSoulIsCallingForIntro} /></h4>
-      <p className="text-center monotext text-sm xl:text-2xl">— Robin Wall Kimmerer</p>
-    </div>
-      <div className=" ">
-        <div className="md:mr-10  md:w-2/3 ">
+    <div className="section top-margin-xl xl:mx-0 w-full flex flex-col items-center ">
+      <div className="section xl:mx-52">
+        <h4 className="text-center italic tracking-tightest"><StructuredText data={content.ifYourSoulIsCallingForIntro} /></h4>
+        <p className="text-center monotext text-sm xl:text-2xl">— Robin Wall Kimmerer</p>
+      </div>
+        <div className="section">
           <GatsbyImage
             image={content.soulImage.gatsbyImageData}
             alt={content.soulImage.alt}
             placeholder="blurred"
-            className="rounded-2xl top-margin-medium mx-1 md:mx-0 overflow-hidden circle"
+            className="rounded-2xl overflow-hidden circle"
           />
         </div>
-        <span className="md:w-1/3 self-end">
-          <div className="mx-2 md:mx-0 mt-10 md:mt-0 w-11/12 md:w-5/6 leading-tight">
+        <div className="mx-2 md:mx-0 mt-10 md:mt-0 w-11/12 md:w-5/6 leading-tight">
             <StructuredText data={content.ifYourSoulIsCallingFor} />
-          </div>
-         
-        </span>
-      </div>
+        </div>
+ 
       <div className="section mx-large text-center">
       <Button cta={content.cta} />
       </div>
