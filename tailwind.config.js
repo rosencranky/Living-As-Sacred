@@ -52,6 +52,7 @@ module.exports = {
       lineHeight: {
         tighter: "1.1",
         tightest: "0.95",
+        'extra-loose': "4.625rem"
       },
       height: {
         70: "70vh",
@@ -60,6 +61,9 @@ module.exports = {
       },
       borderRadius: {
         '4xl': "30px"
+      },
+      letterSpacing: {
+        tightest: '-1.5px'
       }
     },
     variants: {},

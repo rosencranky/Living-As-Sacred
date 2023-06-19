@@ -288,18 +288,13 @@ function Timeline({ content }) {
 
 function CTAPlants({ content }) {
   return (
-    <div className="top-margin-lg btm-margin-lg w-full h-90 flex flex-col justify-center items-center bg-cta3 bg-center bg-cover bg-no-repeat">
-      <h4 className="mx-medium  text-center text-beige rounded-2xl pdng bg-darkgreen">
+    <div className="top-margin-lg btm-margin-lg w-full h-90 flex flex-col justify-center items-center bg-cta3 bg-center bg-cover bg-no-repeat ">
+      <h4 className="mx-medium  text-center text-beige rounded-2xl pdng bg-spice leading-extra-loose tracking-tightest">
         <StructuredText data={content.ctaS3} />
       </h4>
-      <button className="mt-10 mb-3 focus:outline-none">
-        <Link
-          to="/contact"
-          className="z-20 inline-block border border-green rounded-2xl bg-beige hover:bg-green text-black px-5 py-2 monotext text-sm 2xl:text-base no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
-        >
-          {content.cta}
-        </Link>
-      </button>
+      <div className="xl:mt-20">
+        <Button cta={content.cta} />
+      </div>
     </div>
   )
 }

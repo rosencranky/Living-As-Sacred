@@ -104,7 +104,7 @@
   }
 
   .pdng {
-    @apply px-8 py-6 2xl:py-10;
+    @apply px-8 py-6 xl:py-12 xl:px-[5.313rem];
   }
 
   .section-center {
@@ -136,5 +136,5 @@
   }
 }
 h4 {
-  line-height: 1.05 !important;
+  line-height: 74px !important;
 }
