@@ -130,7 +130,7 @@ function About({ content }) {
         </div>
       </div>
     </div>
-    <div className="col-span-3 flex justify-center place-self-center xl:mt-20 xl:mb-52">
+    <div className="col-span-3 flex justify-center place-self-center xl:mt-10 xl:mb-52">
         <Button cta={content.cta} />
       </div>
     </div>
@@ -149,7 +149,7 @@ function Quote({ content }) {
 function Values({ content }) {
   return (
     <div>
-    <div className="top-margin-lg w-full py-12">
+    <div className="top-margin-xl w-full py-12">
       <h1 className="text-center text-black mb-10 md:mb-0">
         {content.valuesSectionTitle}
       </h1>
@@ -188,14 +188,14 @@ function CTASection({ content }) {
       <h4 className="text-center">
         <StructuredText data={content.ctaS1} />
       </h4>
-      <span className="xl:mt-20"><Button cta={content.cta} /></span>
+      <span className="xl:mt-10"><Button cta={content.cta} /></span>
     </div>
   )
 }
 
 function Offering({ content }) {
   return (
-    <div id="offering" className="section mx-3 md:mx-12 lg:mx-8  2xl:mx-16">
+    <div id="offering" className="section top-margin-xl mx-3 md:mx-12 lg:mx-8  2xl:mx-16">
       <h1 className="text-center">{content.offeringSectionTitle}</h1>
       {/* Accordion */}
       <div className="grid top-margin-medium relative z-10 grid-cols-1 xl:grid-cols-4 grid-rows-2">
@@ -232,7 +232,7 @@ function CTAMove({ content }) {
       <h4 className="top-margin-xl mx-large text-center text-red">
         <StructuredText data={content.ctaS2} />
       </h4>
-      <span className="mt-20"><Button cta={content.cta} /></span>
+      <span className="mt-10"><Button cta={content.cta} /></span>
     </div>
   )
 }
@@ -288,7 +288,7 @@ function Timeline({ content }) {
 
 function CTAPlants({ content }) {
   return (
-    <div className="top-margin-lg w-full h-90 flex flex-col justify-center items-center bg-cta3 bg-center bg-cover bg-no-repeat ">
+    <div className="top-margin-xl w-full h-90 flex flex-col justify-center items-center bg-cta3 bg-center bg-cover bg-no-repeat ">
       <h4 className="mx-medium  text-center text-beige rounded-2xl pdng bg-spice leading-extra-loose tracking-tightest">
         <StructuredText data={content.ctaS3} />
       </h4>
@@ -307,7 +307,7 @@ function Price({ content }) {
       </div>
     <div
       id="value"
-      className="section mx-medium beige-card mb-12 flex flex-col items-center text-center"
+      className=" mt-16 mx-medium beige-card mb-12 flex flex-col items-center text-center"
     >
       
       <h2 className="text-7xl xl:text-7xl text-red text-center">
@@ -327,7 +327,7 @@ function Price({ content }) {
       <h1 className="pt-3 mt-3 xl:mt-16 xl:text-2xl-lg">{content.paymentTermsTitle}</h1>
       <h3 className="top-margin-sm">{content.paymentTerms}</h3>
       {/* <Button cta={content.cta} /> */}
-      <button className="mt-8 md:mt-10 mb-3 flex justify-center place-self-center focus:outline-none">
+      <button className="mt-8 md:mt-16 mb-3 flex justify-center place-self-center focus:outline-none">
         <Link
           to="/contact"
           className="z-20 inline-block  border border-green rounded-2xl xl:rounded-4xl bg-khaki hover:bg-beige hover:border-khaki text-black px-5 py-2 monotext text-sm xl:text-2xl no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
@@ -342,7 +342,7 @@ function Price({ content }) {
 
 function Bios({ content }) {
   return (
-    <div className="section  mx-medium" id="women">
+    <div className="section top-margin-xl  mx-medium" id="women">
       <h1 className="text-center">{content.womenSectionTitle}</h1>
       <div className="top-margin-medium grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 place-content-center gap-2">
         {content.women.map((node, i) => {
@@ -392,12 +392,12 @@ function Bios({ content }) {
 
 function Supporting({ content }) {
   return (
-    <div className="top-margin-xl xl:mx-24 beige-card xl:py-16">
+    <div className="section mx-medium beige-card">
       <h1 className="text-center">{content.supportingSectionTitle}</h1>
       <div className="md:flex flex-row justify-around items-center top-margin-medium">
         {content.supportedProject.map((block, i) => (
           <div key={i}>
-            <h2 className="text-center top-margin-sm xl:text-40block">
+            <h2 className="text-center top-margin-sm xl:text-4xl">
               <a
                 href={block.link}
                 target="_blank"
@@ -407,7 +407,7 @@ function Supporting({ content }) {
                 {block.projectName}
               </a>
             </h2>
-            <p className="text-center">{block.description}</p>
+            <p className="text-center mt-2.5">{block.description}</p>
           </div>
         ))}
       </div>
@@ -422,7 +422,7 @@ function Soul({ content }) {
         <h4 className="text-center italic tracking-tightest"><StructuredText data={content.ifYourSoulIsCallingForIntro} /></h4>
         <p className="text-center monotext text-sm xl:text-2xl">— Robin Wall Kimmerer</p>
       </div>
-        <div className="section">
+        <div className="mt-52">
           <GatsbyImage
             image={content.soulImage.gatsbyImageData}
             alt={content.soulImage.alt}
@@ -434,7 +434,7 @@ function Soul({ content }) {
             <StructuredText data={content.ifYourSoulIsCallingFor} />
         </div>
  
-      <div className="section mx-large text-center">
+      <div className="mt-10 mx-large text-center">
       <Button cta={content.cta} />
       </div>
     </div>
