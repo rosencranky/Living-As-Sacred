@@ -392,12 +392,12 @@ function Bios({ content }) {
 
 function Supporting({ content }) {
   return (
-    <div className="section mx-medium beige-card">
+    <div className="top-margin-xl xl:mx-24 beige-card xl:py-16">
       <h1 className="text-center">{content.supportingSectionTitle}</h1>
       <div className="md:flex flex-row justify-around items-center top-margin-medium">
         {content.supportedProject.map((block, i) => (
           <div key={i}>
-            <h2 className="text-center top-margin-sm xl:text-4xl">
+            <h2 className="text-center top-margin-sm xl:text-40block">
               <a
                 href={block.link}
                 target="_blank"
