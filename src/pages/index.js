@@ -253,7 +253,7 @@ function Timeline({ content }) {
       <h1 className="text-center z-50">{content.timelineSectionTitle}</h1>
     <div
       id="timeline"
-      className="section xl:min-h-screen xl:bg-beige rounded-xl xl:px-[8.25rem] xl:py-32 md:mx-24"
+      className="section xl:min-h-screen xl:bg-beige rounded-xl xl:px-[70px] xl:py-16 md:mx-24"
     >
       <div className="z-10  flex flex-row flex-wrap  md:y-12 ">
         {content.contentModules.map((block, i) => (
@@ -262,7 +262,7 @@ function Timeline({ content }) {
             className="xl:h-auto md:basis-full md:mx-3 xl:mx-0 my-4 xl:my-0 flex md:flex-nowrap md:justify-between gap-y-0 bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:px-16 md:py-12 border border-green xl:border-none"
           >
             {/* Title */}
-            <div className="my-8 xl:my-0 col-start-1 col-span-1 border-r border-rust basis-[37%] flex flex-col justify-between">
+            <div className="my-8 xl:my-0 col-start-1 col-span-1 border-r border-rust basis-[37%] flex flex-col justify-between shrink-0">
               <h2 className="text-red pb-5 text-3xl md:text-xl xl:text-4xl xl:leading-loosest ">
                 {block.title}<br/>
                 <em>{block.subtitle}</em>
@@ -275,10 +275,10 @@ function Timeline({ content }) {
               </div>
             </div>
             {/* Weeks */}
-            <div className="-mx-2 xl:-mx-0  my-8 md:my-10 xl:my-0 col-start-2 col-span-1 flex flex-col">
+            <div className="-mx-2 xl:mx-6 my-8 md:my-10 xl:my-0 flex flex-col basis-auto">
               {block.weeks.map((week, i) => (
                 <div key={i}>
-                  <span className="flex items-center justify-between mb-3">
+                  <span className="flex justify-between mb-3">
                     <h3 className="bg-rust w-10 h-10 2xl:w-14 2xl:h-14  rounded-full text-cream text-center flex justify-center items-center">
                       {week.weekNumber}
                     </h3>
