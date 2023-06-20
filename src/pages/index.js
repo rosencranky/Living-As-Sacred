@@ -238,50 +238,65 @@ function CTAMove({ content }) {
 }
 
 function Timeline({ content }) {
-  return (
+  const nth = function(d) {
+    if (d > 3 && d < 21) return `${d}th`;
+    switch (d % 10) {
+      case 1:  return `${d}st`;
+      case 2:  return `${d}nd`;
+      case 3:  return `${d}rd`;
+      default: return `${d}th`;
+    }
+  }
+
+  return (   
+    <div className="top-margin-xl">
+      <h1 className="text-center z-50">{content.timelineSectionTitle}</h1>
     <div
       id="timeline"
-      className="section xl:min-h-screen xl:bg-beige rounded-xl xl:px-5 xl:py-10"
+      className="section xl:min-h-screen xl:bg-beige rounded-xl xl:px-[8.25rem] xl:py-32 md:mx-24"
     >
-      <h1 className="text-center z-50">{content.timelineSectionTitle}</h1>
-      <div className="xl:grid grid-cols-5 z-10  flex flex-row flex-wrap justify-center ">
+      <div className="z-10  flex flex-row flex-wrap  md:y-12 ">
         {content.contentModules.map((block, i) => (
           <div
             key={i}
-            className="lg:h-[78vh] xl:h-auto md:basis-5/12 md:mx-3 xl:mx-0 my-4 xl:my-0 md:grid grid-rows-3 gap-y-0 bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:py-5 xl:p-3 border border-green xl:border-none"
+            className="xl:h-auto md:basis-full md:mx-3 xl:mx-0 my-4 xl:my-0 flex md:flex-nowrap md:justify-between gap-y-0 bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:px-16 border border-green xl:border-none"
           >
             {/* Title */}
-            <div className="my-8 xl:my-0 xl:transform xl:-translate-y-16 row-start-1 row-span-1 border-b border-green self-end">
-              <h2 className="text-center leading-tight pb-5 text-3xl md:text-xl xl:text-4xl">
-                {block.title}
+            <div className="my-8 xl:my-0 col-start-1 col-span-1 border-b border-green basis-[37%]">
+              <h2 className="text-red pb-5 text-3xl md:text-xl xl:text-4xl xl:leading-loosest ">
+                {block.title}<br/>
+                <em>{block.subtitle}</em>
               </h2>
-              <div className="flex justify-between monotext pb-1 place-self-end self-end">
-                <p className="inline-block">{block.startDate}</p>
-                <p className="inline-block">{block.endDate}</p>
+              <div className="monotext pb-1">
+                <p className="inline-block text-date">{`${nth(block.startDate.split('/')[0])} ${new Date(block.startDate.split('/')[1]).toLocaleString("en-us", { month: "long" })} `}</p>
+                <p className="inline-block text-date">&nbsp; - &nbsp;</p>
+                <p className="inline-block text-date">{`${nth(block.endDate.split('/')[0])} ${new Date(block.endDate.split('/')[1]).toLocaleString("en-us", { month: "long" })} `}</p>
+                <p className="block text-sm">{block.zoomDate}</p>
               </div>
             </div>
             {/* Weeks */}
-            <div className="-mx-2 xl:-mx-0 xl:transform xl:-translate-y-12 my-8 md:my-10 xl:my-0 row-start-2 row-span-1 flex flex-col justify-center ">
+            <div className="-mx-2 xl:-mx-0  my-8 md:my-10 xl:my-0 col-start-2 col-span-1 flex flex-col">
               {block.weeks.map((week, i) => (
                 <div key={i}>
                   <span className="flex items-center justify-between mb-3">
-                    <h3 className="bg-red w-10 h-10 2xl:w-14 2xl:h-14  rounded-full text-cream text-center flex justify-center items-center">
+                    <h3 className="bg-rust w-10 h-10 2xl:w-14 2xl:h-14  rounded-full text-cream text-center flex justify-center items-center">
                       {week.weekNumber}
                     </h3>
 
-                    <p className="flex-1 leading-0 lg:ml-3 text-sm monotext text-center">
-                      {week.womanName}
+                    <p className="flex-1 leading-0 lg:ml-3 text-sm monotext ">
+                      {week.womanName}<br/>{week.fullDate}
                     </p>
                   </span>
                 </div>
               ))}
             </div>
-            <div className="row-start-3 text-basesm leading-tight  xl:-mt-4">
+            <div className="text-basesm leading-tight basis-[600px] ">
               <StructuredText data={block.moduleDescription} />
             </div>
           </div>
         ))}
       </div>
+    </div>
     </div>
   )
 }
@@ -518,11 +533,14 @@ export const query = graphql`
         }
       }
       timelineSectionTitle
+
       contentModules {
         ... on DatoCmsModule {
           title
+          subtitle
           startDate(formatString: "DD/MM")
           endDate(formatString: "DD/MM")
+          zoomDate
           moduleDescription {
             value
           }
@@ -533,6 +551,7 @@ export const query = graphql`
               }
               weekNumber
               womanName
+              fullDate
             }
           }
         }
