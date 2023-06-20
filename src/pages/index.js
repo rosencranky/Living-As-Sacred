@@ -259,10 +259,10 @@ function Timeline({ content }) {
         {content.contentModules.map((block, i) => (
           <div
             key={i}
-            className="xl:h-auto md:basis-full md:mx-3 xl:mx-0 my-4 xl:my-0 flex md:flex-nowrap md:justify-between gap-y-0 bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:px-16 border border-green xl:border-none"
+            className="xl:h-auto md:basis-full md:mx-3 xl:mx-0 my-4 xl:my-0 flex md:flex-nowrap md:justify-between gap-y-0 bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:px-16 md:py-12 border border-green xl:border-none"
           >
             {/* Title */}
-            <div className="my-8 xl:my-0 col-start-1 col-span-1 border-b border-green basis-[37%]">
+            <div className="my-8 xl:my-0 col-start-1 col-span-1 border-r border-rust basis-[37%] flex flex-col justify-between">
               <h2 className="text-red pb-5 text-3xl md:text-xl xl:text-4xl xl:leading-loosest ">
                 {block.title}<br/>
                 <em>{block.subtitle}</em>
@@ -290,7 +290,7 @@ function Timeline({ content }) {
                 </div>
               ))}
             </div>
-            <div className="text-basesm leading-tight basis-[600px] ">
+            <div className="text-basesm leading-tight basis-[600px] text-lg">
               <StructuredText data={block.moduleDescription} />
             </div>
           </div>
