@@ -198,16 +198,25 @@ function Offering({ content }) {
     <div id="offering" className="section top-margin-xl mx-3 md:mx-12 lg:mx-8  2xl:mx-16">
       <h1 className="text-center">{content.offeringSectionTitle}</h1>
       {/* Accordion */}
-      <div className="grid top-margin-medium relative z-10 grid-cols-1 xl:grid-cols-2">
-        {content.offeringItem.map((block, i) => (
-          
+      <div className="top-margin-medium relative z-10 flex">
+        <div className="basis-1/2">
+        {content.offeringItem.filter((e,i) => i < 4).map((block, i) => (       
             <Accordion
               index={i}
               excerpt={block.offeringShortText}
               fullText={block.offeringItemText}
             />
-    
         ))}
+        </div>
+        <div className="basis-1/2">
+        {content.offeringItem.filter((e,i) => i >= 4).map((block, i) => (       
+            <Accordion
+              index={i}
+              excerpt={block.offeringShortText}
+              fullText={block.offeringItemText}
+            />
+        ))}
+        </div>
       </div>
     </div>
   )
