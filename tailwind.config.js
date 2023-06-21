@@ -40,6 +40,10 @@ module.exports = {
           lineHeight: '54px',
           letterSpacing: '-1.2px',
           fontWeight: '400',
+        }],
+        'date': ["1.75rem", {
+          lineHeight: '1.313rem', 
+          letterSpacing: '1px', 
         }]
       },
       backgroundImage: {
@@ -52,6 +56,7 @@ module.exports = {
       lineHeight: {
         tighter: "1.1",
         tightest: "0.95",
+        loosest: "3rem",
         'extra-loose': "4.625rem"
       },
       height: {
