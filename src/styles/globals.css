@@ -66,6 +66,10 @@
   .blockquote-sm {
     @apply text-red xl:text-40block -tracking-[1.2px]
   }
+
+  .bg-hero {
+    background-origin: content-box
+  }
 }
 @tailwind components;
 @tailwind utilities;

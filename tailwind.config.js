@@ -21,7 +21,7 @@ module.exports = {
         serif: ["panama", "serif"],
       },
       fontSize: {
-        // "45xl": ["2.75rem", "2.5rem"],
+        'bios-lg': ["2.25rem", "2.5rem"],
         // 'xs': '.75rem',
         // sm: ['40px', '20px'],
         // 'tiny': '.875rem',
@@ -43,7 +43,7 @@ module.exports = {
         }]
       },
       backgroundImage: {
-        hero: "url('../images/living-as-sacred-logo-final.jpg')",
+        hero: "url('../images/las-logo-2023.png')",
         values: "url('../images/values.jpg')",
         hands: "url('../images/hands.jpg')",
         cta3: "url('../images/cta3.jpg')",
