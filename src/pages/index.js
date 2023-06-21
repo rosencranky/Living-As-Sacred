@@ -39,24 +39,16 @@ function Hero() {
   return (
     <div
       id="hero"
-      className="h-screen xl:h-screen max-h-screen md:bg-hero bg-center bg-contain bg-no-repeat"
+      className=""
     >
       <Header />
+      <div className="h-screen xl:h-screen max-h-screen md:bg-hero bg-center bg-contain bg-no-repeat bg-hero pt-32"></div>
       <div className="z-10 absolute top-6 left-0 xl:top-10 xl:left-10">
         <h1 className="mt-0 ml-3 xl:mt-0 xl:ml-0 text-left text-3xl md:text-4xl lg:text-5xl xl:text-7xl  font-serif normal-case text-red tracking-tight leading-tighter">
           Living · as · Sacred
           <br /> 1 October – 14 April
           <br /> <em>Online</em>
         </h1>
-      </div>
-      <div className="block md:hidden z-0 translate-y-3 absolute bottom-[10%]">
-        <StaticImage
-          src="../images/living-as-sacred-logo-mobile.jpg"
-          alt="logo"
-          placeholder="blurred"
-          className="z-0 overflow-hidden"
-          width={500}
-        />
       </div>
     </div>
   )
@@ -349,6 +341,13 @@ function Bios({ content }) {
     <div className="section top-margin-xl  mx-medium" id="women">
       <h1 className="text-center">{content.womenSectionTitle}</h1>
       <div className="top-margin-medium grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 place-content-center gap-2">
+      <div className="relative overflow-hidden">
+        <div className="bg-khaki  rounded-xl circle absolute top-0 left-0 right-0 bottom-0 w-full z-30 flex flex-wrap items-center justify-center">
+          <p className="block top-0 left-0 -mt-6 text-bios-lg text-red z-40">
+            The Council
+          </p>
+        </div>
+        </div>
         {content.women.map((node, i) => {
           return (
             <Link
@@ -364,21 +363,16 @@ function Bios({ content }) {
                     placeholder="blurred"
                     className="rounded-xl overflow-hidden circle"
                   />
-                  {node.isMainOrganiser && (
-                    <p className="text-5xl md:text-6xl lg:text-7xl absolute top-3 right-3 text-red ">
-                      *
-                    </p>
-                  )}
                 </div>
                 <div className="absolute top-0 left-0 right-0 bottom-0 w-full z-30 text-white opacity-0 hover:opacity-100 flex flex-wrap items-center justify-center text-lg">
-                  <p className="block top-0 left-0 -mt-6 monotext text-red z-40">
-                    Read Bio
+                  <p className="block top-0 left-0 -mt-6 text-2xl-lg font-sans text-red z-40">
+                    READ BIO
                   </p>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 w-full p-3">
                   <div className="pb-2">
                     <h3 className="block text-center text-2xl uppercase text-cream leading-tight mb-1">
-                      {node.name}
+                      {node.name} {node.isMainOrganiser && (`(Core Team)`)}
                     </h3>
                   </div>
                 </div>
@@ -387,9 +381,6 @@ function Bios({ content }) {
           )
         })}
       </div>
-      <p className="text-left top-margin-medium text-red text-2xl md:text-3xl  2xl:text-4xl">
-        * Core Team
-      </p>
     </div>
   )
 }
