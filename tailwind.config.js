@@ -50,7 +50,7 @@ module.exports = {
         hero: "url('../images/las-logo-2023.png')",
         values: "url('../images/values.jpg')",
         hands: "url('../images/hands.jpg')",
-        cta3: "url('../images/cta3.jpg')",
+        cta3: "url('../images/cta3_.jpg')",
         tree: "url('../images/background-2.jpg')",
       },
       lineHeight: {
