@@ -140,21 +140,21 @@ function Quote({ content }) {
 
 function Values({ content }) {
   return (
-    <div>
-    <div className="top-margin-xl w-full py-12">
-      <h1 className="text-center text-black mb-10 md:mb-0">
+    <div className="top-margin-xl w-full py-12 h-[100vh]">
+      <div>
+      <h1 className="text-center text-black mb-10">
         {content.valuesSectionTitle}
       </h1>
       </div>
-      <div className="xl:h-[820px]  bg-values bg-cover bg-center py-[177px] px-[565px]">
-        <div className="flex flex-row items-start gap-40 justify-between">
-          <div className="flex flex-col items-start gap-20 ">
+      <div className="bg-values bg-cover bg-center h-full lg:h-5/6 ">
+        <div className="xl:px-40 flex lg:flex-row flex-col items-center  justify-evenly h-full">
+          <div className="flex flex-col items-start lg:gap-20 gap-8">
             <Value text={content.valuesList[0].value} />
             <Value text={content.valuesList[1].value} />
             <Value text={content.valuesList[2].value} />
             <Value text={content.valuesList[3].value} />
           </div>
-          <div className="flex flex-col items-start gap-20">
+          <div className="flex flex-col items-start lg:gap-20 gap-8">
             <Value text={content.valuesList[4].value} />
             <Value text={content.valuesList[5].value} />
             <Value text={content.valuesList[6].value} />
@@ -168,7 +168,7 @@ function Values({ content }) {
 
 function Value({ text }) {
   return (
-    <h2 className="px-6 md:px-4 xl:px-8 pt-1 pb-3 rounded-2xl xl:rounded-4xl xl:w-80 text-black text-center bg-beige hover:bg-green xl:text-3xl">
+    <h2 className="px-6 md:px-4 xl:px-8 pt-1 pb-3 rounded-2xl lg:rounded-4xl lg:w-80 w-52 text-black text-center bg-beige  lg:text-3xl">
       <StructuredText data={text} />
     </h2>
   )
