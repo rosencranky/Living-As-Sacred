@@ -17,7 +17,7 @@
   }
 
   body {
-    @apply text-blacker text-base md:text-base 2xl:text-lg  bg-cream font-serif antialiased;
+    @apply text-blacker text-base md:text-base 2xl:text-2xl  bg-cream font-serif antialiased;
   }
 
   p {
@@ -37,7 +37,7 @@
   }
 
   h4 {
-    @apply text-red font-serif text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl  antialiased  leading-tight xl:leading-extra-loose tracking-tight;
+    @apply text-red font-serif text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl 2xl:leading-extra-loose antialiased  leading-tight md:leading-loose lg:leading-extra-loose tracking-tight;
   }
 
   a {

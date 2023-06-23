@@ -132,7 +132,7 @@ function About({ content }) {
 function Quote({ content }) {
   return (
     <div className="section mx-large">
-      <h4 className="text-center italic ">{content.quote}</h4>
+      <h4 className="text-center italic">{content.quote}</h4>
       <p className="text-center monotext text-sm xl:text-2xl xl:mt-9">— THICH NHAT HANH</p>
     </div>
   )
