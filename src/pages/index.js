@@ -75,7 +75,7 @@ function About({ content }) {
         <h1 className="text-center">{content.aboutSectionTitle} </h1>
       </span>
       </div>
-    <div className="section block xl:mt-16 md:grid mx-medium grid-cols-3 gap-x-24 beige-card ">
+    <div className="section block xl:mt-16 lg:grid mx-medium grid-cols-3 gap-x-24 beige-card ">
       {/* Mission */}
       <div className="col-start-1 flex flex-col justify-start items-center">
         <h1 className="text-center xl:text-2xl-lg">{content.missionSectionTitle}</h1>
@@ -87,7 +87,7 @@ function About({ content }) {
             className="rounded-full xl:m-5 overflow-hidden circle"
           />
         </div>
-        <div className="mx-1 md:mx-3 leading-tight top-margin-sm text-center" >
+        <div className="mx-1 md:mx-3 leading-tight top-margin-sm text-center mb-10" >
           <StructuredText data={content.mission} />
         </div>
       </div>
@@ -102,7 +102,7 @@ function About({ content }) {
             className="rounded-full xl:m-5 overflow-hidden circle"
           />
         </div>
-        <div className="mx-1 md:mx-3 leading-tight top-margin-sm text-center">
+        <div className="mx-1 md:mx-3 leading-tight top-margin-sm text-center mb-10">
           <StructuredText data={content.purpose} />
         </div>
       </div>
@@ -132,7 +132,7 @@ function About({ content }) {
 function Quote({ content }) {
   return (
     <div className="section mx-large">
-      <h4 className="text-center italic">{content.quote}</h4>
+      <h4 className="text-center italic ">{content.quote}</h4>
       <p className="text-center monotext text-sm xl:text-2xl xl:mt-9">— THICH NHAT HANH</p>
     </div>
   )
