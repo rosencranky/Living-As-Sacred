@@ -15,7 +15,7 @@ export default function Accordion({ index, excerpt, fullText }) {
         className={`border-cream border-l border-b bg-khaki hover:bg-khaki transition ease-in duration-100 rounded-xl`}   
       >
       <button
-        className="block w-full h-full text-left focus:outline-none focus:border-none group p-0 m-0 px-6 "
+        className="block w-full h-full text-left focus:outline-none focus:border-none group m-0 px-4 md:px-6 "
         aria-label="Open"
         onClick={() => openToggle()}
       >
@@ -33,12 +33,10 @@ export default function Accordion({ index, excerpt, fullText }) {
                   >
                     <StructuredText data={excerpt} />
                   </h3>
-                    <div className="mt-9">
-                    <StructuredText data={fullText} />
-                    </div>
+                    
                   </div>
                 
-                <div className="px-3 ml-auto ">
+                <div className="px-3 ml-auto h-fit ">
                   <svg
                     className={`w-4 md:w-6 transform mt-[6px] md:mt-1 transition ease-in-out duration-300 ${
                       open ? "rotate-0" : "rotate-45"
@@ -54,6 +52,9 @@ export default function Accordion({ index, excerpt, fullText }) {
                     />
                   </svg>
                 </div>
+                <div className="mt-9 flex-grow ">
+                    <StructuredText data={fullText} />
+                    </div>
               </div>
             </div>
           </div>
@@ -66,7 +67,7 @@ export default function Accordion({ index, excerpt, fullText }) {
         className={`border-cream border-l border-b bg-beige hover:bg-beige transition ease-in duration-100 rounded-xl`}   
       >
       <button
-        className="block w-full h-full text-left focus:outline-none focus:border-none group p-0 m-0 px-6 "
+        className="block w-full h-full text-left focus:outline-none focus:border-none group px-4 m-0 md:px-6 "
         aria-label="Open"
         onClick={() => openToggle()}
       >
