@@ -70,12 +70,12 @@ function Intro({ content }) {
 function About({ content }) {
   return (
     <div className="xl:mt-52">
-      <div className="xl:mb- mt-40 mx-3 lg:mx-10 section-center">
+      <div className=" mt-40 mx-3 lg:mx-10 section-center">
       <span className="mx-medium content-end">
         <h1 className="text-center">{content.aboutSectionTitle} </h1>
       </span>
       </div>
-    <div className="section block xl:mt-16 lg:grid mx-medium grid-cols-3 gap-x-24 beige-card ">
+    <div className="section block xl:mt-16 lg:grid mx-medium grid-cols-3 lg:gap-x-10 2xl:gap-x-24 beige-card ">
       {/* Mission */}
       <div className="col-start-1 flex flex-col justify-start items-center">
         <h1 className="text-center xl:text-2xl-lg">{content.missionSectionTitle}</h1>
