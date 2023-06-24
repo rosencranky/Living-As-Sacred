@@ -249,37 +249,38 @@ function Timeline({ content }) {
       <h1 className="text-center z-50">{content.timelineSectionTitle}</h1>
     <div
       id="timeline"
-      className="section xl:min-h-screen xl:bg-beige rounded-xl xl:px-[70px] xl:py-16 md:mx-24"
+      className="section xl:min-h-screen xl:bg-beige rounded-xl lg:px-[70px] xl:py-16 mx-3"
     >
       <div className="z-10  flex flex-row flex-wrap  md:y-12 ">
         {content.contentModules.map((block, i) => (
           <div
             key={i}
-            className="xl:h-auto md:basis-full md:mx-3 xl:mx-0 my-4 xl:my-0 flex md:flex-nowrap md:justify-between gap-y-0 bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:px-10 md:py-10 border border-green xl:border-none"
+            className="xl:h-auto md:basis-full md:mx-3 xl:mx-0 my-4 xl:my-0 timeline-grid-small xl:timeline-grid-large bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:px-10 md:py-10 border border-green xl:border-none"
           >
             {/* Title */}
-            <div className="my-8 xl:my-0 col-start-1 col-span-1 border-r border-rust basis-[37%] flex flex-col justify-between shrink-0">
-              <h2 className="text-red pb-5 text-3xl md:text-xl xl:text-4xl xl:leading-loosest ">
+            <div className="my-0 col-start-1 col-span-1 xl:border-r xl:border-rust basis-[37%] flex flex-col justify-between shrink-0 text-center xl:text-left">
+              <h2 className="text-red pb-5 text-3xl xl:text-4xl xl:leading-loosest ">
                 {block.title}<br/>
                 <em>{block.subtitle}</em>
               </h2>
-              <div className="monotext pb-1">
-                <p className="inline-block text-date">{`${nth(block.startDate.split('/')[0])} ${new Date(block.startDate.split('/')[1]).toLocaleString("en-us", { month: "long" })} `}</p>
-                <p className="inline-block text-date">&nbsp; - &nbsp;</p>
-                <p className="inline-block text-date">{`${nth(block.endDate.split('/')[0])} ${new Date(block.endDate.split('/')[1]).toLocaleString("en-us", { month: "long" })} `}</p>
+              <div className="monotext pb-1 border-b border-rust xl:border-none">
+                <p className="inline-block text-base lg:text-date">{`${nth(block.startDate.split('/')[0])} ${new Date(block.startDate.split('/')[1]).toLocaleString("en-us", { month: "long" })} `}</p>
+                <br className="hidden xl:inline 2xl:hidden "/>
+                <p className="inline-block xl:hidden 2xl:inline-block text-base lg:text-date">&nbsp; - &nbsp;</p>
+                <p className="inline-block text-base lg:text-date">{`${nth(block.endDate.split('/')[0])} ${new Date(block.endDate.split('/')[1]).toLocaleString("en-us", { month: "long" })} `}</p>
                 <p className="block text-sm">{block.zoomDate}</p>
               </div>
             </div>
             {/* Weeks */}
-            <div className="-mx-2 xl:mx-6 my-8 md:my-10 xl:my-0 flex flex-col basis-auto">
+            <div className="-mx-2 xl:mx-6 my-8 md:my-10 xl:my-0 xl:flex xl:flex-col xl:basis-full grid grid-cols-2 grid-rows-2 grid-flow-col  ">
               {block.weeks.map((week, i) => (
                 <div key={i}>
-                  <span className="flex justify-between mb-3">
+                  <span className="flex justify-between mb-3 md:justify-center shrink-0">
                     <h3 className="bg-rust w-10 h-10 2xl:w-14 2xl:h-14  rounded-full text-cream text-center flex justify-center items-center">
                       {week.weekNumber}
                     </h3>
 
-                    <p className="flex-1 leading-0 lg:ml-3 text-sm monotext ">
+                    <p className="flex-1 leading-0 lg:ml-3 text-sm monotext text-center xl:text-left w-auto">
                       {week.womanName}<br/>{week.fullDate}
                     </p>
                   </span>
