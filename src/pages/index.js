@@ -70,12 +70,12 @@ function Intro({ content }) {
 function About({ content }) {
   return (
     <div className="xl:mt-52">
-      <div className="xl:mb- mt-40 mx-3 lg:mx-10 section-center">
+      <div className=" mt-40 mx-3 lg:mx-10 section-center">
       <span className="mx-medium content-end">
         <h1 className="text-center">{content.aboutSectionTitle} </h1>
       </span>
       </div>
-    <div className="section block xl:mt-16 md:grid mx-medium grid-cols-3 gap-x-24 beige-card ">
+    <div className="section block xl:mt-16 lg:grid mx-medium grid-cols-3 lg:gap-x-10 2xl:gap-x-24 beige-card ">
       {/* Mission */}
       <div className="col-start-1 flex flex-col justify-start items-center">
         <h1 className="text-center xl:text-2xl-lg">{content.missionSectionTitle}</h1>
@@ -87,7 +87,7 @@ function About({ content }) {
             className="rounded-full xl:m-5 overflow-hidden circle"
           />
         </div>
-        <div className="mx-1 md:mx-3 leading-tight top-margin-sm text-center" >
+        <div className="mx-1 md:mx-3 leading-tight top-margin-sm text-center mb-10" >
           <StructuredText data={content.mission} />
         </div>
       </div>
@@ -102,7 +102,7 @@ function About({ content }) {
             className="rounded-full xl:m-5 overflow-hidden circle"
           />
         </div>
-        <div className="mx-1 md:mx-3 leading-tight top-margin-sm text-center">
+        <div className="mx-1 md:mx-3 leading-tight top-margin-sm text-center mb-10">
           <StructuredText data={content.purpose} />
         </div>
       </div>
@@ -440,7 +440,7 @@ function Soul({ content }) {
             className="rounded-2xl overflow-hidden circle"
           />
         </div>
-        <div className="mx-2 xl:mx-[6.75rem] mt-10 top-margin-xl text-40block text-red text-center">
+        <div className="mx-2 xl:mx-[6.75rem] mt-10 top-margin-xl md:text-40block text-black md:text-red text-center">
             <StructuredText data={content.ifYourSoulIsCallingFor} />
         </div>
  
