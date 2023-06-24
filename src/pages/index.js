@@ -440,7 +440,7 @@ function Soul({ content }) {
             className="rounded-2xl overflow-hidden circle"
           />
         </div>
-        <div className="mx-2 xl:mx-[6.75rem] mt-10 top-margin-xl text-40block text-red text-center">
+        <div className="mx-2 xl:mx-[6.75rem] mt-10 top-margin-xl md:text-40block text-black md:text-red text-center">
             <StructuredText data={content.ifYourSoulIsCallingFor} />
         </div>
  
