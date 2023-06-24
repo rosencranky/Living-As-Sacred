@@ -42,9 +42,9 @@ function Hero() {
       className=""
     >
       <Header />
-      <div className="h-screen xl:h-screen max-h-screen md:bg-hero bg-center bg-contain bg-no-repeat bg-hero pt-32"></div>
-      <div className="z-10 absolute top-6 left-0 xl:top-10 xl:left-10">
-        <h1 className="mt-0 ml-3 xl:mt-0 xl:ml-0 text-left text-3xl md:text-4xl lg:text-5xl xl:text-7xl  font-serif normal-case text-red tracking-tight leading-tighter">
+      <div className="h-screen xl:h-screen max-h-screen md:bg-hero bg-center bg-contain bg-no-repeat bg-hero pt-32 px-6"></div>
+      <div className="z-10 absolute top-6 left-8 xl:top-10 xl:left-10">
+        <h1 className="mt-0 xl:mt-0 xl:ml-0 text-left text-3xl lg:text-5xl xl:text-7xl  font-serif normal-case text-red tracking-tight leading-tighter">
           Living · as · Sacred
           <br /> 1 October – 14 April
           <br /> <em>Online</em>
@@ -58,7 +58,7 @@ function Intro({ content }) {
   return (
     <div id="about" className="mt-0 xl:mt-52 xl:mx-24 mx-3 lg:mx-10 section-center ">
       <span className="xl:mx-9">
-        <h1 className="text-center">{content.introSectionTitle} </h1>
+        <h1 className="text-center section-title">{content.introSectionTitle} </h1>
         <h2 className="z-10 text-center blockquote-sm xl:mt-10">
           <StructuredText data={content.introtext1} />
         </h2>
@@ -71,14 +71,14 @@ function About({ content }) {
   return (
     <div className="xl:mt-52">
       <div className=" mt-40 mx-3 lg:mx-10 section-center">
-      <span className="mx-medium content-end">
-        <h1 className="text-center">{content.aboutSectionTitle} </h1>
+      <span>
+        <h1 className="text-center section-title">{content.aboutSectionTitle} </h1>
       </span>
       </div>
     <div className="section block xl:mt-16 lg:grid mx-medium grid-cols-3 lg:gap-x-10 2xl:gap-x-24 beige-card ">
       {/* Mission */}
       <div className="col-start-1 flex flex-col justify-start items-center">
-        <h1 className="text-center xl:text-2xl-lg">{content.missionSectionTitle}</h1>
+        <h1 className="text-center text-base xl:text-2xl-lg">{content.missionSectionTitle}</h1>
         <div className="mt-5">
           <GatsbyImage
             image={content.missionImage.gatsbyImageData}
@@ -93,7 +93,7 @@ function About({ content }) {
       </div>
       {/* Purpose */}
       <div className="mt-10 md:mt-0 md:col-start-2 flex flex-col justify-start items-center">
-        <h1 className="text-center xl:text-2xl-lg">{content.purposeSectionTitle}</h1>
+        <h1 className="text-center text-base xl:text-2xl-lg">{content.purposeSectionTitle}</h1>
         <div className="mt-5">
           <GatsbyImage
             image={content.purposeImage.gatsbyImageData}
@@ -108,7 +108,7 @@ function About({ content }) {
       </div>
       {/* Vision */}
       <div className="mt-10 md:mt-0 md:col-start-3 flex flex-col justify-start items-center">
-        <h1 className="text-center xl:text-2xl-lg">{content.visionSectionTitle}</h1>
+        <h1 className="text-center text-base xl:text-2xl-lg">{content.visionSectionTitle}</h1>
         <div className="mt-5">
           <GatsbyImage
             image={content.visionImage.gatsbyImageData}
@@ -132,7 +132,7 @@ function About({ content }) {
 function Quote({ content }) {
   return (
     <div className="section mx-large">
-      <h4 className="text-center italic">{content.quote}</h4>
+      <h4 className="text-center italic leading-loose tracking-tightest">{content.quote}</h4>
       <p className="text-center monotext text-sm xl:text-2xl xl:mt-9">— THICH NHAT HANH</p>
     </div>
   )
@@ -140,14 +140,14 @@ function Quote({ content }) {
 
 function Values({ content }) {
   return (
-    <div className="top-margin-xl w-full py-12 h-[100vh]">
+    <div className="top-margin-xl w-full py-12">
       <div>
-      <h1 className="text-center text-black mb-10">
+      <h1 className="text-center text-black mb-10 section-title">
         {content.valuesSectionTitle}
       </h1>
       </div>
-      <div className="bg-values bg-cover bg-center h-full lg:h-5/6 ">
-        <div className="xl:px-40 flex lg:flex-row flex-col items-center  justify-evenly h-full">
+      <div className="bg-values bg-cover bg-center py-[4.5rem] lg:py-44 lg:h-5/6 ">
+        <div className="xl:px-40 flex lg:flex-row flex-col items-center gap-[20rem] justify-evenly h-full">
           <div className="flex flex-col items-start lg:gap-20 gap-8">
             <Value text={content.valuesList[0].value} />
             <Value text={content.valuesList[1].value} />
@@ -168,7 +168,7 @@ function Values({ content }) {
 
 function Value({ text }) {
   return (
-    <h2 className="px-6 md:px-4 xl:px-8 pt-1 pb-3 rounded-2xl lg:rounded-4xl lg:w-80 w-52 text-black text-center bg-beige  lg:text-3xl">
+    <h2 className="px-6 md:px-4 xl:px-8 pt-1 pb-3 rounded-4xl lg:w-80 w-52 text-black text-center bg-beige  lg:text-3xl">
       <StructuredText data={text} />
     </h2>
   )
@@ -188,7 +188,7 @@ function CTASection({ content }) {
 function Offering({ content }) {
   return (
     <div id="offering" className="section top-margin-xl mx-3 md:mx-12 lg:mx-8  2xl:mx-16">
-      <h1 className="text-center">{content.offeringSectionTitle}</h1>
+      <h1 className="text-center section-title">{content.offeringSectionTitle}</h1>
       {/* Accordion */}
       <div className="top-margin-medium relative z-10 flex flex-col lg:flex-row">
         <div className="basis-1/2">
@@ -216,8 +216,8 @@ function Offering({ content }) {
 
 function CTAMove({ content }) {
   return (
-    <div className="top-margin-xl w-full flex flex-col items-center"> 
-        <div>
+    <div className="top-margin-xl w-full flex flex-col items-center justify-center "> 
+        <div className="w-10/12 lg:w-1/3 text-center">
           <GatsbyImage
             image={content.ctaImage2.gatsbyImageData}
             alt={content.ctaImage2.alt}
@@ -246,7 +246,7 @@ function Timeline({ content }) {
 
   return (   
     <div className="top-margin-xl">
-      <h1 className="text-center z-50">{content.timelineSectionTitle}</h1>
+      <h1 className="text-center z-50 section-title">{content.timelineSectionTitle}</h1>
     <div
       id="timeline"
       className="section xl:min-h-screen xl:bg-beige rounded-xl lg:px-[70px] xl:py-16 mx-3"
@@ -301,7 +301,7 @@ function Timeline({ content }) {
 function CTAPlants({ content }) {
   return (
     <div className="top-margin-xl w-full h-90 flex flex-col justify-center items-center bg-cta3 bg-center bg-cover bg-no-repeat ">
-      <h4 className="mx-medium  text-center text-beige rounded-2xl pdng bg-spice leading-extra-loose tracking-tightest">
+      <h4 className="mx-medium  text-center text-beige rounded-2xl pdng bg-spice leading-10 lg:leading-extra-loose tracking-tightest">
         <StructuredText data={content.ctaS3} />
       </h4>
       <div className="xl:mt-20">
@@ -315,7 +315,7 @@ function Price({ content }) {
   return (
     <div className="top-margin-xl">
       <div>
-      <h1 className="text-center">{content.valueSectionTitle}</h1>
+      <h1 className="text-center section-title">{content.valueSectionTitle}</h1>
       </div>
     <div
       id="value"
@@ -326,9 +326,9 @@ function Price({ content }) {
         {content.price}
       </h2>
       <h3 className="mt-3 xl:mt-5 text-red"> {content.priceSubtext}</h3>
-      <h1 className="mt-8 xl:mt-16 xl:text-2xl-lg">{content.offerResumeSectionTitle}</h1>
+      <h1 className="mt-8 xl:mt-16 text-base xl:text-2xl-lg">{content.offerResumeSectionTitle}</h1>
       <h3>
-        <ul className="top-margin-sm mx-1 md:mx-12 xl:mx-24 2xl:mx-32 text-center list-none">
+        <ul className="top-margin-sm mx-1 md:mx-12 xl:mx-24 2xl:mx-32 text-center text-base lg:text-2xl list-none">
           {content.including.map((block, i) => (
             <li className="mb-3" key={i}>
               + {block.offeringBulletPoint}
@@ -336,8 +336,8 @@ function Price({ content }) {
           ))}
         </ul>
       </h3>
-      <h1 className="pt-3 mt-3 xl:mt-16 xl:text-2xl-lg">{content.paymentTermsTitle}</h1>
-      <h3 className="top-margin-sm">{content.paymentTerms}</h3>
+      <h1 className="pt-3 mt-3 xl:mt-16 text-base xl:text-2xl-lg">{content.paymentTermsTitle}</h1>
+      <h3 className="top-margin-sm text-base lg:text-2xl">{content.paymentTerms}</h3>
       {/* <Button cta={content.cta} /> */}
       <button className="mt-8 md:mt-16 mb-3 flex justify-center place-self-center focus:outline-none">
         <Link
@@ -355,11 +355,11 @@ function Price({ content }) {
 function Bios({ content }) {
   return (
     <div className="section top-margin-xl  mx-medium" id="women">
-      <h1 className="text-center">{content.womenSectionTitle}</h1>
+      <h1 className="text-center section-title">{content.womenSectionTitle}</h1>
       <div className="top-margin-medium grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 place-content-center gap-2">
       <div className="relative overflow-hidden">
         <div className="bg-khaki  rounded-xl circle absolute top-0 left-0 right-0 bottom-0 w-full z-30 flex flex-wrap items-center justify-center">
-          <p className="block top-0 left-0 -mt-6 text-bios-lg text-red z-40">
+          <p className="block top-0 left-0 -mt-6 text-date lg:text-bios-lg text-center text-red z-40">
             The Council
           </p>
         </div>
@@ -387,7 +387,7 @@ function Bios({ content }) {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 w-full p-3">
                   <div className="pb-2">
-                    <h3 className="block text-center text-2xl uppercase text-cream leading-tight mb-1">
+                    <h3 className="block text-center text-base lg:text-bios-lg uppercase text-cream leading-tight mb-1">
                       {node.name} {node.isMainOrganiser && (`(Core Team)`)}
                     </h3>
                   </div>
@@ -428,12 +428,12 @@ function Supporting({ content }) {
 
 function Soul({ content }) {
   return (
-    <div className="section top-margin-xl xl:mx-0 w-full flex flex-col items-center ">
+    <div className="section top-margin-xl xl:mx-0  flex flex-col items-center ">
       <div className="section xl:mx-52">
         <h4 className="text-center italic tracking-tightest"><StructuredText data={content.ifYourSoulIsCallingForIntro} /></h4>
         <p className="text-center monotext text-sm xl:text-2xl">— Robin Wall Kimmerer</p>
       </div>
-        <div className="mt-52">
+        <div className="mt-40 lg:mt-52 w-10/12 lg:w-1/2">
           <GatsbyImage
             image={content.soulImage.gatsbyImageData}
             alt={content.soulImage.alt}
