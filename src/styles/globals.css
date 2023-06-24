@@ -70,6 +70,18 @@
   .bg-hero {
     background-origin: content-box
   }
+
+  .timeline-grid-large {
+    @apply grid;
+    grid-template-columns: 37% 21% 42%;
+    grid-template-rows: 100%
+  }
+
+  .timeline-grid-small {
+    @apply: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 34% 25% 41%;
+  }
 }
 @tailwind components;
 @tailwind utilities;
