@@ -82,6 +82,10 @@
     grid-template-columns: 100%;
     grid-template-rows: 34% 25% 41%;
   }
+
+  .section-title {
+    @apply text-black text-2xl-lg lg:text-4xl font-mono tracking-wider uppercase antialiased leading-tight mb-2;
+  }
 }
 @tailwind components;
 @tailwind utilities;

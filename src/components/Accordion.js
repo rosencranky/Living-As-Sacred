@@ -24,7 +24,7 @@ export default function Accordion({ index, excerpt, fullText }) {
             <div className="flex-1">
               <div className="flex flex-wrap items-start accordion-item--open ">
                 <div
-                    className={`leading-tight block mb-0 pb-0 px-3 flex-1 transition-opacity ease-in duration-200 delay-50 ${
+                    className={`leading-tight block mb-0 pb-0  flex-1 transition-opacity ease-in duration-200 delay-50 ${
                       open ? "opacity-100" : "opacity-0"
                     }`}
                   >
@@ -52,7 +52,7 @@ export default function Accordion({ index, excerpt, fullText }) {
                     />
                   </svg>
                 </div>
-                <div className="mt-9 flex-grow ">
+                <div className="mt-9 flex-grow text-base lg:text-lg">
                     <StructuredText data={fullText} />
                     </div>
               </div>
@@ -76,7 +76,7 @@ export default function Accordion({ index, excerpt, fullText }) {
             <div className="flex-1">
               <div className="flex flex-wrap items-start accordion-item--open "> 
                   <h3
-                    className={`block mb-0 pb-0 px-3 flex-1  xl:text-3xl transition-opacity ease-in duration-200 align-text-middle ${
+                    className={`block mb-0 pb-0  flex-1  xl:text-3xl transition-opacity ease-in duration-200 align-text-middle ${
                       open ? "opacity-0" : "opacity-100"
                     }`}
                   >
