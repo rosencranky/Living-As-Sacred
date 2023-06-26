@@ -19,7 +19,7 @@ export default function IndexPagePt({ data }) {
       <Hero />
       <Intro content={data.content} />
       <About content={data.content} />
-      <Quote content={data.content} />
+      <JoannaMacy content={data.content} />
       <Values content={data.content} />
       <CTASection content={data.content} />
       <Offering content={data.content} />
@@ -130,10 +130,10 @@ function About({ content }) {
   )
 }
 
-function Quote({ content }) {
+function JoannaMacy({ content }) {
   return (
     <div className="section mx-large">
-      <h4 className="text-center italic">{content.quote}</h4>
+      <h4 className="text-center italic">{content.joannaMacyQuote}</h4>
       <p className="text-center monotext text-sm xl:text-base">—Joanna Macy</p>
     </div>
   )
@@ -504,7 +504,7 @@ export const query = graphql`
         gatsbyImageData(height: 400, width: 400, imgixParams: { fit: "crop" })
         alt
       }
-      quote
+      joannaMacyQuote
       ctaS1 {
         value
       }
