@@ -17,8 +17,7 @@ export default function IndexPage({ data }) {
         description="Living as Sacred is a movement to remember what it means to live in connection with our mother, ourselves, honouring all the relations with all the beings."
       />
       <Hero />
-
-      {/*<Intro content={data.content} />
+      <Intro content={data.content} />
       <About content={data.content} />
       <Quote content={data.content} />
       <Values content={data.content} />
@@ -30,7 +29,7 @@ export default function IndexPage({ data }) {
       <CTAPlants content={data.content} />
       <Price content={data.content} />
       <Soul content={data.content} />
-  <Supporting content={data.content} />*/}
+      <Supporting content={data.content} />
       <Footer content={data.content} />
     </>
   )
