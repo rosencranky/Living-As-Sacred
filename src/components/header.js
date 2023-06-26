@@ -45,7 +45,7 @@ export default function Header() {
       <div
         className={`${
           isExpanded
-            ? `fixed top-0 w-full z-30 block lg:hidden bg-green h-screen`
+            ? `fixed top-0 w-full z-30 block lg:hidden bg-beige h-screen`
             : `hidden`
         }   `}
       >
@@ -82,27 +82,7 @@ export default function Header() {
           >
             Contact
           </Link>
-          <span className="inline-block text-red navlinks mt-10">
-            <Link
-              to={`/`}
-              className="inline-block"
-              title="Home"
-              activeClassName="underline"
-              onClick={() => toggleExpansion(!isExpanded)}
-            >
-              EN
-            </Link>
-            /
-            <Link
-              to={`/pt`}
-              className="inline-block "
-              title="Home"
-              activeClassName="underline"
-              onClick={() => toggleExpansion(!isExpanded)}
-            >
-              PT
-            </Link>
-          </span>
+          
           <div className="flex justify-start mt-10 text-red ">
             <a
               href="https://www.instagram.com/living.as.sacred/"
