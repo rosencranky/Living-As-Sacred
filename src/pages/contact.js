@@ -6,13 +6,14 @@ export default function Contact() {
   return (
     <Layout>
       <SEO title="Contact" />
-      <div className="flex justify-center h-90 items-center overflow-y-hidden ">
-        <div className="w-full lg:w-1/2 xl:w-8/12 px-4  ">
-          <h1 className="text-center top-margin-medium ">Contact us</h1>
+      <div className="flex w-full justify-center h-90 items-center overflow-y-hidden ">
+        <div className=" px-4 w-full flex flex-col justify-center items-center">
+          <h1 className="text-center top-margin-medium section-title">Contact us</h1>
           <p className="top-margin-medium text-center">
-            Please send us a message to sign up for the journey and get payment
-            details.
+          Please send us a message to sign up for the journey.<br/>
+          You can pay the full amount, in 2x and 3x.
           </p>
+          <div className="w-5/6 lg:w-[38.44%]">
           <form
             className=" top-margin-medium z-0 "
             method="post"
@@ -27,7 +28,7 @@ export default function Contact() {
             <label>
               <div className="mt-12  flex justify-center">
                 <input
-                  className="p-3 md:p-6 bg-beige  border border-darkgreen rounded-xl focus:outline-none ring-white  w-3/4"
+                  className="p-3 md:p-6 bg-beige h-12 border border-khaki rounded-xl focus:outline-none ring-white w-full"
                   type="text"
                   name="name"
                   placeholder="Name"
@@ -39,7 +40,7 @@ export default function Contact() {
             <label className="">
               <div className="mt-12 flex justify-center">
                 <input
-                  className=" p-3 md:p-6 bg-beige  border border-darkgreen rounded-xl focus:outline-none ring-white   w-3/4"
+                  className=" p-3 md:p-6 bg-beige h-12 border border-khaki rounded-xl focus:outline-none ring-white w-full"
                   type="text"
                   name="email"
                   placeholder="Email address"
@@ -50,20 +51,20 @@ export default function Contact() {
 
             <label className="">
               {/* Message: */}
-              <div className=" border border-darkgreen rounded-xl w-full  mt-12 h-full">
+              <div className=" border border-khaki rounded-xl w-full  mt-12 h-full">
                 <textarea
-                  className="h-24 p-3 md:p-6 bg-beige text-black rounded-xl  w-full  focus:outline-none outline-none ring-none -mb-1"
+                  className="h-40 p-3 md:p-6  bg-beige text-black rounded-xl  w-full  focus:outline-none outline-none ring-none -mb-1"
                   name="message"
                   type="text"
                   // role="textbox"
-                  placeholder="I want to sign up for Living as Sacred journey. Can you please send me payment details?"
+                  placeholder="Write your message..."
                   required
                 />
               </div>
             </label>
             <div className=" mt-12 border-red rounded-xl flex items-center justify-center ">
               <button
-                className="border border-green rounded-2xl bg-green hover:bg-beigetext-black px-6 py-3 monotext 
+                className="border border-green bg-khaki rounded-3xl bg-green hover:bg-beige text-black px-8 py-3 monotext 
               text-sm 2xl:text-base no-underline  leading-none shadow-sm  ring-white transition ease-in-out duration-300"
                 type="submit"
               >
@@ -71,6 +72,7 @@ export default function Contact() {
               </button>
             </div>
           </form>
+          </div>
         </div>
       </div>
     </Layout>
