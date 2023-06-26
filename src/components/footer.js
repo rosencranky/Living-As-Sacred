@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 export default function Footer() {
   return (
-    <footer className=" w-full  flex justify-between items-end pb-10 px-5 xl:px-10  pt-8 xl:pt-12  bg-darkgreen rounded-t-xl">
+    <footer className=" w-full top-margin-lg flex justify-between items-end pb-10 px-5 xl:px-10  pt-8 xl:pt-12  bg-spice rounded-t-xl">
       <div className="flex flex-col items-end text-beige -mb-2">
         <p> © {new Date().getFullYear()} </p>
       </div>
@@ -18,16 +18,6 @@ export default function Footer() {
         </p>
         <p className="text-right xl:text-left">
           <a
-            href={"https://joannaherman.com"}
-            target="_blank"
-            rel="noreferrer noopener"
-            className="monotext text-base no-underline hover:underline md:ml-5 "
-          >
-            Site by Joanna Herman
-          </a>
-        </p>
-        <p className="text-right xl:text-left">
-          <a
             href={"mailto:livingasacred@gmail.com"}
             target="_blank"
             rel="noreferrer noopener"
@@ -36,23 +26,6 @@ export default function Footer() {
             Contact
           </a>
         </p>
-        {/*<span className="mt-10 xl:mt-0 inline-block">
-          <Link
-            to={`/`}
-            className="font-serif text-xl hover:underline lg:ml-6"
-            activeClassName=""
-          >
-            EN
-          </Link>
-          /
-          <Link
-            to={`/pt`}
-            className="font-serif text-xl hover:underline lg:mr-6"
-            activeClassName="underline"
-          >
-            PT
-          </Link>
-  </span>*/}
         <div className="flex justify-end mt-10">
           <a
             href="https://www.instagram.com/living.as.sacred/"
