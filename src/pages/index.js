@@ -69,13 +69,14 @@ function Intro({ content }) {
 
 function About({ content }) {
   return (
-    <div className="xl:mt-52">
-      <div className=" mt-40 mx-3 lg:mx-10 section-center">
+    <div>
+    <div className="xl:mt-52 section block mx-medium beige-card ">
+      <div className=" mx-3 lg:mx-10 section-center">
       <span>
         <h1 className="text-center section-title">{content.aboutSectionTitle} </h1>
       </span>
       </div>
-    <div className="section block xl:mt-16 lg:grid mx-medium grid-cols-3 lg:gap-x-10 2xl:gap-x-24 beige-card ">
+    <div className=" xl:mt-16 lg:grid  grid-cols-3 lg:gap-x-10 2xl:gap-x-24 ">
       {/* Mission */}
       <div className="col-start-1 flex flex-col justify-start items-center">
         <h1 className="text-center text-base xl:text-2xl-lg">{content.missionSectionTitle}</h1>
@@ -121,6 +122,7 @@ function About({ content }) {
           <StructuredText data={content.vision} />
         </div>
       </div>
+    </div>
     </div>
     <div className="col-span-3 flex justify-center place-self-center xl:mt-10 xl:mb-36">
         <Button cta={content.cta} />
