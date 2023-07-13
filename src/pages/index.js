@@ -315,13 +315,14 @@ function CTAPlants({ content }) {
 
 function Price({ content }) {
   return (
-    <div className="top-margin-xl">
+    <div className="flex flex-col">
+    <div className="top-margin-xl beige-card mx-medium  ">
       <div>
       <h1 className="text-center section-title">{content.valueSectionTitle}</h1>
       </div>
     <div
       id="value"
-      className=" mt-16 mx-medium beige-card mb-12 flex flex-col items-center text-center"
+      className=" mt-16 mb-12 flex flex-col items-center text-center"
     >
       
       <h2 className="text-7xl xl:text-7xl text-red text-center">
@@ -341,7 +342,10 @@ function Price({ content }) {
       <h1 className="pt-3 mt-3 xl:mt-16 text-base xl:text-2xl-lg">{content.paymentTermsTitle}</h1>
       <h3 className="top-margin-sm text-base lg:text-2xl">{content.paymentTerms}</h3>
       {/* <Button cta={content.cta} /> */}
-      <button className="mt-8 md:mt-16 mb-3 flex justify-center place-self-center focus:outline-none">
+      
+    </div>
+    </div>
+    <button className="mt-8 md:mt-16 mb-3 flex justify-center place-self-center focus:outline-none">
         <Link
           to="/contact"
           className="z-20 inline-block  border border-green rounded-2xl xl:rounded-4xl bg-khaki hover:bg-beige hover:border-khaki text-black px-5 py-2 monotext text-sm xl:text-2xl no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
@@ -349,7 +353,6 @@ function Price({ content }) {
           I want more information
         </Link>
       </button>
-    </div>
     </div>
   )
 }
@@ -430,7 +433,7 @@ function Supporting({ content }) {
 
 function Soul({ content }) {
   return (
-    <div className="section top-margin-xl xl:mx-0  flex flex-col items-center ">
+    <div className="section top-margin-lg xl:mx-0  flex flex-col items-center ">
       <div className="section xl:mx-52">
         <h4 className="text-center italic tracking-tightest blockquote-sm"><StructuredText data={content.ifYourSoulIsCallingForIntro} /></h4>
         <p className="text-center monotext text-sm xl:text-2xl">— Robin Wall Kimmerer</p>
