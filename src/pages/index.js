@@ -60,9 +60,9 @@ function Intro({ content }) {
       <span className="xl:mx-9">
         <h1 className="text-center section-title xl:hidden leading-8">LIVING AS SACRED<br/>ONLINE JOURNEY </h1>
         <h1 className="text-center section-title hidden xl:block">{content.introSectionTitle} </h1>
-        <h2 className="z-10 text-center blockquote-sm xl:mt-10">
+        <h4 className="z-10 text-center blockquote-sm tracking-tightest xl:mt-10">
           <StructuredText data={content.introtext1} />
-        </h2>
+        </h4>
       </span>
     </div>
   )
@@ -269,10 +269,10 @@ function Timeline({ content }) {
 
   return (   
     <div className="top-margin-xl pt-16 section xl:bg-beige rounded-xl  ">
-      <h1 className="text-center z-50 section-title">{content.timelineSectionTitle}</h1>
+      <h1 className="text-center z-50 pb-6 section-title">{content.timelineSectionTitle}</h1>
     <div
       id="timeline"
-      className="section xl:min-h-screen xl:bg-beige rounded-xl lg:px-[70px] xl:pb-16 mx-3"
+      className=" xl:min-h-screen xl:bg-beige rounded-xl  lg:px-[70px] xl:pb-16 mx-3"
     >
       <div className="z-10  flex flex-row flex-wrap  md:y-12 ">
         {content.contentModules.map((block, i) => (
@@ -339,7 +339,7 @@ function Price({ content }) {
     <div className="flex flex-col">
     <div className="top-margin-xl beige-card mx-medium  ">
       <div>
-      <h1 className="text-center section-title">{content.valueSectionTitle}</h1>
+      <h1 className="text-center section-title leading-8 pt-6">{content.valueSectionTitle}</h1>
       </div>
     <div
       id="value"
@@ -414,7 +414,7 @@ function Bios({ content }) {
                 <div className="absolute bottom-0 left-0 right-0 w-full p-3">
                   <div className="pb-2">
                     <h3 className="block text-center text-base lg:text-bios-sm uppercase text-cream leading-tight mb-1">
-                      {node.name} {node.isMainOrganiser && (`(Core Team)`)}
+                      {node.name} <br/> {node.isMainOrganiser && (`(Core Team)`)}
                     </h3>
                   </div>
                 </div>
@@ -467,8 +467,8 @@ function Soul({ content }) {
             className="rounded-2xl overflow-hidden circle"
           />
         </div>
-        <div className="mx-2 xl:mx-[6.75rem] mt-10 top-margin-xl blockquote-sm text-center">
-            <StructuredText data={content.ifYourSoulIsCallingFor} />
+        <div className="mx-2 xl:mx-[6.75rem] mt-10 top-margin-xl ">
+            <h4 className="blockquote-sm text-center tracking-tightest"><StructuredText data={content.ifYourSoulIsCallingFor} /></h4>
         </div>
  
       <div className="mt-10 mx-large text-center">

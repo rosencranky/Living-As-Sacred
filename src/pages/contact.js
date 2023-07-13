@@ -8,7 +8,7 @@ export default function Contact() {
       <SEO title="Contact" />
       <div className="flex w-full justify-center h-90 items-center overflow-y-hidden   ">
         <div className=" px-4 w-full flex flex-col justify-center items-center">
-          <h1 className="text-center top-margin-medium section-title">Contact us</h1>
+          <h1 className="text-center top-margin-lg section-title">Contact us</h1>
           <p className="top-margin-medium text-center">
           Please send us a message to sign up for the journey.<br/>
           You can pay the full amount, in 2 or 3 installments.
