@@ -64,7 +64,7 @@ export default function Contact() {
             </label>
             <div className=" mt-12 border-red rounded-xl flex items-center justify-center ">
               <button
-                className="border border-green bg-khaki rounded-3xl bg-green hover:bg-beige text-black px-8 py-3 monotext 
+                className="border border-khaki bg-khaki rounded-3xl bg-green hover:bg-beige hover:border-beige text-black px-8 py-3 monotext 
               text-sm 2xl:text-base no-underline  leading-none shadow-sm  ring-white transition ease-in-out duration-300"
                 type="submit"
               >

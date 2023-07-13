@@ -46,7 +46,7 @@ module.exports = {
           letterSpacing: '-1.2px',
           fontWeight: '400',
         }],
-        'date': ["1.5rem", {
+        'date': ["1.25rem", {
           lineHeight: '1.313rem', 
           letterSpacing: '1px', 
         }]

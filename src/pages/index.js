@@ -278,7 +278,7 @@ function Timeline({ content }) {
         {content.contentModules.map((block, i) => (
           <div
             key={i}
-            className="xl:h-auto md:basis-full md:mx-3 xl:mx-0 my-4 xl:my-0 timeline-grid-small xl:timeline-grid-large bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:px-10 md:py-10 border border-green xl:border-none"
+            className="xl:h-auto md:basis-full md:mx-3 xl:mx-0 my-4 xl:my-0 timeline-grid-small xl:timeline-grid-large bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:px-10 md:py-10 border-none"
           >
             {/* Title */}
             <div className="xl:pr-6 my-0 col-start-1 col-span-1 xl:border-r xl:border-rust basis-[37%] flex flex-col  shrink-0 text-center xl:text-left">
