@@ -22,6 +22,8 @@ module.exports = {
       },
       fontSize: {
         'bios-lg': ["2.25rem", "2.5rem"],
+        "bios-sm": "1.5rem",
+        "timeline-title": "38px",
         // 'xs': '.75rem',
         // sm: ['40px', '20px'],
         // 'tiny': '.875rem',
@@ -35,13 +37,16 @@ module.exports = {
         '4xl': ["2.5rem", "1.25rem"],
         '5xl': ["3rem", "3rem"],
         '6xl': ["3.75rem", "3.75rem"],
-        '7xl': ["4.5rem", "4.5rem"], 
+        '7xl': ["4.5rem", "4.5rem"],
+        'title-lg': ["35px","1.25rem"],
+        'red-text-sm': ["30px","40px"],
+        'red-text-lg': ["35px","54px"],
         '40block': ["40px", {
           lineHeight: '54px',
           letterSpacing: '-1.2px',
           fontWeight: '400',
         }],
-        'date': ["1.75rem", {
+        'date': ["1.25rem", {
           lineHeight: '1.313rem', 
           letterSpacing: '1px', 
         }]

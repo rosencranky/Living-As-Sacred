@@ -56,12 +56,13 @@ function Hero() {
 
 function Intro({ content }) {
   return (
-    <div id="about" className="mt-0 xl:mt-52 xl:mx-24 mx-3 lg:mx-10 section-center ">
+    <div id="about" className="mt-10 xl:mt-52 xl:mx-24 mx-3 lg:mx-10 section-center ">
       <span className="xl:mx-9">
-        <h1 className="text-center section-title">{content.introSectionTitle} </h1>
-        <h2 className="z-10 text-center blockquote-sm xl:mt-10">
+        <h1 className="text-center section-title xl:hidden leading-8">LIVING AS SACRED<br/>ONLINE JOURNEY </h1>
+        <h1 className="text-center section-title hidden xl:block">{content.introSectionTitle} </h1>
+        <h4 className="z-10 text-center blockquote-sm tracking-tightest xl:mt-10">
           <StructuredText data={content.introtext1} />
-        </h2>
+        </h4>
       </span>
     </div>
   )
@@ -69,13 +70,14 @@ function Intro({ content }) {
 
 function About({ content }) {
   return (
-    <div className="xl:mt-52">
-      <div className=" mt-40 mx-3 lg:mx-10 section-center">
+    <div>
+    <div className="xl:mt-52 section block mx-medium beige-card ">
+      <div className=" mx-3 lg:mx-10 section-center">
       <span>
-        <h1 className="text-center section-title">{content.aboutSectionTitle} </h1>
+        <h1 className="text-center section-title py-4 leading-8">{content.aboutSectionTitle} </h1>
       </span>
       </div>
-    <div className="section block xl:mt-16 lg:grid mx-medium grid-cols-3 lg:gap-x-10 2xl:gap-x-24 beige-card ">
+    <div className=" xl:mt-16 lg:grid  grid-cols-3 lg:gap-x-10 2xl:gap-x-24 ">
       {/* Mission */}
       <div className="col-start-1 flex flex-col justify-start items-center">
         <h1 className="text-center text-base xl:text-2xl-lg">{content.missionSectionTitle}</h1>
@@ -122,7 +124,8 @@ function About({ content }) {
         </div>
       </div>
     </div>
-    <div className="col-span-3 flex justify-center place-self-center xl:mt-10 xl:mb-52">
+    </div>
+    <div className="col-span-3 flex justify-center place-self-center xl:mt-10 xl:mb-36">
         <Button cta={content.cta} />
       </div>
     </div>
@@ -132,7 +135,7 @@ function About({ content }) {
 function Quote({ content }) {
   return (
     <div className="section mx-large">
-      <h4 className="text-center italic leading-loose tracking-tightest">{content.quote}</h4>
+      <h4 className="text-center italic blockquote-sm tracking-tightest">{content.quote}</h4>
       <p className="text-center monotext text-sm xl:text-2xl xl:mt-9">— THICH NHAT HANH</p>
     </div>
   )
@@ -177,7 +180,7 @@ function Value({ text }) {
 function CTASection({ content }) {
   return (
     <div className="section section-center mx-medium xl:mt-52">
-      <h4 className="text-center">
+      <h4 className="text-center blockquote-sm">
         <StructuredText data={content.ctaS1} />
       </h4>
       <span className="xl:mt-10"><Button cta={content.cta} /></span>
@@ -188,7 +191,7 @@ function CTASection({ content }) {
 function Offering({ content }) {
   return (
     <div id="offering" className="section top-margin-xl mx-3 md:mx-12 lg:mx-8  2xl:mx-16">
-      <h1 className="text-center section-title">{content.offeringSectionTitle}</h1>
+      <h1 className="text-center section-title leading-8">{content.offeringSectionTitle}</h1>
       {/* Accordion */}
       <div className="top-margin-medium relative z-10 flex flex-col lg:flex-row">
         <div className="basis-1/2">
@@ -225,7 +228,7 @@ function CTAMove({ content }) {
             className="rounded-xl circle overflow-hidden"
           />
         </div>
-      <h4 className="top-margin-xl mx-large text-center text-red">
+      <h4 className="top-margin-xl mx-large text-center blockquote-sm">
         <StructuredText data={content.ctaS2} />
       </h4>
       <span className="mt-10"><Button cta={content.cta} /></span>
@@ -244,30 +247,50 @@ function Timeline({ content }) {
     }
   }
 
+  const writeMonth = function(m) {
+    const month = parseInt(m, 10);
+
+    switch(month) {
+      case 1: return 'JANUARY';
+      case 2: return 'FEBRUARY';
+      case 3: return 'MARCH';
+      case 4: return 'APRIL';
+      case 5: return 'MAY';
+      case 6: return 'JUNE';
+      case 7: return 'JULY';
+      case 8: return 'AUGUST';
+      case 9: return 'SEPTEMBER';
+      case 10: return 'OCTOBER';
+      case 11: return 'NOVEMBER';
+      case 12: return 'DECEMBER';
+      default: return 'ERROR';
+    }
+  }
+
   return (   
-    <div className="top-margin-xl">
-      <h1 className="text-center z-50 section-title">{content.timelineSectionTitle}</h1>
+    <div className="top-margin-xl pt-16 section xl:bg-beige rounded-xl  ">
+      <h1 className="text-center z-50 pb-6 section-title">{content.timelineSectionTitle}</h1>
     <div
       id="timeline"
-      className="section xl:min-h-screen xl:bg-beige rounded-xl lg:px-[70px] xl:py-16 mx-3"
+      className=" xl:min-h-screen xl:bg-beige rounded-xl  lg:px-[70px] xl:pb-16 mx-3"
     >
       <div className="z-10  flex flex-row flex-wrap  md:y-12 ">
         {content.contentModules.map((block, i) => (
           <div
             key={i}
-            className="xl:h-auto md:basis-full md:mx-3 xl:mx-0 my-4 xl:my-0 timeline-grid-small xl:timeline-grid-large bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:px-10 md:py-10 border border-green xl:border-none"
+            className="xl:h-auto md:basis-full md:mx-3 xl:mx-0 my-4 xl:my-0 timeline-grid-small xl:timeline-grid-large bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:px-10 md:py-10 border-none"
           >
             {/* Title */}
-            <div className="my-0 col-start-1 col-span-1 xl:border-r xl:border-rust basis-[37%] flex flex-col justify-between shrink-0 text-center xl:text-left">
-              <h2 className="text-red pb-5 text-3xl xl:text-4xl xl:leading-loosest ">
+            <div className="xl:pr-6 my-0 col-start-1 col-span-1 xl:border-r xl:border-rust basis-[37%] flex flex-col  shrink-0 text-center xl:text-left">
+              <h2 className="text-red pb-5 text-3xl xl:text-timeline-title xl:leading-loosest xl:pb-12">
                 {block.title}<br/>
                 <em>{block.subtitle}</em>
               </h2>
               <div className="monotext pb-1 border-b border-rust xl:border-none">
-                <p className="inline-block text-base lg:text-date">{`${nth(block.startDate.split('/')[0])} ${new Date(block.startDate.split('/')[1]).toLocaleString("en-us", { month: "long" })} `}</p>
-                <br className="hidden xl:inline 2xl:hidden "/>
-                <p className="inline-block xl:hidden 2xl:inline-block text-base lg:text-date">&nbsp; - &nbsp;</p>
-                <p className="inline-block text-base lg:text-date">{`${nth(block.endDate.split('/')[0])} ${new Date(block.endDate.split('/')[1]).toLocaleString("en-us", { month: "long" })} `}</p>
+                <p className="inline-block text-base lg:text-date">{`${nth(block.startDate.split('/')[0])} ${writeMonth(block.startDate.split('/')[1])}`}</p>
+                <br className="hidden lg:inline xl:hidden "/>
+                <p className="inline-block lg:hidden xl:inline-block text-base lg:text-date">&nbsp; - &nbsp;</p>
+                <p className="inline-block text-base lg:text-date">{`${nth(block.endDate.split('/')[0])} ${writeMonth(block.endDate.split('/')[1])}`}</p>
                 <p className="block text-sm">{block.zoomDate}</p>
               </div>
             </div>
@@ -301,7 +324,7 @@ function Timeline({ content }) {
 function CTAPlants({ content }) {
   return (
     <div className="top-margin-xl w-full h-90 flex flex-col justify-center items-center bg-cta3 bg-center bg-cover bg-no-repeat ">
-      <h4 className="mx-medium  text-center text-beige rounded-2xl pdng bg-spice leading-10 lg:leading-extra-loose tracking-tightest">
+      <h4 className="mx-medium  text-center text-beige blockquote-sm rounded-2xl pdng bg-spice leading-10 lg:leading-extra-loose tracking-tightest">
         <StructuredText data={content.ctaS3} />
       </h4>
       <div className="xl:mt-20">
@@ -313,13 +336,14 @@ function CTAPlants({ content }) {
 
 function Price({ content }) {
   return (
-    <div className="top-margin-xl">
+    <div className="flex flex-col">
+    <div className="top-margin-xl beige-card mx-medium  ">
       <div>
-      <h1 className="text-center section-title">{content.valueSectionTitle}</h1>
+      <h1 className="text-center section-title leading-8 pt-6">{content.valueSectionTitle}</h1>
       </div>
     <div
       id="value"
-      className=" mt-16 mx-medium beige-card mb-12 flex flex-col items-center text-center"
+      className=" mt-16 mb-12 flex flex-col items-center text-center"
     >
       
       <h2 className="text-7xl xl:text-7xl text-red text-center">
@@ -339,7 +363,10 @@ function Price({ content }) {
       <h1 className="pt-3 mt-3 xl:mt-16 text-base xl:text-2xl-lg">{content.paymentTermsTitle}</h1>
       <h3 className="top-margin-sm text-base lg:text-2xl">{content.paymentTerms}</h3>
       {/* <Button cta={content.cta} /> */}
-      <button className="mt-8 md:mt-16 mb-3 flex justify-center place-self-center focus:outline-none">
+      
+    </div>
+    </div>
+    <button className="mt-8 md:mt-16 mb-3 flex justify-center place-self-center focus:outline-none">
         <Link
           to="/contact"
           className="z-20 inline-block  border border-green rounded-2xl xl:rounded-4xl bg-khaki hover:bg-beige hover:border-khaki text-black px-5 py-2 monotext text-sm xl:text-2xl no-underline   leading-none shadow-sm  transition ease-in-out duration-300"
@@ -347,7 +374,6 @@ function Price({ content }) {
           I want more information
         </Link>
       </button>
-    </div>
     </div>
   )
 }
@@ -387,8 +413,8 @@ function Bios({ content }) {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 w-full p-3">
                   <div className="pb-2">
-                    <h3 className="block text-center text-base lg:text-bios-lg uppercase text-cream leading-tight mb-1">
-                      {node.name} {node.isMainOrganiser && (`(Core Team)`)}
+                    <h3 className="block text-center text-base lg:text-bios-sm uppercase text-cream leading-tight mb-1">
+                      {node.name} <br/> {node.isMainOrganiser && (`(Core Team)`)}
                     </h3>
                   </div>
                 </div>
@@ -428,9 +454,9 @@ function Supporting({ content }) {
 
 function Soul({ content }) {
   return (
-    <div className="section top-margin-xl xl:mx-0  flex flex-col items-center ">
+    <div className="section top-margin-lg xl:mx-0  flex flex-col items-center ">
       <div className="section xl:mx-52">
-        <h4 className="text-center italic tracking-tightest"><StructuredText data={content.ifYourSoulIsCallingForIntro} /></h4>
+        <h4 className="text-center italic tracking-tightest blockquote-sm"><StructuredText data={content.ifYourSoulIsCallingForIntro} /></h4>
         <p className="text-center monotext text-sm xl:text-2xl">— Robin Wall Kimmerer</p>
       </div>
         <div className="mt-40 lg:mt-52 w-10/12 lg:w-1/2">
@@ -441,8 +467,8 @@ function Soul({ content }) {
             className="rounded-2xl overflow-hidden circle"
           />
         </div>
-        <div className="mx-2 xl:mx-[6.75rem] mt-10 top-margin-xl md:text-40block text-black md:text-red text-center">
-            <StructuredText data={content.ifYourSoulIsCallingFor} />
+        <div className="mx-2 xl:mx-[6.75rem] mt-10 top-margin-xl ">
+            <h4 className="blockquote-sm text-center tracking-tightest"><StructuredText data={content.ifYourSoulIsCallingFor} /></h4>
         </div>
  
       <div className="mt-10 mx-large text-center">
