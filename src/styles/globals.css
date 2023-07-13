@@ -64,7 +64,7 @@
   }
 
   .blockquote-sm {
-    @apply text-red xl:text-40block -tracking-[1.2px]
+    @apply text-red text-red-text-sm xl:text-red-text-lg
   }
 
   .bg-hero {
@@ -84,9 +84,9 @@
   }
 
   .section-title {
-    @apply text-black text-2xl-lg lg:text-4xl font-mono tracking-wider uppercase antialiased leading-tight mb-2;
+    @apply text-black text-2xl-lg lg:text-title-lg font-mono tracking-wider uppercase antialiased mb-2;
   }
-}
+} 
 @tailwind components;
 @tailwind utilities;
 

@@ -132,7 +132,7 @@ function About({ content }) {
 function Quote({ content }) {
   return (
     <div className="section mx-large">
-      <h4 className="text-center italic leading-loose tracking-tightest">{content.quote}</h4>
+      <h4 className="text-center italic blockquote-sm tracking-tightest">{content.quote}</h4>
       <p className="text-center monotext text-sm xl:text-2xl xl:mt-9">— THICH NHAT HANH</p>
     </div>
   )
@@ -177,7 +177,7 @@ function Value({ text }) {
 function CTASection({ content }) {
   return (
     <div className="section section-center mx-medium xl:mt-52">
-      <h4 className="text-center">
+      <h4 className="text-center blockquote-sm">
         <StructuredText data={content.ctaS1} />
       </h4>
       <span className="xl:mt-10"><Button cta={content.cta} /></span>
@@ -225,7 +225,7 @@ function CTAMove({ content }) {
             className="rounded-xl circle overflow-hidden"
           />
         </div>
-      <h4 className="top-margin-xl mx-large text-center text-red">
+      <h4 className="top-margin-xl mx-large text-center blockquote-sm">
         <StructuredText data={content.ctaS2} />
       </h4>
       <span className="mt-10"><Button cta={content.cta} /></span>
@@ -301,7 +301,7 @@ function Timeline({ content }) {
 function CTAPlants({ content }) {
   return (
     <div className="top-margin-xl w-full h-90 flex flex-col justify-center items-center bg-cta3 bg-center bg-cover bg-no-repeat ">
-      <h4 className="mx-medium  text-center text-beige rounded-2xl pdng bg-spice leading-10 lg:leading-extra-loose tracking-tightest">
+      <h4 className="mx-medium  text-center text-beige blockquote-sm rounded-2xl pdng bg-spice leading-10 lg:leading-extra-loose tracking-tightest">
         <StructuredText data={content.ctaS3} />
       </h4>
       <div className="xl:mt-20">
@@ -430,7 +430,7 @@ function Soul({ content }) {
   return (
     <div className="section top-margin-xl xl:mx-0  flex flex-col items-center ">
       <div className="section xl:mx-52">
-        <h4 className="text-center italic tracking-tightest"><StructuredText data={content.ifYourSoulIsCallingForIntro} /></h4>
+        <h4 className="text-center italic tracking-tightest blockquote-sm"><StructuredText data={content.ifYourSoulIsCallingForIntro} /></h4>
         <p className="text-center monotext text-sm xl:text-2xl">— Robin Wall Kimmerer</p>
       </div>
         <div className="mt-40 lg:mt-52 w-10/12 lg:w-1/2">
@@ -441,7 +441,7 @@ function Soul({ content }) {
             className="rounded-2xl overflow-hidden circle"
           />
         </div>
-        <div className="mx-2 xl:mx-[6.75rem] mt-10 top-margin-xl md:text-40block text-black md:text-red text-center">
+        <div className="mx-2 xl:mx-[6.75rem] mt-10 top-margin-xl blockquote-sm text-center">
             <StructuredText data={content.ifYourSoulIsCallingFor} />
         </div>
  

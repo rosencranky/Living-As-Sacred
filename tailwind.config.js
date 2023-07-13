@@ -35,7 +35,10 @@ module.exports = {
         '4xl': ["2.5rem", "1.25rem"],
         '5xl': ["3rem", "3rem"],
         '6xl': ["3.75rem", "3.75rem"],
-        '7xl': ["4.5rem", "4.5rem"], 
+        '7xl': ["4.5rem", "4.5rem"],
+        'title-lg': ["35px","1.25rem"],
+        'red-text-sm': ["30px","40px"],
+        'red-text-lg': ["35px","54px"],
         '40block': ["40px", {
           lineHeight: '54px',
           letterSpacing: '-1.2px',
