@@ -122,7 +122,7 @@ function About({ content }) {
         </div>
       </div>
     </div>
-    <div className="col-span-3 flex justify-center place-self-center xl:mt-10 xl:mb-52">
+    <div className="col-span-3 flex justify-center place-self-center xl:mt-10 xl:mb-36">
         <Button cta={content.cta} />
       </div>
     </div>
