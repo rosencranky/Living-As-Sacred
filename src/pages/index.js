@@ -56,9 +56,10 @@ function Hero() {
 
 function Intro({ content }) {
   return (
-    <div id="about" className="mt-0 xl:mt-52 xl:mx-24 mx-3 lg:mx-10 section-center ">
+    <div id="about" className="mt-10 xl:mt-52 xl:mx-24 mx-3 lg:mx-10 section-center ">
       <span className="xl:mx-9">
-        <h1 className="text-center section-title">{content.introSectionTitle} </h1>
+        <h1 className="text-center section-title xl:hidden leading-8">LIVING AS SACRED<br/>ONLINE JOURNEY </h1>
+        <h1 className="text-center section-title hidden xl:block">{content.introSectionTitle} </h1>
         <h2 className="z-10 text-center blockquote-sm xl:mt-10">
           <StructuredText data={content.introtext1} />
         </h2>
@@ -73,7 +74,7 @@ function About({ content }) {
     <div className="xl:mt-52 section block mx-medium beige-card ">
       <div className=" mx-3 lg:mx-10 section-center">
       <span>
-        <h1 className="text-center section-title">{content.aboutSectionTitle} </h1>
+        <h1 className="text-center section-title py-4 leading-8">{content.aboutSectionTitle} </h1>
       </span>
       </div>
     <div className=" xl:mt-16 lg:grid  grid-cols-3 lg:gap-x-10 2xl:gap-x-24 ">
@@ -190,7 +191,7 @@ function CTASection({ content }) {
 function Offering({ content }) {
   return (
     <div id="offering" className="section top-margin-xl mx-3 md:mx-12 lg:mx-8  2xl:mx-16">
-      <h1 className="text-center section-title">{content.offeringSectionTitle}</h1>
+      <h1 className="text-center section-title leading-8">{content.offeringSectionTitle}</h1>
       {/* Accordion */}
       <div className="top-margin-medium relative z-10 flex flex-col lg:flex-row">
         <div className="basis-1/2">
@@ -246,6 +247,26 @@ function Timeline({ content }) {
     }
   }
 
+  const writeMonth = function(m) {
+    const month = parseInt(m, 10);
+
+    switch(month) {
+      case 1: return 'JANUARY';
+      case 2: return 'FEBRUARY';
+      case 3: return 'MARCH';
+      case 4: return 'APRIL';
+      case 5: return 'MAY';
+      case 6: return 'JUNE';
+      case 7: return 'JULY';
+      case 8: return 'AUGUST';
+      case 9: return 'SEPTEMBER';
+      case 10: return 'OCTOBER';
+      case 11: return 'NOVEMBER';
+      case 12: return 'DECEMBER';
+      default: return 'ERROR';
+    }
+  }
+
   return (   
     <div className="top-margin-xl pt-16 section xl:bg-beige rounded-xl  ">
       <h1 className="text-center z-50 section-title">{content.timelineSectionTitle}</h1>
@@ -266,10 +287,10 @@ function Timeline({ content }) {
                 <em>{block.subtitle}</em>
               </h2>
               <div className="monotext pb-1 border-b border-rust xl:border-none">
-                <p className="inline-block text-base lg:text-date">{`${nth(block.startDate.split('/')[0])} ${new Date(block.startDate.split('/')[1]).toLocaleString("en-us", { month: "long" })} `}</p>
+                <p className="inline-block text-base lg:text-date">{`${nth(block.startDate.split('/')[0])} ${writeMonth(block.startDate.split('/')[1])}`}</p>
                 <br className="hidden lg:inline xl:hidden "/>
                 <p className="inline-block lg:hidden xl:inline-block text-base lg:text-date">&nbsp; - &nbsp;</p>
-                <p className="inline-block text-base lg:text-date">{`${nth(block.endDate.split('/')[0])} ${new Date(block.endDate.split('/')[1]).toLocaleString("en-us", { month: "long" })} `}</p>
+                <p className="inline-block text-base lg:text-date">{`${nth(block.endDate.split('/')[0])} ${writeMonth(block.endDate.split('/')[1])}`}</p>
                 <p className="block text-sm">{block.zoomDate}</p>
               </div>
             </div>
