@@ -247,11 +247,11 @@ function Timeline({ content }) {
   }
 
   return (   
-    <div className="top-margin-xl">
+    <div className="top-margin-xl pt-16 section xl:bg-beige rounded-xl  ">
       <h1 className="text-center z-50 section-title">{content.timelineSectionTitle}</h1>
     <div
       id="timeline"
-      className="section xl:min-h-screen xl:bg-beige rounded-xl lg:px-[70px] xl:py-16 mx-3"
+      className="section xl:min-h-screen xl:bg-beige rounded-xl lg:px-[70px] xl:pb-16 mx-3"
     >
       <div className="z-10  flex flex-row flex-wrap  md:y-12 ">
         {content.contentModules.map((block, i) => (
