@@ -387,7 +387,7 @@ function Bios({ content }) {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 w-full p-3">
                   <div className="pb-2">
-                    <h3 className="block text-center text-base lg:text-bios-lg uppercase text-cream leading-tight mb-1">
+                    <h3 className="block text-center text-base lg:text-bios-sm uppercase text-cream leading-tight mb-1">
                       {node.name} {node.isMainOrganiser && (`(Core Team)`)}
                     </h3>
                   </div>

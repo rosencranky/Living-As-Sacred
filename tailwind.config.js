@@ -22,6 +22,7 @@ module.exports = {
       },
       fontSize: {
         'bios-lg': ["2.25rem", "2.5rem"],
+        "bios-sm": "1.5rem",
         // 'xs': '.75rem',
         // sm: ['40px', '20px'],
         // 'tiny': '.875rem',
