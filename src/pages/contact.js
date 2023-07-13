@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <Layout>
       <SEO title="Contact" />
-      <div className="flex w-full justify-center h-90 items-center overflow-y-hidden   ">
+      <div className="flex w-full justify-center h-full items-center overflow-y-hidden   ">
         <div className=" px-4 w-full flex flex-col justify-center items-center">
           <h1 className="text-center top-margin-lg section-title">Contact us</h1>
           <p className="top-margin-medium text-center">
