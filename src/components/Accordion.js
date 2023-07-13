@@ -24,12 +24,12 @@ export default function Accordion({ index, excerpt, fullText }) {
             <div className="flex-1">
               <div className="flex flex-wrap items-start accordion-item--open ">
                 <div
-                    className={`leading-tight block mb-0 pb-0  flex-1 transition-opacity ease-in duration-200 delay-50 ${
+                    className={`leading-tight block mb-0 pb-0 ml-4 mt-4 flex-1 transition-opacity ease-in duration-200 delay-50 ${
                       open ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     <h3
-                    className={` mb-0 ml-0 pb-0 xl:text-3xl text-black`}
+                    className={` mb-0 ml-0 pb-0 xl:text-2xl-lg text-black`}
                   >
                     <StructuredText data={excerpt} />
                   </h3>
@@ -47,12 +47,12 @@ export default function Accordion({ index, excerpt, fullText }) {
                   >
                     <path
                       d="M1.305 27.132L26.354 2.084M26.354 27.132L1.306 2.083"
-                      stroke="#6D7661"
+                      stroke="#2C2726"
                       strokeWidth="3.24"
                     />
                   </svg>
                 </div>
-                <div className="mt-9 flex-grow text-base lg:text-lg">
+                <div className="mt-9 ml-4 flex-grow text-base lg:text-lg">
                     <StructuredText data={fullText} />
                     </div>
               </div>
@@ -76,7 +76,7 @@ export default function Accordion({ index, excerpt, fullText }) {
             <div className="flex-1">
               <div className="flex flex-wrap items-start accordion-item--open "> 
                   <h3
-                    className={`block mb-0 pb-0  flex-1  xl:text-3xl transition-opacity ease-in duration-200 align-text-middle ${
+                    className={`block mb-0 pb-0 ml-4  flex-1 mt-4 xl:text-2xl-lg transition-opacity ease-in duration-200 align-text-middle ${
                       open ? "opacity-0" : "opacity-100"
                     }`}
                   >
@@ -93,7 +93,7 @@ export default function Accordion({ index, excerpt, fullText }) {
                   >
                     <path
                       d="M1.305 27.132L26.354 2.084M26.354 27.132L1.306 2.083"
-                      stroke="#6D7661"
+                      stroke="#2C2726"
                       strokeWidth="3.24"
                     />
                   </svg>
