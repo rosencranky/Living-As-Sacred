@@ -23,6 +23,7 @@ module.exports = {
       fontSize: {
         'bios-lg': ["2.25rem", "2.5rem"],
         "bios-sm": "1.5rem",
+        "timeline-title": "38px",
         // 'xs': '.75rem',
         // sm: ['40px', '20px'],
         // 'tiny': '.875rem',
@@ -45,7 +46,7 @@ module.exports = {
           letterSpacing: '-1.2px',
           fontWeight: '400',
         }],
-        'date': ["1.75rem", {
+        'date': ["1.5rem", {
           lineHeight: '1.313rem', 
           letterSpacing: '1px', 
         }]

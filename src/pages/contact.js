@@ -28,7 +28,7 @@ export default function Contact() {
             <label>
               <div className="mt-12  flex justify-center">
                 <input
-                  className="p-3 md:p-6 bg-beige h-12 border border-khaki rounded-xl focus:outline-none ring-white w-full"
+                  className="p-3 md:p-6 bg-beige h-12 border border-khaki rounded-xl focus:outline-none ring-white w-full placeholder-rust"
                   type="text"
                   name="name"
                   placeholder="Name"
@@ -40,7 +40,7 @@ export default function Contact() {
             <label className="">
               <div className="mt-12 flex justify-center">
                 <input
-                  className=" p-3 md:p-6 bg-beige h-12 border border-khaki rounded-xl focus:outline-none ring-white w-full"
+                  className=" p-3 md:p-6 bg-beige h-12 border border-khaki rounded-xl focus:outline-none ring-white w-full placeholder-rust"
                   type="text"
                   name="email"
                   placeholder="Email address"
@@ -53,7 +53,7 @@ export default function Contact() {
               {/* Message: */}
               <div className=" border border-khaki rounded-xl w-full  mt-12 h-full">
                 <textarea
-                  className="h-40 p-3 md:p-6  bg-beige text-black rounded-xl  w-full  focus:outline-none outline-none ring-none -mb-1"
+                  className="h-40 p-3 md:p-6  bg-beige text-black rounded-xl  w-full  focus:outline-none outline-none ring-none -mb-1 placeholder-rust"
                   name="message"
                   type="text"
                   // role="textbox"

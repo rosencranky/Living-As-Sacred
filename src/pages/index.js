@@ -258,15 +258,15 @@ function Timeline({ content }) {
             className="xl:h-auto md:basis-full md:mx-3 xl:mx-0 my-4 xl:my-0 timeline-grid-small xl:timeline-grid-large bg-beige xl:hover:bg-cream rounded-2xl transition ease-in duration-100 px-5 py-8 md:px-10 md:py-10 border border-green xl:border-none"
           >
             {/* Title */}
-            <div className="my-0 col-start-1 col-span-1 xl:border-r xl:border-rust basis-[37%] flex flex-col justify-between shrink-0 text-center xl:text-left">
-              <h2 className="text-red pb-5 text-3xl xl:text-4xl xl:leading-loosest ">
+            <div className="my-0 col-start-1 col-span-1 xl:border-r xl:border-rust basis-[37%] flex flex-col justify-evenly shrink-0 text-center xl:text-left">
+              <h2 className="text-red pb-5 text-3xl xl:text-timeline-title xl:leading-loosest ">
                 {block.title}<br/>
                 <em>{block.subtitle}</em>
               </h2>
               <div className="monotext pb-1 border-b border-rust xl:border-none">
                 <p className="inline-block text-base lg:text-date">{`${nth(block.startDate.split('/')[0])} ${new Date(block.startDate.split('/')[1]).toLocaleString("en-us", { month: "long" })} `}</p>
-                <br className="hidden xl:inline 2xl:hidden "/>
-                <p className="inline-block xl:hidden 2xl:inline-block text-base lg:text-date">&nbsp; - &nbsp;</p>
+                <br className="hidden lg:inline xl:hidden "/>
+                <p className="inline-block lg:hidden xl:inline-block text-base lg:text-date">&nbsp; - &nbsp;</p>
                 <p className="inline-block text-base lg:text-date">{`${nth(block.endDate.split('/')[0])} ${new Date(block.endDate.split('/')[1]).toLocaleString("en-us", { month: "long" })} `}</p>
                 <p className="block text-sm">{block.zoomDate}</p>
               </div>
